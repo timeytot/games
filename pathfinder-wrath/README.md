@@ -1,4 +1,4 @@
-# Mod configuration
+# Pathfinder: Wrath of the Righteous
 
 This folder is the Wrath Tactics and Buff It 2 The Limit configuration for Pathfinder: Wrath of the Righteous, save character FaN.
 

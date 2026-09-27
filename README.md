@@ -1,11 +1,9 @@
-# Pathfinder: Wrath of the Righteous
+# Games
 
-Notes and saved configuration for Pathfinder: Wrath of the Righteous.
+Saved notes and configuration for games. Each game has its own folder. The games do not read this repository.
 
-The game does not read this repository. Live mod files stay in the game install.
+## Games
 
-## Folders
-
-| Folder | What it is |
+| Folder | Game |
 |---|---|
-| `mod-configuration` | Wrath Tactics and Buff It 2 The Limit configuration for the FaN save |
+| `pathfinder-wrath` | Pathfinder: Wrath of the Righteous |
