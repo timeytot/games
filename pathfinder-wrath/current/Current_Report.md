@@ -1,15 +1,15 @@
 # Current WotR Snapshot
 
 - Save: Quick_7.zks
-- Save timestamp: 2026-09-29 01:34:32
-- SHA-256: 97640eba1fd7f6678396aa12d709f82414f1e652e947b7460f31b93a2c916e35
-- Generated: 2026-09-29T02:03:51+08:00
+- Save timestamp: 2026-09-29 02:19:40
+- SHA-256: 2a66fa7e82a14047e850e526138af85f4c49281e0a08de7e55187308eb7c84fb
+- Generated: 2026-09-29T02:32:19+08:00
 - Source: read-only save/log extraction
 
 ## Party
 
 - FaN id=2c002cb0-2987-4e37-a575-eb5cdd155850 alive=True classes=WizardClass 20, LichMythicClass 8, MythicStartingClass 2
-- Skeletal Marksman id=2805 alive=True classes=UndeadClass 22
+- Skeletal Marksman id=2805 alive=False classes=UndeadClass 22
 - Daeran_Companion id=4DB8 alive=True classes=OracleClass 20, MythicCompanionClass 10
 - Ember_Companion id=4E3E alive=True classes=WitchClass 20, MythicCompanionClass 10
 - Greybor_Companion id=4ECE alive=True classes=SlayerClass 20, MythicCompanionClass 10
@@ -22,9 +22,9 @@
 - Camelia_Companion id=53EE alive=True classes=ShamanClass 20, MythicCompanionClass 10
 - Arueshalae_Companion id=54B0 alive=True classes=RangerClass 20, MythicCompanionClass 10
 - Ciar id=5568 alive=True classes=CavalierClass 20, MythicCompanionClass 10
-- Horse id=55FD alive=True classes=AnimalCompanionClass 20
-- Delamere id=5611 alive=False classes=SlayerClass 20, MythicCompanionClass 10
-- Queen Galfrey id=56A0 alive=True classes=BardClass 20, MythicCompanionClass 10
+- Horse id=55FD alive=False classes=AnimalCompanionClass 20
+- Delamere id=5611 alive=True classes=SlayerClass 20, MythicCompanionClass 10
+- Queen Galfrey id=56A0 alive=False classes=BardClass 20, MythicCompanionClass 10
 - Kestoglyr id=5728 alive=True classes=StalwartDefenderClass 10, MythicCompanionClass 10, FighterClass 9, WitchClass 1
 - Staunton Vhane id=57A6 alive=True classes=WarpriestClass 20, MythicCompanionClass 10
 
@@ -39,7 +39,7 @@
 ## Ciar Horse
 
 - found: True
-- alive: True
+- alive: False
 - classes: [{'class': 'AnimalCompanionClass', 'level': 20}]
 - feats: ['TripDefenseFourLegs', 'Dodge', 'Diehard', 'ImprovedUnarmedStrike', 'CraneStyleFeat', 'Outflank', 'CraneStyleWingFeat', 'BlindFight', 'IronWill', 'Toughness', 'IronWillImproved', 'CraneStyleBuff']
 
@@ -85,11 +85,7 @@
 
 ## Differences From Previous Snapshot
 
-- save changed: Quick_3.zks -> Quick_7.zks
-- Ciar feat added: TrampleAbility
-- Ciar alive: False -> True
-- Horse alive: False -> True
-- Delamere alive: True -> False
-- Kestoglyr alive: False -> True
-- Staunton Vhane feat removed: PowerAttackBuff
-- Staunton Vhane alive: False -> True
+- Skeletal Marksman alive: True -> False
+- Horse alive: True -> False
+- Delamere alive: False -> True
+- Queen Galfrey alive: True -> False

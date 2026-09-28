@@ -1,12 +1,12 @@
 {
   "unit_id": "55FD",
   "name": "Horse",
-  "alive": true,
+  "alive": false,
   "life": {
-    "life_state": null,
-    "finally_dead": null,
-    "damage": 290,
-    "alive": true
+    "life_state": "Dead",
+    "finally_dead": true,
+    "damage": 419,
+    "alive": false
   },
   "class_levels": [
     {
@@ -95,8 +95,7 @@
     "CraneStyleBuff"
   ],
   "mythic": [
-    "MythicalBeastPet",
-    "BlessingOfUnlifeImmunities"
+    "MythicalBeastPet"
   ],
   "feature_names": [
     "BasicFeatsProgression",
@@ -129,45 +128,15 @@
     "BulwarkSturdy",
     "AnimalCompanionDevotion",
     "MediumBardingProficiency",
-    "InspiredRageAllyToggleSwitchBuff",
     "BardingOfVengeanceFeature",
     "UltimatePredatorsGauntletsFeature",
-    "NegativeEnergyAffinity",
-    "DivinationImmunityFeature"
+    "InspiredRageAllyToggleSwitchBuff"
   ],
   "buffs": [
     "PF2_DLC1_NeutralBuff",
     "PF2_DLC1_LawfulDistortionSaveBuff",
-    "CorruptionLevel1",
     "CavalierTacticianOutflankBuff",
-    "ResistanceBuff",
-    "MageArmorBuff",
-    "ProtectionFromEvilBuff",
-    "ProtectionFromArrowsCommunalBuff",
-    "BlessingOfUnlifeBuff",
-    "MindBlankBuff",
-    "HeroicInvocationBuff",
-    "UnbreakableHeartBuff",
-    "HasteBuff",
-    "HasteBuffEffect",
-    "FreedomOfMovementBuff",
-    "ShieldOfFaithBuff",
-    "AidBuff",
-    "DelayPoisonBuff",
-    "PrayerBuff",
-    "DeathWardBuff",
-    "ProtectionFromFireBuff",
-    "BurstOfGloryBuff",
-    "TrueSeeingBuff",
-    "BearsEnduranceBuff",
-    "BullsStrengthBuff",
-    "CavalierLionsCallBuff",
-    "EvilBlessingMinorBuff",
-    "WindsOfVengeanceBuff",
-    "CavalierBannerBuff",
-    "CavalierBannerGreaterBuff",
-    "InspirationalLeaderEffectBuff",
-    "DarkRitesEffectBuff"
+    "CorruptionLevel1"
   ],
   "equipment": [
     {
@@ -243,6 +212,11 @@
         "descriptor": "ArmorEnhancement",
         "value": 5,
         "item_guid": "65d1437d2b5843e3a820049ed0bf9832"
+      },
+      {
+        "descriptor": "Helpless",
+        "value": -8,
+        "item_guid": null
       }
     ]
   },
@@ -269,8 +243,5 @@
     }
   ],
   "spellbooks": [],
-  "immunities": [
-    "BlessingOfUnlifeImmunities",
-    "DivinationImmunityFeature"
-  ]
+  "immunities": []
 }
