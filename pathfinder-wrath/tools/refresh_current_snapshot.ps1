@@ -51,7 +51,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "drive copy failed: $LASTEXITCODE" }
 
     Set-Location $repo
-    git add -- pathfinder-wrath/current pathfinder-wrath/README.md pathfinder-wrath/tools .gitignore
+    git add -- pathfinder-wrath/current pathfinder-wrath/README.md pathfinder-wrath/tools
     $staged = git diff --cached --name-only
     if (-not $staged) {
         Write-Output "NO_STAGED_CHANGES"

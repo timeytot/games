@@ -18,18 +18,28 @@ The zip contains the notes and copies of those two configs. Notes are in Chinese
 
 ## Current state
 
-`current/` always represents the newest locally detected save snapshot.
+`current/` is the newest locally detected save snapshot.
+
+`diagnostics/` contains immutable historical snapshots.
+
+Build files are the intended configuration. `current/` is the actual newest parsed save state. When a build file and `current/` conflict, `current/` wins.
 
 - `Current_Report.md`
 - `Party_Current.json`
 - `Kestoglyr_Current.json`
 - `Horse_Current.json`
 
-`diagnostics/` contains immutable historical snapshots.
+## Sync workflow
 
-Build files describe intended builds. `current/` describes the latest actual save state. When they conflict, `current/` wins.
+Manual:
 
-Refresh by running `tools/refresh_current_snapshot.cmd`. A signed-in Windows task named `WotR Current Snapshot Sync` checks every 10 minutes and does nothing when the save file hash is unchanged.
+`tools\refresh_current_snapshot.cmd`
+
+Launch the game and sync once after it exits:
+
+`tools\Play_WotR_And_Sync.cmd`
+
+No scheduled task, no background service, no startup item.
 
 ## Diagnostics
 
