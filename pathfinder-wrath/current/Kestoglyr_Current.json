@@ -1,0 +1,420 @@
+{
+  "unit_id": "5728",
+  "name": "Kestoglyr",
+  "alive": true,
+  "life": {
+    "life_state": null,
+    "finally_dead": null,
+    "damage": null,
+    "alive": true
+  },
+  "class_levels": [
+    {
+      "class": "StalwartDefenderClass",
+      "level": 10
+    },
+    {
+      "class": "MythicCompanionClass",
+      "level": 10
+    },
+    {
+      "class": "FighterClass",
+      "level": 9
+    },
+    {
+      "class": "WitchClass",
+      "level": 1
+    }
+  ],
+  "class_order": [
+    "FighterClass",
+    "FighterClass",
+    "FighterClass",
+    "WitchClass",
+    "FighterClass",
+    "FighterClass",
+    "FighterClass",
+    "FighterClass",
+    "StalwartDefenderClass",
+    "StalwartDefenderClass",
+    "FighterClass",
+    "StalwartDefenderClass",
+    "StalwartDefenderClass",
+    "StalwartDefenderClass",
+    "StalwartDefenderClass",
+    "StalwartDefenderClass",
+    "StalwartDefenderClass",
+    "StalwartDefenderClass",
+    "StalwartDefenderClass",
+    "FighterClass",
+    "MythicCompanionClass",
+    "MythicCompanionClass",
+    "MythicCompanionClass",
+    "MythicCompanionClass",
+    "MythicCompanionClass",
+    "MythicCompanionClass",
+    "MythicCompanionClass",
+    "MythicCompanionClass",
+    "MythicCompanionClass",
+    "MythicCompanionClass"
+  ],
+  "abilities": {
+    "Strength": {
+      "base": 20,
+      "permanent": 20
+    },
+    "Dexterity": {
+      "base": 18,
+      "permanent": 20
+    },
+    "Constitution": {
+      "base": 10,
+      "permanent": 10
+    },
+    "Intelligence": {
+      "base": 7,
+      "permanent": 7
+    },
+    "Wisdom": {
+      "base": 10,
+      "permanent": 10
+    },
+    "Charisma": {
+      "base": 14,
+      "permanent": 14
+    }
+  },
+  "skills": {
+    "SkillMobility": {
+      "base": 5,
+      "permanent": 13
+    },
+    "SkillAthletics": {
+      "base": 11,
+      "permanent": 19
+    },
+    "SkillPerception": {
+      "base": 20,
+      "permanent": 23
+    },
+    "SkillPersuasion": {
+      "base": 5,
+      "permanent": 10
+    }
+  },
+  "feats": [
+    "TwoWeaponFighting",
+    "PowerAttackFeature",
+    "WeaponFocus",
+    "ShortswordProficiency",
+    "LightCrossbowProficiency",
+    "DoubleSlice",
+    "CombatReflexes",
+    "Toughness",
+    "Dodge",
+    "Endurance",
+    "ArmorFocusSelection",
+    "ArmorFocusMedium",
+    "Improved Initiative",
+    "ShieldFocus",
+    "ShieldFocusGreater",
+    "ImprovedUnarmedStrike",
+    "CraneStyleFeat",
+    "MissileShield",
+    "BlindFight",
+    "ImprovedInitiativeMythicFeat",
+    "ArmorFocusMythicSelection",
+    "ArmorFocusMediumMythicFeatureVar2",
+    "DodgeMythicFeat",
+    "ToughnessMythicFeat",
+    "ShieldFocusMythicFeat",
+    "CraneStyleBuff"
+  ],
+  "mythic": [
+    "MythicCompanionProgression",
+    "MythicAbilitySelection",
+    "MythicBypassEpicDR",
+    "LastStand",
+    "MythicFeatSelection",
+    "EverReady",
+    "BreakControl",
+    "UnrelentingAssault",
+    "Unstoppable"
+  ],
+  "feature_names": [
+    "BasicFeatsProgression",
+    "HumanRace",
+    "Kestoglyr_Companion",
+    "ChargeAbility",
+    "Kestoglyr_FeatureList",
+    "BasicFeatSelection",
+    "HumanSkilled",
+    "FighterProgression",
+    "FightDefensivelyFeature",
+    "CoupDeGraceFeature",
+    "CoupDeGraceAbility",
+    "TwoWeaponFightingBasicMechanics",
+    "ImpatienceBaseFeature",
+    "DifficultyAdvancementBaseFeature",
+    "SkillAbilities",
+    "LoreReligionUseAbility",
+    "PersuasionUseAbility",
+    "StormBuff",
+    "InspiredRageAllyFeature",
+    "BackgroundsBaseSelection",
+    "DeitySelection",
+    "FighterFeatSelection",
+    "FighterProficiencies",
+    "LightArmorProficiency",
+    "MediumArmorProficiency",
+    "HeavyArmorProficiency",
+    "SimpleWeaponProficiency",
+    "MartialWeaponProficiency",
+    "ShieldsProficiency",
+    "TowerShieldProficiency",
+    "BackgroundsWarriorSelection",
+    "BackgroundGuard",
+    "Bravery",
+    "ArmorTraining",
+    "UndeadType",
+    "UndeadImmunities",
+    "NegativeEnergyAffinity",
+    "PF2_DLC1_NeutralFeature",
+    "PF2_DLC1_LawfulFeature",
+    "WitchProgression",
+    "RayCalculateFeature",
+    "WitchFamiliarSelection",
+    "WitchHexSelection",
+    "WitchBetterHexProgression",
+    "OracleCurseSelection",
+    "AccursedWitchCantripsFeature",
+    "HellboundCurseProgression",
+    "HellboundCurseFeatureLevel1",
+    "HareFamiliarBondFeature",
+    "WitchHexIceplantFeature",
+    "BeltOfBloodlustFeature",
+    "RuggedHelmetFeature",
+    "GlovesOfDuelingFeature2",
+    "DivinationImmunityFeature",
+    "WeaponTrainingSelection",
+    "WeaponTrainingHeavyBlades",
+    "StalwartDefenderProgression",
+    "HellboundCurseFeatureLevel5",
+    "StalwartDefenderACBonus",
+    "DefensiveStanceFeature",
+    "DefensiveStanceFact",
+    "StalwartDefenderProficiencies",
+    "StalwartDefenderDefensivePowerSelection",
+    "InternalFortitudeDefensivePower",
+    "UncannyDodgeChecker",
+    "UncannyDodge",
+    "FearlessDefenseDefensivePower",
+    "StalwartDefenderDamageReduction",
+    "IncreasedDamageReductionDefensivePower",
+    "ImprovedUncannyDodge",
+    "BodyOfStoneFeature",
+    "Fortification25Feature",
+    "HellboundCurseFeatureLevel10",
+    "RenewedDefenseDefensivePower",
+    "RenewedDefenseAbility",
+    "WeaponTrainingRankUpSelection",
+    "TrainedInitiative",
+    "HellboundCurseFeatureLevel15",
+    "StalwartDefenderDamageReductionArmor",
+    "AssertionOfDominanceFeature",
+    "InspiredRageAllyToggleSwitchBuff",
+    "HareFamiliarBuff",
+    "AdamantineArmorMediumFeature",
+    "BreastplateOfTirelessWarriorFeature"
+  ],
+  "buffs": [
+    "PF2_DLC1_NeutralBuff",
+    "PF2_DLC1_LawfulDistortionSaveBuff",
+    "PF2_DLC1_LawfulACBuff",
+    "AssertionOfDominanceBuff",
+    "ArmorFocusMediumMythicFeatureVar2Buff",
+    "AssertionOfDominanceBuffResist",
+    "LastStandBuff",
+    "BreakControlCountBuff1",
+    "CorruptionLevel1",
+    "DodgeMythicBuff",
+    "ArmorFocusMediumMythicFeatureVar2SubBuff"
+  ],
+  "equipment": [
+    {
+      "slot_type": "HandSlot",
+      "name": "DawnflowersKiss_Basic_Scimitar",
+      "guid": "4ca4986b49b01954997f37c24c98d1f3",
+      "unique_id": "306afabc-44c2-4103-a3b2-b2e56a31b401",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentBelt",
+      "name": "BeltOfBloodlustItem",
+      "guid": "c63859f821f7b414492580b638b009fb",
+      "unique_id": "3205cf15-e2c3-4303-a264-36dcf6b85c81",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentHead",
+      "name": "RuggedHelmetItem",
+      "guid": "9b422adf4bdb9994a9690ac20ca74370",
+      "unique_id": "fe752637-9a0c-41da-9ec3-fdf4f8d8c53b",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentFeet",
+      "name": "BootsOfOutbreakItem",
+      "guid": "e55f0210859bb3b4883958e41c155490",
+      "unique_id": "634bb9c7-706e-4c75-9c0e-01b93924327b",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentGloves",
+      "name": "GlovesOfDuelingNormalItem",
+      "guid": "c8f949c03b92f714b83edd610f3e9348",
+      "unique_id": "9105df19-2639-402b-97a4-bf27eaeea79b",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentNeck",
+      "name": "AmuletOfNaturalArmor5",
+      "guid": "11f435140501db84e8e787bf8792fac2",
+      "unique_id": "7c88f040-3793-453b-a2e4-3bdf5dfb4a01",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentRing",
+      "name": "RingOfProtection5",
+      "guid": "2d576daea5f62ae489028bce40469285",
+      "unique_id": "ccd1e2e0-c7ea-421c-9ce9-5e49e2af4448",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentShoulders",
+      "name": "CloakOfResistance5",
+      "guid": "a34cd0f80d04ec647af741d924a3e2a3",
+      "unique_id": "2bd9be30-e473-4518-964c-7e3769c2af04",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "HandSlot",
+      "name": "AssertionOfDominanceShieldItem",
+      "guid": "2ad512d4b7d1438c97b48fe232fcceb5",
+      "unique_id": "24a8d2c9-8d35-4eb8-9da4-a1ba90e81db2",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "ArmorSlot",
+      "name": "BreastplateOfTirelessWarriorItem",
+      "guid": "be955dbae8ea4aecad94bb6e6a9dabfa",
+      "unique_id": "a4527e12-d15e-401b-807f-8d22c2109a03",
+      "dex_limit": 5
+    }
+  ],
+  "ac_fragment": {
+    "base": 10,
+    "dex_limit": 5,
+    "modifiers": [
+      {
+        "descriptor": "DexterityBonus",
+        "value": 5,
+        "item_guid": null
+      },
+      {
+        "descriptor": "Size",
+        "value": 0,
+        "item_guid": null
+      },
+      {
+        "descriptor": "Shield",
+        "value": 2,
+        "item_guid": "18ce7a5689b64f9caaf546c949ab616d"
+      },
+      {
+        "descriptor": "Armor",
+        "value": 6,
+        "item_guid": "be955dbae8ea4aecad94bb6e6a9dabfa"
+      },
+      {
+        "descriptor": "ArmorEnhancement",
+        "value": 5,
+        "item_guid": "be955dbae8ea4aecad94bb6e6a9dabfa"
+      },
+      {
+        "descriptor": "ShieldEnhancement",
+        "value": 5,
+        "item_guid": "18ce7a5689b64f9caaf546c949ab616d"
+      }
+    ]
+  },
+  "toggles": [
+    {
+      "name": "FightDefensivelyToggleAbility",
+      "is_on": true,
+      "guid": "09d742e8b50b0214fb71acfc99cc00b3"
+    },
+    {
+      "name": "MobilityUseAbility",
+      "is_on": null,
+      "guid": "4be5757b85af47545a5789f1d03abda9"
+    },
+    {
+      "name": "InspiredRageAllyToggleSwitch",
+      "is_on": true,
+      "guid": "180e06c04a9bee249b9325bbbcf1ebfb"
+    },
+    {
+      "name": "PowerAttackToggleAbility",
+      "is_on": null,
+      "guid": "a7b339e4f6ff93a4697df5d7a87ff619"
+    },
+    {
+      "name": "HareFamiliarAbility",
+      "is_on": true,
+      "guid": "1194129055923ae46a6b876ff6a30358"
+    },
+    {
+      "name": "DefensiveStanceActivateableAbility",
+      "is_on": null,
+      "guid": "be68c660b41bc9247bcab727b10d2cd1"
+    },
+    {
+      "name": "CraneStyleToggleAbility",
+      "is_on": true,
+      "guid": "31af823f7cfbe0b4e8c063019f3b88e2"
+    }
+  ],
+  "spellbooks": [
+    {
+      "blueprint": "AccursedWitchSpellbook",
+      "level": 1,
+      "known": [
+        {
+          "level": 0,
+          "spells": [
+            "Daze",
+            "DivineZap",
+            "Guidance",
+            "MageLight",
+            "Resistance",
+            "TouchOfFatigueCast",
+            "DismissAreaEffect",
+            "Stabilize"
+          ]
+        },
+        {
+          "level": 1,
+          "spells": [
+            "UnbreakableHeart",
+            "InflictLightWoundsCast"
+          ]
+        }
+      ]
+    }
+  ],
+  "immunities": [
+    "UndeadImmunities",
+    "DivinationImmunityFeature"
+  ]
+}

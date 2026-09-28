@@ -16,6 +16,21 @@ The zip contains the notes and copies of those two configs. Notes are in Chinese
 - [Kestoglyr High AC Build](./Kestoglyr_High_AC_Build.md) — normal-retrain high-AC shield-tank build, equipment, mythic plan, combat toggles, and verified pitfalls.
 - [Ciar Horse Bulwark Build](./Ciar_Horse_Bulwark_Build.md) — Bulwark animal companion as the second front line.
 
+## Current state
+
+`current/` always represents the newest locally detected save snapshot.
+
+- `Current_Report.md`
+- `Party_Current.json`
+- `Kestoglyr_Current.json`
+- `Horse_Current.json`
+
+`diagnostics/` contains immutable historical snapshots.
+
+Build files describe intended builds. `current/` describes the latest actual save state. When they conflict, `current/` wins.
+
+Refresh by running `tools/refresh_current_snapshot.cmd`. A signed-in Windows task named `WotR Current Snapshot Sync` checks every 10 minutes and does nothing when the save file hash is unchanged.
+
 ## Diagnostics
 
 The build file is the plan. A diagnostic file is what was read from a save and the logs at one time. When they conflict, the save diagnostic wins over an older build note.

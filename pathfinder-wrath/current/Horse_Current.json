@@ -1,0 +1,242 @@
+{
+  "unit_id": "55FD",
+  "name": "Horse",
+  "alive": true,
+  "life": {
+    "life_state": null,
+    "finally_dead": null,
+    "damage": null,
+    "alive": true
+  },
+  "class_levels": [
+    {
+      "class": "AnimalCompanionClass",
+      "level": 20
+    }
+  ],
+  "class_order": [
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass",
+    "AnimalCompanionClass"
+  ],
+  "abilities": {
+    "Strength": {
+      "base": 16,
+      "permanent": 16
+    },
+    "Dexterity": {
+      "base": 17,
+      "permanent": 17
+    },
+    "Constitution": {
+      "base": 15,
+      "permanent": 15
+    },
+    "Intelligence": {
+      "base": 3,
+      "permanent": 3
+    },
+    "Wisdom": {
+      "base": 12,
+      "permanent": 12
+    },
+    "Charisma": {
+      "base": 6,
+      "permanent": 6
+    }
+  },
+  "skills": {
+    "SkillMobility": {
+      "base": 3,
+      "permanent": 9
+    },
+    "SkillAthletics": {
+      "base": 17,
+      "permanent": 23
+    },
+    "SkillPerception": {
+      "base": 20,
+      "permanent": 24
+    },
+    "SkillPersuasion": {
+      "base": null,
+      "permanent": -2
+    }
+  },
+  "feats": [
+    "TripDefenseFourLegs",
+    "Dodge",
+    "Diehard",
+    "ImprovedUnarmedStrike",
+    "CraneStyleFeat",
+    "Outflank",
+    "CraneStyleWingFeat",
+    "BlindFight",
+    "IronWill",
+    "Toughness",
+    "IronWillImproved",
+    "CraneStyleBuff"
+  ],
+  "mythic": [
+    "MythicalBeastPet"
+  ],
+  "feature_names": [
+    "BasicFeatsProgression",
+    "AnimalCompanionUnitHorse",
+    "HeadLocatorFeature",
+    "ChargeAbility",
+    "NaturalArmor4",
+    "ReducedReach",
+    "AnimalCompanionSlotFeature",
+    "AnimalType",
+    "AnimalCompanionScent30",
+    "AnimalCompanionUpgradeHorse",
+    "PF2_DLC1_NeutralFeature",
+    "PF2_DLC1_LawfulFeature",
+    "AnimalCompanionBaseProgression",
+    "BasicFeatSelection",
+    "FightDefensivelyFeature",
+    "CoupDeGraceFeature",
+    "CoupDeGraceAbility",
+    "TwoWeaponFightingBasicMechanics",
+    "ImpatienceBaseFeature",
+    "DifficultyAdvancementBaseFeature",
+    "SkillAbilities",
+    "LoreReligionUseAbility",
+    "PersuasionUseAbility",
+    "StormBuff",
+    "InspiredRageAllyFeature",
+    "AnimalCompanionStatFeature",
+    "LightBardingProficiency",
+    "BulwarkSturdy",
+    "AnimalCompanionDevotion",
+    "MediumBardingProficiency",
+    "InspiredRageAllyToggleSwitchBuff",
+    "BardingOfVengeanceFeature",
+    "UltimatePredatorsGauntletsFeature"
+  ],
+  "buffs": [
+    "PF2_DLC1_NeutralBuff",
+    "PF2_DLC1_LawfulDistortionSaveBuff",
+    "CorruptionLevel1",
+    "CavalierTacticianOutflankBuff"
+  ],
+  "equipment": [
+    {
+      "slot_type": "HandSlot",
+      "name": "Bite1d4Large",
+      "guid": "8e644203e127404eb816170145d7cf08",
+      "unique_id": "cebe457d-e13d-4be1-9b0f-31182155e3ba",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "ArmorSlot",
+      "name": "BardingOfVengeanceItem",
+      "guid": "65d1437d2b5843e3a820049ed0bf9832",
+      "unique_id": "ba17180f-582c-4992-a50a-43381a5484c5",
+      "dex_limit": 6
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentGloves",
+      "name": "UltimatePredatorsGauntletsItem",
+      "guid": "c8ad87f3fc49ccd43a5560acb271e968",
+      "unique_id": "d7494884-e327-4ee1-991b-7bc05b84d579",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentBelt",
+      "name": "BeltOfPerfection6",
+      "guid": "2b400628f960a8a43bc2f085d84788cf",
+      "unique_id": "0a740cf3-ea13-40d1-9758-aebde7d25da8",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentShoulders",
+      "name": "CloakOfResistance6",
+      "guid": "37090c79c13262f45821d91071efc138",
+      "unique_id": "da8226d6-ab4d-4ae4-a133-75283dc47968",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentHead",
+      "name": "HeadbandOfPerfection6",
+      "guid": "6d7992679c557c842887c8bba08a12c8",
+      "unique_id": "78d823be-5b77-4225-bea4-207b948201c2",
+      "dex_limit": null
+    },
+    {
+      "slot_type": "BlueprintItemEquipmentNeck",
+      "name": "AmuletOfMightyFists5",
+      "guid": "ff74157b090c1744598408c8f221b9fc",
+      "unique_id": "667ca54f-209f-4c82-a78a-9c1adc7fc1b5",
+      "dex_limit": null
+    }
+  ],
+  "ac_fragment": {
+    "base": 10,
+    "dex_limit": 6,
+    "modifiers": [
+      {
+        "descriptor": "DexterityBonus",
+        "value": 3,
+        "item_guid": null
+      },
+      {
+        "descriptor": "Size",
+        "value": -1,
+        "item_guid": null
+      },
+      {
+        "descriptor": "Armor",
+        "value": 2,
+        "item_guid": "65d1437d2b5843e3a820049ed0bf9832"
+      },
+      {
+        "descriptor": "ArmorEnhancement",
+        "value": 5,
+        "item_guid": "65d1437d2b5843e3a820049ed0bf9832"
+      }
+    ]
+  },
+  "toggles": [
+    {
+      "name": "FightDefensivelyToggleAbility",
+      "is_on": true,
+      "guid": "09d742e8b50b0214fb71acfc99cc00b3"
+    },
+    {
+      "name": "MobilityUseAbility",
+      "is_on": null,
+      "guid": "4be5757b85af47545a5789f1d03abda9"
+    },
+    {
+      "name": "InspiredRageAllyToggleSwitch",
+      "is_on": true,
+      "guid": "180e06c04a9bee249b9325bbbcf1ebfb"
+    },
+    {
+      "name": "CraneStyleToggleAbility",
+      "is_on": true,
+      "guid": "31af823f7cfbe0b4e8c063019f3b88e2"
+    }
+  ],
+  "spellbooks": [],
+  "immunities": []
+}
