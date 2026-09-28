@@ -1,12 +1,12 @@
 {
   "unit_id": "55FD",
   "name": "Horse",
-  "alive": true,
+  "alive": false,
   "life": {
-    "life_state": null,
-    "finally_dead": null,
-    "damage": null,
-    "alive": true
+    "life_state": "Dead",
+    "finally_dead": true,
+    "damage": 343,
+    "alive": false
   },
   "class_levels": [
     {
@@ -212,6 +212,11 @@
         "descriptor": "ArmorEnhancement",
         "value": 5,
         "item_guid": "65d1437d2b5843e3a820049ed0bf9832"
+      },
+      {
+        "descriptor": "Helpless",
+        "value": -8,
+        "item_guid": null
       }
     ]
   },

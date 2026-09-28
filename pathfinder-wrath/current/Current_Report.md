@@ -1,9 +1,9 @@
 # Current WotR Snapshot
 
-- Save: Auto_1.zks
-- Save timestamp: 2026-09-28 23:48:04
-- SHA-256: 5bf8d54412e69b9cbc1ed0ad518f690c775c1ef3e44f9fdab831f75952203750
-- Generated: 2026-09-28T23:51:24+08:00
+- Save: Quick_3.zks
+- Save timestamp: 2026-09-28 23:58:17
+- SHA-256: e5a051f4c557d6768fa0e5712d363f80b0726551dad3c0c6a8a8ae2c2c334498
+- Generated: 2026-09-28T23:59:35+08:00
 - Source: read-only save/log extraction
 
 ## Party
@@ -21,16 +21,16 @@
 - Woljif_Companion id=533C alive=True classes=RogueClass 20, MythicCompanionClass 10
 - Camelia_Companion id=53EE alive=True classes=ShamanClass 20, MythicCompanionClass 10
 - Arueshalae_Companion id=54B0 alive=True classes=RangerClass 20, MythicCompanionClass 10
-- Ciar id=5568 alive=True classes=CavalierClass 20, MythicCompanionClass 10
-- Horse id=55FD alive=True classes=AnimalCompanionClass 20
+- Ciar id=5568 alive=False classes=CavalierClass 20, MythicCompanionClass 10
+- Horse id=55FD alive=False classes=AnimalCompanionClass 20
 - Delamere id=5611 alive=True classes=SlayerClass 20, MythicCompanionClass 10
 - Queen Galfrey id=56A0 alive=True classes=BardClass 20, MythicCompanionClass 10
-- Kestoglyr id=5728 alive=True classes=StalwartDefenderClass 10, MythicCompanionClass 10, FighterClass 9, WitchClass 1
-- Staunton Vhane id=57A6 alive=True classes=WarpriestClass 20, MythicCompanionClass 10
+- Kestoglyr id=5728 alive=False classes=StalwartDefenderClass 10, MythicCompanionClass 10, FighterClass 9, WitchClass 1
+- Staunton Vhane id=57A6 alive=False classes=WarpriestClass 20, MythicCompanionClass 10
 
 ## Kestoglyr
 
-- alive: True
+- alive: False
 - classes: [{'class': 'StalwartDefenderClass', 'level': 10}, {'class': 'MythicCompanionClass', 'level': 10}, {'class': 'FighterClass', 'level': 9}, {'class': 'WitchClass', 'level': 1}]
 - STR/DEX permanent: {'base': 20, 'permanent': 20} / {'base': 18, 'permanent': 20}
 - Mobility ranks: {'base': 5, 'permanent': 13}
@@ -39,7 +39,7 @@
 ## Ciar Horse
 
 - found: True
-- alive: True
+- alive: False
 - classes: [{'class': 'AnimalCompanionClass', 'level': 20}]
 - feats: ['TripDefenseFourLegs', 'Dodge', 'Diehard', 'ImprovedUnarmedStrike', 'CraneStyleFeat', 'Outflank', 'CraneStyleWingFeat', 'BlindFight', 'IronWill', 'Toughness', 'IronWillImproved', 'CraneStyleBuff']
 
@@ -85,4 +85,8 @@
 
 ## Differences From Previous Snapshot
 
-- no previous current snapshot
+- save changed: Auto_1.zks -> Quick_3.zks
+- Ciar alive: True -> False
+- Horse alive: True -> False
+- Kestoglyr alive: True -> False
+- Staunton Vhane alive: True -> False

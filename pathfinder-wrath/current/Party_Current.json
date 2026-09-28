@@ -6,7 +6,7 @@
     "life": {
       "life_state": null,
       "finally_dead": null,
-      "damage": null,
+      "damage": 185,
       "alive": true
     },
     "class_levels": [
@@ -300,7 +300,8 @@
       "StarEmbroideredGlovesFeature",
       "PF2_DLC1_LawfulFeature",
       "CloakOfResistance7ExtraFeature",
-      "InspiredRageAllyToggleSwitchBuff"
+      "InspiredRageAllyToggleSwitchBuff",
+      "DivinationImmunityFeature"
     ],
     "buffs": [
       "CavalierTacticianShakeItOffBuff",
@@ -311,8 +312,29 @@
       "PF2_DLC1_LawfulDistortionSaveBuff",
       "KeketarWarpwave_TemporaryHitPointBuff",
       "ExposeVulnerabilityBuff",
-      "LastStandBuff",
-      "CorruptionLevel1"
+      "CorruptionLevel1",
+      "MageArmorBuff",
+      "ProtectionFromArrowsCommunalBuff",
+      "EyesOfTheBodakBuff",
+      "VampiricShadowShieldBuff",
+      "BoneShieldBuff",
+      "MindBlankBuff",
+      "HeroicInvocationBuff",
+      "UnbreakableHeartBuff",
+      "HasteBuff",
+      "HasteBuffEffect",
+      "FreedomOfMovementBuff",
+      "DelayPoisonBuff",
+      "PrayerBuff",
+      "ProtectionFromFireBuff",
+      "BurstOfGloryBuff",
+      "DisruptingWeaponFakeBuff",
+      "TrueSeeingBuff",
+      "BearsEnduranceBuff",
+      "BullsStrengthBuff",
+      "CavalierLionsCallBuff",
+      "DarkRitesEffectBuff",
+      "InspirationalLeaderEffectBuff"
     ],
     "equipment": [
       {
@@ -636,7 +658,8 @@
       }
     ],
     "immunities": [
-      "UndeadImmunities"
+      "UndeadImmunities",
+      "DivinationImmunityFeature"
     ]
   },
   {
@@ -646,7 +669,7 @@
     "life": {
       "life_state": null,
       "finally_dead": null,
-      "damage": null,
+      "damage": 122,
       "alive": true
     },
     "class_levels": [
@@ -786,12 +809,33 @@
       "SpellCombatFeature",
       "PF2_DLC1_NeutralFeature",
       "PF2_DLC1_LawfulFeature",
-      "InspiredRageAllyToggleSwitchBuff"
+      "InspiredRageAllyToggleSwitchBuff",
+      "DivinationImmunityFeature"
     ],
     "buffs": [
       "PF2_DLC1_NeutralBuff",
       "PF2_DLC1_LawfulDistortionSaveBuff",
-      "CorruptionLevel1"
+      "CorruptionLevel1",
+      "MageArmorBuff",
+      "ProtectionFromArrowsCommunalBuff",
+      "MindBlankBuff",
+      "HeroicInvocationBuff",
+      "UnbreakableHeartBuff",
+      "HasteBuff",
+      "HasteBuffEffect",
+      "FreedomOfMovementBuff",
+      "ShieldOfFaithBuff",
+      "DelayPoisonBuff",
+      "PrayerBuff",
+      "ProtectionFromFireBuff",
+      "BurstOfGloryBuff",
+      "TrueSeeingBuff",
+      "BearsEnduranceBuff",
+      "BullsStrengthBuff",
+      "CavalierLionsCallBuff",
+      "DarkRitesEffectBuff",
+      "InspirationalLeaderEffectBuff",
+      "LichAuraBolsterUndeadEffectBuff"
     ],
     "equipment": [
       {
@@ -1006,7 +1050,8 @@
       }
     ],
     "immunities": [
-      "UndeadImmunities"
+      "UndeadImmunities",
+      "DivinationImmunityFeature"
     ]
   },
   {
@@ -6298,12 +6343,12 @@
   {
     "unit_id": "5568",
     "name": "Ciar",
-    "alive": true,
+    "alive": false,
     "life": {
-      "life_state": null,
-      "finally_dead": null,
-      "damage": null,
-      "alive": true
+      "life_state": "Dead",
+      "finally_dead": true,
+      "damage": 519,
+      "alive": false
     },
     "class_levels": [
       {
@@ -6503,14 +6548,11 @@
       "UnholyShepherdAbility",
       "MountTargetAbility",
       "PF2_DLC1_NeutralFeature",
-      "CavalierDemandingChallengeAreaBuff",
-      "CavalierBannerAreaBuff",
       "PF2_DLC1_LawfulFeature",
       "InspiredRageAllyToggleSwitchBuff",
       "UndyingDevotionFeature"
     ],
     "buffs": [
-      "CavalierShieldOfTheLiegeAreaBuff",
       "CavalierTacticianCoordinatedDefenseBuff",
       "CavalierTacticianOutflankBuff",
       "CavalierTacticianPreciseStrikeBuff",
@@ -6518,7 +6560,6 @@
       "PF2_DLC1_NeutralBuff",
       "PF2_DLC1_LawfulDistortionSaveBuff",
       "BreakControlCountBuff1",
-      "LastStandBuff",
       "CorruptionLevel1"
     ],
     "equipment": [
@@ -6633,6 +6674,11 @@
           "descriptor": "ArmorEnhancement",
           "value": 5,
           "item_guid": "85c318c00285ef74ebceda6f0204fad4"
+        },
+        {
+          "descriptor": "Helpless",
+          "value": -6,
+          "item_guid": null
         }
       ]
     },
@@ -6686,12 +6732,12 @@
   {
     "unit_id": "55FD",
     "name": "Horse",
-    "alive": true,
+    "alive": false,
     "life": {
-      "life_state": null,
-      "finally_dead": null,
-      "damage": null,
-      "alive": true
+      "life_state": "Dead",
+      "finally_dead": true,
+      "damage": 343,
+      "alive": false
     },
     "class_levels": [
       {
@@ -6897,6 +6943,11 @@
           "descriptor": "ArmorEnhancement",
           "value": 5,
           "item_guid": "65d1437d2b5843e3a820049ed0bf9832"
+        },
+        {
+          "descriptor": "Helpless",
+          "value": -8,
+          "item_guid": null
         }
       ]
     },
@@ -6932,7 +6983,7 @@
     "life": {
       "life_state": null,
       "finally_dead": null,
-      "damage": null,
+      "damage": 271,
       "alive": true
     },
     "class_levels": [
@@ -7125,13 +7176,35 @@
       "GlovesOfHeavyImpactFeature",
       "PF2_DLC1_LawfulFeature",
       "InspiredRageAllyToggleSwitchBuff",
-      "FireResistance30Feature"
+      "FireResistance30Feature",
+      "DivinationImmunityFeature"
     ],
     "buffs": [
       "QuarrySelfBuff",
       "PF2_DLC1_NeutralBuff",
       "PF2_DLC1_LawfulDistortionSaveBuff",
-      "CorruptionLevel1"
+      "CorruptionLevel1",
+      "MageArmorBuff",
+      "ProtectionFromArrowsCommunalBuff",
+      "MindBlankBuff",
+      "HeroicInvocationBuff",
+      "UnbreakableHeartBuff",
+      "HasteBuff",
+      "HasteBuffEffect",
+      "FreedomOfMovementBuff",
+      "DelayPoisonBuff",
+      "PrayerBuff",
+      "ProtectionFromFireBuff",
+      "BurstOfGloryBuff",
+      "TrueSeeingBuff",
+      "BearsEnduranceBuff",
+      "BullsStrengthBuff",
+      "CavalierLionsCallBuff",
+      "AnomalyDistortionImmunityAfterBuff",
+      "InspirationalLeaderEffectBuff",
+      "DarkRitesEffectBuff",
+      "LichAuraBolsterUndeadEffectBuff",
+      "AnomalyDistortionImmunityAfterBuff"
     ],
     "equipment": [
       {
@@ -7270,7 +7343,10 @@
     ],
     "spellbooks": [],
     "immunities": [
-      "UndeadImmunities"
+      "UndeadImmunities",
+      "DivinationImmunityFeature",
+      "AnomalyDistortionImmunityAfterBuff",
+      "AnomalyDistortionImmunityAfterBuff"
     ]
   },
   {
@@ -7280,7 +7356,7 @@
     "life": {
       "life_state": null,
       "finally_dead": null,
-      "damage": null,
+      "damage": 330,
       "alive": true
     },
     "class_levels": [
@@ -7474,13 +7550,37 @@
       "PF2_DLC1_NeutralFeature",
       "PF2_DLC1_LawfulFeature",
       "InspiredRageAllyToggleSwitchBuff",
-      "ChainshirtOfBrightPerformanceFeature"
+      "ChainshirtOfBrightPerformanceFeature",
+      "DivinationImmunityFeature",
+      "MirrorImageBuff"
     ],
     "buffs": [
       "LichGalfreyVisualBuff",
       "PF2_DLC1_NeutralBuff",
       "PF2_DLC1_LawfulDistortionSaveBuff",
-      "CorruptionLevel1"
+      "CorruptionLevel1",
+      "ProtectionFromArrowsCommunalBuff",
+      "MindBlankBuff",
+      "HeroicInvocationBuff",
+      "UnbreakableHeartBuff",
+      "HasteBuff",
+      "HasteBuffEffect",
+      "ShieldOfDawnBuff",
+      "FreedomOfMovementBuff",
+      "BrilliantInspirationBuff",
+      "DelayPoisonBuff",
+      "PrayerBuff",
+      "ProtectionFromFireBuff",
+      "BurstOfGloryBuff",
+      "TrueSeeingBuff",
+      "BearsEnduranceBuff",
+      "BullsStrengthBuff",
+      "CavalierLionsCallBuff",
+      "AnomalyDistortionImmunityAfterBuff",
+      "AnomalyDistortionImmunityAfterBuff",
+      "InspirationalLeaderEffectBuff",
+      "DarkRitesEffectBuff",
+      "LichAuraBolsterUndeadEffectBuff"
     ],
     "equipment": [
       {
@@ -7738,18 +7838,21 @@
       }
     ],
     "immunities": [
-      "UndeadImmunities"
+      "UndeadImmunities",
+      "DivinationImmunityFeature",
+      "AnomalyDistortionImmunityAfterBuff",
+      "AnomalyDistortionImmunityAfterBuff"
     ]
   },
   {
     "unit_id": "5728",
     "name": "Kestoglyr",
-    "alive": true,
+    "alive": false,
     "life": {
-      "life_state": null,
-      "finally_dead": null,
-      "damage": null,
-      "alive": true
+      "life_state": "Dead",
+      "finally_dead": true,
+      "damage": 322,
+      "alive": false
     },
     "class_levels": [
       {
@@ -7938,7 +8041,6 @@
       "BeltOfBloodlustFeature",
       "RuggedHelmetFeature",
       "GlovesOfDuelingFeature2",
-      "DivinationImmunityFeature",
       "WeaponTrainingSelection",
       "WeaponTrainingHeavyBlades",
       "StalwartDefenderProgression",
@@ -7976,11 +8078,8 @@
       "PF2_DLC1_LawfulACBuff",
       "AssertionOfDominanceBuff",
       "ArmorFocusMediumMythicFeatureVar2Buff",
-      "AssertionOfDominanceBuffResist",
-      "LastStandBuff",
       "BreakControlCountBuff1",
       "CorruptionLevel1",
-      "DodgeMythicBuff",
       "ArmorFocusMediumMythicFeatureVar2SubBuff"
     ],
     "equipment": [
@@ -8088,6 +8187,11 @@
           "descriptor": "ShieldEnhancement",
           "value": 5,
           "item_guid": "18ce7a5689b64f9caaf546c949ab616d"
+        },
+        {
+          "descriptor": "Helpless",
+          "value": -10,
+          "item_guid": null
         }
       ]
     },
@@ -8157,19 +8261,18 @@
       }
     ],
     "immunities": [
-      "UndeadImmunities",
-      "DivinationImmunityFeature"
+      "UndeadImmunities"
     ]
   },
   {
     "unit_id": "57A6",
     "name": "Staunton Vhane",
-    "alive": true,
+    "alive": false,
     "life": {
-      "life_state": null,
-      "finally_dead": null,
-      "damage": null,
-      "alive": true
+      "life_state": "Dead",
+      "finally_dead": true,
+      "damage": 404,
+      "alive": false
     },
     "class_levels": [
       {
@@ -8408,10 +8511,8 @@
     "buffs": [
       "PF2_DLC1_NeutralBuff",
       "PF2_DLC1_LawfulDistortionSaveBuff",
-      "ExposeVulnerabilityBuff",
       "ArmorFocusHeavyMythicFeatureOffenceBuff",
       "ArmorFocusHeavyMythicFeatureVar2Buff",
-      "LastStandBuff",
       "CorruptionLevel1",
       "ArmorFocusHeavyMythicFeatureVar2SubBuff",
       "ArmorFocusHeavyMythicFeatureOffenceSubBuff"
@@ -8518,6 +8619,11 @@
           "descriptor": "ArmorEnhancement",
           "value": 5,
           "item_guid": "23f961f0890248c78dbad2051cb86bc8"
+        },
+        {
+          "descriptor": "Helpless",
+          "value": -6,
+          "item_guid": null
         }
       ]
     },
