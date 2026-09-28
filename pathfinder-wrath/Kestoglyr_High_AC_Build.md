@@ -60,12 +60,12 @@ DEX 20 后不再继续加点。升级界面里如果看到 STR / DEX 24 等更�
 - Ability：STR +1
 - Familiar：**Hare Familiar**
 - Hex：**Iceplant**
-- Oracle's Curse：**Plagued**
+- Oracle's Curse：**Hellbound**
 - Level 1 Spells：
   - **Inflict Light Wounds**
   - **Unbreakable Heart**
 
-Hare 用于 +4 Initiative。Iceplant 用于 AC。Plagued 是当前实际选择。
+Hare 用于 +4 Initiative。Iceplant 用于 AC。Hellbound 是当前最终实际选择；当前角色页已显示 Fire immunity，且 Hellbound 有效等级已到 15。
 
 ## 5–20 级完整路线
 
@@ -122,7 +122,7 @@ SD10  Renewed Defense
 | 1 | **Last Stand** |
 | 2 | **Improved Initiative (Mythic)** |
 | 3 | **Ever Ready** |
-| 4 | **Mythic Armor Focus (Medium Armor) — Endurance**，但必须先验证秘银全身甲 |
+| 4 | **Mythic Armor Focus (Medium Armor) — Endurance**（已实际取得；当前 Scalemail 明确为 Medium Armor，因此当前生效） |
 | 5 | **Rupture Restraints** |
 | 6 | **Dodge (Mythic)** |
 | 7 | **Unrelenting Assault** |
@@ -130,23 +130,17 @@ SD10  Renewed Defense
 | 9 | **Unstoppable** |
 | 10 | **Shield Focus (Mythic)** 或按最终缺口调整 |
 
-### Medium Armor Endurance 的验证条件
+### Medium Armor Endurance 当前状态与换甲验证
 
-最终穿上 **Mithral Full Plate +4/+5** 后，打开 AC 详细构成。
+**Mythic Armor Focus (Medium Armor) — Endurance 已经实际取得。** 当前装备的 **Scalemail** 明确显示为 Medium Armor，因此当前一定能正常吃到该神话专长。
 
-只有当角色卡实际出现：
+后续如果找到 **Mithral Full Plate +4/+5**，换上之后仍要打开 AC 详细构成，确认它在本机版本下继续按 Medium Armor 处理。至少检查：
 
 ```text
 Armor Focus (Medium Armor) +1
 ```
 
-才点：
-
-```text
-Mythic Armor Focus (Medium Armor) — Endurance
-```
-
-如果没有这行，说明本机版本没有按 Medium 处理该秘银全身甲，不要浪费神话专长，届时重新选方案。
+如果换上秘银全身甲后这行消失，说明该件装备在本机版本下没有按 Medium 处理，不要把它作为本构筑最终护甲。
 
 ## 武器和盾牌
 
@@ -240,7 +234,7 @@ Kestoglyr 的职责：
 ```text
 Main Hand:  Dawnflower's Kiss +5
 Off Hand:   Assertion of Dominance
-Armor:      Mithral Full Plate +4/+5（待 AC 明细验证 Medium Focus）
+Armor:      当前 Scalemail（Medium Armor，临时）；目标 Mithral Full Plate +4/+5，换装时验证 Medium Focus
 ```
 
 ## 已确认的关键避坑
@@ -252,3 +246,37 @@ Armor:      Mithral Full Plate +4/+5（待 AC 明细验证 Medium Focus）
 - Improved Unarmed Strike 只是 Crane Style 前置，不代表改用空手。
 - 不使用 Tower Shield 压低 Max Dexterity。
 - 不点 Heavy Armor Avoidance：本构筑 DEX 高，使用该机制不划算。
+
+## 2026-09-28 实际完成状态
+
+本轮正常重训已经完成，当前角色页核对结果：
+
+- **Class**：Fighter 9 / Stigmatized Witch 1 / Stalwart Defender 10
+- **Mythic Rank**：10
+- **当前面板 AC**：62
+- **Flat-footed AC**：41
+- **Touch AC**：39
+- **Initiative**：+38
+- **HP**：371/371
+- **当前主手**：Dawnflower's Kiss +5
+- **当前副手**：Assertion of Dominance
+- **当前护甲**：Scalemail（Medium Armor，Base AC 5，Max Dexterity 3），只是暂时没有找到更好的中甲/秘银全身甲
+- **当前 Fire immunity**：已在角色页显示，来自最终 Hellbound 路线
+- **Weapon Training**：Heavy Blades；Advanced Weapon Training：Trained Initiative
+- **Mythic**：Last Stand / Improved Initiative (Mythic) / Ever Ready / Mythic Armor Focus (Medium Armor) — Endurance / Rupture Restraints / Dodge (Mythic) / Unrelenting Assault / Toughness (Mythic) / Unstoppable / Shield Focus (Mythic)
+- **Stalwart Defender**：Internal Fortitude / Fearless Defense / Increased Damage Reduction ×2 / Renewed Defense
+- **Feats 已核对存在**：Toughness / Dodge / Endurance / Armor Focus (Medium Armor) / Improved Initiative / Shield Focus / Greater Shield Focus / Improved Unarmed Strike / Crane Style / Missile Shield / Blind Fight
+- **Witch spells 已核对**：Inflict Light Wounds / Unbreakable Heart
+- **常驻/可用能力已核对**：Crane Style / Fighting Defensively / Defensive Stance / Hare Familiar
+
+### Skill 小失误
+
+升级过程中 **Mobility 多投了 2 ranks**。这不会破坏构筑，只是浪费了 2 个 skill points；Crane Style / Fighting Defensively 实际只需要 Mobility 至少 3 ranks。
+
+当前面板技能已经足够使用，不建议为了这 2 个 skill points 单独再洗一次。以后不再继续加 Mobility，技能点优先 Perception，其次 Athletics。
+
+### 当前剩余事项
+
+目前没有发现需要重新洗点的结构性错误。
+
+唯一仍未完成的是最终护甲：当前只有 Scalemail。后续找到更好的 **Medium Armor** 或 **Mithral Full Plate +4/+5** 时，再比较实际 AC。若换 Mithral Full Plate，必须确认 `Armor Focus (Medium Armor)` 仍然实际生效后再作为最终装备。
