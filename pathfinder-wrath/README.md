@@ -31,15 +31,13 @@ Build files are the intended configuration. `current/` is the actual newest pars
 
 ## Sync workflow
 
-Manual:
+Manual sync:
 
 `tools\refresh_current_snapshot.cmd`
 
-Launch the game and sync once after it exits:
+Start the game yourself. After you finish playing, double-click `tools\refresh_current_snapshot.cmd`.
 
-`tools\Play_WotR_And_Sync.cmd`
-
-No scheduled task, no background service, no startup item.
+No scheduled task, no background service, no startup item, no automatic game launch, and no sync when the game exits.
 
 ## Diagnostics
 
