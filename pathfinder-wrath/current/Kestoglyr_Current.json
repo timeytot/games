@@ -1,12 +1,12 @@
 {
   "unit_id": "5728",
   "name": "Kestoglyr",
-  "alive": false,
+  "alive": true,
   "life": {
-    "life_state": "Dead",
-    "finally_dead": true,
-    "damage": 322,
-    "alive": false
+    "life_state": null,
+    "finally_dead": null,
+    "damage": null,
+    "alive": true
   },
   "class_levels": [
     {
@@ -195,6 +195,7 @@
     "BeltOfBloodlustFeature",
     "RuggedHelmetFeature",
     "GlovesOfDuelingFeature2",
+    "DivinationImmunityFeature",
     "WeaponTrainingSelection",
     "WeaponTrainingHeavyBlades",
     "StalwartDefenderProgression",
@@ -224,7 +225,8 @@
     "InspiredRageAllyToggleSwitchBuff",
     "HareFamiliarBuff",
     "AdamantineArmorMediumFeature",
-    "BreastplateOfTirelessWarriorFeature"
+    "BreastplateOfTirelessWarriorFeature",
+    "DefensiveStanceBuff"
   ],
   "buffs": [
     "PF2_DLC1_NeutralBuff",
@@ -232,8 +234,38 @@
     "PF2_DLC1_LawfulACBuff",
     "AssertionOfDominanceBuff",
     "ArmorFocusMediumMythicFeatureVar2Buff",
+    "LastStandBuff",
     "BreakControlCountBuff1",
     "CorruptionLevel1",
+    "ResistanceBuff",
+    "MageArmorBuff",
+    "ProtectionFromEvilBuff",
+    "ProtectionFromArrowsCommunalBuff",
+    "FalseGraceBuff",
+    "MindBlankBuff",
+    "HeroicInvocationBuff",
+    "UnbreakableHeartBuff",
+    "HasteBuff",
+    "HasteBuffEffect",
+    "FreedomOfMovementBuff",
+    "GuidanceBuff",
+    "DelayPoisonBuff",
+    "PrayerBuff",
+    "ProtectionFromFireBuff",
+    "BurstOfGloryBuff",
+    "TrueSeeingBuff",
+    "BearsEnduranceBuff",
+    "BullsStrengthBuff",
+    "CavalierLionsCallBuff",
+    "EvilBlessingMinorBuff",
+    "InspirationalLeaderEffectBuff",
+    "FearlessDefenseBuff",
+    "DarkRitesEffectBuff",
+    "CavalierBannerBuff",
+    "CavalierBannerGreaterBuff",
+    "AssertionOfDominanceBuffResist",
+    "DodgeMythicBuff",
+    "LichAuraBolsterUndeadEffectBuff",
     "ArmorFocusMediumMythicFeatureVar2SubBuff"
   ],
   "equipment": [
@@ -341,11 +373,6 @@
         "descriptor": "ShieldEnhancement",
         "value": 5,
         "item_guid": "18ce7a5689b64f9caaf546c949ab616d"
-      },
-      {
-        "descriptor": "Helpless",
-        "value": -10,
-        "item_guid": null
       }
     ]
   },
@@ -377,7 +404,7 @@
     },
     {
       "name": "DefensiveStanceActivateableAbility",
-      "is_on": null,
+      "is_on": true,
       "guid": "be68c660b41bc9247bcab727b10d2cd1"
     },
     {
@@ -415,6 +442,7 @@
     }
   ],
   "immunities": [
-    "UndeadImmunities"
+    "UndeadImmunities",
+    "DivinationImmunityFeature"
   ]
 }
