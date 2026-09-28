@@ -10,3 +10,7 @@ D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure\Mods\BuffIt2TheLimi
 ```
 
 The zip contains the notes and copies of those two configs. Notes are in Chinese. Filenames are English.
+
+## Build notes
+
+- [Kestoglyr High AC Build](./Kestoglyr_High_AC_Build.md) — normal-retrain high-AC shield-tank build, equipment, mythic plan, combat toggles, and verified pitfalls.
