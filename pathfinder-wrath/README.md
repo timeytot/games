@@ -14,6 +14,7 @@ The zip contains the notes and copies of those two configs. Notes are in Chinese
 ## Build notes
 
 - [Kestoglyr High AC Build](./Kestoglyr_High_AC_Build.md) — normal-retrain high-AC shield-tank build, equipment, mythic plan, combat toggles, and verified pitfalls.
+- [Ciar Horse Bulwark Build](./Ciar_Horse_Bulwark_Build.md) — Bulwark animal companion as the second front line.
 
 ## Diagnostics
 
