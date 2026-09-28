@@ -47,26 +47,8 @@ try {
         --size $newest.Length
     if ($LASTEXITCODE -ne 0) { throw "extractor failed: $LASTEXITCODE" }
 
-    $driveRoot = $null
-    $db = Join-Path $env:LOCALAPPDATA "Google\DriveFS\root_preference_sqlite.db"
-    if (Test-Path $db) {
-        $mount = python -c "import sqlite3,os; p=os.path.expandvars(r'%LOCALAPPDATA%\Google\DriveFS\root_preference_sqlite.db'); c=sqlite3.connect('file:%s?mode=ro'%p.replace('\\','/'), uri=True); rows=list(c.execute('select last_mount_point from media where name=?', ('Google Drive',))); print(rows[0][0] if rows else '')"
-        if ($mount -and (Test-Path $mount)) {
-            $child = Get-ChildItem -Path $mount -Directory | Where-Object { $_.Name -eq "我的云端硬盘" } | Select-Object -First 1
-            if ($child) { $driveRoot = $child.FullName }
-        }
-    }
-    if ($driveRoot) {
-        $driveCurrent = Join-Path $driveRoot "games\pathfinder-wrath\current"
-        New-Item -ItemType Directory -Force -Path $driveCurrent | Out-Null
-        Copy-Item $copy (Join-Path $driveCurrent "Latest_Save.zks") -Force
-        foreach ($name in @("Current_Save.json","Party_Current.json","Kestoglyr_Current.json","Horse_Current.json","Current_Report.md")) {
-            Copy-Item (Join-Path $current $name) (Join-Path $driveCurrent $name) -Force
-        }
-        Write-Output "DRIVE_OK $driveCurrent"
-    } else {
-        Write-Output "DRIVE_SKIP no confirmed Google Drive folder"
-    }
+    python (Join-Path $wrath "tools\copy_current_to_drive.py") $current $copy
+    if ($LASTEXITCODE -ne 0) { throw "drive copy failed: $LASTEXITCODE" }
 
     Set-Location $repo
     git add -- pathfinder-wrath/current pathfinder-wrath/README.md pathfinder-wrath/tools .gitignore
