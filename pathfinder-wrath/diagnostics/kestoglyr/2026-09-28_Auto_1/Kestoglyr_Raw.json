@@ -1,0 +1,67 @@
+{
+  "source_save": "Auto_1.zks",
+  "source_note": "Copy. Original save was not modified. Extracted from the copy.",
+  "unit_id_suffix": "5728",
+  "alive_in_this_save": true,
+  "class_order": [
+    "Fighter","Fighter","Fighter","Witch",
+    "Fighter","Fighter","Fighter","Fighter",
+    "StalwartDefender","StalwartDefender","Fighter",
+    "StalwartDefender","StalwartDefender","StalwartDefender","StalwartDefender",
+    "StalwartDefender","StalwartDefender","StalwartDefender","StalwartDefender",
+    "Fighter"
+  ],
+  "mythic_companion_levels_after_20": 10,
+  "attributes_save": {
+    "Strength": {"base": 20, "permanent": 20},
+    "Dexterity": {"base": 18, "permanent": 20},
+    "Constitution": {"base": 10, "permanent": 10},
+    "Intelligence": {"base": 7, "permanent": 7},
+    "Wisdom": {"base": 10, "permanent": 10},
+    "Charisma": {"base": 14, "permanent": 14},
+    "HitPoints": {"base": 182, "permanent": 182}
+  },
+  "skill_ranks_base": {
+    "Mobility": 5,
+    "Athletics": 11,
+    "Perception": 20,
+    "Persuasion": 5
+  },
+  "curse": "HellboundCurse levels 1, 5, 10, 15. No Plagued feature.",
+  "witch_spells_l1": ["UnbreakableHeart", "InflictLightWoundsCast"],
+  "toggles_m_IsOn": {
+    "CraneStyleToggleAbility": true,
+    "FightDefensivelyToggleAbility": true,
+    "DefensiveStanceActivateableAbility": null,
+    "PowerAttackToggleAbility": null,
+    "HareFamiliarAbility": true
+  },
+  "equipped_blueprint_guids": {
+    "main_hand": "4ca4986b49b01954997f37c24c98d1f3",
+    "off_hand": "2ad512d4b7d1438c97b48fe232fcceb5",
+    "armor": "d7963e1fcf260c148877afd3252dbc91"
+  },
+  "stored_ac_fragment": {
+    "base": 10,
+    "dexterity_bonus_capped": 5,
+    "shield": 2,
+    "shield_enhancement": 5,
+    "armor": 5,
+    "armor_enhancement": 0,
+    "note": "This fragment does not include dodge, deflection, natural armor, stalwart, or mythic lines."
+  },
+  "mythic_features_found": [
+    "LastStand",
+    "ImprovedInitiativeMythicFeat",
+    "EverReady",
+    "ArmorFocusMediumMythicFeatureVar2",
+    "DodgeMythicFeat",
+    "UnrelentingAssault",
+    "ToughnessMythicFeat",
+    "Unstoppable",
+    "ShieldFocusMythicFeat",
+    "MythicBypassEpicDR"
+  ],
+  "mythic_features_not_found": ["RuptureRestraints"],
+  "full_fact_list": "kest_facts.json"
+}

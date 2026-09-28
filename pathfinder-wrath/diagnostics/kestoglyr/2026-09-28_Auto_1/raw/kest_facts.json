@@ -1,0 +1,940 @@
+[
+  {
+    "type": "Feature",
+    "name": "BasicFeatsProgression",
+    "guid": "5b72dd2ca2cb73b49903806ee8986325",
+    "active": true,
+    "uid": "1D10F"
+  },
+  {
+    "type": "Feature",
+    "name": "HumanRace",
+    "guid": "0a5d473ead98b0646b94495af250fdc4",
+    "active": true,
+    "uid": "1D110"
+  },
+  {
+    "type": "MainUnitFact",
+    "name": "Kestoglyr_Companion",
+    "guid": "e551850403d61eb48bb2de010d12c894",
+    "active": true,
+    "uid": "1D111"
+  },
+  {
+    "type": "Ability",
+    "name": "ChargeAbility",
+    "guid": "c78506dd0e14f7c45a599990e4e65038",
+    "active": true,
+    "uid": "1D112"
+  },
+  {
+    "type": "Feature",
+    "name": "Kestoglyr_FeatureList",
+    "guid": "b81cc83bfdb2b754b9a0967616834e7e",
+    "active": true,
+    "uid": "1D113"
+  },
+  {
+    "type": "Feature",
+    "name": "BasicFeatSelection",
+    "guid": "247a4068296e8be42890143f451b4b45",
+    "active": true,
+    "uid": "1D114"
+  },
+  {
+    "type": "Feature",
+    "name": "HumanSkilled",
+    "guid": "3adf9274a210b164cb68f472dc1e4544",
+    "active": true,
+    "uid": "1D115"
+  },
+  {
+    "type": "Feature",
+    "name": "FighterProgression",
+    "guid": "b50e94b57be32f74892f381ae2a8905a",
+    "active": true,
+    "uid": "1D116"
+  },
+  {
+    "type": "Feature",
+    "name": "FightDefensivelyFeature",
+    "guid": "ca22afeb94442b64fb8536e7a9f7dc11",
+    "active": true,
+    "uid": "1D117"
+  },
+  {
+    "type": "ActivatableAbility",
+    "name": "FightDefensivelyToggleAbility",
+    "guid": "09d742e8b50b0214fb71acfc99cc00b3",
+    "active": true,
+    "uid": "1D118"
+  },
+  {
+    "type": "Feature",
+    "name": "CoupDeGraceFeature",
+    "guid": "3fbd5466fcc609d40bb2dfc3e502f4c4",
+    "active": true,
+    "uid": "1D119"
+  },
+  {
+    "type": "Ability",
+    "name": "CoupDeGraceAbility",
+    "guid": "32280b137ca642c45be17e2d92898758",
+    "active": true,
+    "uid": "1D11A"
+  },
+  {
+    "type": "Feature",
+    "name": "TwoWeaponFightingBasicMechanics",
+    "guid": "6948b379c0562714d9f6d58ccbfa8faa",
+    "active": true,
+    "uid": "1D11B"
+  },
+  {
+    "type": "Feature",
+    "name": "ImpatienceBaseFeature",
+    "guid": "109f01a0cbd151d44a98b17056460bc9",
+    "active": true,
+    "uid": "1D11C"
+  },
+  {
+    "type": "Feature",
+    "name": "DifficultyAdvancementBaseFeature",
+    "guid": "33bc1b86b3a2fa5489cc0a5bdcf3f6f8",
+    "active": true,
+    "uid": "1D11D"
+  },
+  {
+    "type": "Feature",
+    "name": "SkillAbilities",
+    "guid": "e4c33ff99d638744686112e2a5f49856",
+    "active": true,
+    "uid": "1D11E"
+  },
+  {
+    "type": "ActivatableAbility",
+    "name": "MobilityUseAbility",
+    "guid": "4be5757b85af47545a5789f1d03abda9",
+    "active": true,
+    "uid": "1D11F"
+  },
+  {
+    "type": "Ability",
+    "name": "LoreReligionUseAbility",
+    "guid": "4843cb4c23951f54290c5149a4907f54",
+    "active": true,
+    "uid": "1D120"
+  },
+  {
+    "type": "Ability",
+    "name": "PersuasionUseAbility",
+    "guid": "7d2233c3b7a0b984ba058a83b736e6ac",
+    "active": true,
+    "uid": "1D121"
+  },
+  {
+    "type": "Feature",
+    "name": "StormBuff",
+    "guid": "0aeba56961779e54a8a0f6dedef081ee",
+    "active": true,
+    "uid": "1D122"
+  },
+  {
+    "type": "Feature",
+    "name": "InspiredRageAllyFeature",
+    "guid": "e6b9eb3008de52e459d632c19f101983",
+    "active": true,
+    "uid": "1D123"
+  },
+  {
+    "type": "ActivatableAbility",
+    "name": "InspiredRageAllyToggleSwitch",
+    "guid": "180e06c04a9bee249b9325bbbcf1ebfb",
+    "active": true,
+    "uid": "1D124"
+  },
+  {
+    "type": "Feature",
+    "name": "BackgroundsBaseSelection",
+    "guid": "f926dabeee7f8a54db8f2010b323383c",
+    "active": true,
+    "uid": "1D126"
+  },
+  {
+    "type": "Feature",
+    "name": "DeitySelection",
+    "guid": "59e7a76987fe3b547b9cce045f4db3e4",
+    "active": true,
+    "uid": "1D127"
+  },
+  {
+    "type": "Feature",
+    "name": "FighterFeatSelection",
+    "guid": "41c8486641f7d6d4283ca9dae4147a9f",
+    "active": true,
+    "uid": "1D128"
+  },
+  {
+    "type": "Feature",
+    "name": "FighterProficiencies",
+    "guid": "a23591cc77086494ba20880f87e73970",
+    "active": true,
+    "uid": "1D129"
+  },
+  {
+    "type": "Feature",
+    "name": "LightArmorProficiency",
+    "guid": "6d3728d4e9c9898458fe5e9532951132",
+    "active": true,
+    "uid": "1D12A"
+  },
+  {
+    "type": "Feature",
+    "name": "MediumArmorProficiency",
+    "guid": "46f4fb320f35704488ba3d513397789d",
+    "active": true,
+    "uid": "1D12B"
+  },
+  {
+    "type": "Feature",
+    "name": "HeavyArmorProficiency",
+    "guid": "1b0f68188dcc435429fb87a022239681",
+    "active": true,
+    "uid": "1D12C"
+  },
+  {
+    "type": "Feature",
+    "name": "SimpleWeaponProficiency",
+    "guid": "e70ecf1ed95ca2f40b754f1adb22bbdd",
+    "active": true,
+    "uid": "1D12D"
+  },
+  {
+    "type": "Feature",
+    "name": "MartialWeaponProficiency",
+    "guid": "203992ef5b35c864390b4e4a1e200629",
+    "active": true,
+    "uid": "1D12E"
+  },
+  {
+    "type": "Feature",
+    "name": "ShieldsProficiency",
+    "guid": "cb8686e7357a68c42bdd9d4e65334633",
+    "active": true,
+    "uid": "1D12F"
+  },
+  {
+    "type": "Feature",
+    "name": "TowerShieldProficiency",
+    "guid": "6105f450bb2acbd458d277e71e19d835",
+    "active": true,
+    "uid": "1D130"
+  },
+  {
+    "type": "Feature",
+    "name": "TwoWeaponFighting",
+    "guid": "ac8aaf29054f5b74eb18f2af950e752d",
+    "active": true,
+    "uid": "1D131"
+  },
+  {
+    "type": "Feature",
+    "name": "BackgroundsWarriorSelection",
+    "guid": "291f372e27b29f149ad15ff219fe15d9",
+    "active": true,
+    "uid": "1D132"
+  },
+  {
+    "type": "Feature",
+    "name": "PowerAttackFeature",
+    "guid": "9972f33f977fc724c838e59641b2fca5",
+    "active": true,
+    "uid": "1D133"
+  },
+  {
+    "type": "ActivatableAbility",
+    "name": "PowerAttackToggleAbility",
+    "guid": "a7b339e4f6ff93a4697df5d7a87ff619",
+    "active": true,
+    "uid": "1D134"
+  },
+  {
+    "type": "Feature",
+    "name": "WeaponFocus",
+    "guid": "1e1f627d26ad36f43bbd26cc2bf8ac7e",
+    "active": true,
+    "uid": "1D136"
+  },
+  {
+    "type": "Feature",
+    "name": "BackgroundGuard",
+    "guid": "3a793809b0f11b74f8b79c252067bfe0",
+    "active": true,
+    "uid": "1D137"
+  },
+  {
+    "type": "Feature",
+    "name": "ShortswordProficiency",
+    "guid": "9e828934974f0fc4bbf7542eb0446e45",
+    "active": true,
+    "uid": "1D138"
+  },
+  {
+    "type": "Feature",
+    "name": "LightCrossbowProficiency",
+    "guid": "3d96feeabdfb1ff45b63af77b545813f",
+    "active": true,
+    "uid": "1D139"
+  },
+  {
+    "type": "Feature",
+    "name": "Bravery",
+    "guid": "f6388946f9f472f4585591b80e9f2452",
+    "active": true,
+    "uid": "1D13A"
+  },
+  {
+    "type": "Feature",
+    "name": "DoubleSlice",
+    "guid": "8a6a1920019c45d40b4561f05dcb3240",
+    "active": true,
+    "uid": "1D13B"
+  },
+  {
+    "type": "Feature",
+    "name": "ArmorTraining",
+    "guid": "3c380607706f209499d951b29d3c44f3",
+    "active": true,
+    "uid": "1D13C"
+  },
+  {
+    "type": "Feature",
+    "name": "CombatReflexes",
+    "guid": "0f8939ae6f220984e8fb568abbdfba95",
+    "active": true,
+    "uid": "1D13D"
+  },
+  {
+    "type": "Feature",
+    "name": "UndeadType",
+    "guid": "734a29b693e9ec346ba2951b27987e33",
+    "active": true,
+    "uid": "1D192"
+  },
+  {
+    "type": "Feature",
+    "name": "UndeadImmunities",
+    "guid": "8a75eb16bfff86949a4ddcb3dd2f83ae",
+    "active": true,
+    "uid": "1D193"
+  },
+  {
+    "type": "Feature",
+    "name": "NegativeEnergyAffinity",
+    "guid": "d5ee498e19722854198439629c1841a5",
+    "active": true,
+    "uid": "1D194"
+  },
+  {
+    "type": "Feature",
+    "name": "PF2_DLC1_NeutralFeature",
+    "guid": "4efeaad78afd422d981db536eeaefa73",
+    "active": true,
+    "uid": "1D195"
+  },
+  {
+    "type": "Buff",
+    "name": "PF2_DLC1_NeutralBuff",
+    "guid": "77952bee48a94956b7c87e48d084558d",
+    "active": true,
+    "uid": "1D196"
+  },
+  {
+    "type": "Feature",
+    "name": "PF2_DLC1_LawfulFeature",
+    "guid": "5aa391e0fbb8440aaba9f42b5652ead6",
+    "active": true,
+    "uid": "1D197"
+  },
+  {
+    "type": "Buff",
+    "name": "PF2_DLC1_LawfulDistortionSaveBuff",
+    "guid": "febd729df319424dbaf520e1613c7031",
+    "active": true,
+    "uid": "1D198"
+  },
+  {
+    "type": "Buff",
+    "name": "PF2_DLC1_LawfulACBuff",
+    "guid": "10eb2693266743839418ba578d3cee8e",
+    "active": true,
+    "uid": "1D199"
+  },
+  {
+    "type": "Feature",
+    "name": "WitchProgression",
+    "guid": "c5e9e2b086a9814409fb6a29a5acdd0f",
+    "active": true,
+    "uid": "1D9CD"
+  },
+  {
+    "type": "Feature",
+    "name": "RayCalculateFeature",
+    "guid": "d3e6275cfa6e7a04b9213b7b292a011c",
+    "active": true,
+    "uid": "1D9CE"
+  },
+  {
+    "type": "Feature",
+    "name": "WitchFamiliarSelection",
+    "guid": "29a333b7ccad3214ea3a51943fa0d8e9",
+    "active": true,
+    "uid": "1D9CF"
+  },
+  {
+    "type": "Feature",
+    "name": "WitchHexSelection",
+    "guid": "9846043cf51251a4897728ed6e24e76f",
+    "active": true,
+    "uid": "1D9D0"
+  },
+  {
+    "type": "Feature",
+    "name": "WitchBetterHexProgression",
+    "guid": "38d01811fcb32444a8fe372c029fa0c6",
+    "active": true,
+    "uid": "1D9D1"
+  },
+  {
+    "type": "Feature",
+    "name": "OracleCurseSelection",
+    "guid": "b0a5118b4fb793241bc7042464b23fab",
+    "active": true,
+    "uid": "1D9D2"
+  },
+  {
+    "type": "Feature",
+    "name": "AccursedWitchCantripsFeature",
+    "guid": "d83becdd1ab644b995ae4aa96a493351",
+    "active": true,
+    "uid": "1D9D3"
+  },
+  {
+    "type": "Feature",
+    "name": "HellboundCurseProgression",
+    "guid": "9f08f0d1faf141c41a3d8205f1911e96",
+    "active": true,
+    "uid": "1D9D4"
+  },
+  {
+    "type": "Feature",
+    "name": "HellboundCurseFeatureLevel1",
+    "guid": "0ff5141fe79c43345a1c8ff72b75923d",
+    "active": true,
+    "uid": "1D9D5"
+  },
+  {
+    "type": "Feature",
+    "name": "HareFamiliarBondFeature",
+    "guid": "97dff21a036e80948b07097ad3df2b30",
+    "active": true,
+    "uid": "1D9D6"
+  },
+  {
+    "type": "ActivatableAbility",
+    "name": "HareFamiliarAbility",
+    "guid": "1194129055923ae46a6b876ff6a30358",
+    "active": true,
+    "uid": "1D9D7"
+  },
+  {
+    "type": "Feature",
+    "name": "WitchHexIceplantFeature",
+    "guid": "9af6dc2697c8ef24eab8ce1c697b05c4",
+    "active": true,
+    "uid": "1D9D8"
+  },
+  {
+    "type": "Feature",
+    "name": "BeltOfBloodlustFeature",
+    "guid": "7a93122e323597d40b6c40e9b570002e",
+    "active": true,
+    "uid": "1D9DD"
+  },
+  {
+    "type": "Feature",
+    "name": "RuggedHelmetFeature",
+    "guid": "305de4ac57a9b2f4abea1d59bbc567fc",
+    "active": true,
+    "uid": "1D9DE"
+  },
+  {
+    "type": "Feature",
+    "name": "GlovesOfDuelingFeature2",
+    "guid": "f063942ce72136c49a12d34a3fd88197",
+    "active": true,
+    "uid": "1D9DF"
+  },
+  {
+    "type": "Feature",
+    "name": "DivinationImmunityFeature",
+    "guid": "12435ed2443c41c78ac47b8ef076e997",
+    "active": true,
+    "uid": "1D9E0"
+  },
+  {
+    "type": "Buff",
+    "name": "CorruptionLevel1",
+    "guid": "a033189ddb6208440a9796a372afea51",
+    "active": true,
+    "uid": "1D9E1"
+  },
+  {
+    "type": "Feature",
+    "name": "Toughness",
+    "guid": "d09b20029e9abfe4480b356c92095623",
+    "active": true,
+    "uid": "1DA83"
+  },
+  {
+    "type": "Feature",
+    "name": "Dodge",
+    "guid": "97e216dbb46ae3c4faef90cf6bbe6fd5",
+    "active": true,
+    "uid": "1DA84"
+  },
+  {
+    "type": "Feature",
+    "name": "WeaponTrainingSelection",
+    "guid": "b8cecf4e5e464ad41b79d5b42b76b399",
+    "active": true,
+    "uid": "1DAD9"
+  },
+  {
+    "type": "Feature",
+    "name": "WeaponTrainingHeavyBlades",
+    "guid": "2a0ce0186af38ed419f47fce16f93c2a",
+    "active": true,
+    "uid": "1DADA"
+  },
+  {
+    "type": "Feature",
+    "name": "Endurance",
+    "guid": "54ee847996c25cd4ba8773d7b8555174",
+    "active": true,
+    "uid": "1DB32"
+  },
+  {
+    "type": "Feature",
+    "name": "ArmorFocusSelection",
+    "guid": "76d4885a395976547a13c5d6bf95b482",
+    "active": true,
+    "uid": "1DB33"
+  },
+  {
+    "type": "Feature",
+    "name": "ArmorFocusMedium",
+    "guid": "7dc004879037638489b64d5016997d12",
+    "active": true,
+    "uid": "1DB34"
+  },
+  {
+    "type": "Feature",
+    "name": "StalwartDefenderProgression",
+    "guid": "e93eabf4f9b48914c9d880dd41c06385",
+    "active": true,
+    "uid": "1DD44"
+  },
+  {
+    "type": "Feature",
+    "name": "HellboundCurseFeatureLevel5",
+    "guid": "ec58af8532fa55f4ea5a9bd8e694187c",
+    "active": true,
+    "uid": "1DD45"
+  },
+  {
+    "type": "Feature",
+    "name": "StalwartDefenderACBonus",
+    "guid": "60b4e1f781e9aac439b8d2ad4c635524",
+    "active": true,
+    "uid": "1DD46"
+  },
+  {
+    "type": "Feature",
+    "name": "DefensiveStanceFeature",
+    "guid": "2a6a2f8e492ab174eb3f01acf5b7c90a",
+    "active": true,
+    "uid": "1DD47"
+  },
+  {
+    "type": "ActivatableAbility",
+    "name": "DefensiveStanceActivateableAbility",
+    "guid": "be68c660b41bc9247bcab727b10d2cd1",
+    "active": true,
+    "uid": "1DD48"
+  },
+  {
+    "type": "",
+    "name": "DefensiveStanceFact",
+    "guid": "82014844bd65c0041bb33e3d1c08c627",
+    "active": true,
+    "uid": "1DD49"
+  },
+  {
+    "type": "Feature",
+    "name": "StalwartDefenderProficiencies",
+    "guid": "05dfc7b4dd2840f99609c3b570343898",
+    "active": true,
+    "uid": "1DD4A"
+  },
+  {
+    "type": "Feature",
+    "name": "Improved Initiative",
+    "guid": "797f25d709f559546b29e7bcb181cc74",
+    "active": true,
+    "uid": "1DD4B"
+  },
+  {
+    "type": "Feature",
+    "name": "StalwartDefenderDefensivePowerSelection",
+    "guid": "2cd91c501bda80b47ac2df0d51b02973",
+    "active": true,
+    "uid": "1E10D"
+  },
+  {
+    "type": "Feature",
+    "name": "InternalFortitudeDefensivePower",
+    "guid": "727fcc6ef87e568479ab9dc3a8a5dc6c",
+    "active": true,
+    "uid": "1E10E"
+  },
+  {
+    "type": "Feature",
+    "name": "ShieldFocus",
+    "guid": "ac57069b6bf8c904086171683992a92a",
+    "active": true,
+    "uid": "1E172"
+  },
+  {
+    "type": "Feature",
+    "name": "ShieldFocusGreater",
+    "guid": "afd05ca5363036c44817c071189b67e1",
+    "active": true,
+    "uid": "1E173"
+  },
+  {
+    "type": "Feature",
+    "name": "UncannyDodgeChecker",
+    "guid": "8f800ed6ce8c42e8a01fd8f3e990c459",
+    "active": true,
+    "uid": "1E2A0"
+  },
+  {
+    "type": "Feature",
+    "name": "UncannyDodge",
+    "guid": "3c08d842e802c3e4eb19d15496145709",
+    "active": true,
+    "uid": "1E2A1"
+  },
+  {
+    "type": "Feature",
+    "name": "ImprovedUnarmedStrike",
+    "guid": "7812ad3672a4b9a4fb894ea402095167",
+    "active": true,
+    "uid": "1E36E"
+  },
+  {
+    "type": "Feature",
+    "name": "FearlessDefenseDefensivePower",
+    "guid": "2c13bd43a7ed4844b9f4dcc919fd74f8",
+    "active": true,
+    "uid": "1E36F"
+  },
+  {
+    "type": "Feature",
+    "name": "StalwartDefenderDamageReduction",
+    "guid": "4d4f48f401d5d8b408c2e7a973fba9ea",
+    "active": true,
+    "uid": "1E4AB"
+  },
+  {
+    "type": "Feature",
+    "name": "CraneStyleFeat",
+    "guid": "0c17102f650d9044290922b0fad9132f",
+    "active": true,
+    "uid": "1E585"
+  },
+  {
+    "type": "ActivatableAbility",
+    "name": "CraneStyleToggleAbility",
+    "guid": "31af823f7cfbe0b4e8c063019f3b88e2",
+    "active": true,
+    "uid": "1E586"
+  },
+  {
+    "type": "Feature",
+    "name": "IncreasedDamageReductionDefensivePower",
+    "guid": "d10496e92d0799a40bb3930b8f4fda0d",
+    "active": true,
+    "uid": "1E588"
+  },
+  {
+    "type": "Feature",
+    "name": "ImprovedUncannyDodge",
+    "guid": "485a18c05792521459c7d06c63128c79",
+    "active": true,
+    "uid": "1E6D5"
+  },
+  {
+    "type": "Feature",
+    "name": "MissileShield",
+    "guid": "5ffcd225924514348ac71730179b5b24",
+    "active": true,
+    "uid": "1E7B6"
+  },
+  {
+    "type": "Feature",
+    "name": "BodyOfStoneFeature",
+    "guid": "64c2f599a29756041a98b2134fdfeeb4",
+    "active": true,
+    "uid": "1E899"
+  },
+  {
+    "type": "Feature",
+    "name": "Fortification25Feature",
+    "guid": "165b74db9493ded40ac05b3521aab427",
+    "active": true,
+    "uid": "1E89A"
+  },
+  {
+    "type": "Feature",
+    "name": "HellboundCurseFeatureLevel10",
+    "guid": "47d816598a5c5944ebd479386520e20c",
+    "active": true,
+    "uid": "1E913"
+  },
+  {
+    "type": "Feature",
+    "name": "BlindFight",
+    "guid": "4e219f5894ad0ea4daa0699e28c37b1d",
+    "active": true,
+    "uid": "1E915"
+  },
+  {
+    "type": "Feature",
+    "name": "RenewedDefenseDefensivePower",
+    "guid": "325a007b2f633a1428ee1edfaf3e860c",
+    "active": true,
+    "uid": "1E916"
+  },
+  {
+    "type": "Ability",
+    "name": "RenewedDefenseAbility",
+    "guid": "ce50ad6751d7eec44a888c78b249050e",
+    "active": true,
+    "uid": "1E917"
+  },
+  {
+    "type": "Feature",
+    "name": "WeaponTrainingRankUpSelection",
+    "guid": "5f3cc7b9a46b880448275763fe70c0b0",
+    "active": true,
+    "uid": "1EA06"
+  },
+  {
+    "type": "Feature",
+    "name": "TrainedInitiative",
+    "guid": "1054ea2fa21176249b96a63d54f02b17",
+    "active": true,
+    "uid": "1EA07"
+  },
+  {
+    "type": "Feature",
+    "name": "MythicCompanionProgression",
+    "guid": "21e74c19da02acb478e32da25abd9d28",
+    "active": true,
+    "uid": "1EA85"
+  },
+  {
+    "type": "Feature",
+    "name": "MythicAbilitySelection",
+    "guid": "ba0e5a900b775be4a99702f1ed08914d",
+    "active": true,
+    "uid": "1EA86"
+  },
+  {
+    "type": "Feature",
+    "name": "MythicBypassEpicDR",
+    "guid": "c60933cc085132b49970cbc4a4b8338f",
+    "active": true,
+    "uid": "1EA87"
+  },
+  {
+    "type": "Feature",
+    "name": "LastStand",
+    "guid": "d25326011c45a5942bc12f5d4401d4ae",
+    "active": true,
+    "uid": "1EA88"
+  },
+  {
+    "type": "Buff",
+    "name": "LastStandBuff",
+    "guid": "c5455f88975e16648b4abc47a28fa120",
+    "active": true,
+    "uid": "1EA89"
+  },
+  {
+    "type": "Feature",
+    "name": "MythicFeatSelection",
+    "guid": "9ee0f6745f555484299b0a1563b99d81",
+    "active": true,
+    "uid": "1EB09"
+  },
+  {
+    "type": "Feature",
+    "name": "ImprovedInitiativeMythicFeat",
+    "guid": "25f4cb387ba4ab94d944fdef3da9ab97",
+    "active": true,
+    "uid": "1EB0A"
+  },
+  {
+    "type": "Feature",
+    "name": "EverReady",
+    "guid": "8161528d5b98b3e4a8a6a0ed327c3b6a",
+    "active": true,
+    "uid": "1EB8B"
+  },
+  {
+    "type": "Feature",
+    "name": "ArmorFocusMythicSelection",
+    "guid": "068f833e8aea4cd58df003543e11b207",
+    "active": true,
+    "uid": "1EC8D"
+  },
+  {
+    "type": "Feature",
+    "name": "ArmorFocusMediumMythicFeatureVar2",
+    "guid": "4243c96836bf4b54aa4b36e1ab0c7fb1",
+    "active": true,
+    "uid": "1EC8E"
+  },
+  {
+    "type": "Feature",
+    "name": "BreakControl",
+    "guid": "99631ee151e86684db2b5f33dddfb7a2",
+    "active": true,
+    "uid": "1ED12"
+  },
+  {
+    "type": "Feature",
+    "name": "DodgeMythicFeat",
+    "guid": "3812d9ca1377c014c97fb3ac421ba9e6",
+    "active": true,
+    "uid": "1ED97"
+  },
+  {
+    "type": "Feature",
+    "name": "UnrelentingAssault",
+    "guid": "b0db6bc8548257a40b055c37d7cbc3e0",
+    "active": true,
+    "uid": "1EE1D"
+  },
+  {
+    "type": "Feature",
+    "name": "ToughnessMythicFeat",
+    "guid": "d8df8f8ad7149824e8e60dd3453557d2",
+    "active": true,
+    "uid": "1EF27"
+  },
+  {
+    "type": "Feature",
+    "name": "HellboundCurseFeatureLevel15",
+    "guid": "641334d44ce2a354297846e38ea1703a",
+    "active": true,
+    "uid": "1EFB0"
+  },
+  {
+    "type": "Feature",
+    "name": "Unstoppable",
+    "guid": "74afc3465db56924c9618a42d84efab8",
+    "active": true,
+    "uid": "1EFB1"
+  },
+  {
+    "type": "Feature",
+    "name": "ShieldFocusMythicFeat",
+    "guid": "502434c044c16304a92901a0b25d5216",
+    "active": true,
+    "uid": "1F03B"
+  },
+  {
+    "type": "",
+    "name": "CraneStyleBuff",
+    "guid": "e8ea7bd10136195478d8a5fc5a44c7da",
+    "active": true,
+    "uid": "1F03E"
+  },
+  {
+    "type": "",
+    "name": "InspiredRageAllyToggleSwitchBuff",
+    "guid": "9fd2dd27d838f0049ab56e9da3508b25",
+    "active": true,
+    "uid": "1F03F"
+  },
+  {
+    "type": "",
+    "name": "HareFamiliarBuff",
+    "guid": "464e10979dfb0854e8051f33f4a0838a",
+    "active": true,
+    "uid": "1F560"
+  },
+  {
+    "type": "Feature",
+    "name": "StalwartDefenderDamageReductionArmor",
+    "guid": "3563079f53894be9a5ace106107818e5",
+    "active": true,
+    "uid": "1FC64"
+  },
+  {
+    "type": "Buff",
+    "name": "ArmorFocusMediumMythicFeatureVar2Buff",
+    "guid": "93e80467a5fc4e68927b99732484fbd4",
+    "active": true,
+    "uid": "1FC71"
+  },
+  {
+    "type": "Feature",
+    "name": "AssertionOfDominanceFeature",
+    "guid": "cd09201e456345e7a39c983ff8912e58",
+    "active": true,
+    "uid": "2017B"
+  },
+  {
+    "type": "Buff",
+    "name": "AssertionOfDominanceBuff",
+    "guid": "063e215c1a654e87b47628e0fa6b3f09",
+    "active": true,
+    "uid": "2017C"
+  },
+  {
+    "type": "Buff",
+    "name": "AssertionOfDominanceBuffResist",
+    "guid": "1abb45d21dd047549f6ff57ecbd13f1a",
+    "active": true,
+    "uid": "2017D"
+  },
+  {
+    "type": "Buff",
+    "name": "DodgeMythicBuff",
+    "guid": "175d1e9fc04e4f2fb28b3860c9c67764",
+    "active": true,
+    "uid": "22EAF"
+  },
+  {
+    "type": "Buff",
+    "name": "ArmorFocusMediumMythicFeatureVar2SubBuff",
+    "guid": "457d5cde294c435ea7b4ee66f4949956",
+    "active": true,
+    "uid": "22F79"
+  }
+]

@@ -1,0 +1,17 @@
+SOURCE: LOG directory listing only. combatLog.txt is 0 bytes, so this fight has no per-hit transcript.
+The fight comparison below is from SAVE history inside Quick_4.zks (read earlier this session, not rewritten).
+
+Latest fight window in Quick_4 history, in-game 22:23:09 to 22:24:32 on 21.08.4715.
+Enemies: 9, CR 20.
+Deaths: Delamere +5s, Galfrey +8s, Kestoglyr +26s.
+Smilodon deaths: 6. Protean: no death line. Combat finished.
+Post-fight Quick_4: Kestoglyr LifeState Dead, m_Damage 364.
+
+2026-09-28 23:10:18	0	combatLog.txt
+MISSING	game-history.txt
+2026-09-28 23:18:20	560401	GameLog.txt
+2026-09-28 23:19:34	807953	GameLogFull.txt
+2026-09-28 23:05:39	3534889	GameLogFullPrev.txt
+2026-09-28 23:05:36	2773696	GameLogPrev.txt
+2026-09-28 23:17:16	117336	Player.log
+2026-09-28 23:05:44	317157	Player-prev.log

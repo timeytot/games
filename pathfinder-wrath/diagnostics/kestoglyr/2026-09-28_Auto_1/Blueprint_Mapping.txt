@@ -1,0 +1,35 @@
+SOURCE: GAME BLUEPRINT via Bundles/cheatdata.json and blueprints.zip. Unconfirmed GUIDs are omitted.
+
+Class
+48ac8db94d5de7645906c7d0ad3bcfbd FighterClass
+d5917881586ff1d4d96d5b7cebda9464 StalwartDefenderClass
+530b6a79cb691c24ba99e1577b4beb6d MythicCompanionClass
+Witch book on character: AccursedWitchSpellbook. English UI name of that archetype is Stigmatized Witch.
+
+Equipped item blueprints from the save
+4ca4986b49b01954997f37c24c98d1f3 DawnflowersKiss_Basic_Scimitar
+2ad512d4b7d1438c97b48fe232fcceb5 AssertionOfDominanceShieldItem
+d7963e1fcf260c148877afd3252dbc91 ScalemailStandard
+c63859f821f7b414492580b638b009fb BeltOfBloodlustItem
+9b422adf4bdb9994a9690ac20ca74370 RuggedHelmetItem
+e55f0210859bb3b4883958e41c155490 BootsOfOutbreakItem
+c8f949c03b92f714b83edd610f3e9348 GlovesOfDuelingNormalItem
+11f435140501db84e8e787bf8792fac2 AmuletOfNaturalArmor5
+2d576daea5f62ae489028bce40469285 RingOfProtection5
+a34cd0f80d04ec647af741d924a3e2a3 CloakOfResistance5
+
+Shield runtime enchantments on the off-hand item
+84d191a748edef84ba30c13b8ab83bd9 armor enhancement on the shield item
+4f0700bdbf8c4c99a4bb491377caf5ca applies feature cd09201e456345e7a39c983ff8912e58
+cd09201e456345e7a39c983ff8912e58 Assertion of Dominance feature
+063e215c1a654e87b47628e0fa6b3f09 AssertionOfDominanceBuff (full HP gate)
+1abb45d21dd047549f6ff57ecbd13f1a AssertionOfDominanceBuffResist (Piercing, Slashing immunity)
+
+Dodge mythic
+DodgeMythicFeat permanent Dodge +1
+DodgeMythicBuff 175d1e9fc04e4f2fb28b3860c9c67764 rank dodge, removed on the first attack roll each round
+
+Medium endurance
+ArmorFocusMediumMythicFeatureVar2 and Var2SubBuff: while armor category is Medium, add half of armor AC
+
+UndeadImmunities includes conditions: Nauseated, Sickened, Exhausted, Fatigued, Paralyzed.
