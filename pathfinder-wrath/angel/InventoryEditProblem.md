@@ -57,9 +57,23 @@ The item tail became:
 
 `m_InventorySlotIndex` was removed. `m_Modifiers` was not added. `"$id":"5415"` still occurs once. `"$ref":"5415"` occurs once. The inventory window opens.
 
-## What is still empty, and why
+## What to load for the empty dolls
 
-Daeran `d3da2a90-9520-4171-a346-c7971a171b77` and Sosiel `3e1e0b22-78e6-475f-b09c-e4beac1bbca1` were not edited in `Hansen amulet test`. Their paper dolls stay empty. Final-party priority, if a later edit equips them:
+`Hansen amulet test` did not touch Daeran or Sosiel. Their empty paper dolls are that file, not a new crash.
+
+A separate save uses the same pattern as the amulet test: the slot `$id` stays on the body, `HoldingSlot` is only `{"$ref":"..."}`, no `m_Modifiers`, no `json.dumps` of `party.json`.
+
+| File | Header name |
+|---|---|
+| `Manual_Hansen_gear_safe.zks` | `Hansen gear safe` |
+
+Load `Hansen gear safe`, press I, and click Daeran, then Sosiel. Daeran should have armor, shirt, belt, head, glasses, boots, gloves, neck, two rings, a cloak, and a rapier. His wrists stay empty. Sosiel should have full plate, a scimitar, a shield, and the rest of the cleric set. Camellia's neck is her own amulet. Hansen, Seelah, Arueshalae, and Ember are not stripped.
+
+If that file opens a white inventory, close it and load `Quicksave1 1` or `Hansen inventory ok`. Do not keep editing `Quick_7.zks`.
+
+## What was empty, and the priority
+
+Daeran `d3da2a90-9520-4171-a346-c7971a171b77` and Sosiel `3e1e0b22-78e6-475f-b09c-e4beac1bbca1` were not edited in `Hansen amulet test`. Final-party priority used for `Hansen gear safe`:
 
 1. Hansen `360c7122-3094-4ab4-9706-04ae85f7715a` is not stripped.
 2. Seelah `0ad3253d-0009-464c-8fea-5162de292bb9`, Camellia, Arueshalae `166F1D`, Ember `7ea9b3f6-19ad-4b7c-98fb-3d935bf698f3`, and Daeran come next.
