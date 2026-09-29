@@ -23,11 +23,11 @@ Fan has Enduring Spells and Greater Enduring Spells. The other five do not. Bull
 
 | Button | JSON | Rows | When to press it |
 |---|---|---|---|
-| Normal | `Long` | 28 | After resting, or after entering a new area |
-| Quick | `Quick` | 5 | Before each fight. Transformation is last, so the other Quick spells are cast first |
-| Important | `Important` | 2 | Hard fights. Frightful Aspect and Burst of Glory |
+| Normal | `Long` | 35 | After resting, or after entering a new area. This is the only button |
+| Quick | `Quick` | 0 | Empty |
+| Important | `Important` | 0 | Empty |
 
-The three buttons do not include each other.
+Every row is on Normal, including Haste, Prayer, Greater Invisibility, Vampiric Shadow Shield, Transformation, Frightful Aspect, and Burst of Glory.
 
 ## Party
 
@@ -67,7 +67,7 @@ Ids match `UniqueId` in the save's `party.json`. Active party order is Fan, Seel
 | Bless Weapon | Fan, Seelah | Seelah |
 | Angelic Aspect, Greater | Seelah | Seelah |
 
-## Quick
+These are also on Normal:
 
 | Spell | Targets | Casters, in order |
 |---|---|---|
@@ -76,11 +76,6 @@ Ids match `UniqueId` in the save's `party.json`. Active party order is Fan, Seel
 | Greater Invisibility | Fan | Fan |
 | Vampiric Shadow Shield | Fan | Fan |
 | Transformation | Fan | Fan |
-
-## Important
-
-| Spell | Targets | Casters, in order |
-|---|---|---|
 | Frightful Aspect | Ember, Daeran, Camellia | Ember, Daeran, Camellia |
 | Burst of Glory | All six | Seelah, Daeran |
 

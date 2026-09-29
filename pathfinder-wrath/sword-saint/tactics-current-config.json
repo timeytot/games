@@ -1,0 +1,308 @@
+{
+  "GlobalRules": [],
+  "CharacterRules": {
+    "6078761c-2271-48a8-bfe2-e82f88a8f041": [
+      {
+        "Id": "fan-transformation",
+        "Name": "Transformation",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 5,
+                "Property": 14,
+                "Operator": 2,
+                "CountOperator": 4,
+                "Value": "true",
+                "Value2": ""
+              },
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "287682389d2011b41b5a65195d9cbc84",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 0,
+          "AbilityId": "27203d62eb3d4184c9aced94f22e1806@L6",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "fan-haste",
+        "Name": "Haste",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 5,
+                "Property": 14,
+                "Operator": 2,
+                "CountOperator": 4,
+                "Value": "true",
+                "Value2": ""
+              },
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "03464790f40c3c24aa684b57155f3280",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 0,
+          "AbilityId": "486eaff58293f6441a5c2759c4872f98@L3",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "fan-prescient-attack",
+        "Name": "Prescient Attack",
+        "Enabled": true,
+        "CooldownRounds": 1,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 5,
+                "Property": 14,
+                "Operator": 2,
+                "CountOperator": 4,
+                "Value": "true",
+                "Value2": ""
+              },
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "2544b9d16793e2642a645c8e3aece7d3",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "fa12d155c229c134dbbbebf0d7b980f0",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "fan-dimension-strike",
+        "Name": "Dimension Strike",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 5,
+                "Property": 14,
+                "Operator": 2,
+                "CountOperator": 4,
+                "Value": "true",
+                "Value2": ""
+              },
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "c25e4bf29c7baa24aa1d6f630a6c1fc3",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "cf7c4eaa2b47d7242b2c734df567cefb",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "fan-arcane-accuracy",
+        "Name": "Arcane Accuracy",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 5,
+                "Property": 14,
+                "Operator": 2,
+                "CountOperator": 4,
+                "Value": "true",
+                "Value2": ""
+              },
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "dd2d0de63be31854794c006dc1077294",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "1b7fb8120390ca24c9da98ce87780b7f",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "fan-perfect-strike",
+        "Name": "Perfect Strike",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 5,
+                "Property": 14,
+                "Operator": 2,
+                "CountOperator": 4,
+                "Value": "true",
+                "Value2": ""
+              },
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "e194d672b44eabd418e80f4bd2308a5b",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "5a169c57935dc3343836c027e35d65b3",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      }
+    ]
+  },
+  "TacticsEnabled": {
+    "6078761c-2271-48a8-bfe2-e82f88a8f041": true,
+    "615A": true,
+    "6224": true,
+    "5AC2": true,
+    "5A2C": true,
+    "60D5": true
+  },
+  "ShowPortraitToggles": true,
+  "TickIntervalSeconds": 1.0,
+  "OutOfCombatTickIntervalSeconds": 2.0,
+  "DebugLogging": false,
+  "RecentBuffGuids": []
+}
