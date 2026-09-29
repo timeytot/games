@@ -85,3 +85,14 @@ There is no Wrath mod that chooses the best item for a build and calls equip. Qu
 ## Question still open
 
 Does Camellia's neck actually show the amulet in `Hansen amulet test`? The screenshots are Daeran and Sosiel, so they do not answer that. If her neck is also empty, `m_ItemRef` plus `HoldingSlot: {$ref}` is enough to open the window and not enough for the paper doll. The next experiment on a copy, not on `Quick_7.zks`, is one slot with `"m_Active":false` so `ItemSlot.PostLoad` can run `OnDidEquipped`. Do not copy another character's `m_Modifiers` tree.
+
+
+## Current safer fix
+
+Do not hand-edit equipment links in `party.json` again for this save. A runtime Unity Mod Manager helper now lives at:
+
+`pathfinder-wrath/angel/runtime-equip-fix/`
+
+It uses Owlcat's own `ItemSlot.RemoveItem()` and `ItemSlot.InsertItem()` while the save is loaded, so the game itself updates wielder/slot links, armor runtime modifiers, enchantments, equipment facts, inventory slot indexes, and equipment-weight state. Build/use instructions are in that folder's `README.md`.
+
+Keep `Quick_7.zks.bak-20260930-gear` untouched until the runtime-equipped manual save has been opened, checked with `I`, and saved successfully.
