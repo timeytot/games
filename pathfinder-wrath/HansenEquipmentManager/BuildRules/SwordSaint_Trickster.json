@@ -1,0 +1,6 @@
+{
+  "id": "SwordSaint_Trickster",
+  "displayName": "Sword Saint Trickster",
+  "match": { "classContains": "SwordSaint", "mythicContains": "Trickster" },
+  "weights": { "STR": 5, "INT": 4, "Crit": 5, "Bardiche": 5, "Enhancement": 2, "DEX": 1 }
+}

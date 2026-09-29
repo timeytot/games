@@ -1,0 +1,11 @@
+{
+  "Id": "HansenEquipmentManager",
+  "DisplayName": "Hansen Equipment Manager",
+  "Author": "timeytot",
+  "ManagerVersion": "0.31.1",
+  "Requirements": [],
+  "AssemblyName": "HansenEquipmentManager.dll",
+  "EntryMethod": "HansenEquipmentManager.Main.Load",
+  "GameVersion": "2.7.0x",
+  "Version": "0.2.0"
+}

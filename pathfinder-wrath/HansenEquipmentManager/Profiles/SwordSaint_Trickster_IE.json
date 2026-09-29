@@ -1,0 +1,9 @@
+{
+  "id": "SwordSaint_Trickster_IE",
+  "displayName": "Sword Saint Trickster Inevitable Excess",
+  "match": {
+    "classContains": "SwordSaint",
+    "mythicContains": "Trickster"
+  },
+  "rules": []
+}

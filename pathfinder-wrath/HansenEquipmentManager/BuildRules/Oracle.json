@@ -1,0 +1,6 @@
+{
+  "id": "Oracle",
+  "displayName": "Oracle",
+  "match": { "classContains": "Oracle" },
+  "weights": { "CHA": 5, "WIS": 2, "AC": 2, "Enhancement": 1 }
+}

@@ -1,0 +1,6 @@
+{
+  "id": "Cleric",
+  "displayName": "Cleric",
+  "match": { "classContains": "Cleric" },
+  "weights": { "WIS": 5, "AC": 4, "Shield": 4, "CHA": 1, "Enhancement": 1 }
+}

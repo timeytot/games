@@ -1,0 +1,6 @@
+{
+  "id": "Oracle_Angel",
+  "displayName": "Oracle Angel",
+  "match": { "classContains": "Oracle", "mythicContains": "Angel" },
+  "weights": { "CHA": 5, "SpellDC": 5, "CasterLevel": 5, "AC": 2, "WIS": 1, "Enhancement": 1 }
+}
