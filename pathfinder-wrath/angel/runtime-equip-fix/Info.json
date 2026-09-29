@@ -1,0 +1,11 @@
+{
+  "Id": "HansenRuntimeEquipFix",
+  "DisplayName": "Hansen Runtime Equip Fix",
+  "Author": "timeytot / ChatGPT",
+  "ManagerVersion": "0.31.1",
+  "Requirements": [],
+  "AssemblyName": "HansenRuntimeEquipFix.dll",
+  "EntryMethod": "HansenRuntimeEquipFix.Main.Load",
+  "GameVersion": "2.7.0x",
+  "Version": "0.1.0"
+}
