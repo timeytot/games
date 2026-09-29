@@ -42,7 +42,7 @@ Checked at level 11, before the level 11 feat picks. Already taken: Power Attack
 | 7 | Great Cleave |
 | 9 | Improved Critical (Bardiche) |
 | 11 | Outflank, Weapon Specialization (Bardiche) |
-| 13 | Improved Improved Critical (Bardiche). If Perception 2 is still missing, take Improved Initiative instead and shift the three Trickster critical feats down one level |
+| 13 | Improved Improved Improved Critical (Bardiche). Improved Improved Critical (Bardiche) is already taken |
 | 15 | Improved Improved Improved Critical (Bardiche) |
 | 17 | Improved Improved Improved Critical Improved (Bardiche), Greater Weapon Specialization (Bardiche) |
 | 19 | Improved Initiative |
@@ -77,28 +77,43 @@ Odd ranks are Mythic Abilities. Even ranks are Mythic Feats. Choose Trickster at
 | 3 | Ever Ready, already taken | Knowledge (Arcana) 1, already taken |
 | 4 | Mythic Improved Critical (Bardiche) | Perception 1, Perception 2 |
 | 5 | Last Stand | Knowledge (World) 1 |
-| 6 | Mythic Power Attack | Knowledge (Arcana) 2, Athletics 1 |
-| 7 | Enduring Spells | Knowledge (Arcana) 3, Use Magic Device 1 |
-| 8 | Mythic Improved Initiative | Knowledge (World) 2 |
-| 9 | Greater Enduring Spells | Athletics 2 |
+| 6 | Mythic Power Attack | Athletics 1, and Knowledge (World) 2 |
+| 7 | Enduring Spells | Use Magic Device 1, and Knowledge (World) 3 |
+| 8 | Mythic Improved Initiative | Athletics 2 |
+| 9 | Greater Enduring Spells | Reuse Magic Device |
 | 10 | Mythic Weapon Specialization (Bardiche) | Athletics 3 |
 
-Improved Critical is already taken, so Mythic Rank 4 can be Mythic Improved Critical. If Mythic Rank 8 arrives before Improved Initiative, take Mythic Weapon Specialization at rank 8 and Mythic Improved Initiative at rank 10.
+Knowledge (World) 2 turns a party roll of 1 into 20. Take it on the first improved-trick slot after Knowledge (World) 1. Do not spend that slot on Knowledge (Arcana) 2. Athletics 2 comes after Athletics 1, and Athletics 3 is the greater trick at rank 10. Skip Lore, Mobility, Persuasion, Stealth, and Trickery.
+
+Improved Critical is already taken, so Mythic Rank 4 is Mythic Improved Critical. If Mythic Rank 8 arrives before Improved Initiative, take Mythic Weapon Specialization at rank 8 and Mythic Improved Initiative at rank 10.
 
 Athletics 3 raises Base Attack Bonus to the character's Athletics ranks. A level 20 Sword Saint otherwise has BAB +15. With Athletics at 20 ranks, BAB becomes 20. Until then, use Transformation to fill BAB.
 
 ## Spells
 
-After Greater Enduring Spells, minute-per-level buffs last 24 hours. Haste and Transformation are round-per-level. Cast those just before a fight.
+Sword Saint prepares spells and has one fewer slot of each level than a base Magus. Learn these into the spellbook. Skip any name that is not on the Magus list. Geniekind is not on that list.
 
-| Level | Spells |
+| Spell level | Opens at character level | Learn |
+|---|---:|---|
+| 1 | 1 | Shield, Enlarge Person, Magic Weapon, True Strike, Shocking Grasp, Grease, Reduce Person |
+| 2 | 4 | Mirror Image, Bull's Strength, Blur, Cat's Grace, Frigid Touch, Invisibility |
+| 3 | 7 | Haste, Displacement, Greater Magic Weapon, Dispel Magic, Vampiric Touch |
+| 4 | 10 | Dimension Door, Greater Invisibility, Stoneskin |
+| 5 | 13 | Baleful Polymorph, Acidic Spray. If Break Enchantment or Vampiric Shadow Shield is on the list, take Break Enchantment first and replace Acidic Spray |
+| 6 | 16 | Transformation, True Seeing, Chain Lightning |
+
+At level 11, fill empty book slots in this order: Shield, Enlarge Person, Mirror Image, Bull's Strength, Haste, Greater Magic Weapon, Displacement, Dimension Door, Greater Invisibility, Stoneskin, True Strike, Magic Weapon.
+
+Prepare every rest, until Greater Enduring Spells exists:
+
+| Slot | Prepare |
 |---|---|
-| 1 | Shield, Enlarge Person, Magic Weapon, True Strike, Shocking Grasp, Grease, Reduce Person |
-| 2 | Mirror Image, Bull's Strength, Blur, Cat's Grace, Frigid Touch, Invisibility |
-| 3 | Haste, Displacement, Greater Magic Weapon, Dispel Magic, Vampiric Touch |
 | 4 | Dimension Door, Greater Invisibility, Stoneskin |
-| 5 | Whichever defensive and attack spells are on the Magus list. Geniekind is not on that list |
-| 6 | Transformation, True Seeing, Chain Lightning |
+| 3 | Haste, Greater Magic Weapon, Displacement |
+| 2 | Mirror Image, Bull's Strength, Blur |
+| 1 | Shield, Enlarge Person, True Strike, Magic Weapon |
+
+After Greater Enduring Spells, minute-per-level buffs last 24 hours. Leave those memorized only long enough to cast them once, then prepare the round-per-level spells: Haste, Displacement, Transformation. Cast Haste and Transformation immediately before a fight. True Strike is one attack. Use it only when Dimension Strike is not available.
 
 Bit of Fun is the Trickster first-ascension ability already on this character. Do not respec it.
 
