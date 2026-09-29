@@ -97,29 +97,31 @@
         },
         "PresetId": null,
         "PackId": null
-      },
+      }
+    ],
+    "5AC2": [
       {
-        "Id": "fan-attack",
-        "Name": "Attack",
+        "Id": "ember-protective-luck",
+        "Name": "Protective Luck",
         "Enabled": true,
         "CooldownRounds": 0,
         "ConditionGroups": [
           {
             "Conditions": [
               {
-                "Subject": 5,
-                "Property": 14,
-                "Operator": 2,
+                "Subject": 1,
+                "Property": 2,
+                "Operator": 3,
                 "CountOperator": 4,
-                "Value": "true",
+                "Value": "1ba3d3a0942d080448ce6aa865bbbd65",
                 "Value2": ""
               }
             ]
           }
         ],
         "Action": {
-          "Type": 4,
-          "AbilityId": "",
+          "Type": 1,
+          "AbilityId": "e7ecd11651b4df34897f33271a8d1cfc",
           "FallbackAbilityIds": [],
           "HealMode": 0,
           "HealSources": 7,
@@ -132,7 +134,1063 @@
           "MoveWithin": 0
         },
         "Target": {
+          "Type": 17,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "ember-vulnerability",
+        "Name": "Vulnerability Curse",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 13,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "6f3da77a44fa7304fac61c07a6187d4118",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "8f0eb58c2d6aeab4e8523ec85b4b2bc7",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 17,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "ember-fortune",
+        "Name": "Fortune",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 1,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "d03be82c4ffd14840a89e600e910ae7d",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "eaf7077a8ff35644883df6d4f7b2084c",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 17,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "ember-ward",
+        "Name": "Ward",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 1,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "da49e3ca7424a4741953ecc4f2fe11bb",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "5adb5a0650f5b2049bab1afe822bd3bd",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 17,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "ember-agony",
+        "Name": "Agony",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 13,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "73921d85ed0d684408c5b5f23b6f4360",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "0d38e470e350ce34f869c20002d45763",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 17,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "ember-major-healing",
+        "Name": "Major Healing",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 1,
+                "Property": 0,
+                "Operator": 0,
+                "CountOperator": 4,
+                "Value": "0.5",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "3408c351753aa9049af25af31ebef624",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 1,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "ember-healing",
+        "Name": "Healing",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 1,
+                "Property": 0,
+                "Operator": 0,
+                "CountOperator": 4,
+                "Value": "0.5",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "ed4fbfcdb0f5dcb41b76d27ed00701af",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 1,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      }
+    ],
+    "60D5": [
+      {
+        "Id": "camellia-battle-spirit",
+        "Name": "Battle Spirit",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "d1de312279a95be49b3de1ea66473cde",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
           "Type": 3,
+          "AbilityId": "7eda685d53423de4281d8bc0f1197442",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "camellia-ghost-touch",
+        "Name": "Ghost Touch",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "7e9fd35cd52a072408b94ec31122139d",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 3,
+          "AbilityId": "7c96a5203b397744b9429ea3fd010728",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "camellia-true-spirit",
+        "Name": "True Battle Spirit",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "4f139d125bb602f48bfaec3d3e1937cb",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "3e1a13fdca87e9c49b2fac4556e5a948",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "camellia-weapon",
+        "Name": "Spirit Weapon",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "caf254364965b604195fdea6717aa027",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "a1799c1abdf619147b4774bb433f76ad",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      }
+    ],
+    "5A2C": [
+      {
+        "Id": "daeran-halo",
+        "Name": "Halo",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "0b1c9d2964b042e4aadf1616f653eb95",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 3,
+          "AbilityId": "248bbb747c273684d9fdf2ed38935def",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "daeran-channel",
+        "Name": "Channel",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 1,
+                "Property": 0,
+                "Operator": 0,
+                "CountOperator": 4,
+                "Value": "0.5",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "b9eca127dd82f554fb2ccd804de86cf6",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      }
+    ],
+    "615A": [
+      {
+        "Id": "seelah-brilliant",
+        "Name": "Brilliant Energy",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "dc60f8100cd9f6749bf071c930eb287d",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 3,
+          "AbilityId": "f1eec5cc68099384cbfc6964049b24fa",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "seelah-weapon-bond",
+        "Name": "Weapon Bond",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "bf570774501886f47b395a4bfe75eeb2",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "7ff088ab58c69854b82ea95c2b0e35b4",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "seelah-smite",
+        "Name": "Smite Evil",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "b6570b8cbb32eaf4ca8255d0ec3310b0",
+                "Value2": ""
+              },
+              {
+                "Subject": 13,
+                "Property": 13,
+                "Operator": 2,
+                "CountOperator": 4,
+                "Value": "evil",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "7bb9eb2042e67bf489ccd1374423cdec",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 17,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "seelah-aura",
+        "Name": "Aura of Justice",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "ac3c66782859eb84692a8782320ffd2c",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "7a4f0c48829952e47bb1fd1e4e9da83a",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "seelah-lay-self",
+        "Name": "Lay on Hands Self",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 0,
+                "Operator": 0,
+                "CountOperator": 4,
+                "Value": "0.5",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "8d6073201e5395d458b8251386d72df1",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "seelah-lay-other",
+        "Name": "Lay on Hands",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 1,
+                "Property": 0,
+                "Operator": 0,
+                "CountOperator": 4,
+                "Value": "0.5",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "caae1dc6fcf7b37408686971ee27db13",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 1,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "seelah-channel",
+        "Name": "Channel Energy",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 1,
+                "Property": 0,
+                "Operator": 0,
+                "CountOperator": 4,
+                "Value": "0.5",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "6670f0f21a1d7f04db2b8b115e8e6abf",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      }
+    ],
+    "6224": [
+      {
+        "Id": "arue-point-blank",
+        "Name": "Point-Blank Shot",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "de5b285a0a8e1e745a0cc9bf02045123",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 3,
+          "AbilityId": "371bb8b465e90bd46aa3446eb9792017",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "arue-rapid-shot",
+        "Name": "Rapid Shot",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "0f310c1e709e15e4fa693db15a4baeb4",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 3,
+          "AbilityId": "90a77bfe25ec2e14caf8bd5cde9febf2",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "arue-deadly-aim",
+        "Name": "Deadly Aim",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "6aaf11aa06ae0e7499a71b79725828df",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 3,
+          "AbilityId": "ccde5ab6edb84f346a74c17ea3e3a70c",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "arue-staggering",
+        "Name": "Staggering Critical",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "f766db0dcd17aaa44b76181bdf85fee9",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 3,
+          "AbilityId": "4909b2de27feaa948927e5e638f160f0",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "arue-bond",
+        "Name": "Hunter's Bond",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "2f93cad6b132aac4e80728d7fa03a8aa",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "cd80ea8a7a07a9d4cb1a54e67a9390a5",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "arue-quarry",
+        "Name": "Quarry",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 13,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "b44184c7ca33c6a41bc11cc5ed07addb",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "e93dfca6f025e6d4e9583e688c147aca",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 17,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
+      },
+      {
+        "Id": "arue-master-spy",
+        "Name": "Master Spy",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 0,
+                "Property": 2,
+                "Operator": 3,
+                "CountOperator": 4,
+                "Value": "f80bdf69ef8bc3743a9b18667ba9684e",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 1,
+          "AbilityId": "0f63708586ba7ef45b78f4205e2109f7",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 0,
           "Filter": ""
         },
         "PresetId": null,

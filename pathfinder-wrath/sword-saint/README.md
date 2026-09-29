@@ -8,7 +8,7 @@ The level-by-level plan is [SwordSaint_Trickster_Build.md](./SwordSaint_Trickste
 |---|---|
 | Character name | Fan |
 | GameId | `8dd97a37ca674651afefb4dd19e06967` |
-| Save file | `Quick_4.zks` is the spellbook edit on 2026-09-29. `Manual_9_Artisan_s_Tower__16_Arodus__VIII__4715__12_03_13.zks` is the earlier manual save. |
+| Save file | `Quick_3.zks` is the spellbook edit on 2026-09-29. `Quick_4.zks` was left unchanged. `Manual_9_Artisan_s_Tower__16_Arodus__VIII__4715__12_03_13.zks` is the earlier manual save. |
 | Party | Fan, Seelah, Arueshalae, Ember, Daeran, Camellia |
 | Live Buff It file | `Mods\BuffIt2TheLimit\UserSettings\bi2tl-8dd97a37ca674651afefb4dd19e06967.json` |
 

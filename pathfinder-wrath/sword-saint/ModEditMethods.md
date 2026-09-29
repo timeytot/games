@@ -21,14 +21,14 @@ A `.zks` save is a zip. Prepared spells are not a separate text file. They live 
 
 `SlottedSpell not available` with `Spell credits=1` means the spell is known, and one slot of that level is still free, but this spell's prepared copy is already spent. Putting the name in the known list again does not fix that. The prepared slot has to reference that spell, and the character has to rest before a newly prepared spell can be cast.
 
-On 2026-09-29 the edited save was `Quick_4.zks`. Backup: `Quick_4.zks.bak-20260929-spells` in the same Saved Games folder. Level 6 already had Transformation (`$id` 1940) and True Seeing (`$id` 1941). The two enhancement spells were replaced:
+On 2026-09-29 the edited save is `Quick_3.zks`, the save before `Quick_4`. `Quick_4.zks` was not written. Backup: `Quick_3.zks.bak-20260929-l6` in the same Saved Games folder. Level 6 already had Transformation (`$id` 1857) and True Seeing (`$id` 1858) in the known list, and Hellfire Ray (`$id` 1866) and Chain Lightning (`$id` 1859) were already known. The two prepared enhancement slots were pointed at those known spells, with `Available` set true:
 
-| Slot ref before | Spell | Slot ref after | Spell |
-|---|---|---|---|
-| 1943 | Bull's Strength, Mass | 1949 | Hellfire Ray |
-| 1947 | Bear's Endurance, Mass | 1942 | Chain Lightning |
+| Slot | Before | After |
+|---|---|---|
+| `$id` 1893 | Bull's Strength, Mass `$ref` 1860 | Hellfire Ray `$ref` 1866 |
+| `$id` 1894 | Bear's Endurance, Mass `$ref` 1864 | Chain Lightning `$ref` 1859 |
 
-Mirror Image, Haste, Stoneskin, Enlarge Person, Mass, and Vampiric Shadow Shield were already prepared on their own levels. Load `Quick_4`, then rest, then press Normal.
+Mirror Image, Haste, Stoneskin, Enlarge Person, Mass, and Vampiric Shadow Shield were already prepared on their own levels. Load `Quick_3`, then rest, then press Normal.
 
 Blueprint names are resolved from `blueprints.zip` in the game folder. `AssetId` in a `.jbp` file is the same id as `Blueprint` in the save.
 
@@ -90,13 +90,13 @@ Live file:
 Mods\WrathTactics\UserSettings\tactics-8dd97a37ca674651afefb4dd19e06967.json
 ```
 
-`tactics-current-config.json` in this folder is a copy. The in-game panel is Ctrl+T. `CharacterRules` is keyed by unit id. Only Fan has rules. `TacticsEnabled` is true for the six active party members.
+`tactics-current-config.json` in this folder is a copy. The in-game panel is Ctrl+T. `CharacterRules` is keyed by unit id. Fan is `6078761c-2271-48a8-bfe2-e82f88a8f041`. Ember is `5AC2`. Camellia is `60D5`. Daeran is `5A2C`. Seelah is `615A`. Arueshalae is `6224`. `TacticsEnabled` is true for the six active party members.
 
 `AbilityId` for a spell is 32 hex characters, no hyphens, plus `@L` and the spell level. Example: Transformation is `27203d62eb3d4184c9aced94f22e1806@L6`. A magus arcana is the ability id with no `@L`.
 
 `HasBuff` uses the buff blueprint, not the ability id. Subject `0` is self. Property `2` is HasBuff. Operator `3` means the buff is absent. Operator `2` means equal. Subject `5`, property `14`, value `true` means a fight is running.
 
-`TickIntervalSeconds` is 1. `CooldownRounds` is 0. Fan's rules are Transformation, Haste, and Attack. The three one-round magus arcanas are not in this list.
+`TickIntervalSeconds` is 1. `CooldownRounds` is 0. Fan's rules are Transformation and Haste. Dimension Strike, Prescient Attack, Arcane Accuracy, Perfect Strike, and Attack are not in this list.
 
 ## One swift action, so one arcana
 
@@ -108,9 +108,11 @@ Dimension Strike, Prescient Attack, and Arcane Accuracy each last 1 round and ea
 | Prescient Attack `fa12d155c229c134dbbbebf0d7b980f0` | 1 | The target loses its Dexterity bonus to AC. |
 | Arcane Accuracy `1b7fb8120390ca24c9da98ce87780b7f` | 1 | Adds the Intelligence modifier as an insight bonus to attack. On Fan that is about +7. |
 
-Dimension Strike is the one to keep on. A dragon's natural armor is much larger than its Dexterity bonus, and larger than +7 to hit. Right-click the ability. The game puts its icon at the lower left of the action bar and uses it each round. That is `Brain.m_AutoUseAbility` in the save. In `Quick_4.zks` at 21:20 that field is already Dimension Strike, and `TemporarilyDisabled` is false.
+Dimension Strike is the one to keep on. A dragon's natural armor is much larger than its Dexterity bonus, and larger than +7 to hit.
 
-Wrath Tactics does not cast it. A tactics swift fires while the weapon swing owns the Standard slot, the log says `unit busy`, and the ability misses its window. The game's own autocast runs at the start of the round, before that swing.
+Turn on the game's own autocast. Select Fan, find Dimension Strike on his action bar, and right-click that icon once. A copy of the icon sticks out at the left end of the bar. That is the autocast marker. The game uses the ability at the start of each round, then Fan still makes his weapon attacks, because the ability is a swift action. Right-click the same icon again to clear it. Wrath Tactics does not cast it and does not order the weapon attack.
+
+That marker is `Brain.m_AutoUseAbility` in the save. In `Quick_4.zks` at 21:20 the field is already Dimension Strike, and `TemporarilyDisabled` is false. `Quick_3.zks` has no autocast. After loading `Quick_3`, right-click Dimension Strike once. The ability spends 2 arcane pool points. With the pool at 0 it does not fire.
 
 ## Perfect Strike stays on
 
@@ -124,11 +126,11 @@ The critical-hit toggle `c6559839738a7fc479aadc263ff9ffff` is the same kind of s
 
 Sword Saint prepared slots: only Shield (`ef768022b0785eb43a18969903c537c4`, level 1) still has `Available` true. Haste and Transformation are prepared and already spent. That is why tactics logged `No suitable spell slots`. Rest refills the pool and those slots.
 
-Level 6 is prepared as Transformation, True Seeing, Bull's Strength, Mass, Bear's Endurance, Mass. The Mass enhancement spells do not raise Fan's Strength or Constitution. Hellfire Ray and Chain Lightning are not in those slots.
+In `Quick_4.zks` level 6 is still Transformation, True Seeing, Bull's Strength, Mass, Bear's Endurance, Mass. That file was left unchanged. The same two slots in `Quick_3.zks` now prepare Hellfire Ray and Chain Lightning.
 
 Trickster spellbook `2ff51e0531ed8e545ab4cb35c32d40f4` is spontaneous. `m_SpontaneousSlots` is `[0, 5, 5, 0, 0, 5, 4, 3, 0, 0, 0]`. Level 3 and level 4 have no casts left today. Rest restores them.
 
-The Attack rule stays. `Action.Type` is 4, `Target.Type` is 3, the nearest enemy. With Fan's AI off, that rule is what orders the swing. Transformation and Haste still fire only when their buff is missing and a memorized slot is open.
+Transformation and Haste still fire only when their buff is missing and a memorized slot is open. There is no Attack rule.
 
 Buff ids for those two rules:
 
@@ -136,3 +138,75 @@ Buff ids for those two rules:
 |---|---|
 | Transformation | `287682389d2011b41b5a65195d9cbc84` |
 | Haste | `03464790f40c3c24aa684b57155f3280` |
+
+## Ember
+
+Ember's unit id is `5AC2`. This character does not have Evil Eye or Cackle. She has one standard action per round. The rules fire in this order, and each one stops matching once its buff is already on the target:
+
+| Order | Hex | Target |
+|---|---|---|
+| 1 | Protective Luck | An ally who does not have it |
+| 2 | Vulnerability Curse | The highest-AC enemy who does not have it |
+| 3 | Fortune | An ally who does not have it |
+| 4 | Ward | An ally who does not have it |
+| 5 | Agony | The highest-AC enemy who does not have it |
+| 6 | Major Healing | The lowest-HP ally, when an ally is under half |
+| 7 | Healing | The same, if Major Healing did not fire |
+
+Slumber and Restless Slumber are not in the list. A dragon is immune to sleep, the buff never sticks, and those rules would spend her standard action every round.
+
+## Camellia
+
+Camellia's unit id is `60D5`. She is a Spirit Hunter. Each rule fires only while its own buff is missing.
+
+| Order | Ability | What it does |
+|---|---|---|
+| 1 | Battle Spirit | Toggle. Stays on and spends its resource at the start of each round. |
+| 2 | Ghost Touch | Toggle. The spirit-weapon property selected on her rapier. |
+| 3 | True Battle Spirit | Standard action. Lasts minutes. |
+| 4 | Spirit Weapon | Swift action. Puts the selected weapon property on her weapon for minutes. |
+
+Greater Battle Spirit is a list of variants, not one ability to leave on, so it is not in the rules. Ameliorating is a condition-removal menu. Skill checks and Fight Defensively are not in the rules.
+
+## Daeran
+
+Daeran's unit id is `5A2C`.
+
+| Order | Ability | What it does |
+|---|---|---|
+| 1 | Halo | Aasimar toggle. Stays on while the halo buff is missing. |
+| 2 | Channel | Standard action, centered on Daeran. Fires when an ally is under half health. |
+
+Channel Harm is negative energy. It damages living allies in the burst, so it is not automatic. Glitterdust is a standard-action area spell that can blind the party, so it is not automatic. Skill checks and Fight Defensively are not in the rules.
+
+## Seelah
+
+Seelah's unit id is `615A`. Weapon Bond properties share one slot, so only one can stay on. The selected property is Brilliant Energy, because her attacks were missing the dragon's armor class of 80 and this property makes those attacks touch attacks.
+
+| Order | Ability | What it does |
+|---|---|---|
+| 1 | Brilliant Energy | Toggle. Selects the weapon-bond property. |
+| 2 | Weapon Bond | Standard action. Puts that property on the weapon for minutes, when the enchantment buff is missing. |
+| 3 | Smite Evil | Swift action. Targets the highest-AC evil enemy, when Seelah does not already have Smite active. |
+| 4 | Aura of Justice | Swift action. Lasts minutes. Fires when that aura is missing. |
+| 5 | Lay on Hands, self | Swift action. When Seelah is under half health. |
+| 6 | Lay on Hands | Standard action. The lowest-HP ally, when an ally is under half. |
+| 7 | Channel Energy | Standard action, centered on Seelah. Same health gate, if Lay on Hands did not fire. |
+
+Holy, Keen, Speed, Axiomatic, Disruption, Flaming, and Flaming Burst are the other weapon-bond choices. They are not on at the same time. Vital Strike replaces a full attack with one swing, so it is not automatic. Channel Harm damages living allies, so it is not automatic.
+
+## Arueshalae
+
+Arueshalae's unit id is `6224`. Toggles fire only while their buff is missing. Rapid Shot, Deadly Aim, and Staggering Critical were already on in `Quick_6.zks`. Point-Blank Shot was off.
+
+| Order | Ability | What it does |
+|---|---|---|
+| 1 | Point-Blank Shot | Toggle. +1 attack and damage inside 30 feet. |
+| 2 | Rapid Shot | Toggle. An extra shot, with a penalty to attack. |
+| 3 | Deadly Aim | Toggle. More damage, with a penalty to attack. |
+| 4 | Staggering Critical | Toggle. Stays on for critical hits. |
+| 5 | Hunter's Bond | Move action. Shares favored enemy while that buff is missing. |
+| 6 | Quarry | Standard action. Marks the highest-AC enemy who is not already her quarry. |
+| 7 | Master Spy | Standard action. Lasts hours. Fires when that buff is missing. |
+
+Deadly Aim and Rapid Shot both lower her attack bonus. Against armor class 80 that is why shots miss. Vampiric Touch would pull her into melee, so it is not automatic. Fight Defensively is not in the rules.
