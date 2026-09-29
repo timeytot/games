@@ -9,7 +9,7 @@ Snapshot time: 2026-09-27. The game was closed. `buffit-current-config.json` in 
 ## File the game reads
 
 ```
-D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure\Mods\BuffIt2TheLimit\UserSettings\bi2tl-7ea3d466491c4249aec2742271c2e71a.json
+C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods\BuffIt2TheLimit\UserSettings\bi2tl-7ea3d466491c4249aec2742271c2e71a.json
 ```
 
 - Mod: Buff It 2 The Limit 1.21.1

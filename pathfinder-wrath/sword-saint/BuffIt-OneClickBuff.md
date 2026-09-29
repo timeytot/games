@@ -7,7 +7,7 @@ Written on 2026-09-29. The game was closed.
 ## Live file
 
 ```
-D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure\Mods\BuffIt2TheLimit\UserSettings\bi2tl-8dd97a37ca674651afefb4dd19e06967.json
+C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods\BuffIt2TheLimit\UserSettings\bi2tl-8dd97a37ca674651afefb4dd19e06967.json
 ```
 
 - GameId: `8dd97a37ca674651afefb4dd19e06967`

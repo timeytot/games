@@ -7,7 +7,7 @@ Written on 2026-09-29. The game was closed.
 ## Live file
 
 ```
-D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure\Mods\BuffIt2TheLimit\UserSettings\bi2tl-fea04e92a6f54507a84b86b8444eec8f.json
+C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods\BuffIt2TheLimit\UserSettings\bi2tl-fea04e92a6f54507a84b86b8444eec8f.json
 ```
 
 - Mod: Buff It 2 The Limit 1.21.1

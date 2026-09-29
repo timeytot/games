@@ -12,7 +12,7 @@ The snapshot is the local file after the game was closed. `tactics-current-confi
 
 ```
 
-D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure\Mods\WrathTactics\UserSettings\tactics-7ea3d466491c4249aec2742271c2e71a.json
+C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods\WrathTactics\UserSettings\tactics-7ea3d466491c4249aec2742271c2e71a.json
 
 ```
 
