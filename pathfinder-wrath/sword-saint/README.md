@@ -1,35 +1,37 @@
-# 剑圣
+# Sword Saint
 
-这个目录是剑圣档案的空框架。角色还没建，所以没有 GameId，没有单位编号，也没有一键 Buff 配置。
+This folder is the Sword Saint profile. The character has not been saved yet, so there is no GameId, no unit ids, and no Buff It or Wrath Tactics config.
 
-游戏现在不会读这个目录。不要把 FaN 或 Hansen 的 JSON 复制过来，那两份配置属于另外两个存档。
+The game does not read this folder. Do not copy the FaN or Hansen JSON files here. Those configs belong to the other two saves.
 
-## 建档之后再填
+The level-by-level plan is [SwordSaint_Trickster_Build.md](./SwordSaint_Trickster_Build.md).
 
-先正常建号并保存一次，再把存档头里的 `GameId` 写到下面。Buff It 和 Wrath Tactics 都按这个编号分文件。
+## Fill this in after the first save
 
-| 栏 | 现在 | 建档后要填 |
+Create the character, save once, then copy `GameId` from the save header. Buff It and Wrath Tactics each use that id in the filename.
+
+| Field | Now | After the first save |
 |---|---|---|
-| 角色名 | 空 | 存档里的角色名 |
-| GameId | 空 | `header.json` 的 `GameId` |
-| 存档文件 | 空 | `Saved Games` 里对应的 `.zks` |
-| 出战队伍 | 空 | 每人的 `UniqueId`、职业、法术书 |
-| Buff It 实机文件 | 空 | `Mods\BuffIt2TheLimit\UserSettings\bi2tl-<GameId>.json` |
-| Wrath Tactics 实机文件 | 空 | 如果这号用战术模组，再写 `Mods\WrathTactics\UserSettings\tactics-<GameId>.json` |
+| Character name | empty | Name in the save |
+| GameId | empty | `GameId` in `header.json` |
+| Save file | empty | Matching `.zks` under `Saved Games` |
+| Party | empty | Each member's `UniqueId`, class, and spellbook |
+| Live Buff It file | empty | `Mods\BuffIt2TheLimit\UserSettings\bi2tl-<GameId>.json` |
+| Live Wrath Tactics file | empty | `Mods\WrathTactics\UserSettings\tactics-<GameId>.json`, if this character uses that mod |
 
-剑圣法术书蓝图是职业共用的，不是某个角色的编号：
+The Sword Saint spellbook blueprint is shared by the class. It is not a character id:
 
 `SwordSaintSpellbook` `682545e1-1e53-06c4-5b14-ca78bcbe3e62`
 
-单位编号必须从那份存档的 `party.json` 读。建档前不要猜。
+Read unit ids from that save's `party.json`. Do not guess them before the save exists.
 
-## 以后这个目录里放什么
+## Files this folder will hold
 
-- `BuffIt-OneClickBuff.md`：一键 Buff 说明。三个按钮仍是 Normal（`Long`）、Quick（`Quick`）、Important（`Important`）。
-- `buffit-current-config.json`：实机 Buff It 配置的副本。
-- `WrathModsConfiguration.zip`：上面两份的打包。游戏不读 zip。
-- 如果要做构筑笔记，用英文文件名另写一份 markdown。
+- `SwordSaint_Trickster_Build.md` — the level-by-level plan.
+- `BuffIt-OneClickBuff.md` — one-click buff notes, after a save exists. The buttons stay Normal (`Long`), Quick (`Quick`), and Important (`Important`).
+- `buffit-current-config.json` — copy of the live Buff It config.
+- `WrathModsConfiguration.zip` — a snapshot of those notes. The game does not read the zip.
 
-`../tools/refresh_current_snapshot.cmd` 只同步 FaN。剑圣存档出现之后，它也不会被写进 `lich/current/`。要给剑圣做存档快照，等有 GameId 再单独加。
+`../tools/refresh_current_snapshot.cmd` syncs only FaN. A Sword Saint save will not be written into `lich/current/`. Add a separate snapshot only after this profile has a GameId.
 
-写实机 JSON 之前先确认 `Wrath.exe` 没在运行。
+Confirm `Wrath.exe` is not running before writing a live JSON file.

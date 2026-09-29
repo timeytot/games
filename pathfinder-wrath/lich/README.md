@@ -9,7 +9,7 @@ D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure\Mods\WrathTactics\U
 D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure\Mods\BuffIt2TheLimit\UserSettings\bi2tl-7ea3d466491c4249aec2742271c2e71a.json
 ```
 
-The zip contains the notes and copies of those two configs. Notes are in Chinese. Filenames are English.
+The zip contains the notes and copies of those two configs. Notes and filenames are English.
 
 ## Build notes
 

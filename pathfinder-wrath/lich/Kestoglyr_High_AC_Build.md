@@ -1,10 +1,10 @@
-# Kestoglyr 高 AC 盾坦 Build
+# Kestoglyr High-AC Shield Tank Build
 
-> 目标：在不使用彻底洗点 Mod 的前提下，利用正常重训把 Kestoglyr 改成队伍主坦，重点提高 AC、先攻和第一轮生存。
+> Goal: turn Kestoglyr into the party's main tank with a normal respec, without a full respec mod. Prioritize AC, initiative, and surviving the first round.
 >
-> 当前方案基于本机实际重训界面、当前装备截图和实际战斗需求整理。游戏内实际蓝图/角色卡优先于旧攻略。
+> This plan was checked against the local respec screen, the current equipment screenshots, and how the fights actually go. The in-game blueprint and character sheet win over an older guide.
 
-## 最终职业
+## Final classes
 
 ```text
 Fighter 9
@@ -12,11 +12,11 @@ Stigmatized Witch 1
 Stalwart Defender 10
 ```
 
-Kestoglyr 前 3 级 Fighter 锁定，不改。
+Kestoglyr's first three Fighter levels stay locked.
 
-## 属性
+## Abilities
 
-基础成长计划：
+Base progression:
 
 ```text
 Lv4   STR 15 -> 16
@@ -26,7 +26,7 @@ Lv16  STR 18 -> 19
 Lv20  STR 19 -> 20
 ```
 
-目标基础属性：
+Target base abilities:
 
 ```text
 STR 20
@@ -37,66 +37,66 @@ WIS 10
 CHA 14
 ```
 
-DEX 20 后不再继续加点。升级界面里如果看到 STR / DEX 24 等更高数字，可能包含装备或当前效果，不改变上述基础成长计划。
+Stop raising Dexterity after 20. If the level-up screen shows Strength or Dexterity at 24 or higher, that number includes gear or a temporary effect. It does not change the base plan above.
 
 ## Skills
 
-当前已经有：
+Already present:
 
-- Athletics：原有 Rank
-- Mobility：已点到 Rank 5
-- Persuasion：原有 Rank
+- Athletics: the original ranks
+- Mobility: raised to rank 5
+- Persuasion: the original ranks
 
-这套只要求 Mobility 至少 3 ranks，因此后面不再继续加 Mobility。
+This build only needs Mobility 3. Do not add more Mobility.
 
-后续技能优先级：
+Later skill priority:
 
 1. Perception
 2. Athletics
-3. 其他不再投入，除非有明确需求
+3. Do not spend points on anything else unless a specific check needs it
 
-## 4 级：Stigmatized Witch 1
+## Level 4: Stigmatized Witch 1
 
-- Ability：STR +1
-- Familiar：**Hare Familiar**
-- Hex：**Iceplant**
-- Oracle's Curse：**Hellbound**
-- Level 1 Spells：
-  - **Inflict Light Wounds**
-  - **Unbreakable Heart**
+- Ability: Strength +1
+- Familiar: Hare Familiar
+- Hex: Iceplant
+- Oracle's Curse: Hellbound
+- Level 1 spells:
+  - Inflict Light Wounds
+  - Unbreakable Heart
 
-Hare 用于 +4 Initiative。Iceplant 用于 AC。Hellbound 是当前最终实际选择；当前角色页已显示 Fire immunity，且 Hellbound 有效等级已到 15。
+The hare is for +4 initiative. Iceplant is for AC. Hellbound is the curse that was actually chosen. The character sheet shows fire immunity, and the effective Hellbound level is already 15.
 
-## 5–20 级完整路线
+## Levels 5–20
 
-| 角色等级 | 职业 | 选择 |
+| Character level | Class | Choice |
 |---:|---|---|
-| 5 | Fighter 4 | 普通 Feat：**Toughness**；Fighter Bonus：**Dodge** |
-| 6 | Fighter 5 | Weapon Training：**Heavy Blades** |
-| 7 | Fighter 6 | 普通 Feat：**Endurance**；Fighter Bonus：**Armor Focus (Medium Armor)** |
-| 8 | Fighter 7 | STR +1 |
-| 9 | Stalwart Defender 1 | **Improved Initiative** |
-| 10 | Stalwart Defender 2 | Defensive Power：**Internal Fortitude** |
-| 11 | Fighter 8 | 普通 Feat：**Shield Focus**；Fighter Bonus：**Greater Shield Focus** |
-| 12 | Stalwart Defender 3 | STR +1；自动获得 Uncanny Dodge |
-| 13 | Stalwart Defender 4 | **Improved Unarmed Strike**；Defensive Power：**Fearless Defense** |
-| 14 | Stalwart Defender 5 | 自动获得职业 DR |
-| 15 | Stalwart Defender 6 | **Crane Style**；Defensive Power：**Increased Damage Reduction** |
-| 16 | Stalwart Defender 7 | STR +1；自动获得更高 DR / Improved Uncanny Dodge |
-| 17 | Stalwart Defender 8 | **Missile Shield**；Defensive Power：**Increased Damage Reduction** 第二次 |
-| 18 | Stalwart Defender 9 | 无额外普通 Feat |
-| 19 | Stalwart Defender 10 | **Blind Fight**；Defensive Power：**Renewed Defense**；自动获得最高档职业 DR |
-| 20 | Fighter 9 | STR +1；Advanced Weapon Training：**Trained Initiative**；保留 **Weapon Training (Heavy Blades)** |
+| 5 | Fighter 4 | Normal feat: Toughness. Fighter bonus: Dodge |
+| 6 | Fighter 5 | Weapon Training: Heavy Blades |
+| 7 | Fighter 6 | Normal feat: Endurance. Fighter bonus: Armor Focus (Medium Armor) |
+| 8 | Fighter 7 | Strength +1 |
+| 9 | Stalwart Defender 1 | Improved Initiative |
+| 10 | Stalwart Defender 2 | Defensive Power: Internal Fortitude |
+| 11 | Fighter 8 | Normal feat: Shield Focus. Fighter bonus: Greater Shield Focus |
+| 12 | Stalwart Defender 3 | Strength +1. Uncanny Dodge is automatic |
+| 13 | Stalwart Defender 4 | Improved Unarmed Strike. Defensive Power: Fearless Defense |
+| 14 | Stalwart Defender 5 | Class damage reduction is automatic |
+| 15 | Stalwart Defender 6 | Crane Style. Defensive Power: Increased Damage Reduction |
+| 16 | Stalwart Defender 7 | Strength +1. Higher damage reduction and Improved Uncanny Dodge are automatic |
+| 17 | Stalwart Defender 8 | Missile Shield. Defensive Power: Increased Damage Reduction, second pick |
+| 18 | Stalwart Defender 9 | No extra normal feat |
+| 19 | Stalwart Defender 10 | Blind Fight. Defensive Power: Renewed Defense. The highest class damage reduction is automatic |
+| 20 | Fighter 9 | Strength +1. Advanced Weapon Training: Trained Initiative. Keep Weapon Training (Heavy Blades) |
 
-### 为什么要 Improved Unarmed Strike
+### Why Improved Unarmed Strike
 
-不是为了空手攻击。
+It is not for unarmed attacks.
 
-它只是为了满足 **Crane Style** 前置。实际武器仍然是弯刀 + 重盾。
+It exists only so Crane Style can be taken. The real weapons stay a scimitar and a heavy shield.
 
-## Stalwart Defender Defensive Powers
+## Stalwart Defender defensive powers
 
-最终顺序：
+Final order:
 
 ```text
 SD2   Internal Fortitude
@@ -106,177 +106,171 @@ SD8   Increased Damage Reduction
 SD10  Renewed Defense
 ```
 
-不选：
+Not taken:
 
-- Roused Defense：Kestoglyr 为亡灵，疲劳相关价值低
-- Smash：不是本构筑的防御核心
+- Roused Defense: Kestoglyr is undead, so fatigue effects have little value
+- Smash: not the defensive core of this build
 
-职业自身 SD5 / SD7 / SD10 的 Damage Reduction 是自动获得，不需要重复选择。
+The damage reduction at Stalwart Defender 5, 7, and 10 is granted by the class. Do not pick it again.
 
-## Mythic 计划
+## Mythic plan
 
-当前推荐路线：
-
-| Mythic Rank | 选择 |
+| Mythic rank | Choice |
 |---:|---|
-| 1 | **Last Stand** |
-| 2 | **Improved Initiative (Mythic)** |
-| 3 | **Ever Ready** |
-| 4 | **Mythic Armor Focus (Medium Armor) — Endurance**（已实际取得；当前 Scalemail 明确为 Medium Armor，因此当前生效） |
-| 5 | **Rupture Restraints** |
-| 6 | **Dodge (Mythic)** |
-| 7 | **Unrelenting Assault** |
-| 8 | **Toughness (Mythic)** |
-| 9 | **Unstoppable** |
-| 10 | **Shield Focus (Mythic)** 或按最终缺口调整 |
+| 1 | Last Stand |
+| 2 | Improved Initiative (Mythic) |
+| 3 | Ever Ready |
+| 4 | Mythic Armor Focus (Medium Armor) — Endurance. Already taken. The current scalemail is Medium Armor, so the feat applies |
+| 5 | Rupture Restraints |
+| 6 | Dodge (Mythic) |
+| 7 | Unrelenting Assault |
+| 8 | Toughness (Mythic) |
+| 9 | Unstoppable |
+| 10 | Shield Focus (Mythic), or adjust to whatever gap is left |
 
-### Medium Armor Endurance 当前状态与换甲验证
+### Medium Armor Endurance
 
-**Mythic Armor Focus (Medium Armor) — Endurance 已经实际取得。** 当前装备的 **Scalemail** 明确显示为 Medium Armor，因此当前一定能正常吃到该神话专长。
+Mythic Armor Focus (Medium Armor) — Endurance is already on the character. The equipped scalemail is listed as Medium Armor, so the feat is active.
 
-后续如果找到 **Mithral Full Plate +4/+5**，换上之后仍要打开 AC 详细构成，确认它在本机版本下继续按 Medium Armor 处理。至少检查：
+If a Mithral Full Plate +4 or +5 shows up later, open the AC breakdown after equipping it and confirm this line is still there:
 
 ```text
 Armor Focus (Medium Armor) +1
 ```
 
-如果换上秘银全身甲后这行消失，说明该件装备在本机版本下没有按 Medium 处理，不要把它作为本构筑最终护甲。
+If that line disappears, this game version is not treating that armor as medium. Do not use it as the final armor for this build.
 
-## 武器和盾牌
+## Weapons and shields
 
-### 主手
+### Main hand
 
-**Dawnflower's Kiss +5**
+Dawnflower's Kiss +5
 
 - Scimitar
 - Heavy Blades
-- +5 Enhancement
-- 默认主手
+- +5 enhancement
+- Default main hand
 
-**Rupturing Storm +4** 留作特定场景替换，不作为默认主手。
+Keep Rupturing Storm +4 as a situational swap. It is not the default.
 
-### 副手
+### Off hand
 
-当前首选：
+Current first choice: Assertion of Dominance
 
-**Assertion of Dominance**
+- Heavy shield +5
+- 7 shield AC
+- No maximum Dexterity limit
+- No tower shield −2 attack penalty
+- At full health, the current tooltip grants immunity to slashing and piercing damage
 
-- Heavy Shield +5
-- 7 Shield AC
-- 不限制 Max Dexterity
-- 没有 Tower Shield 的 -2 Attack
-- 满血时，按当前 tooltip：免疫 slashing 和 piercing damage
+Other shields:
 
-其他盾：
+- A plain heavy shield +5 works, without the special effect on Assertion of Dominance
+- Holemaker is the second choice. After a critical hit it lowers the enemy's attacks and applies piercing vulnerability
+- Charred Bulwark is for a fight that specifically needs cold immunity
+- A tower shield is not recommended
 
-- 普通 Heavy Shield +5：可用，但没有 Assertion of Dominance 的特殊效果
-- Holemaker：次选，暴击后可降低敌人攻击并给予 piercing vulnerability
-- Charred Bulwark：特定需要 cold immunity 时考虑
-- Tower Shield：本构筑不推荐
+### Why not a tower shield
 
-### 为什么不用 Tower Shield
+A +5 tower shield has 9 AC, and also:
 
-+5 Tower Shield 虽然有 9 AC，但：
+- Maximum Dexterity 2
+- −2 on attack rolls
+- A high armor check penalty
 
-- Max Dexterity = 2
-- Attack Rolls -2
-- Armor Check Penalty 很高
+This build uses Dexterity 20 plus Fighter armor training. A tower shield removes too much of that Dexterity AC.
 
-本构筑依赖 DEX 20 + Fighter Armor Training，因此 Tower Shield 会压掉太多 DEX AC，综合收益反而更差。
+## Armor
 
-## 护甲
+Target: Mithral Full Plate +4 or +5.
 
-目标：
+The plan is not to switch to ordinary light armor. Use mithral full plate plus Fighter armor training, and check on this install that it still counts for Armor Focus (Medium Armor) and the medium mythic armor focus.
 
-**Mithral Full Plate +4/+5**
+## Combat toggles
 
-当前核心思路不是换成普通轻甲，而是利用秘银全身甲 + Fighter Armor Training，并现场验证它是否吃 **Armor Focus (Medium Armor)** / Medium Mythic Armor Focus。
+### Leave on
 
-## 战斗开关
+- Crane Style
+- Fighting Defensively
 
-### 常驻打开
+Crane Style does its real work only while Fighting Defensively is on.
 
-- **Crane Style**
-- **Fighting Defensively**
+### Turn on after reaching the spot
 
-Crane Style 只在 Fighting Defensively 开启时发挥核心价值。
+- Defensive Stance
 
-### 站好位置后打开
+Defensive Stance blocks free movement. Put Kestoglyr in the front rank first, then turn it on.
 
-- **Defensive Stance**
+### Usually off
 
-Defensive Stance 开启后不能自由移动，因此先让 Kestoglyr 到前排卡位，再开启。
+- Power Attack. The tank wants reliable hits and defense, not damage as the first job.
 
-### 一般关闭
+## Role in a fight
 
-- Power Attack：主坦优先稳定命中和防御，不以伤害为第一目标
+Kestoglyr's job:
 
-## 实战定位
+1. Win initiative
+2. Take the first contact position
+3. Turn on Defensive Stance
+4. Make one attack so Fighting Defensively is fully active
+5. Absorb ordinary physical pressure with AC, the shield, Last Stand, and damage reduction
 
-Kestoglyr 的职责：
-
-1. 抢先攻
-2. 站住第一接敌位置
-3. 开 Defensive Stance
-4. 通过一次攻击让 Fighting Defensively 正常进入工作状态
-5. 用高 AC、盾牌、Last Stand 和 DR 吃掉大部分普通物理压力
-
-这套并不是为了让 Kestoglyr 单独硬吃所有超高 AB Boss。像 Keketar 这种极端高 AB 目标，仍应配合：
+This is not a plan for Kestoglyr to facetank every extreme-AB boss alone. A target such as a keketar still needs:
 
 - Corrupt Magic
 - Mirror Image
-- 控制
+- Control
 - Last Stand
-- 后排集中输出
+- Focused damage from the back line
 
-## 当前默认装备组合
+## Default equipment
 
 ```text
-Main Hand:  Dawnflower's Kiss +5
-Off Hand:   Assertion of Dominance
-Armor:      当前 Scalemail（Medium Armor，临时）；目标 Mithral Full Plate +4/+5，换装时验证 Medium Focus
+Main hand: Dawnflower's Kiss +5
+Off hand:  Assertion of Dominance
+Armor:     Current scalemail (Medium Armor, temporary). Target is Mithral Full Plate +4/+5, verified as medium after the swap
 ```
 
-## 已确认的关键避坑
+## Confirmed pitfalls
 
-- Toughness 不是 Fighter Bonus Combat Feat；5级应当普通 Feat 选 Toughness，奖励专长选 Dodge。
-- Greater Shield Focus 需要 Fighter 8，因此在角色11级回到 Fighter 8 时即可取得。
-- Endurance 是当前本机 Stalwart Defender 路线的前置需求之一。
-- Increased Damage Reduction 要到 Stalwart Defender 6 才能选择，并且最多选择两次。
-- Improved Unarmed Strike 只是 Crane Style 前置，不代表改用空手。
-- 不使用 Tower Shield 压低 Max Dexterity。
-- 不点 Heavy Armor Avoidance：本构筑 DEX 高，使用该机制不划算。
+- Toughness is not a fighter bonus combat feat. At level 5 the normal feat is Toughness and the bonus feat is Dodge.
+- Greater Shield Focus requires Fighter 8, so it is available when the character returns to Fighter 8 at character level 11.
+- Endurance is one of the prerequisites this Stalwart Defender path actually needed on this install.
+- Increased Damage Reduction cannot be selected before Stalwart Defender 6, and it can be selected at most twice.
+- Improved Unarmed Strike is only the Crane Style prerequisite. It does not mean fighting unarmed.
+- Do not use a tower shield to cut maximum Dexterity.
+- Do not take Heavy Armor Avoidance. Dexterity is high, so that option is a loss.
 
-## 2026-09-28 实际完成状态
+## Status on 2026-09-28
 
-本轮正常重训已经完成，当前角色页核对结果：
+The normal respec is done. The character sheet checked out as:
 
-- **Class**：Fighter 9 / Stigmatized Witch 1 / Stalwart Defender 10
-- **Mythic Rank**：10
-- **当前面板 AC**：62
-- **Flat-footed AC**：41
-- **Touch AC**：39
-- **Initiative**：+38
-- **HP**：371/371
-- **当前主手**：Dawnflower's Kiss +5
-- **当前副手**：Assertion of Dominance
-- **当前护甲**：Scalemail（Medium Armor，Base AC 5，Max Dexterity 3），只是暂时没有找到更好的中甲/秘银全身甲
-- **当前 Fire immunity**：已在角色页显示，来自最终 Hellbound 路线
-- **Weapon Training**：Heavy Blades；Advanced Weapon Training：Trained Initiative
-- **Mythic**：Last Stand / Improved Initiative (Mythic) / Ever Ready / Mythic Armor Focus (Medium Armor) — Endurance / Rupture Restraints / Dodge (Mythic) / Unrelenting Assault / Toughness (Mythic) / Unstoppable / Shield Focus (Mythic)
-- **Stalwart Defender**：Internal Fortitude / Fearless Defense / Increased Damage Reduction ×2 / Renewed Defense
-- **Feats 已核对存在**：Toughness / Dodge / Endurance / Armor Focus (Medium Armor) / Improved Initiative / Shield Focus / Greater Shield Focus / Improved Unarmed Strike / Crane Style / Missile Shield / Blind Fight
-- **Witch spells 已核对**：Inflict Light Wounds / Unbreakable Heart
-- **常驻/可用能力已核对**：Crane Style / Fighting Defensively / Defensive Stance / Hare Familiar
+- Class: Fighter 9 / Stigmatized Witch 1 / Stalwart Defender 10
+- Mythic rank: 10
+- AC on the sheet: 62
+- Flat-footed AC: 41
+- Touch AC: 39
+- Initiative: +38
+- HP: 371/371
+- Main hand: Dawnflower's Kiss +5
+- Off hand: Assertion of Dominance
+- Armor: scalemail (Medium Armor, base AC 5, maximum Dexterity 3). A better medium armor or mithral full plate was not available yet
+- Fire immunity is on the sheet, from the final Hellbound route
+- Weapon Training: Heavy Blades. Advanced Weapon Training: Trained Initiative
+- Mythic: Last Stand / Improved Initiative (Mythic) / Ever Ready / Mythic Armor Focus (Medium Armor) — Endurance / Rupture Restraints / Dodge (Mythic) / Unrelenting Assault / Toughness (Mythic) / Unstoppable / Shield Focus (Mythic)
+- Stalwart Defender: Internal Fortitude / Fearless Defense / Increased Damage Reduction ×2 / Renewed Defense
+- Feats confirmed: Toughness / Dodge / Endurance / Armor Focus (Medium Armor) / Improved Initiative / Shield Focus / Greater Shield Focus / Improved Unarmed Strike / Crane Style / Missile Shield / Blind Fight
+- Witch spells confirmed: Inflict Light Wounds / Unbreakable Heart
+- Abilities confirmed: Crane Style / Fighting Defensively / Defensive Stance / Hare Familiar
 
-### Skill 小失误
+### Skill slip
 
-升级过程中 **Mobility 多投了 2 ranks**。这不会破坏构筑，只是浪费了 2 个 skill points；Crane Style / Fighting Defensively 实际只需要 Mobility 至少 3 ranks。
+Mobility received 2 extra ranks during level-up. The build still works. Those two skill points are wasted. Crane Style and Fighting Defensively only need Mobility 3.
 
-当前面板技能已经足够使用，不建议为了这 2 个 skill points 单独再洗一次。以后不再继续加 Mobility，技能点优先 Perception，其次 Athletics。
+The current skill totals are enough. Do not respec only to recover those two points. Do not add more Mobility. Spend later points on Perception, then Athletics.
 
-### 当前剩余事项
+### Still open
 
-目前没有发现需要重新洗点的结构性错误。
+No structural mistake that requires another respec.
 
-唯一仍未完成的是最终护甲：当前只有 Scalemail。后续找到更好的 **Medium Armor** 或 **Mithral Full Plate +4/+5** 时，再比较实际 AC。若换 Mithral Full Plate，必须确认 `Armor Focus (Medium Armor)` 仍然实际生效后再作为最终装备。
+The remaining gap is the final armor. The character still has scalemail. When a better medium armor or Mithral Full Plate +4/+5 appears, compare the real AC. If the armor is mithral full plate, confirm that Armor Focus (Medium Armor) still applies before treating it as the final piece.
