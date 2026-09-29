@@ -23,7 +23,7 @@ Fan has Enduring Spells and Greater Enduring Spells. The other five do not. Bull
 
 | Button | JSON | Rows | When to press it |
 |---|---|---|---|
-| Normal | `Long` | 35 | After resting, or after entering a new area. This is the only button |
+| Normal | `Long` | 40 | After resting, or after entering a new area. This is the only button |
 | Quick | `Quick` | 0 | Empty |
 | Important | `Important` | 0 | Empty |
 

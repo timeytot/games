@@ -48,7 +48,27 @@ Mods\BuffIt2TheLimit\UserSettings\bi2tl-8dd97a37ca674651afefb4dd19e06967.json
 | Quick | `Quick` |
 | Important | `Important` |
 
-All 35 configured rows are `Long`. Quick and Important are empty. One press of Normal is the whole buff set.
+The left button is the 40 spells that remain after the coverage rules below. Quick and Important are empty. The spellbook screen can list well over 100 entries. That list is every buff, ability, and toggle the UI can see. It is not the button.
+
+A lower spell is left off when a higher spell on the button already gives the same bonus. Other spells are left off when they do not help this party.
+
+| Left off | Why |
+|---|---|
+| Bear's Endurance, Bull's Strength, Cat's Grace, Eagle's Splendor, Owl's Wisdom, and the Mass versions | Enhancement bonuses. Belts and headbands on this party are already +6 or +8. |
+| Heroism, Heroism, Greater | Morale bonuses. Heroic Invocation already gives the higher morale bonus. |
+| Bless | Morale +1. Covered by Heroic Invocation. Prayer stays, because Prayer is a luck bonus. |
+| Invisibility, Invisibility, Mass | Break on attack. Greater Invisibility stays. |
+| Blur, Blink, Shield, Shield of Dawn | Miss chance or a shield bonus. Displacement and Vampiric Shadow Shield are the higher versions. |
+| Enlarge Person | Covered by Enlarge Person, Mass. |
+| Longstrider, Chameleon Stride, Angelic Aspect | Covered by the Greater versions. |
+| Guidance, Resistance, Virtue, Light | Too small at this level, or not a combat buff. |
+| Unbreakable Heart, Remove Fear | Fear immunity is already on Heroic Invocation. |
+| Divine Favor | Luck bonus. Prayer is the party luck buff. |
+| All Cure spells, Heal, Mass, Inspiring Recovery | Heals. They are not pre-fight buffs. |
+| Aspect of the Bear, Aspect of the Wolf, Animal Growth, Magic Fang, Acid Maw | No animal companion in this party. Aspect of the Falcon stays for Arueshalae. |
+| Shield of Faith | Deflection. Fan's ring is already deflection +6. |
+
+Death Ward and Freedom of Movement are not in any of the six spellbooks in `Quick_4.zks`, so they cannot be added.
 
 `Key.Guid` is the spell or ability id, with hyphens. `Wanted` is who receives it. `Casters` is who is allowed to cast it, first entry first. `UseSpells`, `UseScrolls`, `UsePotions`, and `UseEquipment` choose the source. A prepared magus spell is cast only when that spell is still in an unspent memorized slot.
 
@@ -76,17 +96,26 @@ Mods\WrathTactics\UserSettings\tactics-8dd97a37ca674651afefb4dd19e06967.json
 
 `HasBuff` uses the buff blueprint, not the ability id. Subject `0` is self. Property `2` is HasBuff. Operator `3` means the buff is absent. Operator `2` means equal. Subject `5`, property `14`, value `true` means a fight is running.
 
-`CooldownRounds` is combat rounds. A value of 3 became about 18 seconds in the log (`0.0s / 18s`). That lock fired even when the ability never landed, because Fan was already in a weapon attack (`unit busy`).
+`TickIntervalSeconds` is 1. Every second, each rule checks whether its buff is already on Fan. `CooldownRounds` is 0. There is no 18-second lock and no 6-second poll. A 6-second poll can miss the first round of a short fight. One second is the check. If the buff is missing, the rule may fire.
 
-Current Fan rules, in order:
+Fan has one swift action per round. Against a high armor class, ignoring armor, shield, and natural armor matters more than ignoring Dexterity. The swift abilities are therefore in this order:
 
-| Rule | Fires when | Cooldown |
+| Order | Rule | Why this slot |
 |---|---|---|
-| Transformation | In combat, and Transformation buff `287682389d2011b41b5a65195d9cbc84` is absent | 0 |
-| Haste | In combat, and Haste buff `03464790f40c3c24aa684b57155f3280` is absent | 0 |
-| Prescient Attack | In combat, and Prescient Attack buff `2544b9d16793e2642a645c8e3aece7d3` is absent | 1 round |
-| Dimension Strike | In combat, and Dimension Strike buff `c25e4bf29c7baa24aa1d6f630a6c1fc3` is absent | 0 |
-| Arcane Accuracy | In combat, and Arcane Accuracy buff `dd2d0de63be31854794c006dc1077294` is absent | 0 |
-| Perfect Strike | In combat, and Perfect Strike buff `e194d672b44eabd418e80f4bd2308a5b` is absent | 0 |
+| 1 | Dimension Strike | Attacks target touch AC. This is the first check. |
+| 2 | Prescient Attack | The target loses its Dexterity bonus to AC. Used when Dimension Strike is already on Fan. |
+| 3 | Arcane Accuracy | Adds the Intelligence modifier as an insight bonus to attack. Used when the two above are already on Fan. |
+| 4 | Perfect Strike | Maximizes the weapon damage dice of one attack. Used when the attack is already landing. It does not help a miss. |
 
-Prescient Attack keeps a 1-round cooldown so the next round can be Dimension Strike. One swift action exists per round. The other three combat abilities have no cooldown: if that buff is missing, the rule may fire. Transformation and Haste still do nothing until those spells are rested into open slots. The black-dragon log said `No suitable spell slots` for both.
+If several of those buffs are missing at the same check, only the first missing one in that list spends the swift action. The next missing one is eligible one second later, after the previous buff is on Fan. Transformation and Haste are checked on the same 6-second timer, and only if their own buffs are missing. They still need an open memorized slot. The black-dragon log said `No suitable spell slots` for both.
+
+Buff ids the rules look for:
+
+| Rule | Buff id |
+|---|---|
+| Transformation | `287682389d2011b41b5a65195d9cbc84` |
+| Haste | `03464790f40c3c24aa684b57155f3280` |
+| Dimension Strike | `c25e4bf29c7baa24aa1d6f630a6c1fc3` |
+| Prescient Attack | `2544b9d16793e2642a645c8e3aece7d3` |
+| Arcane Accuracy | `dd2d0de63be31854794c006dc1077294` |
+| Perfect Strike | `e194d672b44eabd418e80f4bd2308a5b` |
