@@ -289,6 +289,46 @@
         },
         "PresetId": null,
         "PackId": null
+      },
+      {
+        "Id": "fan-attack",
+        "Name": "Attack",
+        "Enabled": true,
+        "CooldownRounds": 0,
+        "ConditionGroups": [
+          {
+            "Conditions": [
+              {
+                "Subject": 5,
+                "Property": 14,
+                "Operator": 2,
+                "CountOperator": 4,
+                "Value": "true",
+                "Value2": ""
+              }
+            ]
+          }
+        ],
+        "Action": {
+          "Type": 4,
+          "AbilityId": "",
+          "FallbackAbilityIds": [],
+          "HealMode": 0,
+          "HealSources": 7,
+          "HealEnergy": 0,
+          "Sources": 1,
+          "SplashMode": 0,
+          "ToggleMode": 0,
+          "MetamagicRod": null,
+          "WeaponSetIndex": 0,
+          "MoveWithin": 0
+        },
+        "Target": {
+          "Type": 3,
+          "Filter": ""
+        },
+        "PresetId": null,
+        "PackId": null
       }
     ]
   },

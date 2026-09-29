@@ -107,7 +107,7 @@ Fan has one swift action per round. Against a high armor class, ignoring armor, 
 | 3 | Arcane Accuracy | Adds the Intelligence modifier as an insight bonus to attack. Used when the two above are already on Fan. |
 | 4 | Perfect Strike | Maximizes the weapon damage dice of one attack. Used when the attack is already landing. It does not help a miss. |
 
-If several of those buffs are missing at the same check, only the first missing one in that list spends the swift action. The next missing one is eligible one second later, after the previous buff is on Fan. Transformation and Haste are checked on the same 6-second timer, and only if their own buffs are missing. They still need an open memorized slot. The black-dragon log said `No suitable spell slots` for both.
+If several of those buffs are missing at the same check, only the first missing one spends the swift action. The game then keeps that swift action spent for about 6 seconds. The next rule waits out that window. Transformation and Haste are checked every second, and only when their own buffs are missing. They still need an open memorized slot. The 2026-09-29 logs said `No suitable spell slots` for both on every tick.
 
 Buff ids the rules look for:
 
@@ -119,3 +119,35 @@ Buff ids the rules look for:
 | Prescient Attack | `2544b9d16793e2642a645c8e3aece7d3` |
 | Arcane Accuracy | `dd2d0de63be31854794c006dc1077294` |
 | Perfect Strike | `e194d672b44eabd418e80f4bd2308a5b` |
+
+The last rule is `Attack`. `Action.Type` is 4. `Target.Type` is 3, the nearest enemy. `CooldownRounds` is 0. It swings after the swift rules.
+
+## Why a swift rule logs unit busy
+
+Wrath Tactics will not start a swift animation while a weapon attack already owns the Standard slot. Two animated commands on one unit cancel each other. The log line is `unit busy — foreign attack running in Standard`. `foreign` means the party AI issued the swing. `still approaching its target` means that attack order is still walking Fan into range. The mod waits there too, because issuing the swift would cancel the walk.
+
+The only gap the mod accepts is a pending attack whose Standard cooldown still has more than 2.5 seconds left. A Sword Saint full attack fills almost the whole round, so a 1-second check does not see that gap. `CooldownRounds` 0 removes the old 18-second lock. The auto-attack still occupies the Standard slot, so the swift rules still wait. The 20:51 log (`wrath-tactics-2026-09-29-204902.log`) was already on a 1-second check and 0 cooldown. None of the four swift rules executed. Every tick was `unit busy`.
+
+The mod asks for another check the moment one of its own commands ends. A party-AI attack ending leaves the next look to the 1-second poll, which lands while the next swing is already running.
+
+## What the 20:11 log recorded
+
+File: `Mods\WrathTactics\Logs\wrath-tactics-2026-09-29-201020.log`. Those rules still had `CooldownRounds` 3, which is 18 seconds.
+
+| Time | What the mod recorded |
+|---|---|
+| 20:12:38 | Prescient Attack started, acted, and ended Success. The rule then stayed on cooldown for 18 seconds. |
+| 20:12:45 | Dimension Strike started, acted, and ended Success, then the same 18-second lock. |
+| 20:12:50 | Arcane Accuracy was placed in the Swift slot and never started. |
+| 20:13:10 | The game changed Fan's life state (`canAct=false`) and deleted that unstarted command. The combat log is right to omit Arcane Accuracy. |
+| after that | Almost every tick was `foreign attack running in Standard`. |
+
+Perfect Strike never logged `EXECUTED`. Each check was `MATCH but action not executable`, with no engine reason on the line before it. The four maximized damage dice in the combat log came from the party AI.
+
+## How the swift rules get to fire
+
+Turn Fan's AI off. Select Fan and click the AI button, the brain icon, on his action bar. The party brain then stops filling the Standard slot with a weapon swing.
+
+With that AI off, the swift rules fire in the order above, one per round. When a swift command ends, the mod checks again at once and the Attack rule swings at the nearest enemy. When that attack ends, it checks again, casts the next missing swift, then attacks.
+
+With Fan's AI still on, the Attack rule waits behind the party AI's swing. The log stays `unit busy`.
