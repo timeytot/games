@@ -1,109 +1,73 @@
-# Inventory screen breaks after equipping items in a WotR save
+# Inventory edit status, 2026-09-30 04:39
 
-This note is for review. The game is Pathfinder: Wrath of the Righteous (Unity 2020.3). A `.zks` save is a zip. `party.json` uses Unity `$id` / `$ref`.
+The inventory window opens again. Daeran and Sosiel are still naked in `Hansen amulet test` because that file only changes Camellia's neck.
 
-The goal was to equip two naked characters from the shared inventory. Two edits were tried. Both made the inventory screen open as a blank page. Both edits have been reverted. The playable file is the pre-edit backup.
+## What the screenshots show
 
-## Current files
+`Hansen amulet test` loads. Pressing I opens the inventory. Sosiel's and Daeran's paper dolls are empty. The shared stash is still full. That is the intended content of the test file. It does not equip those two characters.
 
-Saved Games folder:
+The only change in that file is Camellia's own amulet, blueprint `94b2b8b9ef254344cbc71663fecf8b99`, item `630f4d77-5c98-44f1-9d2f-d81e4c3b1c11`, on neck slot `$id` `5415`. Click Camellia, not Daeran or Sosiel, to see whether that one item appears.
+
+## Files
 
 ```
 C:\Users\timeg\AppData\LocalLow\Owlcat Games\Pathfinder Wrath Of The Righteous\Saved Games
 ```
 
-| File | What it is |
-|---|---|
-| `Quick_7.zks` | Restored pre-edit save. Header name `Quicksave1 1`. Player Hansen. GameId `fea04e92a6f54507a84b86b8444eec8f`. 2053668 bytes. `party.json` is 2793831 characters |
-| `Quick_7.zks.bak-20260930-gear` | Same bytes as the restored `Quick_7.zks`. Timestamp 2026-09-30 03:18:30 |
-| `Manual_Hansen_inventory_ok.zks` | Same `party.json` as the backup. Header name changed to `Hansen inventory ok` |
-| `Quick_7.zks.broken-gear` | First failed edit. The whole `party.json` was rewritten with `json.dumps`. 1980577 bytes |
+| File | Header name | party.json | Safe to load |
+|---|---|---|---|
+| `Quick_7.zks` | `Quicksave1 1` | 2793831 characters, the pre-edit backup | Yes |
+| `Quick_7.zks.bak-20260930-gear` | `Quicksave1 1` | same bytes as `Quick_7.zks` | Yes |
+| `Manual_Hansen_inventory_ok.zks` | `Hansen inventory ok` | same party.json as the backup | Yes |
+| `Manual_Hansen_amulet_test.zks` | `Hansen amulet test` | one neck edit, described below | Yes. Inventory opened |
+| `Quick_7.zks.broken-gear` | old broken rewrite | do not load | No |
 
-The second edit, which only replaced item tails, was not kept as its own file. It was overwritten when `Quick_7.zks` was restored from the backup.
+Player: Hansen. GameId: `fea04e92a6f54507a84b86b8444eec8f`.
 
-## Crash
-
-After the second edit, pressing I opened a blank inventory. `Player.log` says:
+## Crash from the earlier edits
 
 ```
-NullReferenceException: Object reference not set to an instance of an object
+NullReferenceException
   at Kingmaker.Items.UnitBody.Recalculate ()
   at Kingmaker.UnitLogic.EncumbranceHelper.GetAllCharactersEquipmentWeight ()
   at Kingmaker.UI.MVVM._VM.ServiceWindows.Inventory.InventoryStashVM..ctor
-  at Kingmaker.UI.MVVM._VM.ServiceWindows.Inventory.InventoryVM..ctor
-  at Kingmaker.UI.MVVM._VM.ServiceWindows.ServiceWindowsVM.ShowWindow
 ```
 
-The character select screen still opens. Only the inventory window fails. `UnitBody.Recalculate()` walks every character, so one bad slot blanks the whole window.
+Edit 1 rewrote all of `party.json` with `json.dumps`. The inventory opened blank.
 
-## Save layout that worked before any edit
+Edit 2 did not rewrite the file, but it moved each empty slot's `$id` definition from `Body` onto `Item.HoldingSlot`, and turned the body field into `{"$ref":"..."}`. Python `json.loads` succeeded. The inventory still crashed in `UnitBody.Recalculate`.
 
-The Shared Stash grid is not `player.json` `SharedStash`. That object had 2 items. The grid is one `Descriptor.m_Inventory`. Every companion's `m_Inventory` is a `$ref` to it. This save has about 532 item entities in that collection.
+## Edit 3, the amulet test that opens
 
-A worn armor, copied from the good save:
+ChatGPT's conclusion: do not move the slot `$id`. Early Kingmaker save edits that worked kept the `$id` on the body and pointed `HoldingSlot` back at it with `$ref`. `m_Modifiers` is rebuilt by `ItemEntityArmor.RecalculateStats` and must not be copied from another character.
+
+The amulet test follows that and does not call `json.dumps` on `party.json`.
+
+Camellia's neck stayed:
 
 ```json
-"Armor":{"$ref":"204"}
+"Neck":{"$id":"5415","$type":"Kingmaker.Items.Slots.EquipmentSlot`1[[Kingmaker.Blueprints.Items.Equipment.BlueprintItemEquipmentNeck, Assembly-CSharp]], Assembly-CSharp","m_ItemRef":"630f4d77-5c98-44f1-9d2f-d81e4c3b1c11"}
 ```
+
+The item tail became:
 
 ```json
-"m_FactsAppliedToWielder":[],
-"m_WielderRef":"E55C2",
-"Collection":{"$ref":"17"},
-"HoldingSlot":{"$id":"204","$type":"Kingmaker.Items.Slots.ArmorSlot, Assembly-CSharp","m_ItemRef":"faec25cf-f3a0-42fb-9a40-648bfb25d4fb"},
-"Time":"...","IsIdentified":true,"OriginArea":"...","UniqueId":"faec25cf-f3a0-42fb-9a40-648bfb25d4fb"
+"m_WielderRef":"d489d1c3-83ff-45e0-bb90-8549b7b0c6dd","Collection":{"$ref":"17"},"HoldingSlot":{"$ref":"5415"}
 ```
 
-The `$id` of the slot is defined inside the item's `HoldingSlot`. The body only has the `$ref`. The item stays in the collection. Worn items do not have `m_InventorySlotIndex`.
+`m_InventorySlotIndex` was removed. `m_Modifiers` was not added. `"$id":"5415"` still occurs once. `"$ref":"5415"` occurs once. The inventory window opens.
 
-An empty paper-doll slot on a naked character:
+## What is still empty, and why
 
-```json
-"Armor":{"$id":"8113"}
-```
+Daeran `d3da2a90-9520-4171-a346-c7971a171b77` and Sosiel `3e1e0b22-78e6-475f-b09c-e4beac1bbca1` were not edited in `Hansen amulet test`. Their paper dolls stay empty. Final-party priority, if a later edit equips them:
 
-No `$type`. No `m_ItemRef`.
+1. Hansen `360c7122-3094-4ab4-9706-04ae85f7715a` is not stripped.
+2. Seelah `0ad3253d-0009-464c-8fea-5162de292bb9`, Camellia, Arueshalae `166F1D`, Ember `7ea9b3f6-19ad-4b7c-98fb-3d935bf698f3`, and Daeran come next.
+3. Sosiel is last.
+4. Stacks with `m_Count` greater than 1 stay in the bag. A single worn copy may be taken from Woljif, Greybor, Lann, Nenio, Galfrey, or Regill.
 
-An empty main-hand slot:
+There is no Wrath mod that chooses the best item for a build and calls equip. Quick Swap equips only the item under the cursor. ToyBox calls `ItemSlot.InsertItem`, which is the safe runtime path, but it does not pick the party set by itself.
 
-```json
-"PrimaryHand":{"$id":"8097","ParentFact":{"EntityId":null,"FactId":null}}
-```
+## Question still open
 
-An unworn item tail:
-
-```json
-"m_Blueprint":"...","m_InventorySlotIndex":49,"Collection":{"$ref":"17"},"Time":"...","IsIdentified":true,"OriginArea":"...","UniqueId":"..."
-```
-
-Some unworn copies are stacks: `"m_Count":2`. Those were not equipped. An unworn armor is `ItemEntityArmor` with `"m_Modifiers":null`. A worn armor has a large `m_Modifiers` tree.
-
-Slot classes seen on worn items:
-
-| Slot | `$type` |
-|---|---|
-| Armor | `Kingmaker.Items.Slots.ArmorSlot, Assembly-CSharp` |
-| Hands | `Kingmaker.Items.Slots.HandSlot, Assembly-CSharp` |
-| Belt and the other paper-doll slots | generic EquipmentSlot for that item type. The belt example is below |
-
-Belt slot type, copied from a worn item:
-
-```
-Kingmaker.Items.Slots.EquipmentSlot`1[[Kingmaker.Blueprints.Items.Equipment.BlueprintItemEquipmentBelt, Assembly-CSharp]], Assembly-CSharp
-```
-
-`ChainshirtAcidResistance30Plus5` is `BlueprintItemArmor`, not `BlueprintItemEquipmentArmor`. A shield is `BlueprintItemShield` and belongs in `SecondaryHand`. `GraspOfDevotionItem` is `BlueprintItemWeapon`.
-
-## Edit 1
-
-Python loaded all of `party.json`, changed `m_ItemRef`, `m_WielderRef`, and `HoldingSlot`, then `json.dumps` wrote the whole file back into the zip. The inventory opened blank.
-
-## Edit 2
-
-The whole file was not rewritten. For each chosen item, only the tail from `Collection` through `UniqueId` was replaced with `m_WielderRef` plus a `HoldingSlot`. The body's `{"$id":"8113"}` became `{"$ref":"8113"}`, and that same `$id` was defined on the item's `HoldingSlot`. When a worn item was taken from another character, the old slot object was written back onto that character's body with `m_ItemRef` removed.
-
-After those replacements, `json.loads` succeeded and the moved slot ids were each defined once. In game, pressing I still threw the `UnitBody.Recalculate` null reference above.
-
-## Question
-
-How should one unworn item be attached to an empty Owlcat / Kingmaker body slot so `UnitBody.Recalculate` does not throw? The existing `$id` graph has to stay intact. The whole `party.json` must not be reserialized. If `m_Modifiers` or another field is required before the inventory screen can open, which fields are the minimum?
+Does Camellia's neck actually show the amulet in `Hansen amulet test`? The screenshots are Daeran and Sosiel, so they do not answer that. If her neck is also empty, `m_ItemRef` plus `HoldingSlot: {$ref}` is enough to open the window and not enough for the paper doll. The next experiment on a copy, not on `Quick_7.zks`, is one slot with `"m_Active":false` so `ItemSlot.PostLoad` can run `OnDidEquipped`. Do not copy another character's `m_Modifiers` tree.
