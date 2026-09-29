@@ -18,7 +18,7 @@ The zip contains the notes and copies of those two configs. Notes are in Chinese
 
 ## Current state
 
-`current/` is the newest FaN save snapshot. The refresh script ignores other GameIds, including Hansen.
+`current/` is the newest FaN save snapshot. The refresh script reads only this GameId. Hansen and the sword saint folder stay out of it.
 
 `diagnostics/` contains immutable historical snapshots.
 
