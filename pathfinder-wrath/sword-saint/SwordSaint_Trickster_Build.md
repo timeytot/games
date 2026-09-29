@@ -121,7 +121,7 @@ Bit of Fun is the Trickster first-ascension ability already on this character. D
 
 ## Combat
 
-Use the Cleave line on groups, with the Enduring Blade enchantment left on the weapon. Against a high-AC target, Fan has one swift action per round. Turn his AI off (the brain icon on his action bar) so Wrath Tactics can spend it before the swing. The rules then fire, when that buff is missing, in this order: Dimension Strike, Prescient Attack, Arcane Accuracy, Perfect Strike. The Attack rule swings at the nearest enemy after the swift action. With AI left on, the auto-attack fills the Standard slot for the whole round and those rules log `unit busy` and do not fire. The 2026-09-29 logs and the reason are in [ModEditMethods.md](./ModEditMethods.md). On a confirmed critical hit, spend the extra Arcane Pool point to raise the critical multiplier by 1.
+Use the Cleave line on groups, with the Enduring Blade enchantment left on the weapon. Fan has one swift action per round. Dimension Strike, Prescient Attack, and Arcane Accuracy each last one round and do not stack. Keep Dimension Strike on the right-click autocast (the icon at the lower left of the action bar). It turns every melee attack that round into a touch attack. Prescient Attack only removes Dexterity from AC. Arcane Accuracy only adds the Intelligence modifier. Perfect Strike is a toggle: leave it on, and it maximizes weapon damage dice on a hit without spending the swift action. The critical-hit toggle stays on as well. Wrath Tactics does not cast these. Detail and the 21:20 save check are in [ModEditMethods.md](./ModEditMethods.md).
 
 ## Party
 
@@ -150,4 +150,4 @@ Rest buffs, once:
 
 Do not cast Bull's Strength, Bear's Endurance, Cat's Grace, or Shield of Faith on Fan. The first three do not stack with his current scores. Shield of Faith is deflection and does not stack with the +6 ring.
 
-Immediately before the fight: Daeran casts Haste. Fan casts Transformation, then Greater Invisibility. Seelah uses Mark of Justice on the boss. Ember puts Protective Luck on Fan and refreshes it with Cackle. Evil Eye goes on the boss's Armor Class. Turn Fan's AI off, then let the tactics rules spend one swift action per round, Dimension Strike first.
+Immediately before the fight: Daeran casts Haste. Fan casts Transformation, then Greater Invisibility. Seelah uses Mark of Justice on the boss. Ember puts Protective Luck on Fan and refreshes it with Cackle. Evil Eye goes on the boss's Armor Class. Fan's Dimension Strike stays on right-click autocast, and Perfect Strike stays toggled on. Rest first if the arcane pool is empty.
