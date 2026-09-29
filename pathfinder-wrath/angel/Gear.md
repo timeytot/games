@@ -1,6 +1,6 @@
 # Hansen gear assignment, 2026-09-30
 
-The first edit of this file rewrote all of `party.json`. The inventory screen then opened blank. That file was put back from `Quick_7.zks.bak-20260930-gear`. The edit described below only replaces each chosen item's trailing fields and the paper-doll `$id` / `$ref`. It does not reformat the rest of the save.
+Both save edits were reverted. The inventory screen still crashed. The problem report for review is [InventoryEditProblem.md](./InventoryEditProblem.md). `Quick_7.zks` is the pre-edit backup again.
 
 ## Save
 
