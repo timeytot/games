@@ -1,6 +1,6 @@
 # Hansen gear assignment, 2026-09-30
 
-Read this before moving equipment in Hansen's save. The game does not read this file. The edited save is on disk only.
+The first edit of this file rewrote all of `party.json`. The inventory screen then opened blank. That file was put back from `Quick_7.zks.bak-20260930-gear`. The edit described below only replaces each chosen item's trailing fields and the paper-doll `$id` / `$ref`. It does not reformat the rest of the save.
 
 ## Save
 
@@ -46,19 +46,19 @@ Other unit ids in this save, not in the final party:
 
 | Character | Unit id | Taken from him |
 |---|---|---|
-| Lann, Monk 20 | `e437d264-30d0-4f82-b498-10d5779735e1` | Amulet of natural armor +7 only |
-| Regill, Hellknight 10 / Fighter 10 | `6fb82a23-c68d-4964-aa5e-20f4c180a7ff` | Belt of perfection +8, headband of perfection +8, cloak of resistance +7, bracers of the heavy hand |
-| Galfrey, Paladin 20 | `5A6856` | Nothing |
-| Nenio, Wizard 20 | `a362b4fa-464a-43df-99cf-48216117e70b` | Nothing |
-| Woljif, Rogue 20 | `66befdb4-62f9-4faa-a788-65004482af56` | Nothing |
-| Greybor, Slayer 20 | `E55C2` | Nothing |
+| Lann, Monk 20 | `e437d264-30d0-4f82-b498-10d5779735e1` | Boots of the freest rein, amulet of natural armor +7 |
+| Regill, Hellknight 10 / Fighter 10 | `6fb82a23-c68d-4964-aa5e-20f4c180a7ff` | Belt of perfection +8, headband of perfection +8, cloak of resistance +7, bracers of the heavy hand, amulet of natural armor +7, ring of evasion |
+| Galfrey, Paladin 20 | `5A6856` | Glasses of undeniable truth |
+| Nenio, Wizard 20 | `a362b4fa-464a-43df-99cf-48216117e70b` | Ring of protection +7 |
+| Woljif, Rogue 20 | `66befdb4-62f9-4faa-a788-65004482af56` | Belt of perfection +8, cloak of resistance +7 |
+| Greybor, Slayer 20 | `E55C2` | Headband of perfection +8, ring of instant triumph |
 | Wolf | `47CDA1` | Nothing |
 
-The stash had one unused copy of each best caster piece. That copy went to Daeran. Sosiel's matching stat pieces came off Regill and Lann because a second unused copy did not exist, and those two are outside the final party. Regill still has his mithral full plate, glasses, boots, both rings, and weapon. Lann still has his armor, bow, belt, headband, and the rest of his kit. His neck slot is empty.
+Unused single copies in the stash went to Daeran or Sosiel. Several best pieces in the stash were stacks with `m_Count` greater than 1. Those stacks were left in the bag. A single worn copy was taken from someone outside the final party instead, so the stack count was not destroyed and the final party was not stripped.
 
 ## Daeran, after the edit
 
-Every piece except the rapier was an unworn stash copy. Hansen's own copy of the same item was left on Hansen.
+Armor, shirt, gloves, and the rapier were unworn single copies. The belt came from Woljif, the headband and the instant-triumph ring from Greybor, the glasses from Galfrey, the boots from Lann, the amulet from Regill, the protection ring from Nenio, and the cloak from Woljif.
 
 | Slot | Blueprint name | Why |
 |---|---|---|
@@ -86,7 +86,7 @@ Every piece except the rapier was an unworn stash copy. Hansen's own copy of the
 | Feet | `BootsOfStampedeItem` | Stash. Melee boots. The freest-rein pair went to Daeran |
 | Gloves | `GlovesOfMartialExcellenceItem` | Stash. `GraspOfDevotionItem` is a weapon, not a glove |
 | Glasses | `GogglesOfPiercingGazeItem` | Stash. The truth glasses went to Daeran |
-| Ring 1 | `RingOfEvasionItem` | Stash |
+| Ring 1 | `RingOfEvasionItem` | Regill's second ring |
 | Ring 2 | `PaladinsRingItem` | Stash. It is an equipment ring with no class restriction in the blueprint |
 | Belt | `BeltOfPerfection8` | Regill |
 | Head | `HeadbandOfPerfection8` | Regill. Wisdom 25 is his casting stat |
