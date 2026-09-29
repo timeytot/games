@@ -1,5 +1,7 @@
 # One-click buffs (Buff It 2 The Limit)
 
+The file that matches the zip is [Reproduction.md](./Reproduction.md). The zip's `buffit-current-config.json` has 58 rows. This note is the older writeup. Do not rebuild the JSON from this note.
+
 This note covers one-click buffs only. Wrath Tactics is separate.
 
 Task for a later edit: using the file layout and the current config below, propose target lists and groups to change. Do not recommend deleting a row because the UI shows 0 casts. Zero casts only means the character had not rested, or the spell was not in the spellbook yet. Write the change with the unit ids and hyphenated spell ids from this note.

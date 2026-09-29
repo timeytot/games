@@ -1,5 +1,7 @@
 # Hansen Angel One-Click Buffs
 
+Spell guids, scroll and potion entries, and the save header are in [Reproduction.md](./Reproduction.md). There is no Wrath Tactics file for this save. Do not edit `buffit-current-config.json` until a later request says to change Buff It.
+
 Buff It 2 The Limit configuration for Hansen's Inevitable Excess save. FaN's lich configuration is in `../lich/`. Each save has its own GameId, and the game loads the matching file.
 
 Written on 2026-09-29. The game was closed.

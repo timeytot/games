@@ -1,6 +1,6 @@
 # Wrath Tactics current configuration
 
-
+The file that matches the zip is [Reproduction.md](./Reproduction.md). This note is the 2026-09-27 writeup. The zip's `tactics-current-config.json` has 28 rules across eight units, not only the eight FaN rules described below. Do not rebuild the JSON from this note.
 
 This note matches the 8 rules after the 2026-09-27 edit. One-click buffs are in `BuffIt-OneClickBuff.md`.
 
