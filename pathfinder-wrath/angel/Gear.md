@@ -1,6 +1,8 @@
 # Hansen gear assignment, 2026-09-30
 
-Both save edits were reverted. The inventory screen still crashed. The problem report for review is [InventoryEditProblem.md](./InventoryEditProblem.md). `Quick_7.zks` is the pre-edit backup again.
+Both raw-save equipment edits were reverted. The inventory screen crashed after those edits, so `Quick_7.zks` is the pre-edit backup again. The problem report is [InventoryEditProblem.md](./InventoryEditProblem.md).
+
+The current fix is [runtime-equip-fix](./runtime-equip-fix/README.md): equip Daeran/Sosiel (and Camellia's neck item) at runtime through Owlcat `RemoveItem` / `InsertItem`, then make a new manual save. Do not hand-edit the equipment graph again.
 
 ## Save
 
