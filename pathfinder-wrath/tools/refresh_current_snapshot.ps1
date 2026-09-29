@@ -1,7 +1,8 @@
 $ErrorActionPreference = "Stop"
 $repo = "C:\Users\timeg\Desktop\download\games"
 $wrath = Join-Path $repo "pathfinder-wrath"
-$current = Join-Path $wrath "current"
+$current = Join-Path $wrath "lich\current"
+$lichGameId = "7ea3d466491c4249aec2742271c2e71a"
 $temp = Join-Path $env:TEMP "WotR_Current_Snapshot"
 $saves = "C:\Users\timeg\AppData\LocalLow\Owlcat Games\Pathfinder Wrath Of The Righteous\Saved Games"
 $cheat = "D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure\Bundles\cheatdata.json"
@@ -26,11 +27,26 @@ if (Test-Path $lock) {
 }
 Set-Content -Path $lock -Value $PID -Encoding ascii
 try {
-    $newest = Get-ChildItem -Path $saves -Filter *.zks -Recurse -File |
-        Sort-Object LastWriteTime -Descending |
-        Select-Object -First 1
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $lichSaves = @()
+    foreach ($file in (Get-ChildItem -Path $saves -Filter *.zks -Recurse -File)) {
+        try {
+            $zip = [System.IO.Compression.ZipFile]::OpenRead($file.FullName)
+            try {
+                $entry = $zip.GetEntry("header.json")
+                if (-not $entry) { continue }
+                $reader = New-Object System.IO.StreamReader($entry.Open())
+                try { $header = $reader.ReadToEnd() | ConvertFrom-Json }
+                finally { $reader.Dispose() }
+                if ($header.GameId -eq $lichGameId) { $lichSaves += $file }
+            } finally { $zip.Dispose() }
+        } catch {
+            Write-Output "SKIP_SAVE $($file.Name) $($_.Exception.Message)"
+        }
+    }
+    $newest = $lichSaves | Sort-Object LastWriteTime -Descending | Select-Object -First 1
     if (-not $newest) {
-        throw "No .zks files found."
+        throw "No FaN save found for game $lichGameId."
     }
     $sha = (Get-FileHash -Algorithm SHA256 -Path $newest.FullName).Hash.ToLower()
     $shaFile = Join-Path $current "Current_Save.sha256"
@@ -56,9 +72,9 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "extractor failed: $LASTEXITCODE" }
 
     Set-Location $repo
-    $paths = @("pathfinder-wrath/README.md", "pathfinder-wrath/tools")
+    $paths = @("pathfinder-wrath/lich/README.md", "pathfinder-wrath/tools")
     foreach ($name in $currentFiles) {
-        $paths += "pathfinder-wrath/current/$name"
+        $paths += "pathfinder-wrath/lich/current/$name"
     }
     git add -- $paths
     $staged = git diff --cached --name-only

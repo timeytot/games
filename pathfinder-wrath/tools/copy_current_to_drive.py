@@ -54,7 +54,7 @@ def main():
     folder = drive_user_folder()
     if not folder:
         return 0
-    dest = os.path.join(folder, "games", "pathfinder-wrath", "current")
+    dest = os.path.join(folder, "games", "pathfinder-wrath", "lich", "current")
     os.makedirs(dest, exist_ok=True)
     shutil.copy2(save_copy, os.path.join(dest, "Latest_Save.zks"))
     for name in NAMES:

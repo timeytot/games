@@ -133,6 +133,6 @@ The horse does not run into the middle of a crowd. Preferred order from the enem
 
 This file is the plan. A later save extract of the horse goes under:
 
-`pathfinder-wrath/diagnostics/horse/<date_save-name>/`
+`pathfinder-wrath/lich/diagnostics/horse/<date_save-name>/`
 
 Do not overwrite this build file with a diagnostic.
