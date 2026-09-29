@@ -91,29 +91,31 @@ Athletics 3 raises Base Attack Bonus to the character's Athletics ranks. A level
 
 ## Spells
 
-Sword Saint prepares spells and has one fewer slot of each level than a base Magus. Learn these into the spellbook. Skip any name that is not on the Magus list. Geniekind is not on that list.
+Level 20 spellbook. Sword Saint prepares from this book. Fill every empty memorized slot in the order below. Elemental Body II, Elemental Body III, Cloudkill, and Reduce Person, Mass stay in the book and stay out of the daily slots.
 
-| Spell level | Opens at character level | Learn |
-|---|---:|---|
-| 1 | 1 | Shield, Enlarge Person, Magic Weapon, True Strike, Shocking Grasp, Grease, Reduce Person |
-| 2 | 4 | Mirror Image, Bull's Strength, Blur, Cat's Grace, Frigid Touch, Invisibility |
-| 3 | 7 | Haste, Displacement, Greater Magic Weapon, Dispel Magic, Vampiric Touch |
-| 4 | 10 | Dimension Door, Greater Invisibility, Stoneskin |
-| 5 | 13 | Baleful Polymorph, Acidic Spray. If Break Enchantment or Vampiric Shadow Shield is on the list, take Break Enchantment first and replace Acidic Spray |
-| 6 | 16 | Transformation, True Seeing, Chain Lightning |
-
-At level 11, fill empty book slots in this order: Shield, Enlarge Person, Mirror Image, Bull's Strength, Haste, Greater Magic Weapon, Displacement, Dimension Door, Greater Invisibility, Stoneskin, True Strike, Magic Weapon.
-
-Prepare every rest, until Greater Enduring Spells exists:
-
-| Slot | Prepare |
+| Spell level | In the spellbook |
 |---|---|
-| 4 | Dimension Door, Greater Invisibility, Stoneskin |
-| 3 | Haste, Greater Magic Weapon, Displacement |
-| 2 | Mirror Image, Bull's Strength, Blur |
-| 1 | Shield, Enlarge Person, True Strike, Magic Weapon |
+| 1 | Enlarge Person, Expeditious Retreat, Grease, Magic Missile, Magic Weapon, Reduce Person, Shield, Shocking Grasp, True Strike, Vanish |
+| 2 | Blur, Bull's Strength, Cat's Grace, Frigid Touch, Invisibility, Mirror Image |
+| 3 | Blink, Dispel Magic, Displacement, Haste, Greater Magic Weapon, Vampiric Touch |
+| 4 | Dimension Door, Enlarge Person, Mass, Greater Invisibility, Reduce Person, Mass, Shield of Dawn, Stoneskin |
+| 5 | Acidic Spray, Baleful Polymorph, Cloudkill, Cone of Cold, Elemental Body II, Vampiric Shadow Shield |
+| 6 | Bear's Endurance, Mass, Bull's Strength, Mass, Cat's Grace, Mass, Chain Lightning, Greater Dispel Magic, Elemental Body III, Hellfire Ray, Transformation, True Seeing, Walk through Space |
 
-After Greater Enduring Spells, minute-per-level buffs last 24 hours. Leave those memorized only long enough to cast them once, then prepare the round-per-level spells: Haste, Displacement, Transformation. Cast Haste and Transformation immediately before a fight. True Strike is one attack. Use it only when Dimension Strike is not available.
+With Greater Enduring Spells, a buff whose duration is 5 minutes or longer lasts 24 hours. Cast those once after resting, then leave the round-per-level spells in the slots.
+
+| Spell level | Slots | Memorize |
+|---|---:|---|
+| 6 | 4 | Transformation, True Seeing, Hellfire Ray, Greater Dispel Magic |
+| 5 | 4 | Vampiric Shadow Shield, Baleful Polymorph, Cone of Cold, Acidic Spray |
+| 4 | 4 | Greater Invisibility, Stoneskin, Dimension Door, Enlarge Person, Mass |
+| 3 | 5 | Haste, Displacement, Greater Magic Weapon, Dispel Magic, Blink |
+| 2 | 5 | Mirror Image, Blur, Invisibility, Frigid Touch, Cat's Grace |
+| 1 | 5 | Shield, True Strike, Grease, Shocking Grasp, Vanish |
+
+On this character, Strength 31, Dexterity 20, and Constitution 22 are already +8 over the built scores. Bull's Strength, Bear's Endurance, and Cat's Grace are enhancement bonuses and do not raise those scores. If the bardiche is already +5 or higher, replace Greater Magic Weapon with Vampiric Touch.
+
+Cast Haste and Transformation immediately before a fight. True Strike is one attack. Use it only when Dimension Strike is not available.
 
 Bit of Fun is the Trickster first-ascension ability already on this character. Do not respec it.
 
@@ -121,4 +123,31 @@ Bit of Fun is the Trickster first-ascension ability already on this character. D
 
 Use the Cleave line on groups, with the Enduring Blade enchantment left on the weapon. Against a high-AC target, spend the swift action on one arcana. Open with Prescient Attack. On the next round, use Dimension Strike as the swift action, then full attack. Use Arcane Accuracy on rounds when the other two are not active. Perfect Strike maximizes the weapon damage dice. On a confirmed critical hit, spend the extra Arcane Pool point to raise the critical multiplier by 1.
 
-Party support from the guide: one domain caster (Luck, Madness, Law, Community, or Glory) and one Skald. The Skald supplies stats, attack, AC, extra critical multiplier, and Pounce. The late main-campaign weapon in that guide is its named endgame Bardiche.
+## Party
+
+Inevitable Excess party at level 20: Fan, Seelah, Arueshalae, Ember, Daeran, Camellia.
+
+Fan's open attack tooltip is Base Attack Bonus +14, Strength +10, Weapon Focus +2, Greater Weapon Focus +2, total 28. The sheet attack of +33 is that 28 plus a +5 weapon. Athletics +35 is not 35 ranks. Ranks cap at 20. Cast Transformation before a hard fight.
+
+Armor Class 28 is 10 + Dexterity 5 + Ring of Protection +6 + Canny Defense 7. There is no armor, natural armor, or shield bonus. Touch AC stays 28 after those three are added, because touch ignores them. Miss chance comes from Greater Invisibility and Mirror Image.
+
+| Check | Use |
+|---|---|
+| Trickery, Stealth, Perception, Mobility | Arueshalae |
+| Persuasion, Knowledge (Arcana), Knowledge (World), Lore (Nature), Lore (Religion) | Daeran |
+| Use Magic Device | Ember |
+| Athletics | Fan |
+
+Rest buffs, once:
+
+| Caster | Spell | Target |
+|---|---|---|
+| Ember | Mage Armor | Fan |
+| Camellia | Barkskin | Fan, Seelah, Camellia |
+| Fan | Shield, True Seeing, Stoneskin, Mirror Image, Enlarge Person, Mass | Fan, and the whole party for Enlarge |
+| Daeran | Greater Heroism, Death Ward, Freedom of Movement | Fan, Seelah, Arueshalae, Camellia |
+| Ember | Mind Blank, if it is in the spellbook | Fan |
+
+Do not cast Bull's Strength, Bear's Endurance, Cat's Grace, or Shield of Faith on Fan. The first three do not stack with his current scores. Shield of Faith is deflection and does not stack with the +6 ring.
+
+Immediately before the fight: Daeran casts Haste. Fan casts Transformation, then Greater Invisibility. Seelah uses Mark of Justice on the boss. Ember puts Protective Luck on Fan and refreshes it with Cackle. Evil Eye goes on the boss's Armor Class. One swift action on Fan: Prescient Attack, then Dimension Strike on the next round.
