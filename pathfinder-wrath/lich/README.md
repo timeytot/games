@@ -1,6 +1,6 @@
 # FaN lich profile
 
-This folder is the Wrath Tactics and Buff It 2 The Limit configuration for FaN, the lich save. Hansen's angel profile is in `../angel-hansen/`.
+This folder is the Wrath Tactics and Buff It 2 The Limit configuration for FaN, the lich save. The angel profile is in `../angel/`.
 
 `WrathModsConfiguration.zip` is a snapshot. The game does not read it. The live files are:
 
