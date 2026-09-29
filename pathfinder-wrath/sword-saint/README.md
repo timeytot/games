@@ -2,13 +2,13 @@
 
 This folder is Fan's Sword Saint profile. The game does not read this folder. Do not copy the FaN or Hansen JSON files here. Those configs belong to the other two saves.
 
-The level-by-level plan is [SwordSaint_Trickster_Build.md](./SwordSaint_Trickster_Build.md). The one-click buttons are [BuffIt-OneClickBuff.md](./BuffIt-OneClickBuff.md). How the spellbook, Buff It, and Wrath Tactics are edited is [ModEditMethods.md](./ModEditMethods.md).
+The current setup, and the steps to copy it back, are [Reproduction.md](./Reproduction.md). The level-by-level plan is [SwordSaint_Trickster_Build.md](./SwordSaint_Trickster_Build.md). The one-click buttons are [BuffIt-OneClickBuff.md](./BuffIt-OneClickBuff.md). How the spellbook, Buff It, and Wrath Tactics are edited is [ModEditMethods.md](./ModEditMethods.md).
 
 | Field | Value |
 |---|---|
 | Character name | Fan |
 | GameId | `8dd97a37ca674651afefb4dd19e06967` |
-| Save file | `Quick_3.zks` is the spellbook edit on 2026-09-29. `Quick_4.zks` was left unchanged. `Manual_9_Artisan_s_Tower__16_Arodus__VIII__4715__12_03_13.zks` is the earlier manual save. |
+| Test save | Header name `Quicksave2`, Artisan's Tower, in-game `01:25:40`. On 2026-09-30 that header is `Quick_5.zks`. `Quicksave2 1` is a different file and was not edited. |
 | Party | Fan, Seelah, Arueshalae, Ember, Daeran, Camellia |
 | Live Buff It file | `Mods\BuffIt2TheLimit\UserSettings\bi2tl-8dd97a37ca674651afefb4dd19e06967.json` |
 
@@ -20,11 +20,12 @@ Unit ids were read from that save's `party.json`.
 
 ## Files
 
+- `Reproduction.md` — the live Buff It rows, the six Wrath Tactics rule lists, and the Quicksave2 state. Follow this file to reproduce the setup.
 - `SwordSaint_Trickster_Build.md` — the level-by-level plan.
 - `BuffIt-OneClickBuff.md` — one-click buff notes. The buttons are Normal (`Long`), Quick (`Quick`), and Important (`Important`).
-- `buffit-current-config.json` — copy of the live Buff It config.
-- `tactics-current-config.json` — copy of Fan's live Wrath Tactics config.
-- `ModEditMethods.md` — how to edit the spellbook, Buff It, and Wrath Tactics.
+- `buffit-current-config.json` — copy of the live Buff It config for all six characters.
+- `tactics-current-config.json` — copy of the live Wrath Tactics config for all six characters.
+- `ModEditMethods.md` — how the spellbook, Buff It, and Wrath Tactics are edited. Older save names in that file are history.
 
 `../tools/refresh_current_snapshot.cmd` syncs only FaN. This save is not written into `lich/current/`.
 

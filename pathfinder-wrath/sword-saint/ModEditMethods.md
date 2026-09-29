@@ -1,5 +1,7 @@
 # How Fan's spellbook, Buff It, and Wrath Tactics are edited
 
+The current party setup is [Reproduction.md](./Reproduction.md). Follow that file to copy the six-character Buff It list, the six Wrath Tactics rule lists, and the Quicksave2 state. Sections below that name `Quick_3` or the 21:20 `Quick_4` are earlier edits. `Quick_3` has been rotated off the quicksave list. `Quick_3.zks.bak-20260929-l6` is the backup from before that slot edit, not the edited spellbook.
+
 The game does not read this folder. Edit the live files below only while `Wrath.exe` is closed. If the buff screen or the tactics screen is open, closing it writes the in-memory copy back over the file.
 
 Game install:
@@ -28,7 +30,7 @@ On 2026-09-29 the edited save is `Quick_3.zks`, the save before `Quick_4`. `Quic
 | `$id` 1893 | Bull's Strength, Mass `$ref` 1860 | Hellfire Ray `$ref` 1866 |
 | `$id` 1894 | Bear's Endurance, Mass `$ref` 1864 | Chain Lightning `$ref` 1859 |
 
-Mirror Image, Haste, Stoneskin, Enlarge Person, Mass, and Vampiric Shadow Shield were already prepared on their own levels. Load `Quick_3`, then rest, then press Normal.
+Mirror Image, Haste, Stoneskin, Enlarge Person, Mass, and Vampiric Shadow Shield were already prepared on their own levels. The save to load now is Quicksave2, described in Reproduction.md. That file already has the rested book, Hellfire Ray, Chain Lightning, and arcane pool 17. Press Normal after loading it.
 
 Blueprint names are resolved from `blueprints.zip` in the game folder. `AssetId` in a `.jbp` file is the same id as `Blueprint` in the save.
 
@@ -78,7 +80,7 @@ Corrections after the black-dragon fight:
 |---|---|
 | Bless Weapon `831e9428-64e9-2484-6a30-d2e0678e438b` | Caster is Seelah only. Potions, scrolls, and equipment are off. The previous list drank the last Bless Weapon potion, then stopped. |
 | Angelic Aspect, Greater `b1c7576b-d068-12b4-2bda-3f09ab202f14` | Caster and target are Seelah. The spell cannot be cast on someone else. |
-| Frightful Aspect `e788b02f-8d21-0144-8806-7bdd3ba7b325` | Casters are Daeran, then Camellia. Ember had no spell slot of that level. |
+| Frightful Aspect `e788b02f-8d21-0144-8806-7bdd3ba7b325` | The live file's caster is Ember. Camellia is not a caster on any row. |
 
 Shield of Faith stays off Fan. His ring is already a +6 deflection bonus. Bull's Strength, Bear's Endurance, and Cat's Grace stay off Fan. Those scores are already +8 enhancement.
 
@@ -96,7 +98,7 @@ Mods\WrathTactics\UserSettings\tactics-8dd97a37ca674651afefb4dd19e06967.json
 
 `HasBuff` uses the buff blueprint, not the ability id. Subject `0` is self. Property `2` is HasBuff. Operator `3` means the buff is absent. Operator `2` means equal. Subject `5`, property `14`, value `true` means a fight is running.
 
-`TickIntervalSeconds` is 1. `CooldownRounds` is 0. Fan's rules are Transformation and Haste. Dimension Strike, Prescient Attack, Arcane Accuracy, Perfect Strike, and Attack are not in this list.
+`TickIntervalSeconds` is 1. `CooldownRounds` is 0. Fan's rules are Transformation and Haste. Dimension Strike, Prescient Attack, Arcane Accuracy, Perfect Strike, and Attack are not in this list. Ability ids and buff ids for all six characters are in [Reproduction.md](./Reproduction.md). Brilliant Energy uses buff `dc60f7ff4d985054a9f746aad585558d`. Vulnerability Curse uses buff `6f3da77a44fa7304fac61c07a01964a5`.
 
 ## One swift action, so one arcana
 
@@ -197,7 +199,7 @@ Holy, Keen, Speed, Axiomatic, Disruption, Flaming, and Flaming Burst are the oth
 
 ## Arueshalae
 
-Arueshalae's unit id is `6224`. Toggles fire only while their buff is missing. Rapid Shot, Deadly Aim, and Staggering Critical were already on in `Quick_6.zks`. Point-Blank Shot was off.
+Arueshalae's unit id is `6224`. Toggles fire only while their buff is missing. In Quicksave2, Rapid Shot, Deadly Aim, and Staggering Critical were already on. Point-Blank Shot was turned on in that save. The buff id is `de5b285a0a8e1e745a0cc9bf02045123`.
 
 | Order | Ability | What it does |
 |---|---|---|

@@ -12,10 +12,9 @@ C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods\B
 
 - GameId: `8dd97a37ca674651afefb4dd19e06967`
 - Save: Fan, Inevitable Excess, Artisan's Tower, 16 Arodus (VIII) 4715
-- Save file: `Manual_9_Artisan_s_Tower__16_Arodus__VIII__4715__12_03_13.zks`
-- `.bak-20260929-fan` in that folder is the previous file, which had only Transformation
+- Test save: header name `Quicksave2`, in-game 1 hour 25 minutes. On 2026-09-30 that file is `Quick_5.zks`. Buff It is not inside the save. The GameId file applies to every save of this campaign.
 
-`buffit-current-config.json` in this folder is a copy. The game does not read the repository.
+`buffit-current-config.json` in this folder is a copy of the live file. The row list another agent should follow is [Reproduction.md](./Reproduction.md). The game does not read the repository.
 
 ## The three buttons
 
@@ -44,39 +43,8 @@ Ids match `UniqueId` in the save's `party.json`. Active party order is Fan, Seel
 
 ## Normal
 
-| Spell | Targets | Casters, in order |
-|---|---|---|
-| Mage Armor | Fan, Ember | Ember |
-| Barkskin | All six | Camellia, Arueshalae |
-| Shield | Fan | Fan |
-| Stoneskin | Fan, Seelah, Camellia | Fan, Camellia |
-| True Seeing | Fan | Fan |
-| Mirror Image | Fan | Fan |
-| Enlarge Person, Mass | All six | Fan |
-| Death Ward | All six | Daeran, Ember, Seelah, Camellia |
-| Freedom of Movement | All six | Daeran, Camellia, Ember |
-| Heroic Invocation | All six | Ember, Daeran |
-| Remove Fear | All six | Daeran, Seelah |
-| Delay Poison, Communal | All six | Daeran, Camellia |
-| Protection from Evil, Communal | All six | Daeran, Seelah, Camellia |
-| Resist Acid, Cold, Electricity, Fire, Sonic, Communal | All six | Daeran, Camellia |
-| Protection from Acid, Cold, Electricity, Fire, Sonic, Communal | All six | Daeran, Ember |
-| Blessing of Luck and Resolve, Mass | All six | Daeran |
-| Veil of Heaven | Seelah | Seelah |
-| Aura of Greater Courage | Seelah | Seelah |
-| Bless Weapon | Fan, Seelah | Seelah |
-| Angelic Aspect, Greater | Seelah | Seelah |
+All 40 rows target all six characters. The casters are Fan, Seelah, Arueshalae, Ember, and Daeran. Camellia is a recipient on every row and is not a caster. Her shaman abilities are Wrath Tactics rules, listed in [Reproduction.md](./Reproduction.md).
 
-These are also on Normal:
+The live rows are not the shorter list this file used to show. Death Ward, Freedom of Movement, Remove Fear, communal energy resistance, communal energy protection, and Bless Weapon are not on the button. Barkskin's caster is Arueshalae. Haste's caster is Fan. Frightful Aspect's caster is Ember. Spell guids and caster order are in `Reproduction.md` and in `buffit-current-config.json`.
 
-| Spell | Targets | Casters, in order |
-|---|---|---|
-| Haste | All six | Daeran, Camellia, Fan |
-| Prayer | All six | Daeran |
-| Greater Invisibility | Fan | Fan |
-| Vampiric Shadow Shield | Fan | Fan |
-| Transformation | Fan | Fan |
-| Frightful Aspect | Ember, Daeran, Camellia | Ember, Daeran, Camellia |
-| Burst of Glory | All six | Seelah, Daeran |
-
-Seelah still uses Mark of Justice herself at the start of a boss fight. Ember still puts Protective Luck on Fan and refreshes it with Cackle. Those are not spells on these three buttons.
+Seelah's Mark of Justice is not on the button and is not a tactics rule. Ember does not have Cackle or Evil Eye. Protective Luck is an Ember tactics rule.

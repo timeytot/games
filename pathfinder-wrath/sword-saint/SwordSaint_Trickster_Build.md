@@ -121,7 +121,7 @@ Bit of Fun is the Trickster first-ascension ability already on this character. D
 
 ## Combat
 
-Use the Cleave line on groups, with the Enduring Blade enchantment left on the weapon. Fan has one swift action per round. Dimension Strike, Prescient Attack, and Arcane Accuracy each last one round and do not stack. Keep Dimension Strike on the right-click autocast (the icon at the lower left of the action bar). It turns every melee attack that round into a touch attack. Prescient Attack only removes Dexterity from AC. Arcane Accuracy only adds the Intelligence modifier. Perfect Strike is a toggle: leave it on, and it maximizes weapon damage dice on a hit without spending the swift action. The critical-hit toggle stays on as well. Wrath Tactics does not cast these. Detail and the 21:20 save check are in [ModEditMethods.md](./ModEditMethods.md).
+Use the Cleave line on groups, with the Enduring Blade enchantment left on the weapon. Fan has one swift action per round. Dimension Strike, Prescient Attack, and Arcane Accuracy each last one round and do not stack. Keep Dimension Strike on the right-click autocast (the icon at the lower left of the action bar). It turns every melee attack that round into a touch attack. Prescient Attack only removes Dexterity from AC. Arcane Accuracy only adds the Intelligence modifier. Perfect Strike is a toggle: leave it on, and it maximizes weapon damage dice on a hit without spending the swift action. The critical-hit toggle stays on as well. Wrath Tactics does not cast these. The live rules, the Buff It button, and the Quicksave2 state are in [Reproduction.md](./Reproduction.md).
 
 ## Party
 
@@ -150,4 +150,4 @@ Rest buffs, once:
 
 Do not cast Bull's Strength, Bear's Endurance, Cat's Grace, or Shield of Faith on Fan. The first three do not stack with his current scores. Shield of Faith is deflection and does not stack with the +6 ring.
 
-Immediately before the fight: Daeran casts Haste. Fan casts Transformation, then Greater Invisibility. Seelah uses Mark of Justice on the boss. Ember puts Protective Luck on Fan and refreshes it with Cackle. Evil Eye goes on the boss's Armor Class. Fan's Dimension Strike stays on right-click autocast, and Perfect Strike stays toggled on. Rest first if the arcane pool is empty.
+Immediately before the fight, press the Buff It Normal button, then load Quicksave2 if the pool or the prepared slots are spent. Wrath Tactics casts Fan's Haste and Transformation when those buffs are missing. Ember's Protective Luck is a tactics rule. She does not have Cackle or Evil Eye. Dimension Strike stays on right-click autocast, and Perfect Strike stays toggled on. The party table above is the build plan. The button that is actually configured is the 40-row list in [Reproduction.md](./Reproduction.md).
