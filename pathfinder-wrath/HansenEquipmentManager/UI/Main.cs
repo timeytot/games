@@ -31,8 +31,8 @@ namespace HansenEquipmentManager
         private static Vector2 SlotMenuScroll;
         private static readonly StringBuilder Report = new StringBuilder();
         private const float FieldWidth = 640f;
-        private const float AvailableHeight = 430f;
-        private const float CardHeight = 84f;
+        private const float AvailableHeight = 360f;
+        private const float CardHeight = 36f;
 
         public static bool Load(UnityModManager.ModEntry modEntry)
         {
@@ -276,19 +276,20 @@ namespace HansenEquipmentManager
                     availableCount++;
             }
 
-            GUILayout.Space(6f);
+            GUILayout.Space(4f);
             GUILayout.BeginVertical(GUI.skin.box);
             GUILayout.Label("Current Equipment");
             if (currentIndex < 0)
                 GUILayout.Label("(empty)");
-            else if (GUILayout.Button(picks[currentIndex].DisplayName, GUILayout.Width(FieldWidth - 24f), GUILayout.Height(36f)))
+            else if (GUILayout.Button(picks[currentIndex].DisplayName, GUI.skin.label, GUILayout.Width(FieldWidth - 24f), GUILayout.Height(20f)))
                 BlueprintPick = currentIndex;
             GUILayout.EndVertical();
 
             var note = EquippedNote();
-            GUILayout.Label(note == null ? " " : "Already equipped copies: " + note.DisplayName + " x" + note.Copies);
+            if (note != null)
+                GUILayout.Label("Already equipped copies: " + note.DisplayName + " x" + note.Copies);
             GUILayout.Space(8f);
-            GUILayout.Label("Available Equipment (" + availableCount + (availableCount == 1 ? " item)" : " items)"));
+            GUILayout.Label("Available Equipment (" + availableCount + ")");
 
             float contentHeight = Math.Max(CardHeight, availableCount * CardHeight);
             Rect view = GUILayoutUtility.GetRect(FieldWidth, AvailableHeight);
@@ -304,16 +305,19 @@ namespace HansenEquipmentManager
             if (availableCount == 0)
                 GUI.Label(new Rect(8f, 8f, content.width - 8f, 24f), "(none)");
             int shown = 0;
-            string role = slotName == null ? "" : RoleLabel(slotName);
-            var rowStyle = new GUIStyle(GUI.skin.box) { wordWrap = true, fontSize = 14 };
+            var nameStyle = new GUIStyle(GUI.skin.label) { fontSize = 13, wordWrap = false };
+            var detailStyle = new GUIStyle(GUI.skin.label) { fontSize = 11, wordWrap = false };
             for (int i = 0; i < picks.Count; i++)
             {
                 if (picks[i].Current)
                     continue;
-                var card = new Rect(4f, shown * CardHeight + 4f, content.width - 8f, CardHeight - 8f);
-                string text = picks[i].DisplayName + "\n" + FactLine(role, picks[i].Tags, picks[i].Sources);
-                if (GUI.Button(card, text, rowStyle))
+                var row = new Rect(0f, shown * CardHeight, content.width, CardHeight);
+                if (BlueprintPick == i)
+                    GUI.Box(row, GUIContent.none);
+                if (GUI.Button(row, GUIContent.none, GUIStyle.none))
                     BlueprintPick = i;
+                GUI.Label(new Rect(row.x + 6f, row.y, row.width - 8f, 18f), picks[i].DisplayName, nameStyle);
+                GUI.Label(new Rect(row.x + 16f, row.y + 16f, row.width - 18f, 16f), FactLine(null, picks[i].Tags, picks[i].Sources), detailStyle);
                 shown++;
             }
             GUI.EndScrollView();
