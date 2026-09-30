@@ -84,7 +84,7 @@ namespace HansenEquipmentManager
             else
             {
                 text.AppendLine("[worn] " + DisplayName(itemSlot.MaybeItem));
-                text.AppendLine("Blueprint: " + itemSlot.MaybeItem.Blueprint.name);
+                text.AppendLine("ID: " + itemSlot.MaybeItem.Blueprint.name);
             }
             text.AppendLine("AVAILABLE");
             var ranked = Candidates(view, slot).Take(3).ToList();
@@ -97,21 +97,29 @@ namespace HansenEquipmentManager
             foreach (var row in ranked)
             {
                 string shown = DisplayName(row.Item);
-                Picks.Add(new AdvisorPick { Character = NameOf(view.Unit), Slot = slot, Blueprint = row.Item.Blueprint.name, DisplayName = shown });
+                Picks.Add(new AdvisorPick
+                {
+                    Character = NameOf(view.Unit),
+                    Slot = slot,
+                    Blueprint = row.Item.Blueprint.name,
+                    DisplayName = shown,
+                    Copies = row.Copies,
+                    Sources = string.Join(", ", row.Sources)
+                });
                 text.AppendLine(rank + ". " + shown);
-                text.AppendLine("   Blueprint: " + row.Item.Blueprint.name);
-                text.AppendLine("   Type: " + row.Type);
+                text.AppendLine("   ID: " + row.Item.Blueprint.name);
+                text.AppendLine("   Copies: " + row.Copies);
+                text.AppendLine("   Sources: " + string.Join(", ", row.Sources));
                 text.AppendLine("   Can use: Yes");
-                text.AppendLine("   Shield compatible: " + row.Shield);
-                text.AppendLine("   Notes: " + row.Build);
+                text.AppendLine("   Tags: " + row.Tags);
                 rank++;
             }
             return text.ToString();
         }
 
-        private static IEnumerable<Candidate> Candidates(CharacterView view, string slot)
+        private static List<Candidate> Candidates(CharacterView view, string slot)
         {
-            var rows = new List<Candidate>();
+            var groups = new Dictionary<string, Candidate>(StringComparer.Ordinal);
             foreach (var item in DistinctItems())
             {
                 if (!SlotFits(item, slot))
@@ -119,16 +127,59 @@ namespace HansenEquipmentManager
                 var target = EquipmentScanner.SlotOf(view.Unit, slot);
                 if (target == null || target.MaybeItem == item || !target.CanInsertItem(item))
                     continue;
-                rows.Add(new Candidate
+                string blueprint = item.Blueprint.name;
+                Candidate row;
+                if (!groups.TryGetValue(blueprint, out row))
                 {
-                    Item = item,
-                    Type = TypeLabel(item),
-                    Shield = ShieldLabel(view, item, slot),
-                    Build = ItemMatchesBuild(item, view) ? "matches this build's tags" : "not a typical item for this build",
-                    Sort = SortKey(view, item, slot)
-                });
+                    row = new Candidate
+                    {
+                        Item = item,
+                        Tags = FactTags(item, slot),
+                        Sort = SortKey(view, item, slot),
+                        Sources = new List<string>()
+                    };
+                    groups[blueprint] = row;
+                }
+                row.Copies++;
+                if (item.HoldingSlot == null && row.Item.HoldingSlot != null)
+                    row.Item = item;
+                string source = item.HoldingSlot == null ? "Inventory" : "Outside party";
+                if (!row.Sources.Contains(source))
+                    row.Sources.Add(source);
             }
-            return rows.OrderByDescending(row => row.Sort).ThenBy(row => row.Item.Blueprint.name);
+            return groups.Values.OrderByDescending(row => row.Sort).ThenBy(row => row.Item.Blueprint.name).ToList();
+        }
+
+        private static string FactTags(ItemEntity item, string slot)
+        {
+            var tags = new List<string>();
+            var weapon = item.Blueprint as BlueprintItemWeapon;
+            if (weapon != null)
+            {
+                tags.Add(SplitWords(weapon.Category.ToString()));
+                tags.Add(weapon.IsTwoHanded ? "two-hand" : "one-hand");
+                if (slot == "PrimaryHand")
+                    tags.Add(weapon.IsTwoHanded ? "not shield compatible" : "shield compatible");
+            }
+            else if (slot == "SecondaryHand")
+                tags.Add("shield");
+            else
+                tags.Add(PartyOptimizer.SlotLabel(slot).ToLowerInvariant());
+            return string.Join(", ", tags);
+        }
+
+        private static string SplitWords(string asset)
+        {
+            if (string.IsNullOrEmpty(asset))
+                return asset;
+            var text = new StringBuilder();
+            for (int i = 0; i < asset.Length; i++)
+            {
+                if (i > 0 && char.IsUpper(asset[i]) && char.IsLower(asset[i - 1]))
+                    text.Append(' ');
+                text.Append(asset[i]);
+            }
+            return text.ToString();
         }
 
         private static bool SlotFits(ItemEntity item, string slot)
@@ -160,31 +211,6 @@ namespace HansenEquipmentManager
             var probe = new EquipmentRecommendation();
             ItemEvaluator.Explain(item, view, true, true, probe);
             return probe.StatScore > 0;
-        }
-
-        private static string ShieldLabel(CharacterView view, ItemEntity item, string slot)
-        {
-            if (slot != "PrimaryHand")
-                return "n/a";
-            if (!ShieldInOffhand(view))
-                return ItemEvaluator.IsTwoHanded(item) ? "No, this is two-handed" : "Yes, one-handed";
-            return ItemEvaluator.IsTwoHanded(item) ? "No, shield is already equipped" : "Yes";
-        }
-
-        private static bool ShieldInOffhand(CharacterView view)
-        {
-            var slot = EquipmentScanner.SlotOf(view.Unit, "SecondaryHand");
-            return slot != null && slot.MaybeItem != null && slot.MaybeItem.Blueprint != null &&
-                   slot.MaybeItem.Blueprint.GetType().Name.IndexOf("Shield", StringComparison.OrdinalIgnoreCase) >= 0;
-        }
-
-        private static string TypeLabel(ItemEntity item)
-        {
-            string held = item.HoldingSlot == null ? "" : " held outside party";
-            var weapon = item.Blueprint as BlueprintItemWeapon;
-            if (weapon != null)
-                return weapon.Category + (weapon.IsTwoHanded ? " two-hand" : " one-hand") + " +" + item.EnchantmentValue + held;
-            return ItemEvaluator.SlotName(item) + " +" + item.EnchantmentValue + held;
         }
 
         private static IEnumerable<ItemEntity> DistinctItems()
@@ -219,15 +245,17 @@ namespace HansenEquipmentManager
             public string Slot;
             public string Blueprint;
             public string DisplayName;
+            public int Copies;
+            public string Sources;
         }
 
         private sealed class Candidate
         {
             public ItemEntity Item;
-            public string Type;
-            public string Shield;
-            public string Build;
+            public string Tags;
             public int Sort;
+            public int Copies;
+            public List<string> Sources;
         }
     }
 }

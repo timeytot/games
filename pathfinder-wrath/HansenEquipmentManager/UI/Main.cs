@@ -24,7 +24,9 @@ namespace HansenEquipmentManager
         private static bool CharacterOpen;
         private static bool SlotOpen;
         private static bool BlueprintOpen;
+        private static Vector2 ItemScroll;
         private static readonly StringBuilder Report = new StringBuilder();
+        private const float FieldWidth = 640f;
 
         public static bool Load(UnityModManager.ModEntry modEntry)
         {
@@ -51,19 +53,20 @@ namespace HansenEquipmentManager
             GUILayout.Label(Status);
             GUILayout.Label("Party");
             GUILayout.Label("Detected: " + Detection);
-            if (GUILayout.Button("Scan Party", GUILayout.Width(420)))
+            if (GUILayout.Button("Scan Party", GUILayout.Width(FieldWidth)))
                 RunSafe(ScanParty);
             GUILayout.Label("Equipment List");
-            if (GUILayout.Button("Generate Equipment List", GUILayout.Width(420)))
+            if (GUILayout.Button("Generate Equipment List", GUILayout.Width(FieldWidth)))
                 RunSafe(GenerateList);
-            GUILayout.Label("Actions");
-            GUILayout.Label("Choose one listed item. Only that item is equipped.");
+            GUILayout.Label("Select Equipment");
             CharacterPick = DrawPicker("Character", CharacterPick, ref CharacterOpen, CharacterNames(), true);
             SlotPick = DrawPicker("Slot", SlotPick, ref SlotOpen, SlotLabels(), true);
-            BlueprintPick = DrawPicker("Item", BlueprintPick, ref BlueprintOpen, ItemLabels(), false);
-            if (GUILayout.Button("Equip Selected", GUILayout.Width(420)))
+            DrawItemPicker();
+            DrawPreview();
+            if (GUILayout.Button("Equip This Item", GUILayout.Width(FieldWidth)))
                 RunSafe(EquipSelected);
-            if (GUILayout.Button("Export Report", GUILayout.Width(420)))
+            GUILayout.Label("Report");
+            if (GUILayout.Button("Export Report", GUILayout.Width(FieldWidth)))
                 RunSafe(ExportReport);
         }
 
@@ -142,7 +145,7 @@ namespace HansenEquipmentManager
             };
             string result = EquipmentExecutor.Execute(new List<PlannedAction> { plan });
             WriteReport("Equip Selected", result);
-            Status = "Selected item processed. See the mod log.";
+            Status = "Equipped this item. See the mod log.";
         }
 
         private static void ExportReport()
@@ -158,13 +161,13 @@ namespace HansenEquipmentManager
         private static int DrawPicker(string label, int index, ref bool open, IList<string> options, bool resetsBlueprint)
         {
             string current = options == null || options.Count == 0 || index < 0 || index >= options.Count ? "(none)" : options[index];
-            if (GUILayout.Button(label + ": " + current, GUILayout.Width(420)))
+            if (GUILayout.Button(label + ": " + current, GUILayout.Width(FieldWidth)))
                 open = !open;
             if (!open || options == null)
                 return index;
             for (int i = 0; i < options.Count; i++)
             {
-                if (!GUILayout.Button("  " + options[i], GUILayout.Width(400)))
+                if (!GUILayout.Button(options[i], GUILayout.Width(FieldWidth)))
                     continue;
                 open = false;
                 if (resetsBlueprint)
@@ -172,6 +175,57 @@ namespace HansenEquipmentManager
                 return i;
             }
             return index;
+        }
+
+        private static void DrawItemPicker()
+        {
+            var picks = PicksForSelection();
+            var pick = SelectedPick(picks);
+            string name = pick == null ? "(none)" : pick.DisplayName;
+            if (GUILayout.Button("Item: " + name, GUILayout.Width(FieldWidth)))
+                BlueprintOpen = !BlueprintOpen;
+            if (pick != null)
+                GUILayout.Label("ID: " + pick.Blueprint + (pick.Copies > 1 ? "    " + pick.Copies + " copies" : ""));
+            if (!BlueprintOpen)
+                return;
+            ItemScroll = GUILayout.BeginScrollView(ItemScroll, GUILayout.Width(FieldWidth), GUILayout.Height(180));
+            var style = new GUIStyle(GUI.skin.button);
+            style.wordWrap = true;
+            for (int i = 0; i < picks.Count; i++)
+            {
+                var row = picks[i];
+                string text = row.DisplayName + "\nID: " + row.Blueprint;
+                if (row.Copies > 1)
+                    text += "\n" + row.Copies + " copies";
+                if (!GUILayout.Button(text, style, GUILayout.Width(FieldWidth - 24), GUILayout.Height(row.Copies > 1 ? 58 : 42)))
+                    continue;
+                BlueprintOpen = false;
+                BlueprintPick = i;
+            }
+            GUILayout.EndScrollView();
+        }
+
+        private static void DrawPreview()
+        {
+            var pick = SelectedPick(PicksForSelection());
+            GUILayout.Label("Preview");
+            GUILayout.Label("Current: " + CurrentItemName());
+            GUILayout.Label("New: " + (pick == null ? "(none)" : pick.DisplayName));
+        }
+
+        private static string CurrentItemName()
+        {
+            if (Game.Instance == null || Game.Instance.Player == null)
+                return "(none)";
+            string character = Selected(CharacterNames(), CharacterPick);
+            string slotName = Selected(EquipmentAdvisor.SlotNames, SlotPick);
+            if (character == null || slotName == null)
+                return "(none)";
+            var unit = EquipmentScanner.FindUnit(character, null);
+            var slot = unit == null ? null : EquipmentScanner.SlotOf(unit, slotName);
+            if (slot == null || slot.MaybeItem == null)
+                return "(empty)";
+            return EquipmentAdvisor.DisplayName(slot.MaybeItem);
         }
 
         private static List<string> CharacterNames()
@@ -193,23 +247,7 @@ namespace HansenEquipmentManager
             return labels;
         }
 
-        private static List<string> ItemLabels()
-        {
-            var names = new List<string>();
-            string character = Selected(CharacterNames(), CharacterPick);
-            string slot = Selected(EquipmentAdvisor.SlotNames, SlotPick);
-            foreach (var pick in EquipmentAdvisor.Picks)
-            {
-                if (pick.Character != character || pick.Slot != slot)
-                    continue;
-                string label = string.IsNullOrEmpty(pick.DisplayName) ? pick.Blueprint : pick.DisplayName + "  (" + pick.Blueprint + ")";
-                if (!names.Contains(label))
-                    names.Add(label);
-            }
-            return names;
-        }
-
-        private static string SelectedBlueprint()
+        private static List<EquipmentAdvisor.AdvisorPick> PicksForSelection()
         {
             var matches = new List<EquipmentAdvisor.AdvisorPick>();
             string character = Selected(CharacterNames(), CharacterPick);
@@ -219,9 +257,20 @@ namespace HansenEquipmentManager
                 if (pick.Character == character && pick.Slot == slot)
                     matches.Add(pick);
             }
-            if (BlueprintPick < 0 || BlueprintPick >= matches.Count)
+            return matches;
+        }
+
+        private static EquipmentAdvisor.AdvisorPick SelectedPick(List<EquipmentAdvisor.AdvisorPick> matches)
+        {
+            if (matches == null || BlueprintPick < 0 || BlueprintPick >= matches.Count)
                 return null;
-            return matches[BlueprintPick].Blueprint;
+            return matches[BlueprintPick];
+        }
+
+        private static string SelectedBlueprint()
+        {
+            var pick = SelectedPick(PicksForSelection());
+            return pick == null ? null : pick.Blueprint;
         }
 
         private static string Selected(IList<string> options, int index)
