@@ -30,6 +30,7 @@ $dll = Join-Path $outDir "HansenEquipmentManager.dll"
     (Join-Path $root "Core\CharacterAnalyzer.cs") `
     (Join-Path $root "Core\ItemEvaluator.cs") `
     (Join-Path $root "Core\PartyOptimizer.cs") `
+    (Join-Path $root "Core\EquipmentAdvisor.cs") `
     /r:"$managed\Assembly-CSharp.dll" `
     /r:"$managed\Newtonsoft.Json.dll" `
     /r:"$managed\UnityEngine.CoreModule.dll" `

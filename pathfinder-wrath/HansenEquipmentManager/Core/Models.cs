@@ -72,6 +72,7 @@ namespace HansenEquipmentManager
         public bool AlreadyWorn;
         public bool NeedsConfirmation;
         public bool Apply;
+        public bool Skipped;
         public bool TwoHanded;
     }
 

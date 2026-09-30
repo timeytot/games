@@ -19,7 +19,7 @@ namespace HansenEquipmentManager
                 foreach (var view in party)
                 {
                     string actualSlot = FirstAcceptingSlot(view.Unit, item, slot);
-                    if (actualSlot == null)
+                    if (actualSlot == null || ConflictsWithShield(view, item, actualSlot))
                         continue;
                     var row = new EquipmentRecommendation();
                     ItemEvaluator.Explain(item, view, true, true, row);
@@ -71,11 +71,8 @@ namespace HansenEquipmentManager
                     row.NeedsConfirmation = true;
                     row.Conflict = "class signature weapon stays until you confirm";
                 }
-                if (row.TwoHanded && row.Slot == "PrimaryHand" && HasShield(best.View))
-                {
-                    row.NeedsConfirmation = true;
-                    row.Conflict = "two-handed weapon conflicts with the equipped shield";
-                }
+                if (IsHandSlot(row.Slot) && Occupied(row.Current) && !worn)
+                    ProtectExistingWeapon(row, best.View);
                 if (second != null && best.Row.Score - second.Row.Score < 5 && string.IsNullOrEmpty(row.Conflict))
                 {
                     row.NeedsConfirmation = true;
@@ -106,7 +103,7 @@ namespace HansenEquipmentManager
             int applyCount = 0;
             foreach (var row in chosen.OrderByDescending(row => row.Score))
             {
-                if (row.NeedsConfirmation || row.AlreadyWorn || row.Score < 20)
+                if (row.NeedsConfirmation || row.Skipped || row.AlreadyWorn || row.Score < 20)
                     continue;
                 if (applyCount >= 5)
                     continue;
@@ -136,11 +133,11 @@ namespace HansenEquipmentManager
             var seen = new HashSet<string>();
             foreach (var row in chosen.OrderByDescending(row => row.Score))
             {
-                if (!row.Apply && !row.NeedsConfirmation)
+                if (!row.Apply && !row.NeedsConfirmation && !row.Skipped)
                     continue;
-                if (row.NeedsConfirmation && row.Conflict != null && row.Conflict.StartsWith("close score"))
+                if (row.Conflict != null && row.Conflict.StartsWith("close score"))
                     continue;
-                string key = (row.Apply ? "apply|" : "confirm|") + row.UnitId + "|" + row.Slot;
+                string key = row.UnitId + "|" + row.Slot;
                 if (seen.Contains(key))
                     continue;
                 seen.Add(key);
@@ -165,7 +162,13 @@ namespace HansenEquipmentManager
             foreach (var row in recommendations.Where(row => row.NeedsConfirmation))
             {
                 text.AppendLine(DescribeChange(row));
-                text.AppendLine("Needs confirmation, not equipped. " + row.Conflict);
+                text.AppendLine("NEEDS CONFIRMATION. Not equipped. " + row.Conflict);
+            }
+            foreach (var row in recommendations.Where(row => row.Skipped))
+            {
+                text.AppendLine("SKIPPED:");
+                text.AppendLine(DescribeChange(row));
+                text.AppendLine(row.Conflict);
             }
             return text.ToString();
         }
@@ -192,8 +195,16 @@ namespace HansenEquipmentManager
                 foreach (var row in recommendations.Where(row => row.NeedsConfirmation))
                 {
                     text.AppendLine("");
+                    text.AppendLine("NEEDS CONFIRMATION");
                     text.AppendLine(DescribeChange(row));
-                    text.AppendLine("Needs confirmation, not equipped. " + row.Conflict);
+                    text.AppendLine(row.Conflict);
+                }
+                foreach (var row in recommendations.Where(row => row.Skipped))
+                {
+                    text.AppendLine("");
+                    text.AppendLine("SKIPPED");
+                    text.AppendLine(DescribeChange(row));
+                    text.AppendLine(row.Conflict);
                 }
             }
             return text.ToString();
@@ -207,6 +218,75 @@ namespace HansenEquipmentManager
                 + "\nScore: " + row.Score
                 + "\nReason: " + row.Reason
                 + "\nConfidence: " + row.Confidence + "%";
+        }
+
+        private const int ReplacementThreshold = 20;
+
+        private static bool ConflictsWithShield(CharacterView view, ItemEntity item, string slot)
+        {
+            if (slot == "PrimaryHand" && ItemEvaluator.IsTwoHanded(item) && SecondaryIsShield(view))
+                return true;
+            if (slot == "SecondaryHand" && IsShieldItem(item) && PrimaryIsTwoHanded(view))
+                return true;
+            return false;
+        }
+
+        private static bool SecondaryIsShield(CharacterView view)
+        {
+            var slot = EquipmentScanner.SlotOf(view.Unit, "SecondaryHand");
+            return slot != null && IsShieldItem(slot.MaybeItem);
+        }
+
+        private static bool PrimaryIsTwoHanded(CharacterView view)
+        {
+            var slot = EquipmentScanner.SlotOf(view.Unit, "PrimaryHand");
+            return slot != null && ItemEvaluator.IsTwoHanded(slot.MaybeItem);
+        }
+
+        private static bool IsShieldItem(ItemEntity item)
+        {
+            return item != null && item.Blueprint != null &&
+                   item.Blueprint.GetType().Name.IndexOf("Shield", System.StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
+        private static bool IsHandSlot(string slot)
+        {
+            return slot == "PrimaryHand" || slot == "SecondaryHand";
+        }
+
+        private static bool Occupied(string current)
+        {
+            return !string.IsNullOrEmpty(current) && current != "empty" && current != "missing";
+        }
+
+        private static void ProtectExistingWeapon(EquipmentRecommendation row, CharacterView view)
+        {
+            int currentScore = EquippedScore(view, row.Slot);
+            int delta = row.Score - currentScore;
+            row.Apply = false;
+            row.Reason = "Existing weapon protected. Delta " + delta + ". " + row.Reason;
+            if (delta < ReplacementThreshold)
+            {
+                row.NeedsConfirmation = false;
+                row.Skipped = true;
+                row.Conflict = "Replacement threshold not reached";
+            }
+            else
+            {
+                row.Skipped = false;
+                row.NeedsConfirmation = true;
+                row.Conflict = "Existing weapon protected until you confirm";
+            }
+        }
+
+        private static int EquippedScore(CharacterView view, string slot)
+        {
+            var itemSlot = EquipmentScanner.SlotOf(view.Unit, slot);
+            if (itemSlot == null || itemSlot.MaybeItem == null)
+                return 0;
+            var scored = new EquipmentRecommendation();
+            ItemEvaluator.Explain(itemSlot.MaybeItem, view, true, true, scored);
+            return scored.Score < 0 ? 0 : scored.Score;
         }
 
         private static bool ReplacesEquippedWeapon(EquipmentRecommendation row)

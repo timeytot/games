@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Kingmaker;
-using Newtonsoft.Json;
 using UnityEngine;
 using UnityModManagerNet;
 
@@ -16,8 +15,11 @@ namespace HansenEquipmentManager
         private static List<EquipmentProfile> Profiles = new List<EquipmentProfile>();
         private static int ProfileIndex;
         private static List<BuildRuleSet> BuildRules = new List<BuildRuleSet>();
-        private static string Status = "Scan the party first.";
+        private static string Status = "Scan the party first. Nothing is equipped automatically.";
         private static string Detection = "Not scanned yet";
+        private static string PickCharacter = "";
+        private static string PickSlot = "PrimaryHand";
+        private static string PickBlueprint = "";
         private static readonly StringBuilder Report = new StringBuilder();
 
         public static bool Load(UnityModManager.ModEntry modEntry)
@@ -43,24 +45,20 @@ namespace HansenEquipmentManager
         {
             GUILayout.Label("Hansen Equipment Manager");
             GUILayout.Label("Detected: " + Detection);
-            GUILayout.Label("Plan: " + CurrentName());
             GUILayout.Label(Status);
+            GUILayout.Label("Type the character, slot, and blueprint from the list. Only that item is equipped.");
+            PickCharacter = GUILayout.TextField(PickCharacter, GUILayout.Width(420));
+            PickSlot = GUILayout.TextField(PickSlot, GUILayout.Width(420));
+            PickBlueprint = GUILayout.TextField(PickBlueprint, GUILayout.Width(420));
 
-            if (GUILayout.Button("Switch Plan", GUILayout.Width(420)) && Profiles.Count > 0)
-            {
-                ProfileIndex = (ProfileIndex + 1) % Profiles.Count;
-                Status = "Plan switched. Generate a plan again before equipping.";
-            }
             if (GUILayout.Button("Scan Party", GUILayout.Width(420)))
                 RunSafe(ScanParty);
-            if (GUILayout.Button("Generate Plan", GUILayout.Width(420)))
-                RunSafe(BuildPlan);
-            if (GUILayout.Button("Review Changes", GUILayout.Width(420)))
-                RunSafe(ShowChanges);
-            if (GUILayout.Button("Confirm and Equip", GUILayout.Width(420)))
-                RunSafe(ConfirmEquip);
-            if (GUILayout.Button("Check Equipment", GUILayout.Width(420)))
-                RunSafe(CheckEquipment);
+            if (GUILayout.Button("Generate Equipment List", GUILayout.Width(420)))
+                RunSafe(GenerateList);
+            if (GUILayout.Button("Equip Selected", GUILayout.Width(420)))
+                RunSafe(EquipSelected);
+            if (GUILayout.Button("Export Report", GUILayout.Width(420)))
+                RunSafe(ExportReport);
         }
 
         private static void ScanParty()
@@ -92,80 +90,57 @@ namespace HansenEquipmentManager
                 NoteEmpty(text, unit, "Neck");
             }
             WriteReport("Scan Party", text.ToString());
-            Status = "Party scan is in the mod log. Nothing was equipped.";
+            Status = "Party scanned. Nothing was equipped.";
         }
 
-        private static void BuildPlan()
+        private static void GenerateList()
         {
             RequireGame();
             var party = CharacterAnalyzer.Analyze(BuildRules);
-            var rows = PartyOptimizer.Recommend(party);
-            var saved = new SavedRecommendationFile
+            string list = EquipmentAdvisor.EquipmentList(party);
+            WriteReport("Equipment List", list);
+            Status = "List is in the mod log. Nothing was equipped.";
+        }
+
+        private static void EquipSelected()
+        {
+            RequireGame();
+            if (string.IsNullOrEmpty(PickCharacter) || string.IsNullOrEmpty(PickSlot) || string.IsNullOrEmpty(PickBlueprint))
+                throw new InvalidOperationException("Type a character, a slot, and a blueprint first.");
+            var unit = EquipmentScanner.FindUnit(PickCharacter.Trim(), null);
+            if (unit == null)
+                throw new InvalidOperationException("Character was not found: " + PickCharacter);
+            var slot = EquipmentScanner.SlotOf(unit, PickSlot.Trim());
+            if (slot == null)
+                throw new InvalidOperationException("Slot was not found: " + PickSlot);
+            var item = EquipmentAdvisor.FindSelectedItem(PickBlueprint.Trim());
+            if (item == null)
+                throw new InvalidOperationException("Item was not found: " + PickBlueprint);
+            var plan = new PlannedAction
             {
-                profileId = Current() == null ? "" : Current().id,
-                rows = rows
+                Status = PlanStatus.Ready,
+                ItemId = item.UniqueId,
+                Rule = new EquipmentRule
+                {
+                    character = unit.CharacterName,
+                    unitId = unit.UniqueId,
+                    slot = PickSlot.Trim(),
+                    blueprint = item.Blueprint.name
+                }
             };
-            File.WriteAllText(RecommendationPath(), JsonConvert.SerializeObject(saved, Formatting.Indented));
-            var text = new StringBuilder();
-            text.AppendLine(CharacterAnalyzer.Report(party));
-            text.AppendLine(PartyOptimizer.Report(rows));
-            text.AppendLine("Plan saved. Nothing was equipped.");
-            WriteReport("Generate Plan", text.ToString());
-            Status = "Plan generated. Nothing was equipped. Review the changes before equipping.";
+            string result = EquipmentExecutor.Execute(new List<PlannedAction> { plan });
+            WriteReport("Equip Selected", result);
+            Status = "Selected item processed. See the mod log.";
         }
 
-        private static void ShowChanges()
+        private static void ExportReport()
         {
-            var saved = ReadRecommendation();
-            WriteReport("Review Changes", PartyOptimizer.ChangeList(saved.rows));
-            Status = "Changes are in the mod log. Nothing was equipped.";
-        }
-
-        private static void ConfirmEquip()
-        {
-            RequireGame();
-            var saved = ReadRecommendation();
-            if (Current() != null && saved.profileId != Current().id)
-                throw new InvalidOperationException("The plan was switched. Generate a plan again.");
-            var plans = PartyOptimizer.ToPlans(saved.rows);
-            if (plans.Count == 0)
-                throw new InvalidOperationException("This plan has no changes to apply.");
-            string result = EquipmentExecutor.Execute(plans);
-            File.AppendAllText(Path.Combine(ModDirectory, "equip-log.txt"), System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\n" + result + "\n");
-            WriteReport("Confirm and Equip", result);
-            Status = "Equip finished. A short note was added to equip-log.txt.";
-        }
-
-        private static void CheckEquipment()
-        {
-            RequireGame();
-            string result = "No plan to check.";
-            string path = RecommendationPath();
-            if (File.Exists(path))
-            {
-                var saved = JsonConvert.DeserializeObject<SavedRecommendationFile>(File.ReadAllText(path));
-                if (saved != null && saved.rows != null)
-                    result = EquipmentExecutor.VerifySaved(saved.rows);
-            }
-            WriteReport("Check Equipment", result);
-            File.WriteAllText(Path.Combine(ModDirectory, "report.txt"), Report.ToString());
-            Status = "Check saved once to report.txt.";
-        }
-
-        private static SavedRecommendationFile ReadRecommendation()
-        {
-            string path = RecommendationPath();
-            if (!File.Exists(path))
-                throw new InvalidOperationException("Generate a plan first.");
-            var saved = JsonConvert.DeserializeObject<SavedRecommendationFile>(File.ReadAllText(path));
-            if (saved == null || saved.rows == null)
-                throw new InvalidOperationException("The saved plan is empty. Generate it again.");
-            return saved;
-        }
-
-        private static string RecommendationPath()
-        {
-            return Path.Combine(ModDirectory, "lastRecommendation.json");
+            if (Report.Length == 0)
+                throw new InvalidOperationException("Generate the equipment list before exporting.");
+            string path = Path.Combine(ModDirectory, "report.txt");
+            File.WriteAllText(path, Report.ToString());
+            Log.Log("Exported " + path);
+            Status = "Report written to report.txt.";
         }
 
         private static void NoteEmpty(StringBuilder text, Kingmaker.EntitySystem.Entities.UnitEntityData unit, string slot)

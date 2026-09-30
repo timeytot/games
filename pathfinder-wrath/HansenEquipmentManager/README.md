@@ -24,7 +24,7 @@ Equip Selected runs only after Preview for the same profile, and only for rows m
 
 `BuildRules/*.json` holds stat and tag weights. A new build is a new file. The DLL does not contain per-character scores.
 
-Scan Party and Review Changes stay on screen. Generate Plan overwrites `lastRecommendation.json`. Confirm and Equip appends a short `equip-log.txt`. Check Equipment writes `report.txt` only when clicked. Review Changes shows the current item, the new item, the score, the reason, and the confidence. Replacing a weapon that is already equipped, including a Zen Archer bow, waits for confirmation and is not applied automatically.
+The advisor buttons are Scan Party, Generate Equipment List, Equip Selected, and Export Report. The list shows the current item and up to three usable candidates per slot, with can-use, shield, and build-match notes. It does not equip anything. Equip Selected moves only the character, slot, and blueprint typed into the fields. Export Report writes `report.txt` when clicked. Two-handed weapons are omitted from a primary-hand list while that character is wearing a shield.
 
 ## Build on this machine
 
