@@ -46,7 +46,8 @@ $doCommit = [bool]$Commit -or [bool]$Push
 
 $wrath = Join-Path $Repo "pathfinder-wrath"
 $current = Join-Path $wrath "lich\current"
-$temp = Join-Path $env:TEMP "WotR_Current_Snapshot"
+$tempRoot = if ($env:TEMP) { $env:TEMP } else { [System.IO.Path]::GetTempPath() }
+$temp = Join-Path $tempRoot "WotR_Current_Snapshot"
 $extractor = Join-Path $wrath "tools\extract_wotr_save.py"
 $lock = Join-Path $temp "refresh.lock"
 $currentFiles = @(
