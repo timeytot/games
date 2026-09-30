@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Kingmaker.EntitySystem.Entities;
@@ -12,57 +13,165 @@ namespace HansenEquipmentManager
             int equipped = 0;
             int skipped = 0;
             int failed = 0;
+            if (plans == null)
+            {
+                report.AppendLine("FAILED: no plan to execute");
+                return report.ToString();
+            }
             foreach (var plan in plans)
             {
-                if (plan.Status == PlanStatus.AlreadyCorrect)
+                if (plan == null || plan.Rule == null)
+                {
+                    failed++;
+                    report.AppendLine("FAILED:\nCharacter:\nSlot:\nBlueprint:\nReason: empty plan");
+                    continue;
+                }
+                if (plan.Status == PlanStatus.AlreadyCorrect || plan.Status != PlanStatus.Ready)
                 {
                     skipped++;
-                    report.AppendLine("SKIP " + Label(plan) + " already equipped");
                     continue;
                 }
-                if (plan.Status != PlanStatus.Ready)
+                try
                 {
-                    skipped++;
-                    report.AppendLine("SKIP " + Label(plan) + " " + plan.Status + " " + plan.Detail);
-                    continue;
+                    if (ExecuteOne(plan, report))
+                        equipped++;
+                    else
+                        failed++;
                 }
-
-                var target = EquipmentScanner.FindUnit(plan.Rule.character, plan.Rule.unitId);
-                var slot = EquipmentScanner.SlotOf(target, plan.Rule.slot);
-                var item = EquipmentScanner.FindPlannedItem(plan);
-                string reason;
-                if (!EquipmentValidator.CanApply(slot, item, out reason))
+                catch (Exception ex)
                 {
                     failed++;
-                    report.AppendLine("FAIL " + Label(plan) + " " + reason + ". Nothing was removed.");
-                    continue;
+                    report.AppendLine(Fail(plan, ex.Message));
                 }
-
-                if (item.HoldingSlot != null && !item.HoldingSlot.RemoveItem())
-                {
-                    failed++;
-                    report.AppendLine("FAIL " + Label(plan) + " donor RemoveItem returned false");
-                    continue;
-                }
-                if (slot.HasItem && !slot.RemoveItem())
-                {
-                    failed++;
-                    report.AppendLine("FAIL " + Label(plan) + " target RemoveItem returned false");
-                    continue;
-                }
-                if (!slot.InsertItem(item) || !EquipmentValidator.Equipped(slot, plan.Rule.blueprint))
-                {
-                    failed++;
-                    report.AppendLine("FAIL " + Label(plan) + " InsertItem verification failed");
-                    continue;
-                }
-
-                equipped++;
-                report.AppendLine("SUCCESS " + Label(plan));
             }
 
             report.AppendLine("Done. Equipped " + equipped + ", skipped " + skipped + ", failed " + failed + ".");
             return report.ToString();
+        }
+
+        private static bool ExecuteOne(PlannedAction plan, StringBuilder report)
+        {
+            report.AppendLine("Item " + Safe(plan.Rule.character) + " " + Safe(plan.Rule.slot) + " " + Safe(plan.Rule.blueprint));
+            var target = EquipmentScanner.FindUnit(plan.Rule.character, plan.Rule.unitId);
+            report.AppendLine("Target unit: " + (target == null ? "not found" : "found"));
+            if (target == null)
+            {
+                report.AppendLine(Fail(plan, "character is not in the active party"));
+                return false;
+            }
+
+            var slot = EquipmentScanner.SlotOf(target, plan.Rule.slot);
+            report.AppendLine("Target slot: " + (slot == null ? "not found" : "found"));
+            if (slot == null)
+            {
+                report.AppendLine(Fail(plan, "slot does not exist"));
+                return false;
+            }
+
+            var item = EquipmentScanner.FindPlannedItem(plan);
+            report.AppendLine("Source item: " + (item == null ? "not found" : "found"));
+            if (item == null)
+            {
+                report.AppendLine(Fail(plan, "item is not in inventory"));
+                return false;
+            }
+
+            bool canInsert = false;
+            try
+            {
+                canInsert = slot.CanInsertItem(item);
+            }
+            catch (Exception ex)
+            {
+                report.AppendLine("CanInsertItem: false");
+                report.AppendLine(Fail(plan, ex.Message));
+                return false;
+            }
+            report.AppendLine("CanInsertItem: " + (canInsert ? "true" : "false"));
+            if (!canInsert)
+            {
+                report.AppendLine(Fail(plan, "CanInsertItem=false"));
+                return false;
+            }
+
+            if (item.HoldingSlot == null)
+            {
+                report.AppendLine("RemoveItem: not needed");
+            }
+            else
+            {
+                bool removed = false;
+                try
+                {
+                    removed = item.HoldingSlot.RemoveItem();
+                }
+                catch (Exception ex)
+                {
+                    report.AppendLine("RemoveItem: failed");
+                    report.AppendLine(Fail(plan, ex.Message));
+                    return false;
+                }
+                report.AppendLine("RemoveItem: " + (removed ? "success" : "failed"));
+                if (!removed)
+                {
+                    report.AppendLine(Fail(plan, "could not remove the previous holder"));
+                    return false;
+                }
+            }
+
+            if (slot.HasItem)
+            {
+                bool cleared = false;
+                try
+                {
+                    cleared = slot.RemoveItem();
+                }
+                catch (Exception ex)
+                {
+                    report.AppendLine("RemoveItem: failed");
+                    report.AppendLine(Fail(plan, ex.Message));
+                    return false;
+                }
+                report.AppendLine("Clear target slot: " + (cleared ? "success" : "failed"));
+                if (!cleared)
+                {
+                    report.AppendLine(Fail(plan, "could not clear the target slot"));
+                    return false;
+                }
+            }
+
+            bool inserted = false;
+            try
+            {
+                inserted = slot.InsertItem(item) && EquipmentValidator.Equipped(slot, plan.Rule.blueprint);
+            }
+            catch (Exception ex)
+            {
+                report.AppendLine("InsertItem: failed");
+                report.AppendLine(Fail(plan, ex.Message));
+                return false;
+            }
+            report.AppendLine("InsertItem: " + (inserted ? "success" : "failed"));
+            if (!inserted)
+            {
+                report.AppendLine(Fail(plan, "verification failed after InsertItem"));
+                return false;
+            }
+            report.AppendLine("SUCCESS " + Safe(plan.Rule.character) + " " + Safe(plan.Rule.slot) + " " + Safe(plan.Rule.blueprint));
+            return true;
+        }
+
+        private static string Fail(PlannedAction plan, string reason)
+        {
+            string character = plan == null || plan.Rule == null ? "" : plan.Rule.character;
+            string slot = plan == null || plan.Rule == null ? "" : plan.Rule.slot;
+            string blueprint = plan == null || plan.Rule == null ? "" : plan.Rule.blueprint;
+            return "FAILED:\nCharacter: " + character + "\nSlot: " + slot + "\nBlueprint: " + blueprint + "\nReason: " + reason;
+        }
+
+        private static string Safe(string value)
+        {
+            return value ?? "";
         }
 
         public static string Verify(EquipmentProfile profile)
@@ -80,9 +189,31 @@ namespace HansenEquipmentManager
             return report.ToString();
         }
 
-        private static string Label(PlannedAction plan)
+        public static string VerifySaved(IList<EquipmentRecommendation> rows)
         {
-            return plan.Rule.character + " / " + plan.Rule.slot + " / " + plan.Rule.blueprint;
+            var report = new StringBuilder();
+            report.AppendLine("Equipment check");
+            if (rows == null)
+            {
+                report.AppendLine("No plan.");
+                return report.ToString();
+            }
+            bool any = false;
+            foreach (var row in rows)
+            {
+                if (row == null || !row.Apply)
+                    continue;
+                any = true;
+                var target = EquipmentScanner.FindUnit(row.Character, row.UnitId);
+                var slot = EquipmentScanner.SlotOf(target, row.Slot);
+                bool ok = EquipmentValidator.Equipped(slot, row.Blueprint);
+                report.AppendLine((ok ? "OK: " : "MISSING: ") + row.Character + " " + PartyOptimizer.SlotLabel(row.Slot) + " " + row.Blueprint);
+                if (!ok)
+                    report.AppendLine("Reason: current item is " + EquipmentScanner.Describe(slot));
+            }
+            if (!any)
+                report.AppendLine("This plan had no changes to check.");
+            return report.ToString();
         }
     }
 }

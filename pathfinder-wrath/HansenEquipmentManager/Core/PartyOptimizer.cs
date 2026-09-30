@@ -21,79 +21,254 @@ namespace HansenEquipmentManager
                     string actualSlot = FirstAcceptingSlot(view.Unit, item, slot);
                     if (actualSlot == null)
                         continue;
-                    int score = ItemEvaluator.Score(item, view);
-                    if (score <= 0)
+                    var row = new EquipmentRecommendation();
+                    ItemEvaluator.Explain(item, view, true, true, row);
+                    if (row.Score < 20)
                         continue;
-                    offers.Add(new Offer { Item = item, View = view, Slot = actualSlot, Score = score });
+                    offers.Add(new Offer { Item = item, View = view, Slot = actualSlot, Row = row });
                 }
             }
 
-            offers.Sort((a, b) => b.Score.CompareTo(a.Score));
-            var usedItems = new HashSet<string>();
-            var usedSlots = new HashSet<string>();
-            var blockedTwoHand = new HashSet<string>();
-            var blockedShield = new HashSet<string>();
-            var chosen = new List<EquipmentRecommendation>();
+            var byItem = new Dictionary<string, List<Offer>>();
             foreach (var offer in offers)
             {
-                string itemId = offer.Item.UniqueId;
-                string slotKey = offer.View.Unit.UniqueId + "|" + offer.Slot;
-                if (usedItems.Contains(itemId) || usedSlots.Contains(slotKey))
-                    continue;
-                if (ItemEvaluator.IsTwoHanded(offer.Item) && blockedTwoHand.Contains(offer.View.Unit.UniqueId))
-                    continue;
-                if (offer.Slot == "SecondaryHand" && blockedShield.Contains(offer.View.Unit.UniqueId))
-                    continue;
-
-                usedItems.Add(itemId);
-                usedSlots.Add(slotKey);
-                if (ItemEvaluator.IsTwoHanded(offer.Item))
-                    blockedShield.Add(offer.View.Unit.UniqueId);
-                if (offer.Slot == "SecondaryHand")
-                    blockedTwoHand.Add(offer.View.Unit.UniqueId);
-
-                var conflict = offers.FirstOrDefault(other =>
-                    other.Item.UniqueId == itemId && other.View.Unit.UniqueId != offer.View.Unit.UniqueId);
-                bool worn = offer.Item.HoldingSlot != null &&
-                            offer.Item.Wielder != null &&
-                            ReferenceEquals(offer.Item.Wielder, offer.View.Unit.Descriptor);
-                chosen.Add(new EquipmentRecommendation
+                List<Offer> list;
+                if (!byItem.TryGetValue(offer.Item.UniqueId, out list))
                 {
-                    Character = offer.View.Unit.CharacterName,
-                    UnitId = offer.View.Unit.UniqueId,
-                    Slot = offer.Slot,
-                    Blueprint = offer.Item.Blueprint.name,
-                    ItemId = itemId,
-                    Score = offer.Score,
-                    AlreadyWorn = worn,
-                    Conflict = conflict == null ? null : conflict.View.Unit.CharacterName + " score " + conflict.Score
-                });
+                    list = new List<Offer>();
+                    byItem[offer.Item.UniqueId] = list;
+                }
+                list.Add(offer);
             }
-            return chosen;
+
+            var candidates = new List<EquipmentRecommendation>();
+            foreach (var pair in byItem)
+            {
+                var ranked = pair.Value.OrderByDescending(offer => offer.Row.Score).ToList();
+                var best = ranked[0];
+                var second = ranked.Count > 1 ? ranked[1] : null;
+                bool worn = best.Item.HoldingSlot != null &&
+                            best.Item.Wielder != null &&
+                            ReferenceEquals(best.Item.Wielder, best.View.Unit.Descriptor);
+                var row = best.Row;
+                row.Character = NameOf(best.View.Unit);
+                row.UnitId = best.View.Unit.UniqueId;
+                row.Slot = best.Slot;
+                row.Blueprint = best.Item.Blueprint.name;
+                row.ItemId = best.Item.UniqueId;
+                row.Current = CurrentName(best.View.Unit, best.Slot);
+                row.AlreadyWorn = worn;
+                row.TwoHanded = ItemEvaluator.IsTwoHanded(best.Item);
+                row.Reason = "Stats +" + row.StatScore + ", Crit +" + row.CritScore + ", Build +" + row.BuildScore + ", Compatibility +" + row.CompatibilityScore;
+                row.Confidence = row.Score;
+                if (ReplacesEquippedWeapon(row))
+                {
+                    row.NeedsConfirmation = true;
+                    row.Conflict = "replaces equipped " + row.Current;
+                }
+                if (IsSignatureWeapon(best.View, best.Slot))
+                {
+                    row.NeedsConfirmation = true;
+                    row.Conflict = "class signature weapon stays until you confirm";
+                }
+                if (row.TwoHanded && row.Slot == "PrimaryHand" && HasShield(best.View))
+                {
+                    row.NeedsConfirmation = true;
+                    row.Conflict = "two-handed weapon conflicts with the equipped shield";
+                }
+                if (second != null && best.Row.Score - second.Row.Score < 5 && string.IsNullOrEmpty(row.Conflict))
+                {
+                    row.NeedsConfirmation = true;
+                    row.Apply = false;
+                    row.Conflict = "close score with " + NameOf(second.View.Unit) + " " + second.Row.Score;
+                }
+                candidates.Add(row);
+            }
+
+            var usedItems = new HashSet<string>();
+            var usedSlots = new HashSet<string>();
+            var chosen = new List<EquipmentRecommendation>();
+            foreach (var row in candidates.OrderByDescending(row => row.Score))
+            {
+                if (row.NeedsConfirmation)
+                {
+                    chosen.Add(row);
+                    continue;
+                }
+                string slotKey = row.UnitId + "|" + row.Slot;
+                if (usedItems.Contains(row.ItemId) || usedSlots.Contains(slotKey))
+                    continue;
+                usedItems.Add(row.ItemId);
+                usedSlots.Add(slotKey);
+                chosen.Add(row);
+            }
+
+            int applyCount = 0;
+            foreach (var row in chosen.OrderByDescending(row => row.Score))
+            {
+                if (row.NeedsConfirmation || row.AlreadyWorn || row.Score < 20)
+                    continue;
+                if (applyCount >= 5)
+                    continue;
+                row.Apply = true;
+                applyCount++;
+            }
+            var twoHandUsers = new HashSet<string>();
+            foreach (var row in chosen)
+            {
+                if (row.Apply && row.TwoHanded)
+                    twoHandUsers.Add(row.UnitId);
+            }
+            foreach (var row in chosen)
+            {
+                if (row.Apply && row.Slot == "SecondaryHand" && twoHandUsers.Contains(row.UnitId))
+                {
+                    row.Apply = false;
+                    row.Conflict = "conflicts with a two-handed weapon; not equipped together";
+                }
+            }
+            return OneDecisionPerSlot(chosen);
+        }
+
+        private static List<EquipmentRecommendation> OneDecisionPerSlot(List<EquipmentRecommendation> chosen)
+        {
+            var shown = new List<EquipmentRecommendation>();
+            var seen = new HashSet<string>();
+            foreach (var row in chosen.OrderByDescending(row => row.Score))
+            {
+                if (!row.Apply && !row.NeedsConfirmation)
+                    continue;
+                if (row.NeedsConfirmation && row.Conflict != null && row.Conflict.StartsWith("close score"))
+                    continue;
+                string key = (row.Apply ? "apply|" : "confirm|") + row.UnitId + "|" + row.Slot;
+                if (seen.Contains(key))
+                    continue;
+                seen.Add(key);
+                shown.Add(row);
+            }
+            return shown;
         }
 
         public static string Report(IList<EquipmentRecommendation> recommendations)
         {
             var text = new StringBuilder();
-            text.AppendLine("Recommended");
+            text.AppendLine("Recommended changes");
             if (recommendations == null || recommendations.Count == 0)
             {
-                text.AppendLine("No positive-score assignment.");
+                text.AppendLine("No confident change.");
                 return text.ToString();
             }
-            foreach (var row in recommendations.Where(row => !row.AlreadyWorn))
+            foreach (var row in recommendations.Where(row => row.Apply))
             {
-                text.AppendLine(row.Character + " " + row.Slot + " " + row.Blueprint + " Score " + row.Score);
-                if (!string.IsNullOrEmpty(row.Conflict))
-                    text.AppendLine("Conflict: " + row.Conflict + ". Resolution: " + row.Character + " has the higher score.");
+                text.AppendLine(DescribeChange(row));
+            }
+            foreach (var row in recommendations.Where(row => row.NeedsConfirmation))
+            {
+                text.AppendLine(DescribeChange(row));
+                text.AppendLine("Needs confirmation, not equipped. " + row.Conflict);
             }
             return text.ToString();
+        }
+
+        public static string ChangeList(IList<EquipmentRecommendation> recommendations)
+        {
+            var text = new StringBuilder();
+            text.AppendLine("Changes:");
+            bool any = false;
+            if (recommendations != null)
+            {
+                foreach (var row in recommendations.Where(row => row.Apply))
+                {
+                    any = true;
+                    text.AppendLine("");
+                    text.AppendLine(DescribeChange(row));
+                    text.AppendLine("Will equip when you confirm.");
+                }
+            }
+            if (!any)
+                text.AppendLine("No confident change.");
+            if (recommendations != null)
+            {
+                foreach (var row in recommendations.Where(row => row.NeedsConfirmation))
+                {
+                    text.AppendLine("");
+                    text.AppendLine(DescribeChange(row));
+                    text.AppendLine("Needs confirmation, not equipped. " + row.Conflict);
+                }
+            }
+            return text.ToString();
+        }
+
+        private static string DescribeChange(EquipmentRecommendation row)
+        {
+            string current = string.IsNullOrEmpty(row.Current) ? "empty" : row.Current;
+            return row.Character + " " + SlotLabel(row.Slot) + "\n"
+                + current + "\n->\n" + row.Blueprint
+                + "\nScore: " + row.Score
+                + "\nReason: " + row.Reason
+                + "\nConfidence: " + row.Confidence + "%";
+        }
+
+        private static bool ReplacesEquippedWeapon(EquipmentRecommendation row)
+        {
+            if (row.Slot != "PrimaryHand" && row.Slot != "SecondaryHand")
+                return false;
+            return !string.IsNullOrEmpty(row.Current) && row.Current != "empty" && row.Current != "missing" && row.Current != row.Blueprint;
+        }
+
+        private static bool IsSignatureWeapon(CharacterView view, string slot)
+        {
+            if (view == null || view.Rules == null || view.Rules.signatureCategories == null)
+                return false;
+            var slotItem = EquipmentScanner.SlotOf(view.Unit, slot);
+            if (slotItem == null || slotItem.MaybeItem == null)
+                return false;
+            var weapon = slotItem.MaybeItem.Blueprint as Kingmaker.Blueprints.Items.Weapons.BlueprintItemWeapon;
+            if (weapon == null)
+                return false;
+            string category = weapon.Category.ToString();
+            foreach (var signature in view.Rules.signatureCategories)
+            {
+                if (string.Equals(signature, category, System.StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
+        }
+
+        private static bool HasShield(CharacterView view)
+        {
+            if (view == null || CharacterAnalyzer.Weight(view.Rules, "Shield") <= 0)
+                return false;
+            string current = EquipmentScanner.Describe(EquipmentScanner.SlotOf(view.Unit, "SecondaryHand"));
+            return current != "empty" && current != "missing";
+        }
+
+        public static string SlotLabel(string slot)
+        {
+            switch (slot)
+            {
+                case "PrimaryHand": return "Primary hand";
+                case "SecondaryHand": return "Secondary hand";
+                case "Armor": return "Armor";
+                case "Head": return "Head";
+                case "Neck": return "Neck";
+                case "Belt": return "Belt";
+                case "Feet": return "Feet";
+                case "Gloves": return "Gloves";
+                case "Wrist": return "Wrist";
+                case "Shoulders": return "Shoulders";
+                case "Glasses": return "Glasses";
+                case "Shirt": return "Shirt";
+                case "Ring1": return "Ring 1";
+                case "Ring2": return "Ring 2";
+                default: return slot;
+            }
         }
 
         public static List<PlannedAction> ToPlans(IList<EquipmentRecommendation> recommendations)
         {
             var plans = new List<PlannedAction>();
-            foreach (var row in recommendations.Where(row => !row.AlreadyWorn))
+            foreach (var row in recommendations.Where(row => row.Apply))
             {
                 plans.Add(new PlannedAction
                 {
@@ -139,12 +314,22 @@ namespace HansenEquipmentManager
                 .Select(group => group.First());
         }
 
+        private static string NameOf(UnitEntityData unit)
+        {
+            return string.IsNullOrEmpty(unit.CharacterName) ? unit.UniqueId : unit.CharacterName;
+        }
+
+        private static string CurrentName(UnitEntityData unit, string slot)
+        {
+            return EquipmentScanner.Describe(EquipmentScanner.SlotOf(unit, slot));
+        }
+
         private sealed class Offer
         {
             public ItemEntity Item;
             public CharacterView View;
             public string Slot;
-            public int Score;
+            public EquipmentRecommendation Row;
         }
     }
 }

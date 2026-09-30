@@ -124,9 +124,17 @@ namespace HansenEquipmentManager
             return stat == null ? 0 : stat.ModifiedValue;
         }
 
+        public static IEnumerable<UnitEntityData> ActiveParty()
+        {
+            var party = Kingmaker.Game.Instance.Player.Party;
+            if (party == null)
+                return new UnitEntityData[0];
+            return party.Where(unit => unit != null && unit.Body != null);
+        }
+
         private static IEnumerable<UnitEntityData> GameParty()
         {
-            return Kingmaker.Game.Instance.Player.AllCharacters.Where(unit => unit != null && unit.Body != null);
+            return ActiveParty();
         }
 
         private static string Safe(string value)

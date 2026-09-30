@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Kingmaker;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityModManagerNet;
 
@@ -14,11 +15,9 @@ namespace HansenEquipmentManager
         private static string ModDirectory;
         private static List<EquipmentProfile> Profiles = new List<EquipmentProfile>();
         private static int ProfileIndex;
-        private static List<PlannedAction> PreviewPlans;
-        private static string PreviewProfileId;
         private static List<BuildRuleSet> BuildRules = new List<BuildRuleSet>();
-        private static List<EquipmentRecommendation> PendingRecommendations;
-        private static string Status = "Load a save, then Scan Party.";
+        private static string Status = "Scan the party first.";
+        private static string Detection = "Not scanned yet";
         private static readonly StringBuilder Report = new StringBuilder();
 
         public static bool Load(UnityModManager.ModEntry modEntry)
@@ -43,136 +42,142 @@ namespace HansenEquipmentManager
         private static void OnGUI(UnityModManager.ModEntry modEntry)
         {
             GUILayout.Label("Hansen Equipment Manager");
-            GUILayout.Label("Profile: " + CurrentName());
+            GUILayout.Label("Detected: " + Detection);
+            GUILayout.Label("Plan: " + CurrentName());
             GUILayout.Label(Status);
-            GUILayout.Label("Scan, preview, then equip. Weapon sets are not edited.");
 
-            if (GUILayout.Button("Next Profile", GUILayout.Width(420)) && Profiles.Count > 0)
+            if (GUILayout.Button("Switch Plan", GUILayout.Width(420)) && Profiles.Count > 0)
             {
                 ProfileIndex = (ProfileIndex + 1) % Profiles.Count;
-                PreviewPlans = null;
-                Status = "Profile selected: " + CurrentName() + ". Preview again before equipping.";
+                Status = "Plan switched. Generate a plan again before equipping.";
             }
             if (GUILayout.Button("Scan Party", GUILayout.Width(420)))
                 RunSafe(ScanParty);
-            if (GUILayout.Button("Preview", GUILayout.Width(420)))
-                RunSafe(Preview);
-            if (GUILayout.Button("Equip Selected", GUILayout.Width(420)))
-                RunSafe(Equip);
-            if (GUILayout.Button("Verify", GUILayout.Width(420)))
-                RunSafe(Verify);
-            if (GUILayout.Button("Export Report", GUILayout.Width(420)))
-                RunSafe(ExportReport);
-            if (GUILayout.Button("Recommend", GUILayout.Width(420)))
-                RunSafe(Recommend);
-            if (GUILayout.Button("Apply", GUILayout.Width(420)))
-                RunSafe(ApplyRecommendation);
-            if (GUILayout.Button("Cancel", GUILayout.Width(420)))
-            {
-                PendingRecommendations = null;
-                Status = "Recommendation cancelled. Nothing was equipped.";
-            }
+            if (GUILayout.Button("Generate Plan", GUILayout.Width(420)))
+                RunSafe(BuildPlan);
+            if (GUILayout.Button("Review Changes", GUILayout.Width(420)))
+                RunSafe(ShowChanges);
+            if (GUILayout.Button("Confirm and Equip", GUILayout.Width(420)))
+                RunSafe(ConfirmEquip);
+            if (GUILayout.Button("Check Equipment", GUILayout.Width(420)))
+                RunSafe(CheckEquipment);
         }
 
         private static void ScanParty()
         {
             RequireGame();
-            var text = new StringBuilder();
-            text.AppendLine(EquipmentScanner.DescribeParty());
             var suggested = EquipmentScanner.Suggest(Profiles);
-            if (suggested == null)
+            if (suggested != null)
             {
-                text.AppendLine("Suggested profile: none");
-            }
-            else
-            {
-                text.AppendLine("Suggested profile: " + suggested.id);
                 int index = Profiles.FindIndex(profile => profile.id == suggested.id);
                 if (index >= 0)
                     ProfileIndex = index;
             }
             var main = EquipmentScanner.MainCharacter();
-            text.AppendLine(EquipmentScanner.CandidateReport(EquipmentScanner.SlotOf(main, "PrimaryHand")));
-            WriteReport("SCAN", text.ToString());
-            Status = "Scan written to the log. Suggested profile: " + (suggested == null ? "none" : suggested.displayName);
-        }
-
-        private static void Preview()
-        {
-            RequireGame();
-            var profile = Current();
-            if (profile == null)
-                throw new InvalidOperationException("No profile is loaded.");
-            PreviewPlans = EquipmentScanner.Preview(profile);
-            PreviewProfileId = profile.id;
-            var text = new StringBuilder();
-            text.AppendLine("Preview " + profile.displayName);
-            foreach (var plan in PreviewPlans)
+            if (main != null)
             {
-                text.AppendLine(plan.Rule.character + " " + plan.Rule.slot);
-                text.AppendLine("Current: " + plan.Current);
-                text.AppendLine("New: " + plan.Rule.blueprint);
-                text.AppendLine("Reason: " + plan.Detail);
-                text.AppendLine("Action: " + plan.Status);
-                text.AppendLine("");
+                var pair = EquipmentScanner.ClassAndMythic(main);
+                Detection = pair.Item1 + " / " + pair.Item2;
             }
-            WriteReport("PREVIEW", text.ToString());
-            Status = "Preview ready for " + profile.displayName + ". Equip Selected changes only Ready rows.";
+            var text = new StringBuilder();
+            text.AppendLine("Active party");
+            foreach (var unit in CharacterAnalyzer.ActiveParty())
+            {
+                var pair = EquipmentScanner.ClassAndMythic(unit);
+                text.AppendLine(SafeName(unit.CharacterName) + ": " + pair.Item1);
+                NoteEmpty(text, unit, "PrimaryHand");
+                NoteEmpty(text, unit, "SecondaryHand");
+                NoteEmpty(text, unit, "Armor");
+                NoteEmpty(text, unit, "Head");
+                NoteEmpty(text, unit, "Neck");
+            }
+            WriteReport("Scan Party", text.ToString());
+            Status = "Party scan is in the mod log. Nothing was equipped.";
         }
 
-        private static void Equip()
-        {
-            RequireGame();
-            var profile = Current();
-            if (profile == null || PreviewPlans == null || PreviewProfileId != profile.id)
-                throw new InvalidOperationException("Preview this profile before Equip Selected.");
-            string result = EquipmentExecutor.Execute(PreviewPlans);
-            PreviewPlans = EquipmentScanner.Preview(profile);
-            WriteReport("EQUIP", result);
-            Status = "Equip finished. See the log, then Verify.";
-        }
-
-        private static void Verify()
-        {
-            RequireGame();
-            var profile = Current();
-            if (profile == null)
-                throw new InvalidOperationException("No profile is loaded.");
-            string result = EquipmentExecutor.Verify(profile);
-            WriteReport("VERIFY", result);
-            Status = "Verify written to the log.";
-        }
-
-        private static void Recommend()
+        private static void BuildPlan()
         {
             RequireGame();
             var party = CharacterAnalyzer.Analyze(BuildRules);
-            PendingRecommendations = PartyOptimizer.Recommend(party);
+            var rows = PartyOptimizer.Recommend(party);
+            var saved = new SavedRecommendationFile
+            {
+                profileId = Current() == null ? "" : Current().id,
+                rows = rows
+            };
+            File.WriteAllText(RecommendationPath(), JsonConvert.SerializeObject(saved, Formatting.Indented));
             var text = new StringBuilder();
             text.AppendLine(CharacterAnalyzer.Report(party));
-            text.AppendLine(PartyOptimizer.Report(PendingRecommendations));
-            text.AppendLine("Apply equips the rows above. Cancel discards them.");
-            WriteReport("RECOMMEND", text.ToString());
-            Status = "Recommendation ready. Nothing was equipped. Use Apply or Cancel.";
+            text.AppendLine(PartyOptimizer.Report(rows));
+            text.AppendLine("Plan saved. Nothing was equipped.");
+            WriteReport("Generate Plan", text.ToString());
+            Status = "Plan generated. Nothing was equipped. Review the changes before equipping.";
         }
 
-        private static void ApplyRecommendation()
+        private static void ShowChanges()
+        {
+            var saved = ReadRecommendation();
+            WriteReport("Review Changes", PartyOptimizer.ChangeList(saved.rows));
+            Status = "Changes are in the mod log. Nothing was equipped.";
+        }
+
+        private static void ConfirmEquip()
         {
             RequireGame();
-            if (PendingRecommendations == null)
-                throw new InvalidOperationException("Recommend before Apply.");
-            string result = EquipmentExecutor.Execute(PartyOptimizer.ToPlans(PendingRecommendations));
-            PendingRecommendations = null;
-            WriteReport("APPLY", result);
-            Status = "Recommendation applied. See the log.";
+            var saved = ReadRecommendation();
+            if (Current() != null && saved.profileId != Current().id)
+                throw new InvalidOperationException("The plan was switched. Generate a plan again.");
+            var plans = PartyOptimizer.ToPlans(saved.rows);
+            if (plans.Count == 0)
+                throw new InvalidOperationException("This plan has no changes to apply.");
+            string result = EquipmentExecutor.Execute(plans);
+            File.AppendAllText(Path.Combine(ModDirectory, "equip-log.txt"), System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\n" + result + "\n");
+            WriteReport("Confirm and Equip", result);
+            Status = "Equip finished. A short note was added to equip-log.txt.";
         }
 
-        private static void ExportReport()
+        private static void CheckEquipment()
         {
-            string path = Path.Combine(ModDirectory, "report.txt");
-            File.WriteAllText(path, Report.ToString());
-            Log.Log("Exported " + path);
-            Status = "Report exported to " + path;
+            RequireGame();
+            string result = "No plan to check.";
+            string path = RecommendationPath();
+            if (File.Exists(path))
+            {
+                var saved = JsonConvert.DeserializeObject<SavedRecommendationFile>(File.ReadAllText(path));
+                if (saved != null && saved.rows != null)
+                    result = EquipmentExecutor.VerifySaved(saved.rows);
+            }
+            WriteReport("Check Equipment", result);
+            File.WriteAllText(Path.Combine(ModDirectory, "report.txt"), Report.ToString());
+            Status = "Check saved once to report.txt.";
+        }
+
+        private static SavedRecommendationFile ReadRecommendation()
+        {
+            string path = RecommendationPath();
+            if (!File.Exists(path))
+                throw new InvalidOperationException("Generate a plan first.");
+            var saved = JsonConvert.DeserializeObject<SavedRecommendationFile>(File.ReadAllText(path));
+            if (saved == null || saved.rows == null)
+                throw new InvalidOperationException("The saved plan is empty. Generate it again.");
+            return saved;
+        }
+
+        private static string RecommendationPath()
+        {
+            return Path.Combine(ModDirectory, "lastRecommendation.json");
+        }
+
+        private static void NoteEmpty(StringBuilder text, Kingmaker.EntitySystem.Entities.UnitEntityData unit, string slot)
+        {
+            string current = EquipmentScanner.Describe(EquipmentScanner.SlotOf(unit, slot));
+            if (current == "empty" || current == "missing")
+                text.AppendLine("Missing " + PartyOptimizer.SlotLabel(slot));
+        }
+
+        private static string SafeName(string value)
+        {
+            return string.IsNullOrEmpty(value) ? "(unnamed)" : value;
         }
 
         private static void WriteReport(string title, string body)

@@ -50,6 +50,7 @@ namespace HansenEquipmentManager
         public string displayName;
         public ProfileMatch match;
         public Dictionary<string, int> weights;
+        public List<string> signatureCategories;
     }
 
     public sealed class EquipmentRecommendation
@@ -60,7 +61,23 @@ namespace HansenEquipmentManager
         public string Blueprint;
         public string ItemId;
         public int Score;
+        public int StatScore;
+        public int CritScore;
+        public int BuildScore;
+        public int CompatibilityScore;
+        public string Current;
+        public string Reason;
+        public int Confidence;
         public string Conflict;
         public bool AlreadyWorn;
+        public bool NeedsConfirmation;
+        public bool Apply;
+        public bool TwoHanded;
+    }
+
+    public sealed class SavedRecommendationFile
+    {
+        public string profileId;
+        public List<EquipmentRecommendation> rows;
     }
 }

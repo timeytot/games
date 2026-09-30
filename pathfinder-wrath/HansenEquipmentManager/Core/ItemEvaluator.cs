@@ -10,14 +10,56 @@ namespace HansenEquipmentManager
 {
     public static class ItemEvaluator
     {
-        public static int Score(ItemEntity item, CharacterView view)
+        public static void Explain(ItemEntity item, CharacterView view, bool canInsert, bool slotOk, EquipmentRecommendation row)
         {
-            if (item == null || view == null || view.Rules == null)
-                return 0;
-            int total = 0;
-            foreach (var signal in Signals(item))
-                total += signal.Value * CharacterAnalyzer.Weight(view.Rules, signal.Key);
-            return total;
+            row.StatScore = 0;
+            row.CritScore = 0;
+            row.BuildScore = 0;
+            row.CompatibilityScore = 0;
+            row.Score = -999;
+            if (!slotOk || !canInsert || item == null || view == null)
+                return;
+
+            var signals = Signals(item);
+            int statRaw = 0;
+            foreach (var signal in signals)
+            {
+                if (IsTag(signal.Key))
+                    continue;
+                int weight = CharacterAnalyzer.Weight(view.Rules, signal.Key);
+                if (weight > 0)
+                    statRaw += signal.Value * weight;
+            }
+            int enhancement = 0;
+            signals.TryGetValue("Enhancement", out enhancement);
+            int enhancementWeight = CharacterAnalyzer.Weight(view.Rules, "Enhancement");
+            if (enhancementWeight > 0)
+                statRaw += Math.Min(10, Math.Max(0, enhancement) * enhancementWeight);
+            row.StatScore = Math.Min(50, Math.Max(0, statRaw));
+
+            var weapon = item.Blueprint as BlueprintItemWeapon;
+            if (weapon != null && CharacterAnalyzer.Weight(view.Rules, "Crit") > 0)
+                row.CritScore = Math.Min(15, Math.Max(0, 21 - weapon.CriticalRollEdge) * Math.Min(5, CharacterAnalyzer.Weight(view.Rules, "Crit")) / 2);
+            if (weapon != null && CharacterAnalyzer.Weight(view.Rules, weapon.Category.ToString()) > 0)
+                row.CompatibilityScore = 15;
+            else if (SlotName(item) == "SecondaryHand" && CharacterAnalyzer.Weight(view.Rules, "Shield") > 0)
+                row.CompatibilityScore = 15;
+            else if (weapon != null)
+                row.CompatibilityScore = 5;
+            int spell = 0;
+            signals.TryGetValue("SpellDC", out spell);
+            if (spell > 0 && CharacterAnalyzer.Weight(view.Rules, "SpellDC") > 0)
+                row.CompatibilityScore = Math.Min(15, row.CompatibilityScore + 5);
+
+            bool matched = row.StatScore > 0 || row.CritScore > 0 || row.CompatibilityScore >= 15;
+            if (view.Rules != null && view.Rules.id != "Default" && matched)
+                row.BuildScore = 20;
+            row.Score = Math.Min(100, row.StatScore + row.CritScore + row.BuildScore + row.CompatibilityScore);
+        }
+
+        private static bool IsTag(string key)
+        {
+            return key == "Crit" || key == "Shield" || key == "Enhancement" || key == "SpellDC";
         }
 
         public static string SlotName(ItemEntity item)

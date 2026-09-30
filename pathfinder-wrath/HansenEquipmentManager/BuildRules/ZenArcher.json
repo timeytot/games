@@ -1,0 +1,7 @@
+{
+  "id": "ZenArcher",
+  "displayName": "Zen Archer",
+  "match": { "classContains": "ZenArcher" },
+  "weights": { "DEX": 5, "WIS": 4, "Longbow": 5, "Shortbow": 5, "CompositeLongbow": 5, "CompositeShortbow": 5, "Enhancement": 2 },
+  "signatureCategories": ["Longbow", "Shortbow", "CompositeLongbow", "CompositeShortbow"]
+}

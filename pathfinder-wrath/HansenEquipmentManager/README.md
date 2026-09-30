@@ -24,9 +24,7 @@ Equip Selected runs only after Preview for the same profile, and only for rows m
 
 `BuildRules/*.json` holds stat and tag weights. A new build is a new file. The DLL does not contain per-character scores.
 
-`Recommend` reads each party member's class, mythic path, and ability scores, matches a build rule, then scores stash and worn items from enchantment stat bonuses, enhancement, weapon category, critical range, and shields. `CanInsertItem` rejects anything the character cannot wear. One physical item is assigned to the highest score. The result is only a preview.
-
-`Apply` equips that preview through the same `RemoveItem` / `InsertItem` path. `Cancel` discards it. Weapon sets are not edited.
+Scan Party and Review Changes stay on screen. Generate Plan overwrites `lastRecommendation.json`. Confirm and Equip appends a short `equip-log.txt`. Check Equipment writes `report.txt` only when clicked. Review Changes shows the current item, the new item, the score, the reason, and the confidence. Replacing a weapon that is already equipped, including a Zen Archer bow, waits for confirmation and is not applied automatically.
 
 ## Build on this machine
 
