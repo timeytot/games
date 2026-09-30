@@ -31,8 +31,8 @@ namespace HansenEquipmentManager
         private static Vector2 SlotMenuScroll;
         private static readonly StringBuilder Report = new StringBuilder();
         private const float FieldWidth = 640f;
-        private const float AvailableHeight = 360f;
-        private const float CardHeight = 36f;
+        private const float AvailableHeight = 500f;
+        private const float CardHeight = 46f;
 
         public static bool Load(UnityModManager.ModEntry modEntry)
         {
@@ -90,8 +90,7 @@ namespace HansenEquipmentManager
                 ItemScroll = Vector2.zero;
             }
             DrawItemChoice();
-            DrawSelection();
-            DrawPreview();
+            DrawChoiceSummary();
             bool itemChosen = SelectedPick(PicksForSelection()) != null;
             GUI.enabled = itemChosen;
             if (GUILayout.Button(itemChosen ? "Equip Selected Item" : "Select an item first", GUILayout.Width(FieldWidth)))
@@ -305,8 +304,9 @@ namespace HansenEquipmentManager
             if (availableCount == 0)
                 GUI.Label(new Rect(8f, 8f, content.width - 8f, 24f), "(none)");
             int shown = 0;
-            var nameStyle = new GUIStyle(GUI.skin.label) { fontSize = 13, wordWrap = false };
-            var detailStyle = new GUIStyle(GUI.skin.label) { fontSize = 11, wordWrap = false };
+            var nameStyle = new GUIStyle(GUI.skin.label) { fontSize = 18, wordWrap = false };
+            var detailStyle = new GUIStyle(GUI.skin.label) { fontSize = 13, wordWrap = false };
+            detailStyle.normal.textColor = new Color(0.68f, 0.68f, 0.68f);
             for (int i = 0; i < picks.Count; i++)
             {
                 if (picks[i].Current)
@@ -316,8 +316,8 @@ namespace HansenEquipmentManager
                     GUI.Box(row, GUIContent.none);
                 if (GUI.Button(row, GUIContent.none, GUIStyle.none))
                     BlueprintPick = i;
-                GUI.Label(new Rect(row.x + 6f, row.y, row.width - 8f, 18f), picks[i].DisplayName, nameStyle);
-                GUI.Label(new Rect(row.x + 16f, row.y + 16f, row.width - 18f, 16f), FactLine(null, picks[i].Tags, picks[i].Sources), detailStyle);
+                GUI.Label(new Rect(row.x + 6f, row.y + 1f, row.width - 8f, 22f), picks[i].DisplayName, nameStyle);
+                GUI.Label(new Rect(row.x + 6f, row.y + 22f, row.width - 8f, 18f), FactLine(null, picks[i].Tags, picks[i].Sources), detailStyle);
                 shown++;
             }
             GUI.EndScrollView();
@@ -345,20 +345,16 @@ namespace HansenEquipmentManager
             return null;
         }
 
-        private static void DrawSelection()
+        private static void DrawChoiceSummary()
         {
             var pick = SelectedPick(PicksForSelection());
-            string slot = Selected(EquipmentAdvisor.SlotNames, SlotPick);
-            GUILayout.Label("Selected Item:");
-            if (pick == null)
-                GUILayout.Label("No item selected");
-            else
-            {
-                GUILayout.Label("Name: " + pick.DisplayName);
-                GUILayout.Label("Source: " + (string.IsNullOrEmpty(pick.Sources) ? "(unknown)" : pick.Sources));
-            }
-            if (slot != null)
-                GUILayout.Label("Role: " + RoleLabel(slot));
+            string current = CurrentItemName();
+            GUILayout.Space(4f);
+            GUILayout.Label("Selected:  " + (pick == null ? "No item selected" : pick.DisplayName));
+            GUILayout.Label("Current:  " + current);
+            GUILayout.Label("New:  " + (pick == null ? "No item selected" : pick.DisplayName));
+            if (current != "(empty)" && current != "(none)" && pick != null && pick.DisplayName != current)
+                GUILayout.Label("Warning:  Replacing current equipment");
         }
 
         private static string FactLine(string role, string tags, string source)
@@ -379,32 +375,6 @@ namespace HansenEquipmentManager
             if (!string.IsNullOrEmpty(source))
                 parts.Add(source);
             return parts.Count == 0 ? "" : string.Join(" | ", parts.ToArray());
-        }
-
-        private static string RoleLabel(string slot)
-        {
-            switch (slot)
-            {
-                case "PrimaryHand": return "Weapon";
-                case "SecondaryHand": return "Shield";
-                case "Armor": return "Armor";
-                case "Ring1":
-                case "Ring2": return "Ring";
-                default: return PartyOptimizer.SlotLabel(slot);
-            }
-        }
-
-        private static void DrawPreview()
-        {
-            var pick = SelectedPick(PicksForSelection());
-            string current = CurrentItemName();
-            string slotName = Selected(EquipmentAdvisor.SlotNames, SlotPick);
-            GUILayout.Label("Preview:");
-            GUILayout.Label("Slot: " + (slotName == null ? "(select a slot)" : PartyOptimizer.SlotLabel(slotName)));
-            GUILayout.Label("Current: " + current);
-            GUILayout.Label("New: " + (pick == null ? "No item selected" : pick.DisplayName));
-            if (current != "(empty)" && current != "(none)" && pick != null && pick.DisplayName != current)
-                GUILayout.Label("Warning: Replacing current equipment");
         }
 
         private static void DrawSelectedCharacter()
