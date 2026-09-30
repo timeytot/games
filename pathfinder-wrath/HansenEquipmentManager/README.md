@@ -24,7 +24,7 @@ Equip Selected runs only after Preview for the same profile, and only for rows m
 
 `BuildRules/*.json` holds stat and tag weights. A new build is a new file. The DLL does not contain per-character scores.
 
-The screen is Party, Equipment List, Select Equipment, and Report. The list covers hands, armor, head, neck, both rings, gloves, boots, belt, and cloak. Each slot shows the worn item, then up to three different usable items. Copies of the same blueprint are one row, with a copy count and whether they are in inventory or outside the party. Tags are facts such as one-hand or shield compatible. The item dropdown shows the name, with the blueprint id on the next line. Preview shows the worn item and the chosen item before Equip This Item moves that one item. Export Report overwrites `report.txt` with the latest list only.
+The screen is Party, Equipment List, Select Equipment, and Report. The list covers hands, armor, head, neck, both rings, gloves, boots, belt, and cloak. Each slot shows the worn item, then up to three different usable items. Copies of the same blueprint are one row, with a copy count and whether they are in inventory or outside the party. Tags are facts such as one-hand or shield compatible. Character and Slot are dropdowns. Changing character clears the slot, the item, and the preview. Primary-hand choices list one-handed weapons before two-handed weapons. Preview names the slot. The equip button says Replace Equipment only when that slot is already filled. The report header says Version: Advisor Mode, and a build id such as Oracle_Angel is also shown as Oracle Angel. Export Report overwrites `report.txt` with the latest list only.
 
 ## Build on this machine
 

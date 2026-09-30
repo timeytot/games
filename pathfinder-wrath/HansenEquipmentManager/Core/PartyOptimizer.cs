@@ -327,8 +327,8 @@ namespace HansenEquipmentManager
         {
             switch (slot)
             {
-                case "PrimaryHand": return "Primary hand";
-                case "SecondaryHand": return "Secondary hand";
+                case "PrimaryHand": return "Primary Hand";
+                case "SecondaryHand": return "Secondary Hand";
                 case "Armor": return "Armor";
                 case "Head": return "Head";
                 case "Neck": return "Neck";

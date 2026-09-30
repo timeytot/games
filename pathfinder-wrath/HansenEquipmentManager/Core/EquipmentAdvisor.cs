@@ -11,6 +11,7 @@ namespace HansenEquipmentManager
     public static class EquipmentAdvisor
     {
         public static readonly List<AdvisorPick> Picks = new List<AdvisorPick>();
+        public static readonly List<EquippedCopyNote> EquippedCopies = new List<EquippedCopyNote>();
         public static readonly string[] SlotNames = { "PrimaryHand", "SecondaryHand", "Armor", "Head", "Neck", "Ring1", "Ring2", "Gloves", "Feet", "Belt", "Shoulders" };
 
         public static string PartyList()
@@ -25,6 +26,7 @@ namespace HansenEquipmentManager
         public static string EquipmentList(IList<CharacterView> party)
         {
             Picks.Clear();
+            EquippedCopies.Clear();
             var text = new StringBuilder();
             foreach (var view in party)
             {
@@ -51,7 +53,13 @@ namespace HansenEquipmentManager
             if (rules != null)
             {
                 text.AppendLine("Build:");
-                text.AppendLine(rules.id);
+                string archetype = EquipmentScanner.ArchetypeLine(unit);
+                string shown = rules.id == "Default" && archetype != "none"
+                    ? archetype + " (not configured)"
+                    : FriendlyBuild(rules.id);
+                text.AppendLine(shown);
+                if (!string.Equals(shown, rules.id, StringComparison.Ordinal))
+                    text.AppendLine("ID: " + rules.id);
             }
             return text.ToString();
         }
@@ -78,21 +86,40 @@ namespace HansenEquipmentManager
             var itemSlot = EquipmentScanner.SlotOf(view.Unit, slot);
             var text = new StringBuilder();
             text.AppendLine("=== " + PartyOptimizer.SlotLabel(slot) + " ===");
-            text.AppendLine("CURRENT EQUIPPED");
+            text.AppendLine("Current:");
             if (itemSlot == null || itemSlot.MaybeItem == null)
                 text.AppendLine("(empty)");
             else
             {
-                text.AppendLine("[worn] " + DisplayName(itemSlot.MaybeItem));
+                text.AppendLine(DisplayName(itemSlot.MaybeItem));
                 text.AppendLine("ID: " + itemSlot.MaybeItem.Blueprint.name);
             }
-            text.AppendLine("AVAILABLE");
-            var ranked = Candidates(view, slot).Take(3).ToList();
-            if (ranked.Count == 0)
+            text.AppendLine("Available:");
+            string wornBlueprint = itemSlot == null || itemSlot.MaybeItem == null || itemSlot.MaybeItem.Blueprint == null
+                ? null
+                : itemSlot.MaybeItem.Blueprint.name;
+            var different = new List<Candidate>();
+            Candidate sameAsWorn = null;
+            foreach (var row in Candidates(view, slot))
             {
-                text.AppendLine("none");
-                return text.ToString();
+                if (wornBlueprint != null && row.Item.Blueprint.name == wornBlueprint)
+                    sameAsWorn = row;
+                else
+                    different.Add(row);
             }
+            var ranked = different.Take(3).ToList();
+            if (sameAsWorn != null)
+            {
+                EquippedCopies.Add(new EquippedCopyNote
+                {
+                    Character = NameOf(view.Unit),
+                    Slot = slot,
+                    DisplayName = DisplayName(sameAsWorn.Item),
+                    Copies = sameAsWorn.Copies
+                });
+            }
+            if (ranked.Count == 0)
+                text.AppendLine("none");
             int rank = 1;
             foreach (var row in ranked)
             {
@@ -111,10 +138,26 @@ namespace HansenEquipmentManager
                 text.AppendLine("   Copies: " + row.Copies);
                 text.AppendLine("   Sources: " + string.Join(", ", row.Sources));
                 text.AppendLine("   Can use: Yes");
+                text.AppendLine("   Role: " + RoleOf(slot));
                 text.AppendLine("   Tags: " + row.Tags);
                 rank++;
             }
+            if (sameAsWorn != null)
+                text.AppendLine("Already equipped copies: " + DisplayName(sameAsWorn.Item) + " x" + sameAsWorn.Copies);
             return text.ToString();
+        }
+
+        private static string RoleOf(string slot)
+        {
+            switch (slot)
+            {
+                case "PrimaryHand": return "Weapon";
+                case "SecondaryHand": return "Shield";
+                case "Armor": return "Armor";
+                case "Ring1":
+                case "Ring2": return "Ring";
+                default: return PartyOptimizer.SlotLabel(slot);
+            }
         }
 
         private static List<Candidate> Candidates(CharacterView view, string slot)
@@ -190,11 +233,31 @@ namespace HansenEquipmentManager
             return natural == slot;
         }
 
+        private static string FriendlyBuild(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                return id;
+            var text = new StringBuilder();
+            for (int i = 0; i < id.Length; i++)
+            {
+                char c = id[i];
+                if (c == '_' || c == '-')
+                {
+                    text.Append(' ');
+                    continue;
+                }
+                if (i > 0 && char.IsUpper(c) && char.IsLower(id[i - 1]))
+                    text.Append(' ');
+                text.Append(c);
+            }
+            return text.ToString();
+        }
+
         private static int SortKey(CharacterView view, ItemEntity item, string slot)
         {
+            if (slot == "PrimaryHand")
+                return ItemEvaluator.IsTwoHanded(item) ? 0 : 200;
             int key = ItemMatchesBuild(item, view) ? 2 : 0;
-            if (slot == "PrimaryHand" && !ItemEvaluator.IsTwoHanded(item))
-                key += 1;
             key += Math.Min(9, Math.Max(0, item.EnchantmentValue));
             return key;
         }
@@ -247,6 +310,14 @@ namespace HansenEquipmentManager
             public string DisplayName;
             public int Copies;
             public string Sources;
+        }
+
+        public sealed class EquippedCopyNote
+        {
+            public string Character;
+            public string Slot;
+            public string DisplayName;
+            public int Copies;
         }
 
         private sealed class Candidate

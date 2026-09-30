@@ -18,13 +18,15 @@ namespace HansenEquipmentManager
         private static string Status = "Scan the party first. Nothing is equipped automatically.";
         private static string Detection = "Not scanned yet";
         private static string LatestList = "";
-        private static int CharacterPick;
-        private static int SlotPick;
-        private static int BlueprintPick;
+        private static string ListStatus = "";
+        private static int CharacterPick = -1;
+        private static int SlotPick = -1;
+        private static int BlueprintPick = -1;
         private static bool CharacterOpen;
         private static bool SlotOpen;
-        private static bool BlueprintOpen;
         private static Vector2 ItemScroll;
+        private static Vector2 CharacterMenuScroll;
+        private static Vector2 SlotMenuScroll;
         private static readonly StringBuilder Report = new StringBuilder();
         private const float FieldWidth = 640f;
 
@@ -58,12 +60,29 @@ namespace HansenEquipmentManager
             GUILayout.Label("Equipment List");
             if (GUILayout.Button("Generate Equipment List", GUILayout.Width(FieldWidth)))
                 RunSafe(GenerateList);
+            if (!string.IsNullOrEmpty(ListStatus))
+                GUILayout.Label(ListStatus);
             GUILayout.Label("Select Equipment");
-            CharacterPick = DrawPicker("Character", CharacterPick, ref CharacterOpen, CharacterNames(), true);
-            SlotPick = DrawPicker("Slot", SlotPick, ref SlotOpen, SlotLabels(), true);
-            DrawItemPicker();
+            int nextCharacter = DrawDropdown("Character", CharacterPick, ref CharacterOpen, CharacterNames(), ref SlotOpen, ref CharacterMenuScroll);
+            if (nextCharacter != CharacterPick)
+            {
+                CharacterPick = nextCharacter;
+                SlotPick = -1;
+                BlueprintPick = -1;
+                SlotOpen = false;
+            }
+            int nextSlot = DrawDropdown("Slot", SlotPick, ref SlotOpen, SlotLabels(), ref CharacterOpen, ref SlotMenuScroll);
+            if (nextSlot != SlotPick)
+            {
+                SlotPick = nextSlot;
+                BlueprintPick = -1;
+            }
+            DrawItemChoice();
+            DrawSelection();
             DrawPreview();
-            if (GUILayout.Button("Equip This Item", GUILayout.Width(FieldWidth)))
+            string currentName = CurrentItemName();
+            bool replacing = currentName != "(empty)" && currentName != "(none)";
+            if (GUILayout.Button(replacing ? "Replace Equipment" : "Equip Item", GUILayout.Width(FieldWidth)))
                 RunSafe(EquipSelected);
             GUILayout.Label("Report");
             if (GUILayout.Button("Export Report", GUILayout.Width(FieldWidth)))
@@ -111,7 +130,14 @@ namespace HansenEquipmentManager
             var party = CharacterAnalyzer.Analyze(BuildRules);
             LatestList = EquipmentAdvisor.EquipmentList(party);
             WriteReport("Equipment List", LatestList);
-            Status = "List is in the mod log. Nothing was equipped.";
+            int characters = party == null ? 0 : party.Count;
+            ListStatus = "Generated: " + characters + " characters, " + (characters * EquipmentAdvisor.SlotNames.Length) + " slots";
+            CharacterPick = -1;
+            SlotPick = -1;
+            BlueprintPick = -1;
+            CharacterOpen = false;
+            SlotOpen = false;
+            Status = "Equipment list generated. Nothing was equipped.";
         }
 
         private static void EquipSelected()
@@ -153,64 +179,105 @@ namespace HansenEquipmentManager
             if (string.IsNullOrEmpty(LatestList))
                 throw new InvalidOperationException("Generate the equipment list before exporting.");
             string path = Path.Combine(ModDirectory, "report.txt");
-            File.WriteAllText(path, "Hansen Equipment Manager Report\nTime: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\n\n" + LatestList);
+            File.WriteAllText(path, "Hansen Equipment Manager Report\nVersion: Advisor Mode\nTime: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\n\n" + LatestList);
             Log.Log("Exported " + path);
             Status = "Report written to report.txt.";
         }
 
-        private static int DrawPicker(string label, int index, ref bool open, IList<string> options, bool resetsBlueprint)
+        private static int DrawDropdown(string label, int index, ref bool open, IList<string> options, ref bool otherOpen, ref Vector2 scroll)
         {
-            string current = options == null || options.Count == 0 || index < 0 || index >= options.Count ? "(none)" : options[index];
-            if (GUILayout.Button(label + ": " + current, GUILayout.Width(FieldWidth)))
+            string current = options == null || options.Count == 0 || index < 0 || index >= options.Count ? "(select)" : options[index];
+            if (GUILayout.Button(label + ": " + current + "  ▼", GUILayout.Width(FieldWidth)))
+            {
                 open = !open;
-            if (!open || options == null)
+                if (open)
+                    otherOpen = false;
+            }
+            if (!open || options == null || options.Count == 0)
                 return index;
+            float height = Math.Min(168f, 28f * options.Count);
+            scroll = GUILayout.BeginScrollView(scroll, GUILayout.Width(FieldWidth), GUILayout.Height(height));
+            int chosen = index;
             for (int i = 0; i < options.Count; i++)
             {
-                if (!GUILayout.Button(options[i], GUILayout.Width(FieldWidth)))
+                if (!GUILayout.Button(options[i], GUILayout.Width(FieldWidth - 24)))
                     continue;
                 open = false;
-                if (resetsBlueprint)
-                    BlueprintPick = 0;
-                return i;
-            }
-            return index;
-        }
-
-        private static void DrawItemPicker()
-        {
-            var picks = PicksForSelection();
-            var pick = SelectedPick(picks);
-            string name = pick == null ? "(none)" : pick.DisplayName;
-            if (GUILayout.Button("Item: " + name, GUILayout.Width(FieldWidth)))
-                BlueprintOpen = !BlueprintOpen;
-            if (pick != null)
-                GUILayout.Label("ID: " + pick.Blueprint + (pick.Copies > 1 ? "    " + pick.Copies + " copies" : ""));
-            if (!BlueprintOpen)
-                return;
-            ItemScroll = GUILayout.BeginScrollView(ItemScroll, GUILayout.Width(FieldWidth), GUILayout.Height(180));
-            var style = new GUIStyle(GUI.skin.button);
-            style.wordWrap = true;
-            for (int i = 0; i < picks.Count; i++)
-            {
-                var row = picks[i];
-                string text = row.DisplayName + "\nID: " + row.Blueprint;
-                if (row.Copies > 1)
-                    text += "\n" + row.Copies + " copies";
-                if (!GUILayout.Button(text, style, GUILayout.Width(FieldWidth - 24), GUILayout.Height(row.Copies > 1 ? 58 : 42)))
-                    continue;
-                BlueprintOpen = false;
-                BlueprintPick = i;
+                chosen = i;
             }
             GUILayout.EndScrollView();
+            return chosen;
+        }
+
+        private static void DrawItemChoice()
+        {
+            var picks = PicksForSelection();
+            GUILayout.Label("Current Equipment");
+            GUILayout.Label(CurrentItemName());
+            var note = EquippedNote();
+            if (note != null)
+                GUILayout.Label("Already equipped copies: " + note.DisplayName + " x" + note.Copies);
+            GUILayout.Label("Available");
+            ItemScroll = GUILayout.BeginScrollView(ItemScroll, GUILayout.Width(FieldWidth), GUILayout.Height(96));
+            if (picks.Count == 0)
+                GUILayout.Label("(none)");
+            for (int i = 0; i < picks.Count; i++)
+            {
+                if (GUILayout.Button(picks[i].DisplayName, GUILayout.Width(FieldWidth - 24)))
+                    BlueprintPick = i;
+            }
+            GUILayout.EndScrollView();
+        }
+
+        private static EquipmentAdvisor.EquippedCopyNote EquippedNote()
+        {
+            string character = Selected(CharacterNames(), CharacterPick);
+            string slot = Selected(EquipmentAdvisor.SlotNames, SlotPick);
+            foreach (var note in EquipmentAdvisor.EquippedCopies)
+            {
+                if (note.Character == character && note.Slot == slot)
+                    return note;
+            }
+            return null;
+        }
+
+        private static void DrawSelection()
+        {
+            var pick = SelectedPick(PicksForSelection());
+            string slot = Selected(EquipmentAdvisor.SlotNames, SlotPick);
+            GUILayout.Label("Selected Item:");
+            GUILayout.Label("Name: " + (pick == null ? "(none)" : pick.DisplayName));
+            GUILayout.Label("Blueprint: " + (pick == null ? "(none)" : pick.Blueprint));
+            if (pick != null)
+                GUILayout.Label("Source: " + (string.IsNullOrEmpty(pick.Sources) ? "(unknown)" : pick.Sources));
+            if (slot != null)
+                GUILayout.Label("Role: " + RoleLabel(slot));
+        }
+
+        private static string RoleLabel(string slot)
+        {
+            switch (slot)
+            {
+                case "PrimaryHand": return "Weapon";
+                case "SecondaryHand": return "Shield";
+                case "Armor": return "Armor";
+                case "Ring1":
+                case "Ring2": return "Ring";
+                default: return PartyOptimizer.SlotLabel(slot);
+            }
         }
 
         private static void DrawPreview()
         {
             var pick = SelectedPick(PicksForSelection());
-            GUILayout.Label("Preview");
-            GUILayout.Label("Current: " + CurrentItemName());
+            string current = CurrentItemName();
+            string slotName = Selected(EquipmentAdvisor.SlotNames, SlotPick);
+            GUILayout.Label("Preview:");
+            GUILayout.Label("Slot: " + (slotName == null ? "(select a slot)" : PartyOptimizer.SlotLabel(slotName)));
+            GUILayout.Label("Current: " + current);
             GUILayout.Label("New: " + (pick == null ? "(none)" : pick.DisplayName));
+            if (current != "(empty)" && current != "(none)" && pick != null)
+                GUILayout.Label("Warning: Replacing equipped item");
         }
 
         private static string CurrentItemName()
