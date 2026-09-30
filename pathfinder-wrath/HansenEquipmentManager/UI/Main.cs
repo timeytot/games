@@ -17,9 +17,12 @@ namespace HansenEquipmentManager
         private static List<BuildRuleSet> BuildRules = new List<BuildRuleSet>();
         private static string Status = "Scan the party first. Nothing is equipped automatically.";
         private static string Detection = "Not scanned yet";
-        private static string PickCharacter = "";
-        private static string PickSlot = "PrimaryHand";
-        private static string PickBlueprint = "";
+        private static int CharacterPick;
+        private static int SlotPick;
+        private static int BlueprintPick;
+        private static bool CharacterOpen;
+        private static bool SlotOpen;
+        private static bool BlueprintOpen;
         private static readonly StringBuilder Report = new StringBuilder();
 
         public static bool Load(UnityModManager.ModEntry modEntry)
@@ -46,10 +49,10 @@ namespace HansenEquipmentManager
             GUILayout.Label("Hansen Equipment Manager");
             GUILayout.Label("Detected: " + Detection);
             GUILayout.Label(Status);
-            GUILayout.Label("Type the character, slot, and blueprint from the list. Only that item is equipped.");
-            PickCharacter = GUILayout.TextField(PickCharacter, GUILayout.Width(420));
-            PickSlot = GUILayout.TextField(PickSlot, GUILayout.Width(420));
-            PickBlueprint = GUILayout.TextField(PickBlueprint, GUILayout.Width(420));
+            GUILayout.Label("Choose from the generated list. Only that item is equipped.");
+            CharacterPick = DrawPicker("Character", CharacterPick, ref CharacterOpen, CharacterNames(), true);
+            SlotPick = DrawPicker("Slot", SlotPick, ref SlotOpen, EquipmentAdvisor.SlotNames, true);
+            BlueprintPick = DrawPicker("Blueprint", BlueprintPick, ref BlueprintOpen, BlueprintNames(), false);
 
             if (GUILayout.Button("Scan Party", GUILayout.Width(420)))
                 RunSafe(ScanParty);
@@ -82,7 +85,10 @@ namespace HansenEquipmentManager
             foreach (var unit in CharacterAnalyzer.ActiveParty())
             {
                 var pair = EquipmentScanner.ClassAndMythic(unit);
-                text.AppendLine(SafeName(unit.CharacterName) + ": " + pair.Item1);
+                text.AppendLine(SafeName(unit.CharacterName));
+                text.AppendLine("Class: " + pair.Item1);
+                text.AppendLine("Archetype: " + EquipmentScanner.ArchetypeLine(unit));
+                text.AppendLine("Mythic: " + pair.Item2);
                 NoteEmpty(text, unit, "PrimaryHand");
                 NoteEmpty(text, unit, "SecondaryHand");
                 NoteEmpty(text, unit, "Armor");
@@ -105,17 +111,20 @@ namespace HansenEquipmentManager
         private static void EquipSelected()
         {
             RequireGame();
-            if (string.IsNullOrEmpty(PickCharacter) || string.IsNullOrEmpty(PickSlot) || string.IsNullOrEmpty(PickBlueprint))
-                throw new InvalidOperationException("Type a character, a slot, and a blueprint first.");
-            var unit = EquipmentScanner.FindUnit(PickCharacter.Trim(), null);
+            string character = Selected(CharacterNames(), CharacterPick);
+            string slotName = Selected(EquipmentAdvisor.SlotNames, SlotPick);
+            string blueprint = Selected(BlueprintNames(), BlueprintPick);
+            if (character == null || slotName == null || blueprint == null)
+                throw new InvalidOperationException("Generate the equipment list, then choose a character, slot, and item.");
+            var unit = EquipmentScanner.FindUnit(character, null);
             if (unit == null)
-                throw new InvalidOperationException("Character was not found: " + PickCharacter);
-            var slot = EquipmentScanner.SlotOf(unit, PickSlot.Trim());
+                throw new InvalidOperationException("Character was not found: " + character);
+            var slot = EquipmentScanner.SlotOf(unit, slotName);
             if (slot == null)
-                throw new InvalidOperationException("Slot was not found: " + PickSlot);
-            var item = EquipmentAdvisor.FindSelectedItem(PickBlueprint.Trim());
+                throw new InvalidOperationException("Slot was not found: " + slotName);
+            var item = EquipmentAdvisor.FindSelectedItem(blueprint);
             if (item == null)
-                throw new InvalidOperationException("Item was not found: " + PickBlueprint);
+                throw new InvalidOperationException("Item was not found: " + blueprint);
             var plan = new PlannedAction
             {
                 Status = PlanStatus.Ready,
@@ -124,7 +133,7 @@ namespace HansenEquipmentManager
                 {
                     character = unit.CharacterName,
                     unitId = unit.UniqueId,
-                    slot = PickSlot.Trim(),
+                    slot = slotName,
                     blueprint = item.Blueprint.name
                 }
             };
@@ -141,6 +150,56 @@ namespace HansenEquipmentManager
             File.WriteAllText(path, Report.ToString());
             Log.Log("Exported " + path);
             Status = "Report written to report.txt.";
+        }
+
+        private static int DrawPicker(string label, int index, ref bool open, IList<string> options, bool resetsBlueprint)
+        {
+            string current = options == null || options.Count == 0 || index < 0 || index >= options.Count ? "(none)" : options[index];
+            if (GUILayout.Button(label + ": " + current, GUILayout.Width(420)))
+                open = !open;
+            if (!open || options == null)
+                return index;
+            for (int i = 0; i < options.Count; i++)
+            {
+                if (!GUILayout.Button("  " + options[i], GUILayout.Width(400)))
+                    continue;
+                open = false;
+                if (resetsBlueprint)
+                    BlueprintPick = 0;
+                return i;
+            }
+            return index;
+        }
+
+        private static List<string> CharacterNames()
+        {
+            var names = new List<string>();
+            foreach (var pick in EquipmentAdvisor.Picks)
+            {
+                if (!names.Contains(pick.Character))
+                    names.Add(pick.Character);
+            }
+            return names;
+        }
+
+        private static List<string> BlueprintNames()
+        {
+            var names = new List<string>();
+            string character = Selected(CharacterNames(), CharacterPick);
+            string slot = Selected(EquipmentAdvisor.SlotNames, SlotPick);
+            foreach (var pick in EquipmentAdvisor.Picks)
+            {
+                if (pick.Character == character && pick.Slot == slot && !names.Contains(pick.Blueprint))
+                    names.Add(pick.Blueprint);
+            }
+            return names;
+        }
+
+        private static string Selected(IList<string> options, int index)
+        {
+            if (options == null || index < 0 || index >= options.Count)
+                return null;
+            return options[index];
         }
 
         private static void NoteEmpty(StringBuilder text, Kingmaker.EntitySystem.Entities.UnitEntityData unit, string slot)

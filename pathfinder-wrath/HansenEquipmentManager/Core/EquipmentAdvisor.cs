@@ -10,31 +10,48 @@ namespace HansenEquipmentManager
 {
     public static class EquipmentAdvisor
     {
-        private static readonly string[] Slots = { "PrimaryHand", "SecondaryHand", "Head", "Armor", "Neck" };
+        public static readonly List<AdvisorPick> Picks = new List<AdvisorPick>();
+        public static readonly string[] SlotNames = { "PrimaryHand", "SecondaryHand", "Head", "Armor", "Neck", "Ring1", "Ring2" };
 
         public static string PartyList()
         {
             var text = new StringBuilder();
             text.AppendLine("Active party");
             foreach (var unit in CharacterAnalyzer.ActiveParty())
-            {
-                var pair = EquipmentScanner.ClassAndMythic(unit);
-                text.AppendLine(NameOf(unit) + " | " + pair.Item1 + " | " + pair.Item2);
-            }
+                text.AppendLine(CharacterBlock(unit, null));
             return text.ToString();
         }
 
         public static string EquipmentList(IList<CharacterView> party)
         {
+            Picks.Clear();
             var text = new StringBuilder();
             foreach (var view in party)
             {
-                var pair = EquipmentScanner.ClassAndMythic(view.Unit);
-                text.AppendLine("# " + NameOf(view.Unit));
-                text.AppendLine(pair.Item1 + " | " + pair.Item2 + " | build " + (view.Rules == null ? "none" : view.Rules.id));
-                foreach (var slot in Slots)
+                text.AppendLine("=== " + NameOf(view.Unit) + " ===");
+                text.AppendLine(CharacterBlock(view.Unit, view.Rules));
+                foreach (var slot in SlotNames)
                     text.AppendLine(SlotTable(view, slot));
                 text.AppendLine("");
+            }
+            return text.ToString();
+        }
+
+        private static string CharacterBlock(UnitEntityData unit, BuildRuleSet rules)
+        {
+            var pair = EquipmentScanner.ClassAndMythic(unit);
+            var text = new StringBuilder();
+            text.AppendLine(NameOf(unit));
+            text.AppendLine("Class:");
+            text.AppendLine(pair.Item1);
+            text.AppendLine("Archetype:");
+            text.AppendLine(EquipmentScanner.ArchetypeLine(unit));
+            text.AppendLine("Mythic:");
+            text.AppendLine(pair.Item2);
+            if (rules != null)
+            {
+                text.AppendLine("Build:");
+                text.AppendLine(rules.id);
             }
             return text.ToString();
         }
@@ -51,19 +68,26 @@ namespace HansenEquipmentManager
         {
             var itemSlot = EquipmentScanner.SlotOf(view.Unit, slot);
             var text = new StringBuilder();
-            text.AppendLine("## " + PartyOptimizer.SlotLabel(slot));
-            text.AppendLine("Current: " + EquipmentScanner.Describe(itemSlot));
+            text.AppendLine(PartyOptimizer.SlotLabel(slot));
+            text.AppendLine("CURRENT:");
+            text.AppendLine(EquipmentScanner.Describe(itemSlot));
+            text.AppendLine("AVAILABLE:");
             var ranked = Candidates(view, slot).Take(3).ToList();
             if (ranked.Count == 0)
             {
-                text.AppendLine("No usable candidate in the stash.");
+                text.AppendLine("none");
                 return text.ToString();
             }
-            text.AppendLine("Rank | Item | Type | Can use | Shield | Build");
             int rank = 1;
             foreach (var row in ranked)
             {
-                text.AppendLine(rank + " | " + row.Item.Blueprint.name + " | " + row.Type + " | yes | " + row.Shield + " | " + row.Build);
+                Picks.Add(new AdvisorPick { Character = NameOf(view.Unit), Slot = slot, Blueprint = row.Item.Blueprint.name });
+                text.AppendLine(rank + ".");
+                text.AppendLine(row.Item.Blueprint.name);
+                text.AppendLine("Type: " + row.Type);
+                text.AppendLine("Can use: Yes");
+                text.AppendLine("Shield: " + row.Shield);
+                text.AppendLine("Build fit: " + row.Build);
                 rank++;
             }
             return text.ToString();
@@ -78,8 +102,6 @@ namespace HansenEquipmentManager
                     continue;
                 var target = EquipmentScanner.SlotOf(view.Unit, slot);
                 if (target == null || target.MaybeItem == item || !target.CanInsertItem(item))
-                    continue;
-                if (slot == "PrimaryHand" && ItemEvaluator.IsTwoHanded(item) && ShieldInOffhand(view))
                     continue;
                 rows.Add(new Candidate
                 {
@@ -173,6 +195,13 @@ namespace HansenEquipmentManager
         private static string NameOf(UnitEntityData unit)
         {
             return string.IsNullOrEmpty(unit.CharacterName) ? unit.UniqueId : unit.CharacterName;
+        }
+
+        public sealed class AdvisorPick
+        {
+            public string Character;
+            public string Slot;
+            public string Blueprint;
         }
 
         private sealed class Candidate

@@ -259,18 +259,56 @@ namespace HansenEquipmentManager
             return score;
         }
 
+        public static string ArchetypeLine(UnitEntityData unit)
+        {
+            var names = new List<string>();
+            foreach (var klass in BaseClasses(unit))
+            {
+                var data = unit.Progression.GetClassData(klass);
+                if (data == null || data.Archetypes == null)
+                    continue;
+                foreach (var archetype in data.Archetypes)
+                {
+                    if (archetype == null)
+                        continue;
+                    string asset = string.IsNullOrEmpty(archetype.name) ? archetype.Name : archetype.name;
+                    string pretty = Pretty(asset);
+                    if (!names.Contains(pretty))
+                        names.Add(pretty);
+                }
+            }
+            return names.Count == 0 ? "none" : string.Join(", ", names.ToArray());
+        }
+
+        public static string MatchText(UnitEntityData unit)
+        {
+            return ClassLine(unit) + " " + ArchetypeLine(unit) + " " + MythicName(unit);
+        }
+
         private static string ClassLine(UnitEntityData unit)
         {
-            if (unit == null || unit.Progression == null || unit.Progression.ClassesOrder == null)
-                return "unknown";
             var parts = new List<string>();
+            foreach (var klass in BaseClasses(unit))
+                parts.Add(Pretty(AssetName(klass)) + " " + unit.Progression.GetClassLevel(klass));
+            return parts.Count == 0 ? "unknown" : string.Join(", ", parts.ToArray());
+        }
+
+        private static IEnumerable<BlueprintCharacterClass> BaseClasses(UnitEntityData unit)
+        {
+            var seen = new HashSet<string>();
+            if (unit == null || unit.Progression == null || unit.Progression.ClassesOrder == null)
+                yield break;
             foreach (BlueprintCharacterClass klass in unit.Progression.ClassesOrder)
             {
                 if (klass == null)
                     continue;
-                parts.Add(AssetName(klass) + " " + unit.Progression.GetClassLevel(klass));
+                string asset = AssetName(klass);
+                if (asset.IndexOf("Mythic", StringComparison.OrdinalIgnoreCase) >= 0)
+                    continue;
+                if (!seen.Add(asset))
+                    continue;
+                yield return klass;
             }
-            return parts.Count == 0 ? "unknown" : string.Join(", ", parts.ToArray());
         }
 
         private static string MythicName(UnitEntityData unit)
@@ -280,7 +318,18 @@ namespace HansenEquipmentManager
             var data = unit.Progression.GetCurrentMythicClass();
             if (data == null || data.CharacterClass == null)
                 return "none";
-            return AssetName(data.CharacterClass);
+            return Pretty(AssetName(data.CharacterClass)) + " MR" + unit.Progression.MythicLevel;
+        }
+
+        private static string Pretty(string asset)
+        {
+            if (string.IsNullOrEmpty(asset))
+                return asset;
+            if (asset.EndsWith("MythicClass"))
+                return asset.Substring(0, asset.Length - "MythicClass".Length);
+            if (asset.EndsWith("Class"))
+                return asset.Substring(0, asset.Length - "Class".Length);
+            return asset;
         }
 
         private static string AssetName(BlueprintCharacterClass klass)
