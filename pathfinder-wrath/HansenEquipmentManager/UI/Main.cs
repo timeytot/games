@@ -30,6 +30,8 @@ namespace HansenEquipmentManager
         private static Vector2 SlotMenuScroll;
         private static readonly StringBuilder Report = new StringBuilder();
         private const float FieldWidth = 640f;
+        private const float AvailableHeight = 220f;
+        private const float CardHeight = 72f;
 
         public static bool Load(UnityModManager.ModEntry modEntry)
         {
@@ -252,40 +254,64 @@ namespace HansenEquipmentManager
         private static void DrawItemChoice()
         {
             var picks = PicksForSelection();
-            GUILayout.Label("Current");
+            string character = Selected(CharacterNames(), CharacterPick);
+            string slotName = Selected(EquipmentAdvisor.SlotNames, SlotPick);
+            string slotLabel = slotName == null ? "(select a slot)" : PartyOptimizer.SlotLabel(slotName);
+            GUILayout.BeginVertical(GUI.skin.box);
+            GUILayout.Label(character ?? "(select a character)");
+            GUILayout.Label(slotLabel);
+            GUILayout.EndVertical();
+
             int currentIndex = -1;
+            int availableCount = 0;
             for (int i = 0; i < picks.Count; i++)
             {
-                if (!picks[i].Current)
-                    continue;
-                currentIndex = i;
-                break;
+                if (picks[i].Current && currentIndex < 0)
+                    currentIndex = i;
+                else if (!picks[i].Current)
+                    availableCount++;
             }
+
+            Rect currentRect = GUILayoutUtility.GetRect(FieldWidth, 78f);
+            GUI.Box(currentRect, GUIContent.none);
+            var heading = new GUIStyle(GUI.skin.label) { fontSize = 12 };
+            var wornName = new GUIStyle(GUI.skin.button) { fontSize = 16, wordWrap = true };
+            GUI.Label(new Rect(currentRect.x + 8f, currentRect.y + 4f, currentRect.width - 16f, 18f), "CURRENT EQUIPMENT", heading);
             if (currentIndex < 0)
-                GUILayout.Label("(empty)");
-            else
-            {
-                var worn = picks[currentIndex];
-                if (GUILayout.Button("[CURRENT] " + worn.DisplayName, GUILayout.Width(FieldWidth)))
-                    BlueprintPick = currentIndex;
-            }
+                GUI.Label(new Rect(currentRect.x + 8f, currentRect.y + 28f, currentRect.width - 16f, 28f), "(empty)");
+            else if (GUI.Button(new Rect(currentRect.x + 8f, currentRect.y + 26f, currentRect.width - 16f, 44f), picks[currentIndex].DisplayName, wornName))
+                BlueprintPick = currentIndex;
+
             var note = EquippedNote();
-            if (note != null)
-                GUILayout.Label("Already equipped copies: " + note.DisplayName + " x" + note.Copies);
-            GUILayout.Label("Available");
-            ItemScroll = GUILayout.BeginScrollView(ItemScroll, GUILayout.Width(FieldWidth), GUILayout.Height(96));
-            bool any = false;
+            GUILayout.Label(note == null ? " " : "Already equipped copies: " + note.DisplayName + " x" + note.Copies);
+            GUILayout.Label("AVAILABLE");
+
+            float contentHeight = Math.Max(CardHeight, availableCount * CardHeight);
+            Rect view = GUILayoutUtility.GetRect(FieldWidth, AvailableHeight);
+            float width = view.width > 1f ? view.width : FieldWidth;
+            var content = new Rect(0f, 0f, Math.Max(1f, width - 16f), contentHeight);
+            ItemScroll = GUI.BeginScrollView(view, ItemScroll, content);
+            if (availableCount == 0)
+                GUI.Label(new Rect(8f, 8f, content.width - 8f, 24f), "(none)");
+            int shown = 0;
+            string role = slotName == null ? "" : RoleLabel(slotName);
+            var detailStyle = new GUIStyle(GUI.skin.label) { fontSize = 11, wordWrap = true };
             for (int i = 0; i < picks.Count; i++)
             {
                 if (picks[i].Current)
                     continue;
-                any = true;
-                if (GUILayout.Button(picks[i].DisplayName, GUILayout.Width(FieldWidth - 24)))
+                var card = new Rect(4f, shown * CardHeight + 4f, content.width - 8f, CardHeight - 10f);
+                if (GUI.Button(card, GUIContent.none))
                     BlueprintPick = i;
+                GUI.Label(new Rect(card.x + 8f, card.y + 4f, card.width - 12f, 22f), picks[i].DisplayName, wornName);
+                string source = string.IsNullOrEmpty(picks[i].Sources) ? "" : picks[i].Sources;
+                string detail = role;
+                if (!string.IsNullOrEmpty(source))
+                    detail = string.IsNullOrEmpty(detail) ? source : detail + "\n" + source;
+                GUI.Label(new Rect(card.x + 8f, card.y + 26f, card.width - 12f, 36f), detail, detailStyle);
+                shown++;
             }
-            if (!any)
-                GUILayout.Label("(none)");
-            GUILayout.EndScrollView();
+            GUI.EndScrollView();
         }
 
         private static EquipmentAdvisor.EquippedCopyNote EquippedNote()
