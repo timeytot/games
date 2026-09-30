@@ -182,7 +182,8 @@ namespace HansenEquipmentManager
                     Blueprint = row.Item.Blueprint.name,
                     DisplayName = shown,
                     Copies = row.Copies,
-                    Sources = string.Join(", ", row.Sources)
+                    Sources = string.Join(", ", row.Sources),
+                    Tags = row.Tags
                 });
                 text.AppendLine(rank + ". " + shown);
                 text.AppendLine("   ID: " + row.Item.Blueprint.name);
@@ -379,6 +380,7 @@ namespace HansenEquipmentManager
             public string Sources;
             public bool Current;
             public string ItemId;
+            public string Tags;
         }
 
         public sealed class EquippedCopyNote

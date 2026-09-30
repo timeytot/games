@@ -31,8 +31,8 @@ namespace HansenEquipmentManager
         private static Vector2 SlotMenuScroll;
         private static readonly StringBuilder Report = new StringBuilder();
         private const float FieldWidth = 640f;
-        private const float AvailableHeight = 220f;
-        private const float CardHeight = 72f;
+        private const float AvailableHeight = 430f;
+        private const float CardHeight = 84f;
 
         public static bool Load(UnityModManager.ModEntry modEntry)
         {
@@ -276,18 +276,18 @@ namespace HansenEquipmentManager
                     availableCount++;
             }
 
-            Rect currentRect = GUILayoutUtility.GetRect(FieldWidth, 78f);
-            GUI.Box(currentRect, GUIContent.none);
-            var heading = new GUIStyle(GUI.skin.label) { fontSize = 12 };
-            var wornName = new GUIStyle(GUI.skin.button) { fontSize = 16, wordWrap = true };
-            GUI.Label(new Rect(currentRect.x + 8f, currentRect.y + 4f, currentRect.width - 16f, 18f), "CURRENT EQUIPMENT", heading);
+            GUILayout.Space(6f);
+            GUILayout.BeginVertical(GUI.skin.box);
+            GUILayout.Label("Current Equipment");
             if (currentIndex < 0)
-                GUI.Label(new Rect(currentRect.x + 8f, currentRect.y + 28f, currentRect.width - 16f, 28f), "(empty)");
-            else if (GUI.Button(new Rect(currentRect.x + 8f, currentRect.y + 26f, currentRect.width - 16f, 44f), picks[currentIndex].DisplayName, wornName))
+                GUILayout.Label("(empty)");
+            else if (GUILayout.Button(picks[currentIndex].DisplayName, GUILayout.Width(FieldWidth - 24f), GUILayout.Height(36f)))
                 BlueprintPick = currentIndex;
+            GUILayout.EndVertical();
 
             var note = EquippedNote();
             GUILayout.Label(note == null ? " " : "Already equipped copies: " + note.DisplayName + " x" + note.Copies);
+            GUILayout.Space(8f);
             GUILayout.Label("Available Equipment (" + availableCount + (availableCount == 1 ? " item)" : " items)"));
 
             float contentHeight = Math.Max(CardHeight, availableCount * CardHeight);
@@ -305,20 +305,15 @@ namespace HansenEquipmentManager
                 GUI.Label(new Rect(8f, 8f, content.width - 8f, 24f), "(none)");
             int shown = 0;
             string role = slotName == null ? "" : RoleLabel(slotName);
-            var detailStyle = new GUIStyle(GUI.skin.label) { fontSize = 11, wordWrap = true };
+            var rowStyle = new GUIStyle(GUI.skin.box) { wordWrap = true, fontSize = 14 };
             for (int i = 0; i < picks.Count; i++)
             {
                 if (picks[i].Current)
                     continue;
-                var card = new Rect(4f, shown * CardHeight + 4f, content.width - 8f, CardHeight - 10f);
-                if (GUI.Button(card, GUIContent.none))
+                var card = new Rect(4f, shown * CardHeight + 4f, content.width - 8f, CardHeight - 8f);
+                string text = picks[i].DisplayName + "\n" + FactLine(role, picks[i].Tags, picks[i].Sources);
+                if (GUI.Button(card, text, rowStyle))
                     BlueprintPick = i;
-                GUI.Label(new Rect(card.x + 8f, card.y + 4f, card.width - 12f, 22f), picks[i].DisplayName, wornName);
-                string source = string.IsNullOrEmpty(picks[i].Sources) ? "" : picks[i].Sources;
-                string detail = role;
-                if (!string.IsNullOrEmpty(source))
-                    detail = string.IsNullOrEmpty(detail) ? source : detail + "\n" + source;
-                GUI.Label(new Rect(card.x + 8f, card.y + 26f, card.width - 12f, 36f), detail, detailStyle);
                 shown++;
             }
             GUI.EndScrollView();
@@ -330,7 +325,7 @@ namespace HansenEquipmentManager
                 return;
             if (AvailableView.width < 1f || !AvailableView.Contains(Event.current.mousePosition))
                 return;
-            ItemScroll.y += Event.current.delta.y * 28f;
+            ItemScroll.y += Event.current.delta.y * CardHeight;
             Event.current.Use();
         }
 
@@ -360,6 +355,26 @@ namespace HansenEquipmentManager
             }
             if (slot != null)
                 GUILayout.Label("Role: " + RoleLabel(slot));
+        }
+
+        private static string FactLine(string role, string tags, string source)
+        {
+            var parts = new List<string>();
+            if (!string.IsNullOrEmpty(role))
+                parts.Add(role);
+            if (!string.IsNullOrEmpty(tags))
+            {
+                foreach (var piece in tags.Split(','))
+                {
+                    string trimmed = piece.Trim();
+                    if (trimmed.Length == 0)
+                        continue;
+                    parts.Add(char.ToUpper(trimmed[0]) + trimmed.Substring(1));
+                }
+            }
+            if (!string.IsNullOrEmpty(source))
+                parts.Add(source);
+            return parts.Count == 0 ? "" : string.Join(" | ", parts.ToArray());
         }
 
         private static string RoleLabel(string slot)
