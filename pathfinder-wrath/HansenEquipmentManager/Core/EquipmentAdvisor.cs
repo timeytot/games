@@ -158,7 +158,6 @@ namespace HansenEquipmentManager
                 else
                     different.Add(row);
             }
-            var ranked = different.Take(3).ToList();
             if (sameAsWorn != null)
             {
                 EquippedCopies.Add(new EquippedCopyNote
@@ -169,10 +168,11 @@ namespace HansenEquipmentManager
                     Copies = sameAsWorn.Copies
                 });
             }
-            if (ranked.Count == 0)
+            text.AppendLine("Count: " + different.Count);
+            if (different.Count == 0)
                 text.AppendLine("none");
             int rank = 1;
-            foreach (var row in ranked)
+            foreach (var row in different)
             {
                 string shown = DisplayName(row.Item);
                 Picks.Add(new AdvisorPick

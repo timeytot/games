@@ -26,6 +26,7 @@ namespace HansenEquipmentManager
         private static bool CharacterOpen;
         private static bool SlotOpen;
         private static Vector2 ItemScroll;
+        private static Rect AvailableView;
         private static Vector2 CharacterMenuScroll;
         private static Vector2 SlotMenuScroll;
         private static readonly StringBuilder Report = new StringBuilder();
@@ -54,6 +55,7 @@ namespace HansenEquipmentManager
 
         private static void OnGUI(UnityModManager.ModEntry modEntry)
         {
+            ScrollAvailableList();
             GUILayout.Label("Hansen Equipment Manager");
             GUILayout.Label(Status);
             GUILayout.Label("Party");
@@ -78,12 +80,14 @@ namespace HansenEquipmentManager
                 SlotPick = -1;
                 BlueprintPick = -1;
                 SlotOpen = false;
+                ItemScroll = Vector2.zero;
             }
             int nextSlot = DrawDropdown("Slot", SlotPick, ref SlotOpen, SlotLabels(), ref CharacterOpen, ref SlotMenuScroll);
             if (nextSlot != SlotPick)
             {
                 SlotPick = nextSlot;
                 BlueprintPick = -1;
+                ItemScroll = Vector2.zero;
             }
             DrawItemChoice();
             DrawSelection();
@@ -284,13 +288,19 @@ namespace HansenEquipmentManager
 
             var note = EquippedNote();
             GUILayout.Label(note == null ? " " : "Already equipped copies: " + note.DisplayName + " x" + note.Copies);
-            GUILayout.Label("AVAILABLE");
+            GUILayout.Label("Available Equipment (" + availableCount + (availableCount == 1 ? " item)" : " items)"));
 
             float contentHeight = Math.Max(CardHeight, availableCount * CardHeight);
             Rect view = GUILayoutUtility.GetRect(FieldWidth, AvailableHeight);
+            AvailableView = view;
             float width = view.width > 1f ? view.width : FieldWidth;
             var content = new Rect(0f, 0f, Math.Max(1f, width - 16f), contentHeight);
-            ItemScroll = GUI.BeginScrollView(view, ItemScroll, content);
+            float maxScroll = Math.Max(0f, contentHeight - AvailableHeight);
+            if (ItemScroll.y < 0f)
+                ItemScroll.y = 0f;
+            if (ItemScroll.y > maxScroll)
+                ItemScroll.y = maxScroll;
+            ItemScroll = GUI.BeginScrollView(view, ItemScroll, content, false, true);
             if (availableCount == 0)
                 GUI.Label(new Rect(8f, 8f, content.width - 8f, 24f), "(none)");
             int shown = 0;
@@ -312,6 +322,16 @@ namespace HansenEquipmentManager
                 shown++;
             }
             GUI.EndScrollView();
+        }
+
+        private static void ScrollAvailableList()
+        {
+            if (Event.current.type != EventType.ScrollWheel)
+                return;
+            if (AvailableView.width < 1f || !AvailableView.Contains(Event.current.mousePosition))
+                return;
+            ItemScroll.y += Event.current.delta.y * 28f;
+            Event.current.Use();
         }
 
         private static EquipmentAdvisor.EquippedCopyNote EquippedNote()
