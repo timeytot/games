@@ -24,7 +24,7 @@ Equip Selected runs only after Preview for the same profile, and only for rows m
 
 `BuildRules/*.json` holds stat and tag weights. A new build is a new file. The DLL does not contain per-character scores.
 
-The advisor buttons are Scan Party, Generate Equipment List, Equip Selected, and Export Report. The list shows the current item and up to three usable candidates per slot, with can-use, shield, and build-match notes. It does not equip anything. Equip Selected moves only the character, slot, and blueprint typed into the fields. Export Report writes `report.txt` when clicked. Two-handed weapons are omitted from a primary-hand list while that character is wearing a shield.
+The advisor buttons are grouped as Party, Equipment List, and Actions. The list covers hands, armor, head, neck, both rings, gloves, boots, belt, and cloak. Each slot shows the worn item first, then up to three usable alternatives with a readable name and the blueprint underneath. Equip Selected uses those dropdowns and moves only that one item. Export Report overwrites `report.txt` with the latest list only. Two-handed weapons stay visible when the offhand is empty, marked as not shield compatible.
 
 ## Build on this machine
 

@@ -333,10 +333,10 @@ namespace HansenEquipmentManager
                 case "Head": return "Head";
                 case "Neck": return "Neck";
                 case "Belt": return "Belt";
-                case "Feet": return "Feet";
+                case "Feet": return "Boots";
                 case "Gloves": return "Gloves";
                 case "Wrist": return "Wrist";
-                case "Shoulders": return "Shoulders";
+                case "Shoulders": return "Cloak";
                 case "Glasses": return "Glasses";
                 case "Shirt": return "Shirt";
                 case "Ring1": return "Ring 1";

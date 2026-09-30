@@ -17,6 +17,7 @@ namespace HansenEquipmentManager
         private static List<BuildRuleSet> BuildRules = new List<BuildRuleSet>();
         private static string Status = "Scan the party first. Nothing is equipped automatically.";
         private static string Detection = "Not scanned yet";
+        private static string LatestList = "";
         private static int CharacterPick;
         private static int SlotPick;
         private static int BlueprintPick;
@@ -47,17 +48,19 @@ namespace HansenEquipmentManager
         private static void OnGUI(UnityModManager.ModEntry modEntry)
         {
             GUILayout.Label("Hansen Equipment Manager");
-            GUILayout.Label("Detected: " + Detection);
             GUILayout.Label(Status);
-            GUILayout.Label("Choose from the generated list. Only that item is equipped.");
-            CharacterPick = DrawPicker("Character", CharacterPick, ref CharacterOpen, CharacterNames(), true);
-            SlotPick = DrawPicker("Slot", SlotPick, ref SlotOpen, EquipmentAdvisor.SlotNames, true);
-            BlueprintPick = DrawPicker("Blueprint", BlueprintPick, ref BlueprintOpen, BlueprintNames(), false);
-
+            GUILayout.Label("Party");
+            GUILayout.Label("Detected: " + Detection);
             if (GUILayout.Button("Scan Party", GUILayout.Width(420)))
                 RunSafe(ScanParty);
+            GUILayout.Label("Equipment List");
             if (GUILayout.Button("Generate Equipment List", GUILayout.Width(420)))
                 RunSafe(GenerateList);
+            GUILayout.Label("Actions");
+            GUILayout.Label("Choose one listed item. Only that item is equipped.");
+            CharacterPick = DrawPicker("Character", CharacterPick, ref CharacterOpen, CharacterNames(), true);
+            SlotPick = DrawPicker("Slot", SlotPick, ref SlotOpen, SlotLabels(), true);
+            BlueprintPick = DrawPicker("Item", BlueprintPick, ref BlueprintOpen, ItemLabels(), false);
             if (GUILayout.Button("Equip Selected", GUILayout.Width(420)))
                 RunSafe(EquipSelected);
             if (GUILayout.Button("Export Report", GUILayout.Width(420)))
@@ -103,8 +106,8 @@ namespace HansenEquipmentManager
         {
             RequireGame();
             var party = CharacterAnalyzer.Analyze(BuildRules);
-            string list = EquipmentAdvisor.EquipmentList(party);
-            WriteReport("Equipment List", list);
+            LatestList = EquipmentAdvisor.EquipmentList(party);
+            WriteReport("Equipment List", LatestList);
             Status = "List is in the mod log. Nothing was equipped.";
         }
 
@@ -113,7 +116,7 @@ namespace HansenEquipmentManager
             RequireGame();
             string character = Selected(CharacterNames(), CharacterPick);
             string slotName = Selected(EquipmentAdvisor.SlotNames, SlotPick);
-            string blueprint = Selected(BlueprintNames(), BlueprintPick);
+            string blueprint = SelectedBlueprint();
             if (character == null || slotName == null || blueprint == null)
                 throw new InvalidOperationException("Generate the equipment list, then choose a character, slot, and item.");
             var unit = EquipmentScanner.FindUnit(character, null);
@@ -144,10 +147,10 @@ namespace HansenEquipmentManager
 
         private static void ExportReport()
         {
-            if (Report.Length == 0)
+            if (string.IsNullOrEmpty(LatestList))
                 throw new InvalidOperationException("Generate the equipment list before exporting.");
             string path = Path.Combine(ModDirectory, "report.txt");
-            File.WriteAllText(path, Report.ToString());
+            File.WriteAllText(path, "Hansen Equipment Manager Report\nTime: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\n\n" + LatestList);
             Log.Log("Exported " + path);
             Status = "Report written to report.txt.";
         }
@@ -182,17 +185,43 @@ namespace HansenEquipmentManager
             return names;
         }
 
-        private static List<string> BlueprintNames()
+        private static List<string> SlotLabels()
+        {
+            var labels = new List<string>();
+            foreach (var slot in EquipmentAdvisor.SlotNames)
+                labels.Add(PartyOptimizer.SlotLabel(slot));
+            return labels;
+        }
+
+        private static List<string> ItemLabels()
         {
             var names = new List<string>();
             string character = Selected(CharacterNames(), CharacterPick);
             string slot = Selected(EquipmentAdvisor.SlotNames, SlotPick);
             foreach (var pick in EquipmentAdvisor.Picks)
             {
-                if (pick.Character == character && pick.Slot == slot && !names.Contains(pick.Blueprint))
-                    names.Add(pick.Blueprint);
+                if (pick.Character != character || pick.Slot != slot)
+                    continue;
+                string label = string.IsNullOrEmpty(pick.DisplayName) ? pick.Blueprint : pick.DisplayName + "  (" + pick.Blueprint + ")";
+                if (!names.Contains(label))
+                    names.Add(label);
             }
             return names;
+        }
+
+        private static string SelectedBlueprint()
+        {
+            var matches = new List<EquipmentAdvisor.AdvisorPick>();
+            string character = Selected(CharacterNames(), CharacterPick);
+            string slot = Selected(EquipmentAdvisor.SlotNames, SlotPick);
+            foreach (var pick in EquipmentAdvisor.Picks)
+            {
+                if (pick.Character == character && pick.Slot == slot)
+                    matches.Add(pick);
+            }
+            if (BlueprintPick < 0 || BlueprintPick >= matches.Count)
+                return null;
+            return matches[BlueprintPick].Blueprint;
         }
 
         private static string Selected(IList<string> options, int index)

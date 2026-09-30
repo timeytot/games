@@ -11,7 +11,7 @@ namespace HansenEquipmentManager
     public static class EquipmentAdvisor
     {
         public static readonly List<AdvisorPick> Picks = new List<AdvisorPick>();
-        public static readonly string[] SlotNames = { "PrimaryHand", "SecondaryHand", "Head", "Armor", "Neck", "Ring1", "Ring2" };
+        public static readonly string[] SlotNames = { "PrimaryHand", "SecondaryHand", "Armor", "Head", "Neck", "Ring1", "Ring2", "Gloves", "Feet", "Belt", "Shoulders" };
 
         public static string PartyList()
         {
@@ -56,6 +56,15 @@ namespace HansenEquipmentManager
             return text.ToString();
         }
 
+        public static string DisplayName(ItemEntity item)
+        {
+            if (item == null)
+                return "(empty)";
+            if (!string.IsNullOrEmpty(item.Name))
+                return item.Name;
+            return item.Blueprint == null ? "(unknown)" : item.Blueprint.name;
+        }
+
         public static ItemEntity FindSelectedItem(string blueprint)
         {
             return Kingmaker.Game.Instance.Player.Inventory.Items
@@ -68,10 +77,16 @@ namespace HansenEquipmentManager
         {
             var itemSlot = EquipmentScanner.SlotOf(view.Unit, slot);
             var text = new StringBuilder();
-            text.AppendLine(PartyOptimizer.SlotLabel(slot));
-            text.AppendLine("CURRENT:");
-            text.AppendLine(EquipmentScanner.Describe(itemSlot));
-            text.AppendLine("AVAILABLE:");
+            text.AppendLine("=== " + PartyOptimizer.SlotLabel(slot) + " ===");
+            text.AppendLine("CURRENT EQUIPPED");
+            if (itemSlot == null || itemSlot.MaybeItem == null)
+                text.AppendLine("(empty)");
+            else
+            {
+                text.AppendLine("[worn] " + DisplayName(itemSlot.MaybeItem));
+                text.AppendLine("Blueprint: " + itemSlot.MaybeItem.Blueprint.name);
+            }
+            text.AppendLine("AVAILABLE");
             var ranked = Candidates(view, slot).Take(3).ToList();
             if (ranked.Count == 0)
             {
@@ -81,13 +96,14 @@ namespace HansenEquipmentManager
             int rank = 1;
             foreach (var row in ranked)
             {
-                Picks.Add(new AdvisorPick { Character = NameOf(view.Unit), Slot = slot, Blueprint = row.Item.Blueprint.name });
-                text.AppendLine(rank + ".");
-                text.AppendLine(row.Item.Blueprint.name);
-                text.AppendLine("Type: " + row.Type);
-                text.AppendLine("Can use: Yes");
-                text.AppendLine("Shield: " + row.Shield);
-                text.AppendLine("Build fit: " + row.Build);
+                string shown = DisplayName(row.Item);
+                Picks.Add(new AdvisorPick { Character = NameOf(view.Unit), Slot = slot, Blueprint = row.Item.Blueprint.name, DisplayName = shown });
+                text.AppendLine(rank + ". " + shown);
+                text.AppendLine("   Blueprint: " + row.Item.Blueprint.name);
+                text.AppendLine("   Type: " + row.Type);
+                text.AppendLine("   Can use: Yes");
+                text.AppendLine("   Shield compatible: " + row.Shield);
+                text.AppendLine("   Notes: " + row.Build);
                 rank++;
             }
             return text.ToString();
@@ -108,7 +124,7 @@ namespace HansenEquipmentManager
                     Item = item,
                     Type = TypeLabel(item),
                     Shield = ShieldLabel(view, item, slot),
-                    Build = ItemMatchesBuild(item, view) ? "High" : "Low",
+                    Build = ItemMatchesBuild(item, view) ? "matches this build's tags" : "not a typical item for this build",
                     Sort = SortKey(view, item, slot)
                 });
             }
@@ -149,10 +165,10 @@ namespace HansenEquipmentManager
         private static string ShieldLabel(CharacterView view, ItemEntity item, string slot)
         {
             if (slot != "PrimaryHand")
-                return "-";
+                return "n/a";
             if (!ShieldInOffhand(view))
-                return ItemEvaluator.IsTwoHanded(item) ? "two-hand" : "one-hand";
-            return ItemEvaluator.IsTwoHanded(item) ? "no" : "yes";
+                return ItemEvaluator.IsTwoHanded(item) ? "No, this is two-handed" : "Yes, one-handed";
+            return ItemEvaluator.IsTwoHanded(item) ? "No, shield is already equipped" : "Yes";
         }
 
         private static bool ShieldInOffhand(CharacterView view)
@@ -202,6 +218,7 @@ namespace HansenEquipmentManager
             public string Character;
             public string Slot;
             public string Blueprint;
+            public string DisplayName;
         }
 
         private sealed class Candidate

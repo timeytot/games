@@ -325,11 +325,20 @@ namespace HansenEquipmentManager
         {
             if (string.IsNullOrEmpty(asset))
                 return asset;
+            if (asset.EndsWith("Archetype"))
+                asset = asset.Substring(0, asset.Length - "Archetype".Length);
             if (asset.EndsWith("MythicClass"))
-                return asset.Substring(0, asset.Length - "MythicClass".Length);
-            if (asset.EndsWith("Class"))
-                return asset.Substring(0, asset.Length - "Class".Length);
-            return asset;
+                asset = asset.Substring(0, asset.Length - "MythicClass".Length);
+            else if (asset.EndsWith("Class"))
+                asset = asset.Substring(0, asset.Length - "Class".Length);
+            var text = new StringBuilder();
+            for (int i = 0; i < asset.Length; i++)
+            {
+                if (i > 0 && char.IsUpper(asset[i]) && char.IsLower(asset[i - 1]))
+                    text.Append(' ');
+                text.Append(asset[i]);
+            }
+            return text.ToString();
         }
 
         private static string AssetName(BlueprintCharacterClass klass)
