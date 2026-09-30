@@ -37,7 +37,7 @@ Manual sync:
 
 `../tools/refresh_current_snapshot.cmd`
 
-Start the game yourself. After you finish playing, double-click `../tools/refresh_current_snapshot.cmd`.
+Start the game yourself. After you finish playing, double-click `../tools/refresh_current_snapshot.cmd`. That extracts the newest save for this GameId into `current/`. It does not commit or push. Pass `-Commit` to commit the snapshot locally, and `-Push` to commit and push the current branch.
 
 No scheduled task, no background service, no startup item, no automatic game launch, and no sync when the game exits.
 

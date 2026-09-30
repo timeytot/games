@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Kingmaker.EntitySystem.Entities;
 
 namespace HansenEquipmentManager
 {
@@ -172,48 +171,6 @@ namespace HansenEquipmentManager
         private static string Safe(string value)
         {
             return value ?? "";
-        }
-
-        public static string Verify(EquipmentProfile profile)
-        {
-            var report = new StringBuilder();
-            report.AppendLine("Verify " + profile.displayName);
-            foreach (var rule in profile.rules)
-            {
-                UnitEntityData target = EquipmentScanner.FindUnit(rule.character, rule.unitId);
-                var slot = EquipmentScanner.SlotOf(target, rule.slot);
-                bool ok = EquipmentValidator.Equipped(slot, rule.blueprint);
-                report.AppendLine((ok ? "OK " : "MISSING ") + rule.character + " " + rule.slot + " " + rule.blueprint
-                    + " current=" + EquipmentScanner.Describe(slot));
-            }
-            return report.ToString();
-        }
-
-        public static string VerifySaved(IList<EquipmentRecommendation> rows)
-        {
-            var report = new StringBuilder();
-            report.AppendLine("Equipment check");
-            if (rows == null)
-            {
-                report.AppendLine("No plan.");
-                return report.ToString();
-            }
-            bool any = false;
-            foreach (var row in rows)
-            {
-                if (row == null || !row.Apply)
-                    continue;
-                any = true;
-                var target = EquipmentScanner.FindUnit(row.Character, row.UnitId);
-                var slot = EquipmentScanner.SlotOf(target, row.Slot);
-                bool ok = EquipmentValidator.Equipped(slot, row.Blueprint);
-                report.AppendLine((ok ? "OK: " : "MISSING: ") + row.Character + " " + PartyOptimizer.SlotLabel(row.Slot) + " " + row.Blueprint);
-                if (!ok)
-                    report.AppendLine("Reason: current item is " + EquipmentScanner.Describe(slot));
-            }
-            if (!any)
-                report.AppendLine("This plan had no changes to check.");
-            return report.ToString();
         }
     }
 }
