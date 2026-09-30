@@ -80,9 +80,7 @@ namespace HansenEquipmentManager
             DrawItemChoice();
             DrawSelection();
             DrawPreview();
-            string currentName = CurrentItemName();
-            bool replacing = currentName != "(empty)" && currentName != "(none)";
-            if (GUILayout.Button(replacing ? "Replace Equipment" : "Equip Item", GUILayout.Width(FieldWidth)))
+            if (GUILayout.Button("Equip Selected Item", GUILayout.Width(FieldWidth)))
                 RunSafe(EquipSelected);
             GUILayout.Label("Report");
             if (GUILayout.Button("Export Report", GUILayout.Width(FieldWidth)))
@@ -128,7 +126,7 @@ namespace HansenEquipmentManager
         {
             RequireGame();
             var party = CharacterAnalyzer.Analyze(BuildRules);
-            LatestList = EquipmentAdvisor.EquipmentList(party);
+            RememberList(party);
             WriteReport("Equipment List", LatestList);
             int characters = party == null ? 0 : party.Count;
             ListStatus = "Generated: " + characters + " characters, " + (characters * EquipmentAdvisor.SlotNames.Length) + " slots";
@@ -154,7 +152,23 @@ namespace HansenEquipmentManager
             var slot = EquipmentScanner.SlotOf(unit, slotName);
             if (slot == null)
                 throw new InvalidOperationException("Slot was not found: " + slotName);
-            var item = EquipmentAdvisor.FindSelectedItem(blueprint);
+            var selected = SelectedPick(PicksForSelection());
+            if (selected != null && selected.Current && slot.MaybeItem != null && slot.MaybeItem.UniqueId == selected.ItemId)
+                throw new InvalidOperationException("That item is already equipped.");
+            string previousId = null;
+            string previousBlueprint = null;
+            string previousName = null;
+            if (slot.MaybeItem != null && slot.MaybeItem.Blueprint != null)
+            {
+                previousId = slot.MaybeItem.UniqueId;
+                previousBlueprint = slot.MaybeItem.Blueprint.name;
+                previousName = EquipmentAdvisor.DisplayName(slot.MaybeItem);
+            }
+            var item = selected != null && !string.IsNullOrEmpty(selected.ItemId)
+                ? EquipmentAdvisor.FindById(selected.ItemId)
+                : null;
+            if (item == null)
+                item = EquipmentAdvisor.FindSelectedItem(blueprint);
             if (item == null)
                 throw new InvalidOperationException("Item was not found: " + blueprint);
             var plan = new PlannedAction
@@ -171,7 +185,23 @@ namespace HansenEquipmentManager
             };
             string result = EquipmentExecutor.Execute(new List<PlannedAction> { plan });
             WriteReport("Equip Selected", result);
-            Status = "Equipped this item. See the mod log.";
+            if (result.IndexOf("SUCCESS", StringComparison.Ordinal) >= 0)
+            {
+                var party = CharacterAnalyzer.Analyze(BuildRules);
+                RememberList(party);
+                EquipmentAdvisor.IncludeDisplaced(character, slotName, previousId, previousBlueprint, previousName);
+                BlueprintPick = -1;
+                int count = party == null ? 0 : party.Count;
+                ListStatus = "Generated: " + count + " characters, " + (count * EquipmentAdvisor.SlotNames.Length) + " slots";
+                Status = "Equipped this item. The previous item is now under Available.";
+            }
+            else
+                Status = "Equip did not finish. See the mod log.";
+        }
+
+        private static void RememberList(System.Collections.Generic.IList<CharacterView> party)
+        {
+            LatestList = EquipmentAdvisor.EquipmentList(party);
         }
 
         private static void ExportReport()
@@ -212,20 +242,40 @@ namespace HansenEquipmentManager
         private static void DrawItemChoice()
         {
             var picks = PicksForSelection();
-            GUILayout.Label("Current Equipment");
-            GUILayout.Label(CurrentItemName());
+            GUILayout.Label("Current");
+            int currentIndex = -1;
+            for (int i = 0; i < picks.Count; i++)
+            {
+                if (!picks[i].Current)
+                    continue;
+                currentIndex = i;
+                break;
+            }
+            if (currentIndex < 0)
+                GUILayout.Label("(empty)");
+            else
+            {
+                var worn = picks[currentIndex];
+                if (GUILayout.Button("[CURRENT] " + worn.DisplayName, GUILayout.Width(FieldWidth)))
+                    BlueprintPick = currentIndex;
+                GUILayout.Label("Blueprint: " + worn.Blueprint);
+            }
             var note = EquippedNote();
             if (note != null)
                 GUILayout.Label("Already equipped copies: " + note.DisplayName + " x" + note.Copies);
             GUILayout.Label("Available");
             ItemScroll = GUILayout.BeginScrollView(ItemScroll, GUILayout.Width(FieldWidth), GUILayout.Height(96));
-            if (picks.Count == 0)
-                GUILayout.Label("(none)");
+            bool any = false;
             for (int i = 0; i < picks.Count; i++)
             {
+                if (picks[i].Current)
+                    continue;
+                any = true;
                 if (GUILayout.Button(picks[i].DisplayName, GUILayout.Width(FieldWidth - 24)))
                     BlueprintPick = i;
             }
+            if (!any)
+                GUILayout.Label("(none)");
             GUILayout.EndScrollView();
         }
 
@@ -246,10 +296,14 @@ namespace HansenEquipmentManager
             var pick = SelectedPick(PicksForSelection());
             string slot = Selected(EquipmentAdvisor.SlotNames, SlotPick);
             GUILayout.Label("Selected Item:");
-            GUILayout.Label("Name: " + (pick == null ? "(none)" : pick.DisplayName));
-            GUILayout.Label("Blueprint: " + (pick == null ? "(none)" : pick.Blueprint));
-            if (pick != null)
+            if (pick == null)
+                GUILayout.Label("No item selected");
+            else
+            {
+                GUILayout.Label("Name: " + pick.DisplayName);
+                GUILayout.Label("Blueprint: " + pick.Blueprint);
                 GUILayout.Label("Source: " + (string.IsNullOrEmpty(pick.Sources) ? "(unknown)" : pick.Sources));
+            }
             if (slot != null)
                 GUILayout.Label("Role: " + RoleLabel(slot));
         }
@@ -275,9 +329,9 @@ namespace HansenEquipmentManager
             GUILayout.Label("Preview:");
             GUILayout.Label("Slot: " + (slotName == null ? "(select a slot)" : PartyOptimizer.SlotLabel(slotName)));
             GUILayout.Label("Current: " + current);
-            GUILayout.Label("New: " + (pick == null ? "(none)" : pick.DisplayName));
-            if (current != "(empty)" && current != "(none)" && pick != null)
-                GUILayout.Label("Warning: Replacing equipped item");
+            GUILayout.Label("New: " + (pick == null ? "No item selected" : pick.DisplayName));
+            if (current != "(empty)" && current != "(none)" && pick != null && pick.DisplayName != current)
+                GUILayout.Label("Warning: Replacing current equipment");
         }
 
         private static string CurrentItemName()

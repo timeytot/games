@@ -73,6 +73,46 @@ namespace HansenEquipmentManager
             return item.Blueprint == null ? "(unknown)" : item.Blueprint.name;
         }
 
+        public static void IncludeDisplaced(string character, string slot, string itemId, string blueprint, string displayName)
+        {
+            if (string.IsNullOrEmpty(character) || string.IsNullOrEmpty(slot) || string.IsNullOrEmpty(blueprint))
+                return;
+            int insertAt = -1;
+            for (int i = 0; i < Picks.Count; i++)
+            {
+                var pick = Picks[i];
+                if (pick.Character != character || pick.Slot != slot)
+                    continue;
+                if (string.Equals(pick.ItemId, itemId, StringComparison.Ordinal) || string.Equals(pick.Blueprint, blueprint, StringComparison.Ordinal))
+                    return;
+                if (pick.Current)
+                    insertAt = i + 1;
+                else if (insertAt < 0)
+                    insertAt = i;
+            }
+            if (insertAt < 0)
+                insertAt = Picks.Count;
+            Picks.Insert(insertAt, new AdvisorPick
+            {
+                Character = character,
+                Slot = slot,
+                Blueprint = blueprint,
+                DisplayName = string.IsNullOrEmpty(displayName) ? blueprint : displayName,
+                Copies = 1,
+                Sources = "Previous equipment",
+                Current = false,
+                ItemId = itemId
+            });
+        }
+
+        public static ItemEntity FindById(string itemId)
+        {
+            if (string.IsNullOrEmpty(itemId) || Kingmaker.Game.Instance == null || Kingmaker.Game.Instance.Player == null)
+                return null;
+            return Kingmaker.Game.Instance.Player.Inventory.Items
+                .FirstOrDefault(item => item != null && item.UniqueId == itemId);
+        }
+
         public static ItemEntity FindSelectedItem(string blueprint)
         {
             return Kingmaker.Game.Instance.Player.Inventory.Items
@@ -87,11 +127,22 @@ namespace HansenEquipmentManager
             var text = new StringBuilder();
             text.AppendLine("=== " + PartyOptimizer.SlotLabel(slot) + " ===");
             text.AppendLine("Current:");
-            if (itemSlot == null || itemSlot.MaybeItem == null)
+            if (itemSlot == null || itemSlot.MaybeItem == null || itemSlot.MaybeItem.Blueprint == null)
                 text.AppendLine("(empty)");
             else
             {
-                text.AppendLine(DisplayName(itemSlot.MaybeItem));
+                Picks.Add(new AdvisorPick
+                {
+                    Character = NameOf(view.Unit),
+                    Slot = slot,
+                    Blueprint = itemSlot.MaybeItem.Blueprint.name,
+                    DisplayName = DisplayName(itemSlot.MaybeItem),
+                    Copies = 1,
+                    Sources = "Equipped",
+                    Current = true,
+                    ItemId = itemSlot.MaybeItem.UniqueId
+                });
+                text.AppendLine("[CURRENT] " + DisplayName(itemSlot.MaybeItem));
                 text.AppendLine("ID: " + itemSlot.MaybeItem.Blueprint.name);
             }
             text.AppendLine("Available:");
@@ -310,6 +361,8 @@ namespace HansenEquipmentManager
             public string DisplayName;
             public int Copies;
             public string Sources;
+            public bool Current;
+            public string ItemId;
         }
 
         public sealed class EquippedCopyNote
