@@ -138,7 +138,7 @@ namespace HansenEquipmentManager
                     Blueprint = itemSlot.MaybeItem.Blueprint.name,
                     DisplayName = DisplayName(itemSlot.MaybeItem),
                     Copies = 1,
-                    Sources = "Equipped",
+                    Sources = NameOf(view.Unit),
                     Current = true,
                     ItemId = itemSlot.MaybeItem.UniqueId
                 });
@@ -237,11 +237,27 @@ namespace HansenEquipmentManager
                 row.Copies++;
                 if (item.HoldingSlot == null && row.Item.HoldingSlot != null)
                     row.Item = item;
-                string source = item.HoldingSlot == null ? "Inventory" : "Outside party";
+                string source = SourceOf(item);
                 if (!row.Sources.Contains(source))
                     row.Sources.Add(source);
             }
             return groups.Values.OrderByDescending(row => row.Sort).ThenBy(row => row.Item.Blueprint.name).ToList();
+        }
+
+        private static string SourceOf(ItemEntity item)
+        {
+            if (item.HoldingSlot == null || item.Wielder == null)
+                return "Inventory";
+            var player = Kingmaker.Game.Instance.Player;
+            if (player != null && player.AllCharacters != null)
+            {
+                foreach (var unit in player.AllCharacters)
+                {
+                    if (unit != null && unit.Descriptor != null && ReferenceEquals(unit.Descriptor, item.Wielder) && !string.IsNullOrEmpty(unit.CharacterName))
+                        return unit.CharacterName;
+                }
+            }
+            return "Outside Party";
         }
 
         private static string FactTags(ItemEntity item, string slot)

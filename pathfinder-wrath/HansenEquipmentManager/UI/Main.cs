@@ -16,7 +16,8 @@ namespace HansenEquipmentManager
         private static int ProfileIndex;
         private static List<BuildRuleSet> BuildRules = new List<BuildRuleSet>();
         private static string Status = "Scan the party first. Nothing is equipped automatically.";
-        private static string Detection = "Not scanned yet";
+        private static string MainName = "(not scanned)";
+        private static string Detection = "";
         private static string LatestList = "";
         private static string ListStatus = "";
         private static int CharacterPick = -1;
@@ -54,7 +55,12 @@ namespace HansenEquipmentManager
             GUILayout.Label("Hansen Equipment Manager");
             GUILayout.Label(Status);
             GUILayout.Label("Party");
-            GUILayout.Label("Detected: " + Detection);
+            GUILayout.Label("Main Character:");
+            GUILayout.Label(MainName);
+            if (!string.IsNullOrEmpty(Detection))
+                GUILayout.Label(Detection);
+            GUILayout.Label("Selected Character:");
+            DrawSelectedCharacter();
             if (GUILayout.Button("Scan Party", GUILayout.Width(FieldWidth)))
                 RunSafe(ScanParty);
             GUILayout.Label("Equipment List");
@@ -80,8 +86,11 @@ namespace HansenEquipmentManager
             DrawItemChoice();
             DrawSelection();
             DrawPreview();
-            if (GUILayout.Button("Equip Selected Item", GUILayout.Width(FieldWidth)))
+            bool itemChosen = SelectedPick(PicksForSelection()) != null;
+            GUI.enabled = itemChosen;
+            if (GUILayout.Button(itemChosen ? "Equip Selected Item" : "Select an item first", GUILayout.Width(FieldWidth)))
                 RunSafe(EquipSelected);
+            GUI.enabled = true;
             GUILayout.Label("Report");
             if (GUILayout.Button("Export Report", GUILayout.Width(FieldWidth)))
                 RunSafe(ExportReport);
@@ -101,6 +110,7 @@ namespace HansenEquipmentManager
             if (main != null)
             {
                 var pair = EquipmentScanner.ClassAndMythic(main);
+                MainName = SafeName(main.CharacterName);
                 Detection = pair.Item1 + " / " + pair.Item2;
             }
             var text = new StringBuilder();
@@ -258,7 +268,6 @@ namespace HansenEquipmentManager
                 var worn = picks[currentIndex];
                 if (GUILayout.Button("[CURRENT] " + worn.DisplayName, GUILayout.Width(FieldWidth)))
                     BlueprintPick = currentIndex;
-                GUILayout.Label("Blueprint: " + worn.Blueprint);
             }
             var note = EquippedNote();
             if (note != null)
@@ -301,7 +310,6 @@ namespace HansenEquipmentManager
             else
             {
                 GUILayout.Label("Name: " + pick.DisplayName);
-                GUILayout.Label("Blueprint: " + pick.Blueprint);
                 GUILayout.Label("Source: " + (string.IsNullOrEmpty(pick.Sources) ? "(unknown)" : pick.Sources));
             }
             if (slot != null)
@@ -332,6 +340,22 @@ namespace HansenEquipmentManager
             GUILayout.Label("New: " + (pick == null ? "No item selected" : pick.DisplayName));
             if (current != "(empty)" && current != "(none)" && pick != null && pick.DisplayName != current)
                 GUILayout.Label("Warning: Replacing current equipment");
+        }
+
+        private static void DrawSelectedCharacter()
+        {
+            string name = Selected(CharacterNames(), CharacterPick);
+            if (name == null || Game.Instance == null || Game.Instance.Player == null)
+            {
+                GUILayout.Label("(select)");
+                return;
+            }
+            GUILayout.Label(name);
+            var unit = EquipmentScanner.FindUnit(name, null);
+            if (unit == null)
+                return;
+            var pair = EquipmentScanner.ClassAndMythic(unit);
+            GUILayout.Label(pair.Item1 + " / " + pair.Item2);
         }
 
         private static string CurrentItemName()
