@@ -12,7 +12,7 @@ Profile JSON files load at startup from `Profiles/`.
 
 | Profile | Match | Role |
 |---|---|---|
-| `Angel_Oracle_IE.json` | Oracle + Angel main | Full IE Angel party loadout rules (Hansen + companions). See `Docs/Angel_IE_Loadout.md`. |
+| `Angel_Oracle_IE.json` | Oracle + Angel main | IE Angel party loadout (Seelah / Camellia / Galfrey / Ember CHANGEs; Hansen + Arue KEEP). Donors: Nenio, Daeran. See `Docs/Angel_IE_Loadout.md`. |
 | `SwordSaint_Trickster_IE.json` | Sword Saint / Trickster | Match only; no item rules yet. |
 | `Lich_Wizard_IE.json` | Wizard / Lich | Match only; no item rules yet. |
 

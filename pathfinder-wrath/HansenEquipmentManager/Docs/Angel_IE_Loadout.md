@@ -1,205 +1,117 @@
 # Angel IE Loadout
 
-Inventory-only loadout for Hansen’s Inevitable Excess Angel Oracle party.
-All blueprint IDs were verified against `report.txt`. Missing community BIS pieces are not invented.
+Inventory-only Equip Profile for Hansen’s Inevitable Excess Angel Oracle party.
+Online sources: [Neoseeker Angel Oracle](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Angel_Oracle), [Neoseeker Ember](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Ember), [Saga of the Jasonite Seelah / Camellia](https://sagaofthejasonite.com/). Missing BIS is listed, never invented.
 
 **Profile:** `Profiles/Angel_Oracle_IE.json`  
-**Last verified report:** 2026-10-02 03:10:21 (all Equip Profile rules PASS)
+**Save:** Quick_8.zks (2026-10-02 04:04, GameId `fea04e92…`)  
+**Report:** 2026-10-02 04:04:20
 
-## How to apply
+## Active party
 
-1. Load the Angel IE save with the six active party members.
-2. Open Hansen Equipment Manager.
-3. Click **Equip Profile**. The mod matches `Angel_Oracle_IE`, previews rules, and equips only **Ready** plans.
-4. Optional: **Export Report** and compare against this document.
-
-### Unequip rules
-
-A profile rule with blueprint `__UNEQUIP__`, `none`, or empty string clears that slot (no insert). Used for Lann and Nenio armor so armor bonuses do not fight monk AC or bracers of armor.
-
-### Donors
-
-Some rules take an item from another character (`donor` / `donorUnitId`). Rule order matters: Lann takes Hansen’s natural armor amulet before Hansen equips Vellexia’s from Arueshalae.
-
----
-
-## Hansen — Angel Oracle Seeker (full-slot audit)
-
-Sources: Neoseeker / Fextralife Angel Oracle Seeker consensus, constrained to this save’s inventory.
-
-**Missing from inventory:** Grave Singer, Robe of Virtue, Imminent Demise / Bane of Spirit, Flawless belt, Bracers of Balance, Haramaki of Divine Guidance.
-
-| Slot | Decision | Blueprint | Why |
+| # | Character | Build in save | UniqueId |
 |---|---|---|---|
-| Glasses | CHANGE | `DLC3_BrokenTricksterGlassesArtifactItem` | Consensus CHA/DC glasses; replaces Undeniable Truth |
-| Head | CHANGE | `MaskOfNothingItem` | Consensus head; replaces Perfection +8 |
-| Neck | CHANGE | `VellexiasMagnifyingAmuletItem` (from Arueshalae) | Consensus spell DC amulet |
-| Primary | CHANGE | `FierySpellWeaverItem` | No Grave Singer; caster-focus staff |
-| Gloves | CHANGE | `StarEmbroideredGlovesItem` (from Daeran) | SR 30 + luck saves |
-| Cloak | KEEP | `Artifact_AngelCloakItem` | Bound of Possibility (Angel mythic cloak) |
-| Ring 2 | KEEP | `DLC3_RingOfInstantTriumphItem` | Triumphant Advance |
-| Ring 1 | KEEP | `RingOfProtection7` | No Imminent Demise; Boreal Might only adds cold spells |
-| Wrist | KEEP | `StormlordsResolveItem` | Spontaneous spell-list expansion |
-| Shirt | KEEP | `DLC3_RobeOfTheSinmageItem` | Robe of the Seven Sins |
-| Boots | KEEP | `BootsOfFreestReinItem` | Strong general boots for Oracle |
-| Belt | KEEP | `BeltOfPerfection8` | No Flawless belt |
-| Armor | KEEP | `SarkorianWeddingBreastplateItem` | Best available chest on this save |
-| Secondary | KEEP empty | — | Staff is two-handed |
+| 1 | Hansen | Oracle 20 Seeker / Angel MR10 | `360c7122-3094-4ab4-9706-04ae85f7715a` |
+| 2 | Seelah | Paladin 20 / MR9 | `0ad3253d-0009-464c-8fea-5162de292bb9` |
+| 3 | Camellia | Shaman 20 Spirit Hunter / MR8 | `d489d1c3-83ff-45e0-bb90-8549b7b0c6dd` |
+| 4 | Queen Galfrey | Paladin 20 / MR10 | `5A6856` |
+| 5 | Arueshalae | Ranger 20 Master Spy / MR10 | `166F1D` |
+| 6 | Ember | Witch 20 Accursed / MR8 | `7ea9b3f6-19ad-4b7c-98fb-3d935bf698f3` |
+
+Donors (inactive, still in `AllCharacters`): Nenio (`a362b4fa-…`), Daeran (`d3da2a90-…`).
+
+## How to apply in game
+
+1. Load the Angel IE quicksave that matches this report.
+2. Open **Hansen Equipment Manager**.
+3. Click **Equip Profile** once (applies all Ready rules, including donor pulls).
+4. Click **Equip Profile** again — Camellia’s `Interceptor` is Blocked while Disk of Unbalance is still equipped; pass 1 unequips, pass 2 inserts.
+5. Optional: **Export Report** and diff against the tables below.
+
+HEM never edits `.zks` files. This repo only ships the profile + docs.
 
 ---
 
-## Arueshalae — Ranger Master Spy (full-slot audit)
+## Preview — current vs online (inventory-limited)
 
-**Missing:** Instant Enemy gloves, Gloves of Dueling, Heart of Iceland. Vellexia moves to Hansen.
+### Hansen — KEEP (already inventory-best Angel Oracle)
 
-| Slot | Decision | Blueprint | Why |
+| Slot | Equipped | Online core | Gap |
 |---|---|---|---|
-| Neck | CHANGE | `AmuletOfNaturalArmor7` | Replace Vellexia after Hansen takes it |
-| Shirt | CHANGE | `DLC3_RobeOfUnspeakableTruthItem` | +2 Wis for Instant Enemy / ranger spells; Seven Sins stays on casters |
-| Primary | KEEP | `LongbowOfLeechingStrikeItem` | Best dedicated bow on this save |
-| Armor | KEEP | `DLC3_DemonhideLeatherArmorItem` | Snakeskin: +4 profane Dex, speed, acid immunity |
-| Head | KEEP | `DarknessCaressItem` | Charisma to ranged weapon damage |
-| Glasses | KEEP | `GogglesOfMalocchioItem` | Bow crit disorient; Broken Trickster goes to Hansen |
-| Ring 1 | KEEP | `RingOfProtection7` | Defense over Guiding Star opener damage |
-| Ring 2 | KEEP | `ShootDownItem` | Merciless Shot |
-| Gloves | KEEP | `BigGameGlovesItem` | Quarry −2 AC; no Instant Enemy gloves |
-| Wrist | KEEP | `BracersOfArchery` | Archery kit |
-| Boots | KEEP | `BootsOfFreestReinItem` | Strong general boots |
-| Belt | KEEP | `BeltOfPerfection8` | Mangling Frenzy needs rage; no Skald |
-| Cloak | KEEP | `CloakOfResistance7` | Call to Violence needs rage; Carnage is evocation DC |
-| Secondary | KEEP empty | — | Two-handed bow |
+| Glasses / Head / Neck / Gloves / Staff / Cloak / Rings | Broken Trickster, Mask of Nothing, Vellexia, Star Embroidered, Fiery Spell Weaver, Bound of Possibility, Prot+7, Triumphant | Same Neoseeker Angel core where owned | — |
+| Missing | — | Grave Singer, Robe of Virtue, Flawless belt, Bracers of Balance, Imminent Demise | not in save |
 
----
+### Seelah — CHANGE (Paladin tank)
 
-## Lann — Zen Archer Monk (full-slot audit)
-
-Zen Archers must stay **unarmored**. Body armor disables monk Wisdom AC and flurry.
-
-| Slot | Decision | Blueprint | Why |
+| Slot | Was | Equip | Why |
 |---|---|---|---|
-| Neck | CHANGE | `AmuletOfNaturalArmor7` (from Hansen) | Fill empty neck after Hansen swaps to Vellexia |
-| Boots | CHANGE | `BootsOfFreestReinItem` | Fill empty feet |
-| Armor | CHANGE unequip | `__UNEQUIP__` (was `ImpendingEclipseItem`) | Haramaki kills monk AC / flurry |
-| Primary | KEEP | `FinneanCompositeLongbowStage3Base` | Stage 3 Finnean bow |
-| Shirt | KEEP | `RobeOfOrderItem` | Monk-only robe; ki / lawful attack bonus |
-| Glasses | KEEP | `GogglesOfMalocchioItem` | Bow crit utility |
-| Head | KEEP | `HeadbandOfPerfection8` | Mental Perfection +8 |
-| Ring 1 | KEEP | `RingOfProtection7` | Deflection |
-| Ring 2 | KEEP | `ShootDownItem` | Merciless Shot |
-| Gloves | KEEP | `DLC3_GlovesOfSurgicalExtractionItem` | Phlebotomy; no better archery gloves free |
-| Wrist | KEEP | `BracersOfArchery` | Attack/damage over armor bracers on unarmored monk |
-| Belt | KEEP | `BeltOfPerfection8` | Physical Perfection +8 |
-| Cloak | KEEP | `CloakOfResistance7` | No Skald rage chain for Call to Violence |
-| Secondary | KEEP empty | — | Two-handed bow |
+| Secondary | empty | `AssertionOfDominanceShieldItem` | Jasonite #1 shield; Hopebringer stays on Galfrey |
+| Shirt | empty | `ClothOfHeavyFortificationItem` | Fortification cloth for tank |
+| Wrist | empty | `ClearPurposeItem` (donor Daeran) | Fill empty wrist; concentration / heal utility |
+| Gloves | Claws | `GlovesOfMartialExcellenceItem` | Better martial AB gloves in inventory |
+| Ring 2 | Triumphant | `RingOfEvasionItem` | Tank Reflex Evasion; Triumphant remains on others |
+| KEEP | Radiance, Mithral FP+5, Mental+8, Undeniable Truth, NA+7, Prot+7, Freest Rein, Belt+8, Res+7 | | |
+| Missing | — | Living Fortress, Heartstone, Lizard Tail, Dawnflower (Radiance kept) | not owned / Radiance preferred |
 
-**Not used:** `AmuletOfMightyFists5` (unarmed/natural weapons; Lann shoots a bow).  
-**Not used:** Call to Violence (rage aura; worse than Resistance +7 here).
+### Camellia — CHANGE (Spirit Hunter dual rapier)
 
----
-
-## Nenio — Wizard Scrollmaster (full-slot audit)
-
-Sources: Neoseeker / InEffect Scroll Savant gear notes, inventory-limited.
-
-**Missing:** Bane of Spirit, Magician’s Ring, Draven’s Hat, Sin Mage’s Staff.  
-**Note:** Ring of Boreal Might requires spontaneous casting; Scrollmaster Wizard does not qualify.
-
-| Slot | Decision | Blueprint | Why |
+| Slot | Was | Equip | Why |
 |---|---|---|---|
-| Ring 1 | CHANGE | `RingOfProtection7` | Fill empty ring; +7 deflection beats Devastating Will’s +3 |
-| Gloves | CHANGE | `GlovesOfArcaneEradicationItem` (from Ember) | +4 ranged touch (rays) + UMD |
-| Boots | CHANGE | `BootsOfMagicalWhirlItem` | Quicken next spell after first demon kill |
-| Armor | CHANGE unequip | `__UNEQUIP__` (was `ArrowCatcherItem`) | Armor bonus does not stack with Bracers of Armor +9 |
-| Primary | KEEP | `MapPlaningBardicheItem` | Death’s Consonant (INT weapon) |
-| Shirt | KEEP | `DLC3_RobeOfTheSinmageItem` | Seven Sins |
-| Head | KEEP | `HeadbandOfPerfection8` | INT headband |
-| Glasses | KEEP | `GogglesOfMindControlItem` | Enchantment DC |
-| Neck | KEEP | `GlassAmuletOfClarityItem` | Enchantment DC; stays on Nenio |
-| Ring 2 | KEEP | `DLC3_RingOfInstantTriumphItem` | Triumphant Advance |
-| Wrist | KEEP | `BracersOfArmor9` | +9 armor AC |
-| Belt | KEEP | `BeltOfPerfection8` | Physical Perfection |
-| Cloak | KEEP | `LibrariansCloakItem` | Scroll CL +4 / UMD (Scrollmaster core) |
-| Secondary | KEEP empty | — | Two-handed bardiche |
+| Secondary | Disk of Unbalance | `__UNEQUIP__` → `InterceptorItem` | Jasonite dual-rapier off-hand (2× Equip Profile) |
+| Neck | Bone Amulet | `VoraciousSpiritItem` | Endgame AC stacking amulet in inventory |
+| KEEP | Translucent Needle, Mithral BP+5, Seven Sins, Mental+8, Undeniable Truth, Prot+7, Triumphant, Claws, Repelling, Freest Rein, Belt+8, Res+7 | | |
+| Missing | — | Fencer’s Gift, Spirit Trackers, Rapier of Speed, Heartstone | not in save |
 
----
+### Queen Galfrey — CHANGE (Paladin + Hopebringer)
 
-## Daeran — Life Oracle CHA healer (full-slot audit)
-
-Powerless Prophecy wants freedom of movement-style boots. Star Embroidered Gloves move to Hansen.
-
-| Slot | Decision | Blueprint | Why |
+| Slot | Was | Equip | Why |
 |---|---|---|---|
-| Wrist | CHANGE | `ClearPurposeItem` | Heal without AoO + concentration; empty wrist |
-| Gloves | CHANGE (donor) | empty after Equip Profile | Star Embroidered → Hansen; no better CHA/heal gloves left |
-| Primary | KEEP | `RapierPlus5` | Filler; Fiery Spell Weaver goes to Hansen |
-| Armor | KEEP | `ChainshirtAcidResistance30Plus5` | Medium armor + acid resist 30 |
-| Shirt | KEEP | `DLC3_RobeOfTheSinmageItem` | Seven Sins |
-| Head | KEEP | `HeadbandOfPerfection8` | CHA headband |
-| Glasses | KEEP | `DLC3_GlassesOfundeniableTruthItem` | Broken Trickster goes to Hansen |
-| Neck | KEEP | `AmuletOfNaturalArmor7` | Defense |
-| Ring 1 | KEEP | `RingOfProtection7` | Deflection; Sacred Touch’s +1d6 heal is not worth losing +7 |
-| Ring 2 | KEEP | `DLC3_RingOfInstantTriumphItem` | Triumphant Advance |
-| Boots | KEEP | `BootsOfFreestReinItem` | Helps Powerless Prophecy; Magical Whirl goes to Nenio |
-| Belt | KEEP | `BeltOfPerfection8` | Physical Perfection |
-| Cloak | KEEP | `CloakOfResistance7` | Carnage is evocation DC |
-| Secondary | KEEP empty | — | Healer, not shield tank |
+| Glasses | empty | `DLC3_GlassesOfundeniableTruthItem` | Spare copy in inventory / inactive |
+| Wrist | empty | `BracersOfHeavyHandItem` | Fill empty wrist (shield kit) |
+| KEEP | Radiance, Hopebringer, Mithral FP+5, Seven Sins, Mental+8, NA+7, Triumphant, Prot+7, Claws, Freest Rein, Belt+8, Res+7 | | |
 
-**Not used:** Eldritch Scholar bracers (armor +6; does not stack with chainshirt).  
-**Not used:** Boreal Might (cold list does not beat Prot +7 / Triumphant Advance).
+### Arueshalae — KEEP (Master Spy archery kit)
 
----
-
-## Sosiel — Cleric glaive + domain support (full-slot audit)
-
-Sources: Jasonite / InEffect Cleric notes. Shelyn glaive proficiency and reach support.
-
-**Important corrections vs early draft:**
-
-- `InterceptorItem` is **not** on Sosiel’s Available list (rapier; Cleric is not proficient).
-- Hopebringer requires a one-handed weapon and would force dropping **Mutilated Angel**.
-
-| Slot | Decision | Blueprint | Why |
-|---|---|---|---|
-| Shirt | CHANGE | `ClothOfHeavyFortificationItem` | Fill empty shirt; fortification for front line |
-| Ring 2 | CHANGE | `RingOfProtection7` | Replaces Righteous Crusader’s Ring (extra Smite Evil; Cleric has no Smite) |
-| Boots | CHANGE | `BootsOfFreestReinItem` | Stampede is charge-damage only; Freest Rein is safer general use |
-| Primary | KEEP | `DLC3_BeautyslasherGlaiveWeaponItem` | Mutilated Angel: +5 adamantine glaive, evil bonuses, stacking −AC |
-| Secondary | KEEP empty | — | Two-handed glaive; Hopebringer stays in stash |
-| Armor | KEEP | `MithralFullplateStandartPlus5` | Mithral full plate +5 |
-| Head | KEEP | `HeadbandOfPerfection8` | +8 mental; Zaoris headband does not beat it |
-| Glasses | KEEP | `GogglesOfPiercingGazeItem` | +1 vs outsiders |
-| Neck | KEEP | `AmuletOfNaturalArmor7` | Defense |
-| Ring 1 | KEEP | `RingOfEvasionItem` | Evasion on Reflex saves |
-| Gloves | KEEP | `GlovesOfMartialExcellenceItem` | Unarmed-oriented; better gloves already assigned elsewhere |
-| Wrist | KEEP | `BracersOfHeavyHandItem` | Off-hand damage; useless on 2H glaive but Clear Purpose is on Daeran; armor bracers do not stack with full plate |
-| Belt | KEEP | `BeltOfPerfection8` | Physical Perfection |
-| Cloak | KEEP | `CloakOfResistance7` | Call to Violence needs rage |
-
-**Hopebringer left in inventory:** shield + mace is a pure tank line; this party keeps Sosiel on glaive reach / domains.
-
----
-
-## Equip Profile rule checklist
-
-| Character | Slot | Blueprint |
+| Slot | Equipped | Notes |
 |---|---|---|
-| Lann | Neck | `AmuletOfNaturalArmor7` ← Hansen |
-| Lann | Feet | `BootsOfFreestReinItem` |
-| Lann | Armor | `__UNEQUIP__` |
-| Hansen | Glasses | `DLC3_BrokenTricksterGlassesArtifactItem` |
-| Hansen | Head | `MaskOfNothingItem` |
-| Hansen | Neck | `VellexiasMagnifyingAmuletItem` ← Arueshalae |
-| Hansen | PrimaryHand | `FierySpellWeaverItem` |
-| Hansen | Gloves | `StarEmbroideredGlovesItem` ← Daeran |
-| Arueshalae | Neck | `AmuletOfNaturalArmor7` |
-| Arueshalae | Shirt | `DLC3_RobeOfUnspeakableTruthItem` |
-| Nenio | Ring1 | `RingOfProtection7` |
-| Nenio | Gloves | `GlovesOfArcaneEradicationItem` ← Ember |
-| Nenio | Feet | `BootsOfMagicalWhirlItem` |
-| Nenio | Armor | `__UNEQUIP__` |
-| Sosiel | Shirt | `ClothOfHeavyFortificationItem` |
-| Sosiel | Ring2 | `RingOfProtection7` |
-| Sosiel | Feet | `BootsOfFreestReinItem` |
-| Daeran | Wrist | `ClearPurposeItem` |
+| Full kit | Snakeskin, Unspeakable Truth, Darkness Caress, Malocchio, Leeching Strike, Big Game, Merciless Shot, Archery bracers, NA+7, Prot+7, Freest Rein, Belt+8, Res+7 | Already matches prior inventory audit |
+| Missing | Instant Enemy gloves, Heart of Iceland | not in save |
+| Not used | Call to Violence / Mangling Frenzy in inventory | need rage / Skald; worse than Res+7 here |
 
-KEEP slots are documented above but are **not** written as profile rules (already correct or intentionally left alone).
+### Ember — CHANGE (Neoseeker ray witch)
+
+| Slot | Was | Equip | Why |
+|---|---|---|---|
+| Gloves | empty | `GlovesOfArcaneEradicationItem` (donor Nenio) | Mandatory ranged-touch gloves |
+| Feet | Freest Rein | `BootsOfMagicalWhirlItem` (donor Nenio) | Quicken alt; Arcane Persistence not owned |
+| Shirt | Seven Sins | `BaphometFireCloth_AnimalisticFireItem` | Call of the Fiery Things (mandatory fire cloth) |
+| Belt | Mallander’s Insult | `MaskOfAreshkagalBelt_TabulaRasaItem` | Pristine Mind (mandatory) |
+| Ring 2 | Sacred Touch | `RedSalamandraItem` | Red Salamander (mandatory) |
+| Glasses | Cinder Goggles | `GogglesOfPiercingGazeItem` | Mandatory SR glasses |
+| KEEP | Lethal Conductor, Deadly Rays, Mental+8, Pyromania, Eldritch Scholar, Carnage | | |
+| Missing | Ashmaker, Ward Master, Steady Finger, Scorching Bracers, Arcane Persistence, Assailant’s Belt | not in save |
+
+---
+
+## Equip Profile rule list
+
+| Order | Character | Slot | Blueprint | Donor |
+|---|---|---|---|---|
+| 1 | Ember | Gloves | `GlovesOfArcaneEradicationItem` | Nenio |
+| 2 | Ember | Feet | `BootsOfMagicalWhirlItem` | Nenio |
+| 3 | Seelah | Wrist | `ClearPurposeItem` | Daeran |
+| 4 | Seelah | SecondaryHand | `AssertionOfDominanceShieldItem` | — |
+| 5 | Seelah | Shirt | `ClothOfHeavyFortificationItem` | — |
+| 6 | Seelah | Gloves | `GlovesOfMartialExcellenceItem` | — |
+| 7 | Seelah | Ring2 | `RingOfEvasionItem` | — |
+| 8 | Camellia | SecondaryHand | `__UNEQUIP__` | — |
+| 9 | Camellia | SecondaryHand | `InterceptorItem` | — |
+| 10 | Camellia | Neck | `VoraciousSpiritItem` | — |
+| 11 | Queen Galfrey | Glasses | `DLC3_GlassesOfundeniableTruthItem` | — |
+| 12 | Queen Galfrey | Wrist | `BracersOfHeavyHandItem` | — |
+| 13 | Ember | Shirt | `BaphometFireCloth_AnimalisticFireItem` | — |
+| 14 | Ember | Belt | `MaskOfAreshkagalBelt_TabulaRasaItem` | — |
+| 15 | Ember | Ring2 | `RedSalamandraItem` | — |
+| 16 | Ember | Glasses | `GogglesOfPiercingGazeItem` | — |
+
+Hansen and Arueshalae have no CHANGE rules (already correct).
