@@ -47,9 +47,12 @@ Each character section lists UniqueId, class/archetype/mythic, then every slot w
 
 ## Angel IE party docs
 
-Full English slot audits, KEEP/CHANGE rationale, donors, and unequip notes:
+**Apply now:** load the Angel IE save → open HEM → **Equip Profile** twice (second click finishes Camellia’s Interceptor).
+
+Full English slot audits, KEEP/CHANGE Preview vs online builds, donors, missing BIS, and rule table:
 
 - [`Docs/Angel_IE_Loadout.md`](Docs/Angel_IE_Loadout.md)
+- Profile: [`Profiles/Angel_Oracle_IE.json`](Profiles/Angel_Oracle_IE.json)
 
 ## Build on this machine
 

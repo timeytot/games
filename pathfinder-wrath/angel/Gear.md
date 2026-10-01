@@ -1,5 +1,7 @@
 # Hansen gear assignment, 2026-09-30
 
+> **Current loadout (2026-10-02):** do not use this file to equip. Use Hansen Equipment Manager **Equip Profile** with [`../HansenEquipmentManager/Profiles/Angel_Oracle_IE.json`](../HansenEquipmentManager/Profiles/Angel_Oracle_IE.json). Full party Preview, donors, and steps: [`../HansenEquipmentManager/Docs/Angel_IE_Loadout.md`](../HansenEquipmentManager/Docs/Angel_IE_Loadout.md). Active party is Hansen / Seelah / Camellia / Galfrey / Arueshalae / Ember (not the Lann/Nenio/Daeran/Sosiel set below).
+
 Both raw-save equipment edits were reverted. The inventory screen crashed after those edits, so `Quick_7.zks` is the pre-edit backup again. The problem report is [InventoryEditProblem.md](./InventoryEditProblem.md).
 
 The current fix is [runtime-equip-fix](./runtime-equip-fix/README.md): equip Daeran/Sosiel (and Camellia's neck item) at runtime through Owlcat `RemoveItem` / `InsertItem`, then make a new manual save. Do not hand-edit the equipment graph again.
