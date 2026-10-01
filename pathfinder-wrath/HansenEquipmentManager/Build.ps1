@@ -1,5 +1,11 @@
 param(
-    [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure"
+    [string]$GameDir = $(
+        if (Test-Path "D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure\Wrath_Data\Managed\Assembly-CSharp.dll") {
+            "D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure"
+        } else {
+            "C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure"
+        }
+    )
 )
 
 $ErrorActionPreference = "Stop"

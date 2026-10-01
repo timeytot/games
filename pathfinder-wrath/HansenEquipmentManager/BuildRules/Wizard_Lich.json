@@ -1,0 +1,13 @@
+{
+  "id": "Wizard_Lich",
+  "displayName": "Wizard Lich",
+  "match": { "classContains": "Wizard", "mythicContains": "Lich" },
+  "weights": {
+    "INT": 5,
+    "SpellDC": 5,
+    "CasterLevel": 5,
+    "AC": 2,
+    "Enhancement": 1,
+    "WIS": 1
+  }
+}

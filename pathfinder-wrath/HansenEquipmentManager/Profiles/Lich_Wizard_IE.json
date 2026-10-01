@@ -1,0 +1,9 @@
+{
+  "id": "Lich_Wizard_IE",
+  "displayName": "Lich Wizard Inevitable Excess",
+  "match": {
+    "classContains": "Wizard",
+    "mythicContains": "Lich"
+  },
+  "rules": []
+}

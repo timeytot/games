@@ -10,6 +10,10 @@ Profile files still load at startup. Advisor Mode does not preview them, verify 
 
 `Profiles/SwordSaint_Trickster_IE.json` matches a Sword Saint / Trickster main character. It has no item rules. Those are not invented here.
 
+`Profiles/Lich_Wizard_IE.json` matches a Wizard / Lich main character (FaN). It has no item rules yet.
+
+BuildRules cover Angel Oracle, Zen Archer, Sword Saint Trickster, and Wizard Lich. Advisor Mode only uses them for match and factual tags, not auto equip.
+
 `Scan Party` names a profile when the main character's class, archetype, or mythic path matches. It does not equip anything.
 
 ## Buttons
