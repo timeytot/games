@@ -1,42 +1,64 @@
 # Hansen Equipment Manager
 
-Advisor Mode lists what each active character can wear and equips one chosen item. Equip uses `CanInsertItem`, then `RemoveItem`, then `InsertItem`, then checks that the blueprint is in the slot. It does not edit `party.json` or any `.zks` save, and it does not copy weapon sets.
+Advisor Mode lists what each active character can wear and can equip one chosen item.
+**Equip Profile** previews and applies the matching profile’s Ready rules.
+
+Equip uses `CanInsertItem`, then `RemoveItem`, then `InsertItem`, then checks that the blueprint is in the slot.
+It does not edit `party.json` or any `.zks` save, and it does not copy weapon sets.
 
 ## Profiles
 
-Profile files still load at startup. Advisor Mode does not preview them, verify them, or equip their rules.
+Profile JSON files load at startup from `Profiles/`.
 
-`Profiles/Angel_Oracle_IE.json` is the Daeran, Sosiel, and Camellia list that used to be hardcoded. Sosiel has no primary-hand rule. The shield stays a secondary-hand rule. A donor in the file is an explicit profile choice.
+| Profile | Match | Role |
+|---|---|---|
+| `Angel_Oracle_IE.json` | Oracle + Angel main | Full IE Angel party loadout rules (Hansen + companions). See `Docs/Angel_IE_Loadout.md`. |
+| `SwordSaint_Trickster_IE.json` | Sword Saint / Trickster | Match only; no item rules yet. |
+| `Lich_Wizard_IE.json` | Wizard / Lich | Match only; no item rules yet. |
 
-`Profiles/SwordSaint_Trickster_IE.json` matches a Sword Saint / Trickster main character. It has no item rules. Those are not invented here.
+### Profile rule fields
 
-`Profiles/Lich_Wizard_IE.json` matches a Wizard / Lich main character (FaN). It has no item rules yet.
+- `character` / `unitId` — target party member
+- `slot` — equipment slot (`PrimaryHand`, `SecondaryHand`, `Armor`, `Shirt`, `Head`, `Glasses`, `Neck`, `Ring1`, `Ring2`, `Gloves`, `Wrist`, `Feet`, `Belt`, `Cloak`)
+- `blueprint` — item blueprint name, or `__UNEQUIP__` / `none` / empty to clear the slot
+- `donor` / `donorUnitId` — optional source character when the item is currently worn elsewhere
 
-BuildRules cover Angel Oracle, Zen Archer, Sword Saint Trickster, and Wizard Lich. Advisor Mode only uses them for match and factual tags, not auto equip.
-
-`Scan Party` names a profile when the main character's class, archetype, or mythic path matches. It does not equip anything.
+`Scan Party` names a matching profile for the main character. It does not equip anything by itself.
 
 ## Buttons
 
-1. Scan Party
-2. Generate Equipment List
-3. Equip Selected Item
-4. Export Report
+1. **Scan Party** — detect party, builds, matching profile
+2. **Generate Equipment List** — Advisor list for selected character/slot
+3. **Equip Selected Item** — equip one Advisor pick
+4. **Equip Profile** — preview matching profile rules, equip Ready plans only
+5. **Export Report** — overwrite `report.txt`
 
-Equip Selected Item equips the one item chosen on the screen.
+## Recommendation / BuildRules
 
-## Recommendation
+`BuildRules/*.json` holds match tags and weights for Advisor scoring.
+Covered builds include Angel Oracle, Zen Archer, Sword Saint Trickster, Wizard Lich, Scrollmaster, and Master Spy.
+Advisor Mode uses them for match and factual tags; it does not auto-equip from BuildRules alone.
 
-`BuildRules/*.json` holds stat and tag weights. A new build is a new file. The DLL does not contain per-character scores. `classContains` matches the class asset, the archetype asset, or the spaced display name. `ZenArcher` matches a Zen Archer whose class asset is `MonkClass`. `SwordSaint` matches the same way.
+## Report
 
-The screen is Party, Equipment List, Select Equipment, and Report. The list covers hands, armor, shirt, head, glasses, neck, both rings, gloves, wrist, boots, belt, and cloak. Each slot shows the worn item, then each different usable item. Copies of the same blueprint are one row, with a copy count and whether they are in inventory or outside the party. Tags are facts such as one-hand or shield compatible. Character and Slot are dropdowns. Changing character clears the slot and the item. The screen names the main character and the selected character separately. Blueprint ids stay in the report. Equip Selected Item stays disabled until an item is chosen, and the choice shows whether that item is in inventory or on another character. The worn item stays selectable under Current. After an equip, the item that was taken off is placed under Available so it can be put back. Primary-hand choices list one-handed weapons before two-handed weapons. The equip button is Equip Selected Item. The report header says Version: Advisor Mode, and a build id such as Oracle_Angel is also shown as Oracle Angel. Export Report overwrites `report.txt` with the latest list only.
+Export Report overwrites `Mods/HansenEquipmentManager/report.txt`.
+Header includes `Version: Advisor Mode` and a build id (for example `Oracle_Angel` shown as Oracle Angel).
+Each character section lists UniqueId, class/archetype/mythic, then every slot with Current and Available items.
+
+## Angel IE party docs
+
+Full English slot audits, KEEP/CHANGE rationale, donors, and unequip notes:
+
+- [`Docs/Angel_IE_Loadout.md`](Docs/Angel_IE_Loadout.md)
 
 ## Build on this machine
 
-This machine has no .NET SDK. `Build.ps1` uses Visual Studio 2022 Build Tools `csc.exe` and the local WotR 2.7.0x assemblies.
+`Build.ps1` uses Visual Studio Build Tools `csc.exe` and the local WotR assemblies.
 
 ```powershell
 .\Build.ps1
+# or, if the game is on D:
+.\Build.ps1 -GameDir "D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure"
 ```
 
 The old `HansenRuntimeEquipFix` mod is disabled by renaming its `Info.json`, so both mods do not load.
