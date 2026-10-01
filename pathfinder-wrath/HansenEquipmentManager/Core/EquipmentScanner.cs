@@ -58,72 +58,6 @@ namespace HansenEquipmentManager
             return bestScore > 0 ? best : null;
         }
 
-        public static List<PlannedAction> Preview(EquipmentProfile profile)
-        {
-            var plans = new List<PlannedAction>();
-            if (profile == null)
-                return plans;
-            foreach (var rule in profile.rules)
-                plans.Add(Resolve(rule));
-            return plans;
-        }
-
-        public static PlannedAction Resolve(EquipmentRule rule)
-        {
-            var plan = new PlannedAction { Rule = rule, Current = "missing" };
-            var target = FindUnit(rule.character, rule.unitId);
-            if (target == null)
-            {
-                plan.Status = PlanStatus.Missing;
-                plan.Detail = "character not in this party";
-                return plan;
-            }
-
-            var slot = SlotOf(target, rule.slot);
-            if (slot == null)
-            {
-                plan.Status = PlanStatus.Missing;
-                plan.Detail = "slot is not a real equipment slot: " + rule.slot;
-                return plan;
-            }
-
-            plan.Current = Describe(slot);
-            if (ItemMatches(slot.MaybeItem, rule.blueprint))
-            {
-                plan.Status = PlanStatus.AlreadyCorrect;
-                plan.Detail = "profile rule, already equipped";
-                plan.ItemId = slot.MaybeItem.UniqueId;
-                return plan;
-            }
-
-            var candidates = Candidates(rule).ToList();
-            if (candidates.Count == 0)
-            {
-                plan.Status = PlanStatus.Missing;
-                plan.Detail = "no single safe copy of " + rule.blueprint;
-                return plan;
-            }
-            if (candidates.Count > 1)
-            {
-                plan.Status = PlanStatus.NeedsChoice;
-                plan.Detail = candidates.Count + " copies. Not chosen automatically.";
-                return plan;
-            }
-
-            var item = candidates[0];
-            if (!slot.CanInsertItem(item))
-            {
-                plan.Status = PlanStatus.Blocked;
-                plan.Detail = "CanInsertItem=false for " + rule.blueprint;
-                return plan;
-            }
-
-            plan.Status = PlanStatus.Ready;
-            plan.ItemId = item.UniqueId;
-            plan.Detail = string.IsNullOrEmpty(rule.donor) ? "profile rule, one unworn copy" : "profile rule, donor " + rule.donor;
-            return plan;
-        }
-
         public static string CandidateReport(ItemSlot primary)
         {
             var text = new StringBuilder();
@@ -215,53 +149,83 @@ namespace HansenEquipmentManager
             return Game.Instance.Player.Inventory.Items.FirstOrDefault(item => item != null && item.UniqueId == plan.ItemId);
         }
 
-        private static IEnumerable<ItemEntity> Candidates(EquipmentRule rule)
-        {
-            var matches = Game.Instance.Player.Inventory.Items
-                .Where(item => ItemMatches(item, rule.blueprint))
-                .GroupBy(item => item.UniqueId)
-                .Select(group => group.First())
-                .ToList();
-
-            if (!string.IsNullOrEmpty(rule.donor) || !string.IsNullOrEmpty(rule.donorUnitId))
-            {
-                var donor = FindUnit(rule.donor, rule.donorUnitId);
-                var worn = matches.Where(item => donor != null && WornBy(item, donor)).ToList();
-                if (worn.Count > 0)
-                    return worn;
-            }
-
-            return matches.Where(item => item.HoldingSlot == null);
-        }
-
-        private static bool WornBy(ItemEntity item, UnitEntityData unit)
-        {
-            return item != null &&
-                   item.HoldingSlot != null &&
-                   unit != null &&
-                   unit.Descriptor != null &&
-                   ReferenceEquals(item.HoldingSlot.Owner, unit.Descriptor);
-        }
-
         private static int MatchScore(UnitEntityData main, EquipmentProfile profile)
         {
             if (profile.match == null)
                 return 0;
             int score = 0;
-            string classes = ClassLine(main);
-            string mythic = MythicName(main);
-            if (!string.IsNullOrEmpty(profile.match.classContains) &&
-                classes.IndexOf(profile.match.classContains, StringComparison.OrdinalIgnoreCase) >= 0)
-                score += 2;
-            if (!string.IsNullOrEmpty(profile.match.mythicContains) &&
-                mythic.IndexOf(profile.match.mythicContains, StringComparison.OrdinalIgnoreCase) >= 0)
-                score += 2;
+            int classScore = ClassMatchScore(main, profile.match.classContains);
+            if (classScore > 0)
+                score += classScore;
+            int mythicScore = MythicMatchScore(main, profile.match.mythicContains);
+            if (mythicScore > 0)
+                score += mythicScore;
             return score;
+        }
+
+        public static int ClassMatchScore(UnitEntityData unit, string needle)
+        {
+            if (string.IsNullOrEmpty(needle))
+                return 0;
+            if (unit == null)
+                return -1;
+            bool classHit = TextContains(ClassLine(unit) + " " + ClassAssetText(unit), needle);
+            bool archetypeHit = TextContains(ArchetypeLine(unit) + " " + ArchetypeAssetText(unit), needle);
+            if (!classHit && !archetypeHit)
+                return -1;
+            if (archetypeHit && !classHit)
+                return 3;
+            return 2;
+        }
+
+        public static int MythicMatchScore(UnitEntityData unit, string needle)
+        {
+            if (string.IsNullOrEmpty(needle))
+                return 0;
+            return TextContains(MythicMatchText(unit), needle) ? 2 : -1;
+        }
+
+        private static bool TextContains(string haystack, string needle)
+        {
+            if (string.IsNullOrEmpty(needle) || string.IsNullOrEmpty(haystack))
+                return false;
+            if (haystack.IndexOf(needle, StringComparison.OrdinalIgnoreCase) >= 0)
+                return true;
+            string compactNeedle = Compact(needle);
+            if (compactNeedle.Length == 0)
+                return false;
+            return Compact(haystack).IndexOf(compactNeedle, StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
+        private static string Compact(string value)
+        {
+            var text = new StringBuilder(value.Length);
+            for (int i = 0; i < value.Length; i++)
+            {
+                char c = value[i];
+                if (c == ' ' || c == '_' || c == '-')
+                    continue;
+                text.Append(c);
+            }
+            return text.ToString();
         }
 
         public static string ArchetypeLine(UnitEntityData unit)
         {
             var names = new List<string>();
+            CollectArchetypes(unit, names, null);
+            return names.Count == 0 ? "none" : string.Join(", ", names.ToArray());
+        }
+
+        private static string ArchetypeAssetText(UnitEntityData unit)
+        {
+            var assets = new List<string>();
+            CollectArchetypes(unit, null, assets);
+            return assets.Count == 0 ? "" : string.Join(" ", assets.ToArray());
+        }
+
+        private static void CollectArchetypes(UnitEntityData unit, List<string> pretty, List<string> assets)
+        {
             foreach (var klass in BaseClasses(unit))
             {
                 var data = unit.Progression.GetClassData(klass);
@@ -272,17 +236,29 @@ namespace HansenEquipmentManager
                     if (archetype == null)
                         continue;
                     string asset = string.IsNullOrEmpty(archetype.name) ? archetype.Name : archetype.name;
-                    string pretty = Pretty(asset);
-                    if (!names.Contains(pretty))
-                        names.Add(pretty);
+                    if (string.IsNullOrEmpty(asset))
+                        continue;
+                    if (assets != null && !assets.Contains(asset))
+                        assets.Add(asset);
+                    if (pretty == null)
+                        continue;
+                    string name = Pretty(asset);
+                    if (!pretty.Contains(name))
+                        pretty.Add(name);
                 }
             }
-            return names.Count == 0 ? "none" : string.Join(", ", names.ToArray());
         }
 
-        public static string MatchText(UnitEntityData unit)
+        private static string ClassAssetText(UnitEntityData unit)
         {
-            return ClassLine(unit) + " " + ArchetypeLine(unit) + " " + MythicName(unit);
+            var parts = new List<string>();
+            foreach (var klass in BaseClasses(unit))
+            {
+                string asset = AssetName(klass);
+                if (!parts.Contains(asset))
+                    parts.Add(asset);
+            }
+            return parts.Count == 0 ? "" : string.Join(" ", parts.ToArray());
         }
 
         private static string ClassLine(UnitEntityData unit)
@@ -321,6 +297,16 @@ namespace HansenEquipmentManager
             return Pretty(AssetName(data.CharacterClass)) + " MR" + unit.Progression.MythicLevel;
         }
 
+        private static string MythicMatchText(UnitEntityData unit)
+        {
+            if (unit == null || unit.Progression == null)
+                return "none";
+            var data = unit.Progression.GetCurrentMythicClass();
+            if (data == null || data.CharacterClass == null)
+                return MythicName(unit);
+            return MythicName(unit) + " " + AssetName(data.CharacterClass);
+        }
+
         private static string Pretty(string asset)
         {
             if (string.IsNullOrEmpty(asset))
@@ -353,13 +339,6 @@ namespace HansenEquipmentManager
             if (slot.MaybeItem == null || slot.MaybeItem.Blueprint == null)
                 return "empty";
             return slot.MaybeItem.Blueprint.name;
-        }
-
-        private static bool ItemMatches(ItemEntity item, string blueprint)
-        {
-            return item != null &&
-                   item.Blueprint != null &&
-                   string.Equals(item.Blueprint.name, blueprint, StringComparison.Ordinal);
         }
 
         private static string Safe(string value)

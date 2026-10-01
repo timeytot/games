@@ -13,7 +13,6 @@ namespace HansenEquipmentManager
         private static UnityModManager.ModEntry.ModLogger Log;
         private static string ModDirectory;
         private static List<EquipmentProfile> Profiles = new List<EquipmentProfile>();
-        private static int ProfileIndex;
         private static List<BuildRuleSet> BuildRules = new List<BuildRuleSet>();
         private static string Status = "Scan the party first. Nothing is equipped automatically.";
         private static string MainName = "(not scanned)";
@@ -105,12 +104,6 @@ namespace HansenEquipmentManager
         {
             RequireGame();
             var suggested = EquipmentScanner.Suggest(Profiles);
-            if (suggested != null)
-            {
-                int index = Profiles.FindIndex(profile => profile.id == suggested.id);
-                if (index >= 0)
-                    ProfileIndex = index;
-            }
             var main = EquipmentScanner.MainCharacter();
             if (main != null)
             {
@@ -120,6 +113,7 @@ namespace HansenEquipmentManager
             }
             var text = new StringBuilder();
             text.AppendLine("Active party");
+            text.AppendLine("Profile: " + (suggested == null ? "none" : suggested.id));
             foreach (var unit in CharacterAnalyzer.ActiveParty())
             {
                 var pair = EquipmentScanner.ClassAndMythic(unit);
@@ -130,8 +124,11 @@ namespace HansenEquipmentManager
                 NoteEmpty(text, unit, "PrimaryHand");
                 NoteEmpty(text, unit, "SecondaryHand");
                 NoteEmpty(text, unit, "Armor");
+                NoteEmpty(text, unit, "Shirt");
                 NoteEmpty(text, unit, "Head");
+                NoteEmpty(text, unit, "Glasses");
                 NoteEmpty(text, unit, "Neck");
+                NoteEmpty(text, unit, "Wrist");
             }
             WriteReport("Scan Party", text.ToString());
             Status = "Party scanned. Nothing was equipped.";
@@ -497,21 +494,6 @@ namespace HansenEquipmentManager
         {
             if (Game.Instance == null || Game.Instance.Player == null)
                 throw new InvalidOperationException("No loaded game.");
-        }
-
-        private static EquipmentProfile Current()
-        {
-            if (Profiles == null || Profiles.Count == 0)
-                return null;
-            if (ProfileIndex < 0 || ProfileIndex >= Profiles.Count)
-                ProfileIndex = 0;
-            return Profiles[ProfileIndex];
-        }
-
-        private static string CurrentName()
-        {
-            var profile = Current();
-            return profile == null ? "(none)" : profile.displayName;
         }
     }
 }

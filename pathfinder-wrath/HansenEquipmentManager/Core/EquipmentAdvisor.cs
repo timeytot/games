@@ -12,7 +12,7 @@ namespace HansenEquipmentManager
     {
         public static readonly List<AdvisorPick> Picks = new List<AdvisorPick>();
         public static readonly List<EquippedCopyNote> EquippedCopies = new List<EquippedCopyNote>();
-        public static readonly string[] SlotNames = { "PrimaryHand", "SecondaryHand", "Armor", "Head", "Neck", "Ring1", "Ring2", "Gloves", "Feet", "Belt", "Shoulders" };
+        public static readonly string[] SlotNames = { "PrimaryHand", "SecondaryHand", "Armor", "Shirt", "Head", "Glasses", "Neck", "Ring1", "Ring2", "Gloves", "Wrist", "Feet", "Belt", "Shoulders" };
 
         public static string PartyList()
         {

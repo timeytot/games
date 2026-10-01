@@ -92,12 +92,10 @@ namespace HansenEquipmentManager
             if (rule.match == null)
                 return 0;
             int score = 0;
-            string classes = EquipmentScanner.MatchText(unit);
-            string mythic = EquipmentScanner.MatchText(unit);
             if (!string.IsNullOrEmpty(rule.match.classContains))
-                score += classes.IndexOf(rule.match.classContains, StringComparison.OrdinalIgnoreCase) >= 0 ? 2 : -1;
+                score += EquipmentScanner.ClassMatchScore(unit, rule.match.classContains);
             if (!string.IsNullOrEmpty(rule.match.mythicContains))
-                score += mythic.IndexOf(rule.match.mythicContains, StringComparison.OrdinalIgnoreCase) >= 0 ? 2 : -1;
+                score += EquipmentScanner.MythicMatchScore(unit, rule.match.mythicContains);
             return score;
         }
 

@@ -1,11 +1,53 @@
+<#
+.SYNOPSIS
+Extract the newest Wrath of the Righteous save for one GameId into lich/current.
+
+.DESCRIPTION
+Finds the newest .zks whose header GameId matches, runs extract_wotr_save.py, and
+writes the snapshot under pathfinder-wrath/lich/current. Extraction always runs.
+
+A local git commit is optional. Pass -Commit to stage and commit the snapshot
+on the current branch. Pass -Push to do that commit and then push the current
+branch with `git push origin HEAD`. Push is off unless -Push is set. This script
+does not assume origin/main.
+
+.PARAMETER Repo
+Git repository root. Environment: WOTR_REPO. Default: the folder that contains
+pathfinder-wrath, two levels above this script.
+
+.PARAMETER Saves
+Owlcat Saved Games directory. Environment: WOTR_SAVES. Default: the current
+user's LocalLow Pathfinder Wrath Of The Righteous Saved Games folder.
+
+.PARAMETER GameId
+header.json GameId to keep. Environment: WOTR_GAME_ID. Default: the FaN lich id.
+
+.PARAMETER CheatData
+Path to the game's Bundles/cheatdata.json. Environment: WOTR_CHEATDATA.
+Default: the usual Steam install of Pathfinder Second Adventure.
+
+.PARAMETER Commit
+Stage and commit the extracted snapshot locally. Does not push.
+
+.PARAMETER Push
+Commit the snapshot, then push the current branch to origin. Implies -Commit.
+#>
+param(
+    [string]$Repo = $(if ($env:WOTR_REPO) { $env:WOTR_REPO } else { (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path }),
+    [string]$Saves = $(if ($env:WOTR_SAVES) { $env:WOTR_SAVES } else { Join-Path $env:USERPROFILE "AppData\LocalLow\Owlcat Games\Pathfinder Wrath Of The Righteous\Saved Games" }),
+    [string]$GameId = $(if ($env:WOTR_GAME_ID) { $env:WOTR_GAME_ID } else { "7ea3d466491c4249aec2742271c2e71a" }),
+    [string]$CheatData = $(if ($env:WOTR_CHEATDATA) { $env:WOTR_CHEATDATA } else { "C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Bundles\cheatdata.json" }),
+    [switch]$Commit,
+    [switch]$Push
+)
+
 $ErrorActionPreference = "Stop"
-$repo = "C:\Users\timeg\Desktop\download\games"
-$wrath = Join-Path $repo "pathfinder-wrath"
+$doCommit = [bool]$Commit -or [bool]$Push
+
+$wrath = Join-Path $Repo "pathfinder-wrath"
 $current = Join-Path $wrath "lich\current"
-$lichGameId = "7ea3d466491c4249aec2742271c2e71a"
-$temp = Join-Path $env:TEMP "WotR_Current_Snapshot"
-$saves = "C:\Users\timeg\AppData\LocalLow\Owlcat Games\Pathfinder Wrath Of The Righteous\Saved Games"
-$cheat = "C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Bundles\cheatdata.json"
+$tempRoot = if ($env:TEMP) { $env:TEMP } else { [System.IO.Path]::GetTempPath() }
+$temp = Join-Path $tempRoot "WotR_Current_Snapshot"
 $extractor = Join-Path $wrath "tools\extract_wotr_save.py"
 $lock = Join-Path $temp "refresh.lock"
 $currentFiles = @(
@@ -27,9 +69,18 @@ if (Test-Path $lock) {
 }
 Set-Content -Path $lock -Value $PID -Encoding ascii
 try {
+    if ([string]::IsNullOrWhiteSpace($Repo) -or !(Test-Path $Repo)) {
+        throw "Repo was not found: $Repo"
+    }
+    if ([string]::IsNullOrWhiteSpace($Saves) -or !(Test-Path $Saves)) {
+        throw "Saves folder was not found: $Saves"
+    }
+    if ([string]::IsNullOrWhiteSpace($GameId)) {
+        throw "GameId is empty. Pass -GameId or set WOTR_GAME_ID."
+    }
     Add-Type -AssemblyName System.IO.Compression.FileSystem
-    $lichSaves = @()
-    foreach ($file in (Get-ChildItem -Path $saves -Filter *.zks -Recurse -File)) {
+    $matchedSaves = New-Object System.Collections.Generic.List[System.IO.FileInfo]
+    foreach ($file in (Get-ChildItem -Path $Saves -Filter *.zks -Recurse -File)) {
         try {
             $zip = [System.IO.Compression.ZipFile]::OpenRead($file.FullName)
             try {
@@ -38,15 +89,15 @@ try {
                 $reader = New-Object System.IO.StreamReader($entry.Open())
                 try { $header = $reader.ReadToEnd() | ConvertFrom-Json }
                 finally { $reader.Dispose() }
-                if ($header.GameId -eq $lichGameId) { $lichSaves += $file }
+                if ($header.GameId -eq $GameId) { $matchedSaves.Add($file) }
             } finally { $zip.Dispose() }
         } catch {
             Write-Output "SKIP_SAVE $($file.Name) $($_.Exception.Message)"
         }
     }
-    $newest = $lichSaves | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+    $newest = $matchedSaves | Sort-Object LastWriteTime -Descending | Select-Object -First 1
     if (-not $newest) {
-        throw "No FaN save found for game $lichGameId."
+        throw "No save found for game $GameId."
     }
     $sha = (Get-FileHash -Algorithm SHA256 -Path $newest.FullName).Hash.ToLower()
     $shaFile = Join-Path $current "Current_Save.sha256"
@@ -63,7 +114,7 @@ try {
     $stamp = $newest.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss")
     python $extractor `
         --save $copy `
-        --cheatdata $cheat `
+        --cheatdata $CheatData `
         --outdir $current `
         --sha256 $sha `
         --source-file $newest.FullName `
@@ -71,19 +122,27 @@ try {
         --size $newest.Length
     if ($LASTEXITCODE -ne 0) { throw "extractor failed: $LASTEXITCODE" }
 
-    Set-Location $repo
-    $paths = @("pathfinder-wrath/lich/README.md", "pathfinder-wrath/tools")
-    foreach ($name in $currentFiles) {
-        $paths += "pathfinder-wrath/lich/current/$name"
-    }
-    git add -- $paths
-    $staged = git diff --cached --name-only
-    if (-not $staged) {
-        Write-Output "NO_STAGED_CHANGES"
+    if (-not $doCommit) {
+        Write-Output "EXTRACT_OK $sha $($newest.Name)"
     } else {
-        git commit -m "snapshot: update current WotR save state"
-        git push origin main
-        Write-Output "PUSH_OK $sha $($newest.Name)"
+        Set-Location $Repo
+        $paths = @("pathfinder-wrath/lich/README.md", "pathfinder-wrath/tools")
+        foreach ($name in $currentFiles) {
+            $paths += "pathfinder-wrath/lich/current/$name"
+        }
+        git add -- $paths
+        $staged = git diff --cached --name-only
+        if (-not $staged) {
+            Write-Output "NO_STAGED_CHANGES"
+        } else {
+            git commit -m "snapshot: update current WotR save state"
+            if ($Push) {
+                git push origin HEAD
+                Write-Output "PUSH_OK $sha $($newest.Name)"
+            } else {
+                Write-Output "COMMIT_OK $sha $($newest.Name)"
+            }
+        }
     }
 
     python (Join-Path $wrath "tools\copy_current_to_drive.py") $current $copy
