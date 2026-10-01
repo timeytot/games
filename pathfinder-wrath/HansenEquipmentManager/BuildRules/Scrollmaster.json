@@ -1,0 +1,13 @@
+{
+  "id": "Scrollmaster",
+  "displayName": "Scrollmaster",
+  "match": { "classContains": "Scrollmaster" },
+  "weights": {
+    "INT": 5,
+    "SpellDC": 5,
+    "CasterLevel": 4,
+    "AC": 1,
+    "Enhancement": 1
+  },
+  "signatureCategories": []
+}

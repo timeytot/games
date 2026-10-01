@@ -66,6 +66,8 @@ namespace HansenEquipmentManager
             DrawSelectedCharacter();
             if (GUILayout.Button("Scan Party", GUILayout.Width(FieldWidth)))
                 RunSafe(ScanParty);
+            if (GUILayout.Button("Equip Profile", GUILayout.Width(FieldWidth)))
+                RunSafe(EquipProfile);
             GUILayout.Label("Equipment List");
             if (GUILayout.Button("Generate Equipment List", GUILayout.Width(FieldWidth)))
                 RunSafe(GenerateList);
@@ -134,6 +136,53 @@ namespace HansenEquipmentManager
             Status = "Party scanned. Nothing was equipped.";
         }
 
+        private static void EquipProfile()
+        {
+            RequireGame();
+            var profile = EquipmentScanner.Suggest(Profiles);
+            if (profile == null)
+                profile = Profiles.Find(p => p != null && p.id == "Angel_Oracle_IE");
+            if (profile == null && Profiles.Count > 0)
+                profile = Profiles[0];
+            if (profile == null)
+                throw new InvalidOperationException("No equipment profile is loaded.");
+
+            var plans = EquipmentScanner.Preview(profile);
+            var ready = new List<PlannedAction>();
+            var text = new StringBuilder();
+            text.AppendLine("Profile: " + profile.id);
+            int readyCount = 0;
+            int already = 0;
+            int missing = 0;
+            int blocked = 0;
+            foreach (var plan in plans)
+            {
+                if (plan == null)
+                    continue;
+                text.AppendLine(plan.Status + " " + Safe(plan.Rule == null ? null : plan.Rule.character)
+                    + " " + Safe(plan.Rule == null ? null : plan.Rule.slot)
+                    + " " + Safe(plan.Rule == null ? null : plan.Rule.blueprint)
+                    + " | " + Safe(plan.Detail));
+                if (plan.Status == PlanStatus.Ready)
+                {
+                    ready.Add(plan);
+                    readyCount++;
+                }
+                else if (plan.Status == PlanStatus.AlreadyCorrect)
+                    already++;
+                else if (plan.Status == PlanStatus.Blocked)
+                    blocked++;
+                else
+                    missing++;
+            }
+
+            string result = EquipmentExecutor.Execute(ready);
+            text.AppendLine(result);
+            WriteReport("Equip Profile", text.ToString());
+            Status = "Equip Profile " + profile.id + ": ready " + readyCount
+                + ", already " + already + ", missing " + missing + ", blocked " + blocked + ".";
+        }
+
         private static void GenerateList()
         {
             RequireGame();
@@ -148,6 +197,11 @@ namespace HansenEquipmentManager
             CharacterOpen = false;
             SlotOpen = false;
             Status = "Equipment list generated. Nothing was equipped.";
+        }
+
+        private static string Safe(string value)
+        {
+            return string.IsNullOrEmpty(value) ? "" : value;
         }
 
         private static void EquipSelected()

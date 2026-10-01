@@ -58,6 +58,117 @@ namespace HansenEquipmentManager
             return bestScore > 0 ? best : null;
         }
 
+        public static List<PlannedAction> Preview(EquipmentProfile profile)
+        {
+            var plans = new List<PlannedAction>();
+            if (profile == null || profile.rules == null)
+                return plans;
+            foreach (var rule in profile.rules)
+                plans.Add(Resolve(rule));
+            return plans;
+        }
+
+        public static PlannedAction Resolve(EquipmentRule rule)
+        {
+            var plan = new PlannedAction { Rule = rule, Current = "missing" };
+            if (rule == null)
+            {
+                plan.Status = PlanStatus.Missing;
+                plan.Detail = "empty rule";
+                return plan;
+            }
+
+            var target = FindUnit(rule.character, rule.unitId);
+            if (target == null)
+            {
+                plan.Status = PlanStatus.Missing;
+                plan.Detail = "character not in this party";
+                return plan;
+            }
+
+            var slot = SlotOf(target, rule.slot);
+            if (slot == null)
+            {
+                plan.Status = PlanStatus.Missing;
+                plan.Detail = "slot is not a real equipment slot: " + rule.slot;
+                return plan;
+            }
+
+            plan.Current = Describe(slot);
+            if (ItemMatches(slot.MaybeItem, rule.blueprint))
+            {
+                plan.Status = PlanStatus.AlreadyCorrect;
+                plan.Detail = "profile rule, already equipped";
+                plan.ItemId = slot.MaybeItem.UniqueId;
+                return plan;
+            }
+
+            var item = FindItem(rule);
+            if (item == null)
+            {
+                plan.Status = PlanStatus.Missing;
+                plan.Detail = "no usable copy of " + rule.blueprint;
+                return plan;
+            }
+
+            if (!slot.CanInsertItem(item))
+            {
+                plan.Status = PlanStatus.Blocked;
+                plan.Detail = "CanInsertItem=false for " + rule.blueprint;
+                plan.ItemId = item.UniqueId;
+                return plan;
+            }
+
+            plan.Status = PlanStatus.Ready;
+            plan.ItemId = item.UniqueId;
+            plan.Detail = string.IsNullOrEmpty(rule.donor) ? "profile rule via FindItem" : "profile rule, donor " + rule.donor;
+            return plan;
+        }
+
+        public static ItemEntity FindItem(EquipmentRule rule)
+        {
+            if (rule == null || string.IsNullOrEmpty(rule.blueprint) || Game.Instance == null || Game.Instance.Player == null)
+                return null;
+
+            var matches = Game.Instance.Player.Inventory.Items
+                .Where(item => ItemMatches(item, rule.blueprint))
+                .GroupBy(item => item.UniqueId)
+                .Select(group => group.First())
+                .ToList();
+            if (matches.Count == 0)
+                return null;
+
+            if (!string.IsNullOrEmpty(rule.donor) || !string.IsNullOrEmpty(rule.donorUnitId))
+            {
+                var donor = FindUnit(rule.donor, rule.donorUnitId);
+                var worn = matches.Where(item => donor != null && WornBy(item, donor)).ToList();
+                if (worn.Count > 0)
+                    return worn[0];
+            }
+
+            var free = matches.Where(item => item.HoldingSlot == null).ToList();
+            if (free.Count > 0)
+                return free[0];
+
+            return null;
+        }
+
+        private static bool WornBy(ItemEntity item, UnitEntityData unit)
+        {
+            return item != null &&
+                   item.HoldingSlot != null &&
+                   unit != null &&
+                   unit.Descriptor != null &&
+                   ReferenceEquals(item.HoldingSlot.Owner, unit.Descriptor);
+        }
+
+        private static bool ItemMatches(ItemEntity item, string blueprint)
+        {
+            return item != null &&
+                   item.Blueprint != null &&
+                   string.Equals(item.Blueprint.name, blueprint, StringComparison.Ordinal);
+        }
+
         public static string CandidateReport(ItemSlot primary)
         {
             var text = new StringBuilder();

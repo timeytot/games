@@ -6,30 +6,23 @@
     "mythicContains": "Angel"
   },
   "rules": [
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Armor", "blueprint": "ChainshirtAcidResistance30Plus5" },
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Shirt", "blueprint": "DLC3_RobeOfTheSinmageItem" },
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Belt", "blueprint": "BeltOfPerfection8", "donor": "Woljif", "donorUnitId": "66befdb4-62f9-4faa-a788-65004482af56" },
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Head", "blueprint": "HeadbandOfPerfection8", "donor": "Greybor", "donorUnitId": "E55C2" },
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Glasses", "blueprint": "DLC3_GlassesOfundeniableTruthItem", "donor": "Galfrey", "donorUnitId": "5A6856" },
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Feet", "blueprint": "BootsOfFreestReinItem", "donor": "Lann", "donorUnitId": "e437d264-30d0-4f82-b498-10d5779735e1" },
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Gloves", "blueprint": "StarEmbroideredGlovesItem" },
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Neck", "blueprint": "AmuletOfNaturalArmor7", "donor": "Regill", "donorUnitId": "6fb82a23-c68d-4964-aa5e-20f4c180a7ff" },
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Ring1", "blueprint": "RingOfProtection7", "donor": "Nenio", "donorUnitId": "a362b4fa-464a-43df-99cf-48216117e70b" },
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Ring2", "blueprint": "DLC3_RingOfInstantTriumphItem", "donor": "Greybor", "donorUnitId": "E55C2" },
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Shoulders", "blueprint": "CloakOfResistance7", "donor": "Woljif", "donorUnitId": "66befdb4-62f9-4faa-a788-65004482af56" },
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "PrimaryHand", "blueprint": "RapierPlus5" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Armor", "blueprint": "MithralFullplateStandartPlus5" },
+    { "character": "Lann", "unitId": "e437d264-30d0-4f82-b498-10d5779735e1", "slot": "Neck", "blueprint": "AmuletOfNaturalArmor7", "donor": "Hansen", "donorUnitId": "360c7122-3094-4ab4-9706-04ae85f7715a" },
+    { "character": "Lann", "unitId": "e437d264-30d0-4f82-b498-10d5779735e1", "slot": "Feet", "blueprint": "BootsOfFreestReinItem" },
+
+    { "character": "Hansen", "unitId": "360c7122-3094-4ab4-9706-04ae85f7715a", "slot": "Glasses", "blueprint": "DLC3_BrokenTricksterGlassesArtifactItem" },
+    { "character": "Hansen", "unitId": "360c7122-3094-4ab4-9706-04ae85f7715a", "slot": "Head", "blueprint": "MaskOfNothingItem" },
+    { "character": "Hansen", "unitId": "360c7122-3094-4ab4-9706-04ae85f7715a", "slot": "Neck", "blueprint": "VellexiasMagnifyingAmuletItem", "donor": "Arueshalae", "donorUnitId": "166F1D" },
+    { "character": "Hansen", "unitId": "360c7122-3094-4ab4-9706-04ae85f7715a", "slot": "PrimaryHand", "blueprint": "FierySpellWeaverItem" },
+    { "character": "Hansen", "unitId": "360c7122-3094-4ab4-9706-04ae85f7715a", "slot": "Gloves", "blueprint": "StarEmbroideredGlovesItem", "donor": "Daeran", "donorUnitId": "d3da2a90-9520-4171-a346-c7971a171b77" },
+
+    { "character": "Arueshalae", "unitId": "166F1D", "slot": "Neck", "blueprint": "AmuletOfNaturalArmor7" },
+
+    { "character": "Nenio", "unitId": "a362b4fa-464a-43df-99cf-48216117e70b", "slot": "Ring1", "blueprint": "RingOfDevastatingWillItem" },
+
+    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "PrimaryHand", "blueprint": "InterceptorItem" },
     { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "SecondaryHand", "blueprint": "TheUndyingLoveOfTheHopebringerShieldItem" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Feet", "blueprint": "BootsOfStampedeItem" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Gloves", "blueprint": "GlovesOfMartialExcellenceItem" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Glasses", "blueprint": "GogglesOfPiercingGazeItem" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Ring1", "blueprint": "RingOfEvasionItem", "donor": "Regill", "donorUnitId": "6fb82a23-c68d-4964-aa5e-20f4c180a7ff" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Ring2", "blueprint": "PaladinsRingItem" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Belt", "blueprint": "BeltOfPerfection8", "donor": "Regill", "donorUnitId": "6fb82a23-c68d-4964-aa5e-20f4c180a7ff" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Head", "blueprint": "HeadbandOfPerfection8", "donor": "Regill", "donorUnitId": "6fb82a23-c68d-4964-aa5e-20f4c180a7ff" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Shoulders", "blueprint": "CloakOfResistance7", "donor": "Regill", "donorUnitId": "6fb82a23-c68d-4964-aa5e-20f4c180a7ff" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Wrist", "blueprint": "BracersOfHeavyHandItem", "donor": "Regill", "donorUnitId": "6fb82a23-c68d-4964-aa5e-20f4c180a7ff" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Neck", "blueprint": "AmuletOfNaturalArmor7", "donor": "Lann", "donorUnitId": "e437d264-30d0-4f82-b498-10d5779735e1" },
-    { "character": "Camellia", "unitId": "d489d1c3-83ff-45e0-bb90-8549b7b0c6dd", "slot": "Neck", "blueprint": "CameliaAmuletItem" }
+    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Shirt", "blueprint": "ClothOfHeavyFortificationItem" },
+
+    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Wrist", "blueprint": "BracersOfEldritchScholarItem", "donor": "Ember" }
   ]
 }

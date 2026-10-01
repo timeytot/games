@@ -1,0 +1,16 @@
+{
+  "id": "MasterSpy",
+  "displayName": "Master Spy",
+  "match": { "classContains": "MasterSpy" },
+  "weights": {
+    "DEX": 5,
+    "WIS": 3,
+    "Longbow": 5,
+    "CompositeLongbow": 5,
+    "Shortbow": 4,
+    "Crit": 2,
+    "Enhancement": 2,
+    "AC": 1
+  },
+  "signatureCategories": ["Longbow", "Shortbow", "CompositeLongbow", "CompositeShortbow"]
+}
