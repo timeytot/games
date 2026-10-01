@@ -22,7 +22,7 @@ Unit ids were read from that save's `party.json`.
 
 - `Reproduction.md` — the live Buff It rows, the six Wrath Tactics rule lists, and the Quicksave2 state. Follow this file to reproduce the setup.
 - `SwordSaint_Trickster_Build.md` — the level-by-level plan.
-- `BuffIt-OneClickBuff.md` — one-click buff notes. The buttons are Normal (`Long`), Quick (`Quick`), and Important (`Important`).
+- `BuffIt-OneClickBuff.md` — campaign Buff It pointer (GameId + config copy). Shared rules: [../BuffIt-Guide.md](../BuffIt-Guide.md).
 - `buffit-current-config.json` — copy of the live Buff It config for all six characters.
 - `tactics-current-config.json` — copy of the live Wrath Tactics config for all six characters.
 - `ModEditMethods.md` — how the spellbook, Buff It, and Wrath Tactics are edited. Older save names in that file are history.

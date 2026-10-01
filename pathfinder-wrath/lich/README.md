@@ -2,7 +2,7 @@
 
 The current copy, and the steps for a later restore, are [Reproduction.md](./Reproduction.md). Do not edit the JSON in `WrathModsConfiguration.zip` until a later request says to change Buff It or Wrath Tactics.
 
-This folder is the Wrath Tactics and Buff It 2 The Limit configuration for FaN, the lich save. The angel profile is in `../angel/`.
+This folder is the Wrath Tactics and Buff It 2 The Limit configuration for FaN, the lich save. The angel profile is in `../angel/`. Generic Buff It rules (any campaign): [../BuffIt-Guide.md](../BuffIt-Guide.md). Campaign pointer: [BuffIt-OneClickBuff.md](./BuffIt-OneClickBuff.md).
 
 `WrathModsConfiguration.zip` is a snapshot. The game does not read it. The live files are:
 

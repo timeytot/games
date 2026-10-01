@@ -1,8 +1,8 @@
 # Reproduce Hansen's angel setup
 
-Read this file first. It describes the Buff It copy that is already stored. Do not edit that JSON, and do not copy it into the game, until a later request says to change it.
+Read this file for GameId paths, party unit ids, and the Buff It / gear reproduction notes for **this campaign**. Shared Buff It behavior (buttons, JSON fields, personal spells, restore checklist) is documented in [../BuffIt-Guide.md](../BuffIt-Guide.md). The short campaign pointer is [BuffIt-OneClickBuff.md](./BuffIt-OneClickBuff.md).
 
-The game does not read this folder. `BuffIt-OneClickBuff.md` names the same rows. This file adds the spell guids and the scroll and potion caster entries that the older table left out. If the two disagree, `buffit-current-config.json` wins. That loose file is identical to the `buffit-current-config.json` member inside `WrathModsConfiguration.zip`.
+The game does not read this folder. If notes and JSON disagree, `buffit-current-config.json` wins.
 
 There is no Wrath Tactics file for this GameId in this folder, in the zip, or in the live UserSettings folder. Do not create one.
 
@@ -63,38 +63,16 @@ The later quicksave is `Quick_7.zks`, header name `Quicksave1 1`, in-game total 
 
 ## Buff It
 
-`Version` is 1. Verbose casting, skip animations, cast on combat start, allow in combat, bypass arcane failure, and overwrite are all false. Source priority is 0. Use Magic Device retries are 3 and mode is 1. Scrolls, potions, equipment, songs, and activatables are enabled. Sort by name is false. There is no menu hotkey. `CasterRanks`, `MountPreference`, and `FuryWeaponPreference` are empty.
+Field meanings, button groups, `SourceType` values, and restore steps: [../BuffIt-Guide.md](../BuffIt-Guide.md).
 
-Hansen's Oracle book does not have Enduring Spells or Greater Enduring Spells. Round-per-level spells are on Quick or Important, not Normal.
+Authoritative row list: [`buffit-current-config.json`](./buffit-current-config.json). Campaign pointer: [BuffIt-OneClickBuff.md](./BuffIt-OneClickBuff.md).
 
-| Button | `InGroups` | Rows |
-|---|---|---|
-| Normal | `Long` | 56 |
-| Quick | `Quick` | 9 |
-| Important | `Important` | 4 |
+Current snapshot policy for this GameId: **all rows on Normal (`Long`)**; Quick and Important empty. Remap `Wanted` / `Casters` whenever the active party changes. Personal-range spells require each Wanted unit to self-cast.
 
-The three buttons do not include each other. Normal does not cast Quick or Important.
-
-Every row has `UseSpells`, `UseScrolls`, `UsePotions`, and `UseEquipment` true. `UseExtendRod` and `CastOnCombatStart` are false. `Blacklisted` is false.
-
-`SourceType` 0 is a spellbook. `SourceType` 1 is a scroll, with an all-zero spellbook. `SourceType` 2 is a potion, with an all-zero spellbook. Caster order is the order in the JSON. The first caster is tried first.
-
-Prepared casters still need the spell memorized. Hansen does not. If a backup caster is listed, the row can still fire from that backup when the first caster has no slot.
-
-Nenio prepares Heroic Invocation, Haste, Cat's Grace Mass, True Seeing Communal, Stoneskin, Foresight, Seamantle, Mirror Image, Displacement, and Mage Armor.
-
-Arueshalae prepares Longstrider Greater, Hurricane Bow, Aspect of the Falcon, Animal Growth, and Magic Fang Greater. Barkskin lists her first and Hansen second.
-
-Galfrey prepares Bestow Grace, Bestow Grace of the Champion, Bless Weapon, Veil of Heaven, Veil of Positive Energy, Aura of Greater Courage, Angelic Aspect Greater, and Eaglesoul.
-
-Sosiel prepares Divine Power, Righteous Might, and Eaglesoul. Mass ability scores, Death Ward, Holy Aura, and Prayer list him and also list Hansen or another backup.
-
-BUFF_TABLE_HERE
+Older party tables below (Lann / Nenio / Sosiel era) are historical id references only. Prefer unit ids from the latest save’s `party.json`.
 
 ## Leave these as they are
 
 - Do not create a Wrath Tactics file for this GameId.
-- Do not put round-per-level spells onto Normal. Haste, Prayer, Divine Power, Righteous Might, Eaglesoul, Holy Hymn, Circle of Clarity, Displacement, and Bestow Grace of the Champion stay on Quick. Fortress of the Faithful, Sun Form, Avenger's Blessing, and Holy Aura stay on Important.
-- Do not add the spells the older note removed: Unholy Aura, Cloak of Chaos, the genie forms, Shapechange, Ice Body, Fiery Body, Frightful Aspect, Transformation, Winds of Vengeance, Cave Fangs, Army of Heaven, Phoenix Gift, Jolting Portent, True Strike, Bless, Aid, Shield of Law, or Greater Magic Weapon on the off hand.
-- Sun Form stays on Hansen only.
-- Do not copy this file onto the sword saint GameId or onto `ForImport_1.zks`.
+- Do not copy this Buff It file onto another campaign’s GameId (including the sword saint save or `ForImport_1.zks`).
+- Prefer fixing `Wanted` / preparation over deleting rows that show zero casts.
