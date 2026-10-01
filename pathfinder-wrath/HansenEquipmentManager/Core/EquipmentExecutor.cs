@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Kingmaker.Items.Slots;
 
 namespace HansenEquipmentManager
 {
@@ -66,6 +67,9 @@ namespace HansenEquipmentManager
                 report.AppendLine(Fail(plan, "slot does not exist"));
                 return false;
             }
+
+            if (EquipmentScanner.IsUnequipBlueprint(plan.Rule.blueprint))
+                return ExecuteUnequip(plan, slot, report);
 
             var item = EquipmentScanner.FindPlannedItem(plan);
             report.AppendLine("Source item: " + (item == null ? "not found" : "found"));
@@ -157,6 +161,37 @@ namespace HansenEquipmentManager
                 return false;
             }
             report.AppendLine("SUCCESS " + Safe(plan.Rule.character) + " " + Safe(plan.Rule.slot) + " " + Safe(plan.Rule.blueprint));
+            return true;
+        }
+
+        private static bool ExecuteUnequip(PlannedAction plan, ItemSlot slot, StringBuilder report)
+        {
+            report.AppendLine("Unequip: clear slot without insert");
+            if (!slot.HasItem)
+            {
+                report.AppendLine("Clear target slot: already empty");
+                report.AppendLine("SUCCESS " + Safe(plan.Rule.character) + " " + Safe(plan.Rule.slot) + " unequip");
+                return true;
+            }
+
+            bool cleared = false;
+            try
+            {
+                cleared = slot.RemoveItem();
+            }
+            catch (Exception ex)
+            {
+                report.AppendLine("RemoveItem: failed");
+                report.AppendLine(Fail(plan, ex.Message));
+                return false;
+            }
+            report.AppendLine("Clear target slot: " + (cleared ? "success" : "failed"));
+            if (!cleared || slot.HasItem)
+            {
+                report.AppendLine(Fail(plan, "could not unequip the target slot"));
+                return false;
+            }
+            report.AppendLine("SUCCESS " + Safe(plan.Rule.character) + " " + Safe(plan.Rule.slot) + " unequip");
             return true;
         }
 

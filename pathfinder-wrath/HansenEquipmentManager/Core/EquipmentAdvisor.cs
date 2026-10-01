@@ -44,6 +44,8 @@ namespace HansenEquipmentManager
             var pair = EquipmentScanner.ClassAndMythic(unit);
             var text = new StringBuilder();
             text.AppendLine(NameOf(unit));
+            text.AppendLine("UniqueId:");
+            text.AppendLine(unit == null ? "" : Convert.ToString(unit.UniqueId));
             text.AppendLine("Class:");
             text.AppendLine(pair.Item1);
             text.AppendLine("Archetype:");

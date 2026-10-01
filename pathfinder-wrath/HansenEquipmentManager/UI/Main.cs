@@ -120,6 +120,7 @@ namespace HansenEquipmentManager
             {
                 var pair = EquipmentScanner.ClassAndMythic(unit);
                 text.AppendLine(SafeName(unit.CharacterName));
+                text.AppendLine("UniqueId: " + Convert.ToString(unit.UniqueId));
                 text.AppendLine("Class: " + pair.Item1);
                 text.AppendLine("Archetype: " + EquipmentScanner.ArchetypeLine(unit));
                 text.AppendLine("Mythic: " + pair.Item2);

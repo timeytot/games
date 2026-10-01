@@ -8,21 +8,26 @@
   "rules": [
     { "character": "Lann", "unitId": "e437d264-30d0-4f82-b498-10d5779735e1", "slot": "Neck", "blueprint": "AmuletOfNaturalArmor7", "donor": "Hansen", "donorUnitId": "360c7122-3094-4ab4-9706-04ae85f7715a" },
     { "character": "Lann", "unitId": "e437d264-30d0-4f82-b498-10d5779735e1", "slot": "Feet", "blueprint": "BootsOfFreestReinItem" },
+    { "character": "Lann", "unitId": "e437d264-30d0-4f82-b498-10d5779735e1", "slot": "Armor", "blueprint": "__UNEQUIP__" },
 
     { "character": "Hansen", "unitId": "360c7122-3094-4ab4-9706-04ae85f7715a", "slot": "Glasses", "blueprint": "DLC3_BrokenTricksterGlassesArtifactItem" },
     { "character": "Hansen", "unitId": "360c7122-3094-4ab4-9706-04ae85f7715a", "slot": "Head", "blueprint": "MaskOfNothingItem" },
-    { "character": "Hansen", "unitId": "360c7122-3094-4ab4-9706-04ae85f7715a", "slot": "Neck", "blueprint": "VellexiasMagnifyingAmuletItem", "donor": "Arueshalae", "donorUnitId": "166F1D" },
+    { "character": "Hansen", "unitId": "360c7122-3094-4ab4-9706-04ae85f7715a", "slot": "Neck", "blueprint": "VellexiasMagnifyingAmuletItem", "donor": "Arueshalae" },
     { "character": "Hansen", "unitId": "360c7122-3094-4ab4-9706-04ae85f7715a", "slot": "PrimaryHand", "blueprint": "FierySpellWeaverItem" },
     { "character": "Hansen", "unitId": "360c7122-3094-4ab4-9706-04ae85f7715a", "slot": "Gloves", "blueprint": "StarEmbroideredGlovesItem", "donor": "Daeran", "donorUnitId": "d3da2a90-9520-4171-a346-c7971a171b77" },
 
-    { "character": "Arueshalae", "unitId": "166F1D", "slot": "Neck", "blueprint": "AmuletOfNaturalArmor7" },
+    { "character": "Arueshalae", "slot": "Neck", "blueprint": "AmuletOfNaturalArmor7" },
+    { "character": "Arueshalae", "slot": "Shirt", "blueprint": "DLC3_RobeOfUnspeakableTruthItem" },
 
-    { "character": "Nenio", "unitId": "a362b4fa-464a-43df-99cf-48216117e70b", "slot": "Ring1", "blueprint": "RingOfDevastatingWillItem" },
+    { "character": "Nenio", "unitId": "a362b4fa-464a-43df-99cf-48216117e70b", "slot": "Ring1", "blueprint": "RingOfProtection7" },
+    { "character": "Nenio", "unitId": "a362b4fa-464a-43df-99cf-48216117e70b", "slot": "Gloves", "blueprint": "GlovesOfArcaneEradicationItem", "donor": "Ember" },
+    { "character": "Nenio", "unitId": "a362b4fa-464a-43df-99cf-48216117e70b", "slot": "Feet", "blueprint": "BootsOfMagicalWhirlItem" },
+    { "character": "Nenio", "unitId": "a362b4fa-464a-43df-99cf-48216117e70b", "slot": "Armor", "blueprint": "__UNEQUIP__" },
 
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "PrimaryHand", "blueprint": "InterceptorItem" },
-    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "SecondaryHand", "blueprint": "TheUndyingLoveOfTheHopebringerShieldItem" },
     { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Shirt", "blueprint": "ClothOfHeavyFortificationItem" },
+    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Ring2", "blueprint": "RingOfProtection7" },
+    { "character": "Sosiel", "unitId": "3e1e0b22-78e6-475f-b09c-e4beac1bbca1", "slot": "Feet", "blueprint": "BootsOfFreestReinItem" },
 
-    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Wrist", "blueprint": "BracersOfEldritchScholarItem", "donor": "Ember" }
+    { "character": "Daeran", "unitId": "d3da2a90-9520-4171-a346-c7971a171b77", "slot": "Wrist", "blueprint": "ClearPurposeItem" }
   ]
 }

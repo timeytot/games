@@ -95,6 +95,19 @@ namespace HansenEquipmentManager
             }
 
             plan.Current = Describe(slot);
+            if (IsUnequipBlueprint(rule.blueprint))
+            {
+                if (!slot.HasItem || slot.MaybeItem == null)
+                {
+                    plan.Status = PlanStatus.AlreadyCorrect;
+                    plan.Detail = "unequip rule, slot already empty";
+                    return plan;
+                }
+                plan.Status = PlanStatus.Ready;
+                plan.Detail = "unequip rule, remove " + plan.Current;
+                return plan;
+            }
+
             if (ItemMatches(slot.MaybeItem, rule.blueprint))
             {
                 plan.Status = PlanStatus.AlreadyCorrect;
@@ -123,6 +136,14 @@ namespace HansenEquipmentManager
             plan.ItemId = item.UniqueId;
             plan.Detail = string.IsNullOrEmpty(rule.donor) ? "profile rule via FindItem" : "profile rule, donor " + rule.donor;
             return plan;
+        }
+
+        public static bool IsUnequipBlueprint(string blueprint)
+        {
+            if (string.IsNullOrEmpty(blueprint))
+                return true;
+            return string.Equals(blueprint, "none", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(blueprint, "__UNEQUIP__", StringComparison.OrdinalIgnoreCase);
         }
 
         public static ItemEntity FindItem(EquipmentRule rule)
