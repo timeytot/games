@@ -190,7 +190,7 @@ Use Human, Pickpocket, Lamashtu, Chaotic Neutral, Heavy Crossbow, the legal 25-p
 | 7 | KSS 7 | Deadly Aim | Expanded Element: Fire again; unlock Blue Flame |
 | 8 | KSS 8 | — | Infusion Specialization rank 2; Skill Focus: Perception |
 | 9 | KSS 9 | Greater Spell Penetration | Maximized Metakinesis; select Detonation; Torrent is the line alternative |
-| 10 | KSS 10 | — | Skilled Kineticist: Lore (Nature) |
+| 10 | KSS 10 | — | Skilled Kineticist: Lore (Nature) — utility only; for combat utility, use Kineticist Bonus Feat: Iron Will or Kinetic Restoration |
 | 11 | KSS 11 | Improved Critical: Heavy Crossbow | Rending Arrows; Wall is the form alternative; Infusion Specialization rank 3 |
 | 12 | KSS 12 | — | Kinetic Restoration |
 | 13 | KSS 13 | Improved Improved Critical: Heavy Crossbow after Trickster Perception II | Honed Infusion; it ignores DR |
@@ -201,6 +201,8 @@ Use Human, Pickpocket, Lamashtu, Chaotic Neutral, Heavy Crossbow, the legal 25-p
 | 18 | KSS 18 | — | Aerial Evasion, which requires Enveloping Winds |
 | 19 | KSS 19 | Improved Initiative or Blind-Fight | Chain Arrows is an unaltered form; use it separately from Substance infusions |
 | 20 | KSS 20 | — | Celerity; **Critical Overdrive**; Infusion Specialization rank 6 |
+
+**Level-10 Lore (Nature) note:** `Skilled Kineticist: Lore (Nature)` and the UI option `Skill Focus — Lore (Nature)` are utility choices. They do not increase blast attack, damage, crit range or infusion power. If you selected the screenshot option, the build is still functional; for a combat-focused respec, choose `Kineticist Bonus Feat: Iron Will` if available, or `Kinetic Restoration`. Fire adds Lore (Nature) as a class skill, which is why it appears in this slot.
 
 If Perception II is not visible when you respec, leave the two Trickster critical-feat slots open and select them after unlocking the trick. The final Trickster multiplier feat is deliberately omitted from the primary KSS20 route because current tests report Critical Overdrive hard-setting the blast multiplier at x4; use it only if your own log proves that it stacks.
 
@@ -721,6 +723,7 @@ If you want one build only:
 6. **Weretouched** for natural attacks after removing Demon-only assumptions.
 
 The central IE rule is the same for all six: select Legend at IE Mythic Rank 3 if that is the goal, and treat every cited Mythic Rank 4–10 line as a normal-campaign reference rather than an available IE Legend progression.
+
 
 
 
