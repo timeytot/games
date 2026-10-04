@@ -190,7 +190,7 @@ Use Human, Pickpocket, Lamashtu, Chaotic Neutral, Heavy Crossbow, the legal 25-p
 | 7 | KSS 7 | Deadly Aim | Expanded Element: Fire again; unlock Blue Flame |
 | 8 | KSS 8 | — | Infusion Specialization rank 2; Skill Focus: Perception |
 | 9 | KSS 9 | Greater Spell Penetration | Maximized Metakinesis; select Detonation; Torrent is the line alternative |
-| 10 | KSS 10 | — | Skilled Kineticist: Lore (Nature) — utility only; for combat utility, use Kineticist Bonus Feat: Iron Will or Kinetic Restoration |
+| 10 | KSS 10 | — | **Kineticist Bonus Feat — Fire → Iron Will** (the strongest combat choice for this utility slot) |
 | 11 | KSS 11 | Improved Critical: Heavy Crossbow | Rending Arrows; Wall is the form alternative; Infusion Specialization rank 3 |
 | 12 | KSS 12 | — | Kinetic Restoration |
 | 13 | KSS 13 | Improved Improved Critical: Heavy Crossbow after Trickster Perception II | Honed Infusion; it ignores DR |
@@ -202,7 +202,7 @@ Use Human, Pickpocket, Lamashtu, Chaotic Neutral, Heavy Crossbow, the legal 25-p
 | 19 | KSS 19 | Improved Initiative or Blind-Fight | Chain Arrows is an unaltered form; use it separately from Substance infusions |
 | 20 | KSS 20 | — | Celerity; **Critical Overdrive**; Infusion Specialization rank 6 |
 
-**Level-10 Lore (Nature) note:** `Skilled Kineticist: Lore (Nature)` and the UI option `Skill Focus — Lore (Nature)` are utility choices. They do not increase blast attack, damage, crit range or infusion power. If you selected the screenshot option, the build is still functional; for a combat-focused respec, choose `Kineticist Bonus Feat: Iron Will` if available, or `Kinetic Restoration`. Fire adds Lore (Nature) as a class skill, which is why it appears in this slot.
+**Level-10 exact choice:** select `Kineticist Bonus Feat — Fire`, then select `Iron Will`. Do not select `Skill Focus — Lore (Nature)` for this damage build. `Skilled Kineticist` is a utility alternative: it automatically buffs the skills added by your primary element, including Fire's `Lore (Nature)`, but it does not increase blast attack, damage, crit range or infusion power.
 
 If Perception II is not visible when you respec, leave the two Trickster critical-feat slots open and select them after unlocking the trick. The final Trickster multiplier feat is deliberately omitted from the primary KSS20 route because current tests report Critical Overdrive hard-setting the blast multiplier at x4; use it only if your own log proves that it stacks.
 
@@ -264,13 +264,13 @@ Use the legal 25-point-buy spread above. Put every level-up point into DEX at ch
 | 8 | KSS 7 | — | Expanded Element: Fire again; unlock Blue Flame |
 | 9 | KSS 8 | Improved Initiative | Infusion Specialization rank 2; Skill Focus: Perception |
 | 10 | KSS 9 | — | Maximized Metakinesis; select Detonation; Torrent is the line alternative |
-| 11 | KSS 10 | Improved Critical: Heavy Crossbow | Skilled Kineticist: Lore (Nature) |
+| 11 | KSS 10 | Improved Critical: Heavy Crossbow | **Kineticist Bonus Feat — Fire → Iron Will** |
 | 12 | KSS 11 | — | Rending Arrows; Infusion Specialization rank 3 |
 | 13 | KSS 12 | Blind-Fight | Kinetic Restoration |
 | 14 | KSS 13 | — | Honed Infusion; Quicken Metakinesis |
 | 15 | KSS 14 | Improved Precise Shot | Infusion Specialization rank 4; Skill Focus: Stealth |
 | 16 | KSS 15 | — | Expanded Element: Air |
-| 17 | KSS 16 | Iron Will | Expanded Defense: Air (grants Enveloping Winds); Composite Specialization |
+| 17 | KSS 16 | Critical Focus | Expanded Defense: Air (grants Enveloping Winds); Composite Specialization |
 | 18 | KSS 17 | — | Pure-Flame Infusion for Blue Flame; Infusion Specialization rank 5 |
 | 19 | KSS 18 | Improved Blind-Fight | Aerial Evasion or another legal Air utility |
 | 20 | KSS 19 | — | Chain Arrows; Metakinetic Master |
@@ -723,6 +723,7 @@ If you want one build only:
 6. **Weretouched** for natural attacks after removing Demon-only assumptions.
 
 The central IE rule is the same for all six: select Legend at IE Mythic Rank 3 if that is the goal, and treat every cited Mythic Rank 4–10 line as a normal-campaign reference rather than an available IE Legend progression.
+
 
 
 
