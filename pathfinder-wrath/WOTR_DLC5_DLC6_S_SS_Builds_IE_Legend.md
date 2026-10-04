@@ -225,11 +225,12 @@ The First Ascension screen has two different choices that appear next to each ot
 - MR2: **Extra Mythic Ability: Ascendant Element: Fire**. MR2 is a Mythic Feat slot, so Ascendant Element must be taken through Extra Mythic Ability.
 - MR3: **Over-Infused Blasts** in the generic Mythic Ability slot; choose **Trickster** and immediately choose Mythic Trick: **Perception I**. These are separate selections at the same rank.
 - MR4: **Knowledge (World) I** and Improved Mythic Trick: **Perception II**. Perception II unlocks the three Heavy Crossbow critical feats; take the first two at KSS13/KSS15, and use Improved Precise Shot at KSS17 because current KSS20 tests can hard-cap the multiplier at x4.
-- MR5: Rupture Restraints for IE condition and movement protection, plus Mythic Trick: **Persuasion I**. Over-Infused Blasts is deliberately taken at MR3 because it is available there and immediately enables the strongest two-substance single-target tests.
+- MR5: **Rupture Restraints** for IE condition and movement protection, plus Mythic Trick: **Persuasion I**. Over-Infused Blasts is deliberately taken at MR3 because it is available there and immediately enables the strongest two-substance single-target tests.
 - MR6: Mythic Trick: **Knowledge (World) II** and Improved Mythic Trick: **Persuasion II**.
 - MR7: Greater Mythic Trick: **Persuasion III** if you want the full combat-control chain; it is optional against fear-immune bosses.
 - Later mythic-feat slots: Mythic Improved Critical: Heavy Crossbow only if the log shows it stacks; otherwise use Mythic Weapon Focus: Heavy Crossbow, Mythic Spell Penetration or defensive feats.
 - The normal Trickster sequence is Perception I → Perception II, Knowledge (World) I/II, then Persuasion I/II/III. Knowledge (World) II changes a natural 1 on a skill check into a 20; Persuasion II can paralyze demoralized enemies that fail their Will saves.
+- **Kinetic Overcharge warning:** do not select this for Kinetic Sharpshooter. Its prerequisite and effect are tied to `Gather Power`, while KSS replaces that mechanic with Kinetic Quiver and cannot use Gather Power. It appears in the list but does not provide the intended burn reduction for this archetype.
 - Use Trick Fate, the late level-7 Trickster spell, before an IE boss. The [Trickster guide](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/trickster) documents Perception II, the critical feats and Trick Fate.
 - KSS has no class spellbook. Party casters or scrolls provide Greater Magic Weapon, Haste, Heroic Invocation/Greater Heroism, True Seeing, Death Ward, communal defenses and Transformation.
 
