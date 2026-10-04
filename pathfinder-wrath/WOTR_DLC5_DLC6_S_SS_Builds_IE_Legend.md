@@ -195,7 +195,7 @@ Use Human, Pickpocket, Lamashtu, Chaotic Neutral, Heavy Crossbow, the legal 25-p
 | 12 | KSS 12 | — | Kinetic Restoration |
 | 13 | KSS 13 | Improved Improved Critical: Heavy Crossbow after Trickster Perception II | Honed Infusion; it ignores DR |
 | 14 | KSS 14 | — | Infusion Specialization rank 4; **Skill Focus → Persuasion** |
-| 15 | KSS 15 | Improved Improved Improved Critical: Heavy Crossbow | Expanded Element: Air |
+| 15 | KSS 15 | Improved Improved Improved Critical: Heavy Crossbow | **Expanded Element: Air → Air Blast**; keep Electric Blast as the Touch-AC alternative only |
 | 16 | KSS 16 | — | Expanded Defense: Air (grants Enveloping Winds) |
 | 17 | KSS 17 | Improved Precise Shot | Pure-Flame for Blue Flame; combine with Rending only when Over-Infused Blasts works; Infusion Specialization rank 5 |
 | 18 | KSS 18 | — | Aerial Evasion, which requires Enveloping Winds |
@@ -205,6 +205,8 @@ Use Human, Pickpocket, Lamashtu, Chaotic Neutral, Heavy Crossbow, the legal 25-p
 **Level-10 exact choice:** select `Kineticist Bonus Feat — Fire`, then select `Iron Will`. Do not select `Skill Focus — Lore (Nature)` for this damage build. `Skilled Kineticist` is a utility alternative: it automatically buffs the skills added by your primary element, including Fire's `Lore (Nature)`, but it does not increase blast attack, damage, crit range or infusion power.
 
 **Level-14 exact choice:** open `Skill Focus` and select **Skill Focus — Persuasion**. This supports the normal Trickster Persuasion I/II route and is the strongest general choice for this build. It is a combat-control investment, not a blast-damage bonus: Persuasion I demoralizes enemies as combat begins, and Persuasion II can paralyze demoralized enemies that fail their Will saves. If your screen still shows Persuasion at 0 ranks, move the 14 Mobility ranks into Persuasion before completing the level-up. `Skill Focus — Stealth` is a defensive/stealth fallback, mainly for the fresh Legend variant that does not continue the normal Trickster trick chain.
+
+**Level-15 exact choice:** select `Expanded Element — Air`, then select **Air Blast**. Air Blast is physical bludgeoning damage with the Kineticist's higher physical-blast damage profile and does not require an SR check. Electric Blast targets Touch AC but is an energy blast that must overcome SR and is frequently resisted or immune in IE. Use Blue Flame for the primary energy-blast line; Air Blast is the physical backup and works with Honed/Rending options.
 
 If Perception II is not visible when you respec, leave the two Trickster critical-feat slots open and select them after unlocking the trick. The final Trickster multiplier feat is deliberately omitted from the primary KSS20 route because current tests report Critical Overdrive hard-setting the blast multiplier at x4; use it only if your own log proves that it stacks.
 
@@ -224,11 +226,14 @@ The First Ascension screen has two different choices that appear next to each ot
 - MR1: Last Stand.
 - MR2: **Extra Mythic Ability: Ascendant Element: Fire**. MR2 is a Mythic Feat slot, so Ascendant Element must be taken through Extra Mythic Ability.
 - MR3: **Over-Infused Blasts** in the generic Mythic Ability slot; choose **Trickster** and immediately choose Mythic Trick: **Perception I**. These are separate selections at the same rank.
-- MR4: **Knowledge (World) I** and Improved Mythic Trick: **Perception II**. Perception II unlocks the three Heavy Crossbow critical feats; take the first two at KSS13/KSS15, and use Improved Precise Shot at KSS17 because current KSS20 tests can hard-cap the multiplier at x4.
+- MR4: take **Point-Blank Shot (Mythic)** in the generic Mythic Feat slot if it is still unspent. In the Trickster slots, take Improved Mythic Trick: **Perception II** and Mythic Trick: **Knowledge (World) I**. Perception II unlocks the three Heavy Crossbow critical feats; take the first two at KSS13/KSS15, and use Improved Precise Shot at KSS17 because current KSS20 tests can hard-cap the multiplier at x4.
 - MR5: **Rupture Restraints** for IE condition and movement protection, plus Mythic Trick: **Persuasion I**. Over-Infused Blasts is deliberately taken at MR3 because it is available there and immediately enables the strongest two-substance single-target tests.
-- MR6: Mythic Trick: **Knowledge (World) II** and Improved Mythic Trick: **Persuasion II**.
-- MR7: Greater Mythic Trick: **Persuasion III** if you want the full combat-control chain; it is optional against fear-immune bosses.
-- Later mythic-feat slots: Mythic Improved Critical: Heavy Crossbow only if the log shows it stacks; otherwise use Mythic Weapon Focus: Heavy Crossbow, Mythic Spell Penetration or defensive feats.
+- MR6: take **Spell Penetration (Mythic)** in the generic Mythic Feat slot; Improved Mythic Trick: **Persuasion II**; Mythic Trick: **Stealth I**. MR6 has only one Improved Mythic Trick slot, so do not try to select Knowledge (World) II here as a second upgrade.
+- MR7: take **The Bigger They Are** in the generic Mythic Ability slot; Greater Mythic Trick: **Persuasion III**; Mythic Trick: **Infuse Magic Device**.
+- MR8: take **Weapon Focus (Mythic) — Heavy Crossbow** in the generic Mythic Feat slot; Improved Mythic Trick: **Knowledge (World) II**; Mythic Trick: **Reuse Magic Device**.
+- MR9: take **Ranging Shots** in the generic Mythic Ability slot; Improved Mythic Trick: **Stealth II**; Mythic Trick: **Lore (Religion) I**.
+- MR10: take **Deadly Aim (Mythic)** in the generic Mythic Feat slot; Greater Mythic Trick: **Knowledge (World) III**; Mythic Trick: **Mobility I**.
+- Do not use Mythic Improved Critical: Heavy Crossbow as the default generic feat while the KSS20 Critical Overdrive multiplier is hard-capped at x4. Test it in your combat log first; use the reliable ranged bonuses above for the primary route.
 - The normal Trickster sequence is Perception I → Perception II, Knowledge (World) I/II, then Persuasion I/II/III. Knowledge (World) II changes a natural 1 on a skill check into a 20; Persuasion II can paralyze demoralized enemies that fail their Will saves.
 - **Kinetic Overcharge warning:** do not select this for Kinetic Sharpshooter. Its prerequisite and effect are tied to `Gather Power`, while KSS replaces that mechanic with Kinetic Quiver and cannot use Gather Power. It appears in the list but does not provide the intended burn reduction for this archetype.
 - Use Trick Fate, the late level-7 Trickster spell, before an IE boss. The [Trickster guide](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/trickster) documents Perception II, the critical feats and Trick Fate.
