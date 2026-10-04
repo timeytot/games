@@ -37,7 +37,7 @@ C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure
 If not:
 
 ```powershell
-.\Build.ps1 -GameDir "D:\path\to\Pathfinder Second Adventure"
+.\Build.ps1 -GameDir "C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure"
 ```
 
 It builds and copies:

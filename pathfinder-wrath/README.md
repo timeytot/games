@@ -5,6 +5,8 @@ Each playthrough has its own folder. A save loads the mod config that matches it
 ## Shared mod guides
 
 - [Buff It 2 The Limit — generic guide](./BuffIt-Guide.md) — buttons, live file path, JSON fields, personal spells, red-row debugging, restore checklist. Playthrough folders only store GameId pointers and config copies.
+- [Melee Trickster notes](./Melee_Trickster_Notes.md) — general planner links, Trickster Rank 3 tricks, Mage Armor on Magus, Trickster→Legend, and melee openers. No character-specific data.
+- [IE Legend and DLC5/DLC6 archetypes](./IE_Legend_and_DLC_Archetypes.md) — IE Legend is MR3-only; Neoseeker-style DLC archetype grades and IE-friendly picks.
 
 ## Playthroughs
 

@@ -60,8 +60,8 @@ Full English slot audits, KEEP/CHANGE Preview vs online builds, donors, missing 
 
 ```powershell
 .\Build.ps1
-# or, if the game is on D:
-.\Build.ps1 -GameDir "D:\SteamLibrary\steamapps\common\Pathfinder Second Adventure"
+# or override install path:
+.\Build.ps1 -GameDir "C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure"
 ```
 
 The old `HansenRuntimeEquipFix` mod is disabled by renaming its `Info.json`, so both mods do not load.
