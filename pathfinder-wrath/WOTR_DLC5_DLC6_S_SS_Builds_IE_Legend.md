@@ -208,6 +208,17 @@ If Perception II is not visible when you respec, leave the two Trickster critica
 
 ### Primary mythic and spell plan
 
+### First Ascension: exact click order for KSS
+
+The First Ascension screen has two different choices that appear next to each other:
+
+1. In the **Mythic Hero path-linked slot**, keep **Bit of Fun**. This is the Trickster-linked choice and is the correct selection for the KSS20/Trickster route. It creates three illusionary copies; it is defensive utility, not blast damage.
+2. In the separate empty **Mythic Ability** slot (the plus-sign slot), select **Last Stand**. This is the generic Mythic Ability for MR1 and is the choice used by this build for IE boss survival.
+3. Leave **Bypass Epic Damage Reduction** unchanged; it is the fixed rank-1 benefit shown on the progression panel.
+4. At MR2, the panel is a **Mythic Feat** slot. Select **Extra Mythic Ability**, then select **Ascendant Element: Fire**. Do not look for Ascendant Element directly in the MR2 Mythic Feat list.
+
+`Bit of Fun` does not itself finalize the later path selection. When the IE route presents the path choice, select **Trickster**, then take Perception I and Perception II as specified below.
+
 - MR1: Last Stand.
 - MR2: **Extra Mythic Ability: Ascendant Element: Fire**. MR2 is a Mythic Feat slot, so Ascendant Element must be taken through Extra Mythic Ability.
 - MR3: Trickster; immediately choose Mythic Trick: Perception I.
