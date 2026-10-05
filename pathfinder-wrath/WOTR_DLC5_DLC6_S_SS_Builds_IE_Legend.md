@@ -1,109 +1,41 @@
 # Pathfinder: Wrath of the Righteous
-# DLC5 + DLC6 Archetypes, Full Ratings, and IE Build Plans
+# Inevitable Excess (IE) Complete Endgame Builds and Ratings
 
 Prepared for characters and parties in **Inevitable Excess (IE)**.
-This document covers every DLC5 and DLC6 archetype in the current Neoseeker ranking snapshot, then separates those archetype grades from the strongest full-game IE systems.
 
-## Scope, ranking source, and IE environment
+This file ranks complete IE end states. It does not rank DLC archetypes in isolation. Every scored row is a finished build for one of the two IE modes: a level-20 class build with a Mythic Rank 10 route, or a fresh Mythic Rank 3 Legend build extended to 40 class levels.
 
-The ranking source uses this Unfair/min-max scale:
+## IE-only scope
 
-| Rating | Meaning |
-|---|---|
-| **SS** | Far above the power curve; close to balance-breaking |
-| **S** | Clearly above the power curve |
-| **A / A+ / A−** | Top-tier, with the sign showing relative placement inside the tier |
-| **B / B+ / B−** | Average to above-average, but not a defining endgame engine |
-| **C / C+** | Below average or highly conditional |
-| **D** | Clearly weak in the current min-max environment |
+This guide excludes the main-campaign sequence where a character takes Trickster, Angel or Lich and later changes to Legend at Mythic Rank 8.
 
-Primary ranking source: [Neoseeker — Class Rankings](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/guides/Class_Rankings). The dedicated archetype pages are older snapshots, so their individual labels can differ from the maintained general ranking page.
+The two scored IE modes are:
 
-### Full DLC6 ranking — A Dance of Masks
+1. **IE Mythic entry: level 20 / MR10.** The build has 20 class levels and a selected mythic route; this is the guide's “30-step” end state.
+2. **IE Legend entry: MR3 → 40 class levels.** Legend is selected immediately at MR3. The build then uses ordinary class levels to reach 40; later MR4–10 path features are unavailable.
 
-| Rating | Archetype | Class | Practical IE reading |
-|---|---|---|---|
-| **SS** | Inciter | Skald | Best party-wide melee multiplier and control support |
-| **SS** | Kinetic Sharpshooter | Kineticist | Best self-contained ranged blast finisher |
-| **S** | Sable Company Marine | Ranger | Excellent one-level flying mount and terrain-ignoring dip |
-| **A−** | Drunken Master | Monk | Strong pure high-level martial; wants defensive support |
-| **A−** | Titan Fighter | Fighter | Good large-weapon martial package; less flexible than Mutation Warrior |
-| **B+** | Bloodseeker | Slayer | Solid martial and bleed package, but not a top IE engine |
-| **B+** | Mantis Zealot | Warpriest | Useful divine martial hybrid with narrower support ceiling |
-| **B** | Magic Deceiver | Arcanist | Flexible spell tricks, but lower sustained output than top casters |
-| **C+** | Bladebound | Magus | Playable spellblade, but weaker than established Magus cores |
-| **C** | Chelaxian Diva | Bard | Niche social/control bard with a lower combat ceiling |
-| **C** | Living Grimoire | Inquisitor | Flavorful divine caster, but outperformed by stronger Inquisitor shells |
+A fresh IE Legend cannot use Angel, Lich or Trickster path features. Those systems are therefore scored only in the IE MR10 column. Swarm-that-Walks and Gold Dragon are tracked separately as IE MR8 candidates and are not given a score until their complete routes are written.
 
-DLC6 contains 11 archetypes; see [Owlcat’s official DLC6 announcement](https://wrath.owlcat.games/news/78).
+## Unified IE endgame score
 
-### Full DLC5 ranking — The Lord of Nothing
+The score is an internal comparison of complete IE end states, not an official game rating and not a DLC-archetype rating.
 
-| Rating | Archetype | Class | Practical IE reading |
-|---|---|---|---|
-| **S** | Ghost Rider | Cavalier | Best one-level tether/mount utility and a strong mounted hybrid core |
-| **S** | Weretouched | Shifter | Strong natural-attack bruiser when the build does not depend on Demon-only tricks |
-| **S** | Geomancer | Sorcerer | Strong fire-ray and area-damage caster shell |
-| **A+** | Winter Child | Shaman | Excellent cold/nature caster with strong control and support options |
-| **A+** | Shadowcaster | Wizard | Strong shadow/illusion control with a high tactical ceiling |
-| **A+** | Dual-Cursed Oracle | Oracle | Excellent curse/control Oracle; especially strong with Angel support |
-| **A−** | Tandem Executioner | Ranger | Reliable two-character focus-fire package, but party-dependent |
-| **B+** | Hag of Gyronna | Witch | Useful curse and debuff tools with a narrower build path |
-| **B** | Dark Lurker | Rogue | Sneak-attack stealth package that needs more support than top martials |
-| **B−** | Hag-Riven | Oracle | Functional hybrid witch, but less focused than Shadowcaster |
-| **B−** | Tortured Crusader | Paladin | Defensive paladin variant with lower damage specialization |
-| **C+** | Prophet of Pestilence | Cleric | Disease/control theme with inconsistent high-end reliability |
-| **C** | Reanimator | Alchemist | Summon and undead package below stronger alchemist shells |
-| **C** | Flesheater | Barbarian | Fun mutation bruiser, but weaker than established barbarian cores |
-| **D** | Separatist | Cleric | Flexible domain access, but a poor primary endgame chassis |
+| Score | Tier | Meaning |
+|---:|---|---|
+| 9.5–10.0 | **SS** | Exceptional endgame ceiling, low practical compromise |
+| 9.0–9.4 | **S+** | Clearly dominant in its role |
+| 8.5–8.9 | **S** | Excellent endgame system with a defined trade-off |
+| 8.0–8.4 | **A+** | Strong and reliable, but below the top systems |
+| 7.5–7.9 | **A** | Usable, but not a first recommendation for an optimized IE party |
 
-DLC5 contains 15 archetypes; see [Owlcat’s official DLC5 announcement](https://wrath.owlcat.games/news/75). The [Burning Ember](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Burning_Ember_%28DLC5%29), [Demonic Shifter](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Demonic_Shifter), and [Riding Vivi](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Riding_Vivi_Mercenary) pages are useful build references, but their main-campaign mythic assumptions still need to be removed for a fresh IE Legend.
-No complete level-by-level progression is implied for the A–D entries; this file keeps full build progressions for the six S/SS archetypes and gives the lower tiers a practical role summary. Prima Games publishes a separate editorial order—[Bladebound, Magic Deceiver, Chelaxian Diva, Living Grimoire, Bloodseeker, Drunken Master, Sable Company Marine, Kinetic Sharpshooter, Mantis Zealot, Inciter and Titan Fighter](https://primagames.com/gaming/best-new-archetypes-in-pathfinder-wotr-dance-of-masks-ranked)—because it measures novelty and general appeal rather than Unfair/min-max combat ceiling.
+### IE path facts used in this document
 
-### Machine-readable tier map
-
-```yaml
-DLC6:
-  SS: [Inciter, Kinetic Sharpshooter]
-  S: [Sable Company Marine]
-  A-: [Drunken Master, Titan Fighter]
-  B+: [Bloodseeker, Mantis Zealot]
-  B: [Magic Deceiver]
-  C+: [Bladebound]
-  C: [Chelaxian Diva, Living Grimoire]
-DLC5:
-  S: [Ghost Rider, Weretouched, Geomancer]
-  A+: [Winter Child, Shadowcaster, Dual-Cursed Oracle]
-  A-: [Tandem Executioner]
-  B+: [Hag of Gyronna]
-  B: [Dark Lurker]
-  B-: [Hag-Riven, Tortured Crusader]
-  C+: [Prophet of Pestilence]
-  C: [Reanimator, Flesheater]
-  D: [Separatist]
-```
-
-**Do not treat these two tables as a whole-game IE class ranking.** They rate DLC archetypes inside their own source category. Angel Oracle, Lich caster, Trickster Sword Saint, Brown-Fur Transmuter and Mutation Warrior are separate full-game systems and are compared below.
-
-
-**Rating-version note:** Neoseeker’s dedicated DLC review pages are older snapshots and can show a lower label (for example, A+ for some DLC5 archetypes or S for Kinetic Sharpshooter). The inclusion filter here uses the current general Class Rankings page, and the dedicated pages are linked under each build for mechanical commentary.
-
-Official DLC context:
-
-- [Owlcat — The Lord of Nothing DLC5](https://wrath.owlcat.games/news/75): DLC5 adds 15 archetypes, new spells, and new feats, and makes them available in the main campaign for new characters or retraining.
-- [Owlcat — A Dance of Masks DLC6](https://wrath.owlcat.games/news/78): DLC6 adds 11 character archetypes.
-
-### IE Legend facts used in this document
-
-A fresh IE character can select **Legend at Mythic Rank 3**. This is different from the main campaign, where Legend is normally a late Mythic Rank 8 transition. A fresh IE Legend therefore does **not** receive the normal Mythic Rank 4–10 path progression, and it does not receive a merged Angel/Lich spellbook.
+A fresh IE character can select **Legend at Mythic Rank 3**. This differs from the main campaign, where Legend is normally a late Mythic Rank 8 transition. A fresh IE Legend therefore does not receive normal Mythic Rank 4–10 path progression or a merged Angel/Lich spellbook.
 
 Sources:
 
 - [Steam discussion — IE Legend is available at Mythic Rank 3 and cannot be taken later after another path](https://steamcommunity.com/app/1184370/discussions/0/3177859849531059867/)
 - [GameFAQs — Legend mechanics and loss of later Mythic ranks/spellbook](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/other-mythic-paths)
-
-The cited Neoseeker builds are ordinary level-20 builds written for the main campaign. Their Mythic Rank 4–10 lines are retained below as **source reference only**. Each section then gives an **IE Legend adaptation**. The adaptation is my recommendation, not a claim made by the original build author.
-
 ## IE final-build scope
 
 This guide evaluates **Inevitable Excess only**. It does not use the main-campaign route “take Trickster/Angel/Lich first, then change to Legend at Mythic Rank 8.” In IE, the two build modes are separate:
@@ -113,48 +45,48 @@ This guide evaluates **Inevitable Excess only**. It does not use the main-campai
 
 IE MR8 Swarm-that-Walks and Gold Dragon are listed as future IE candidates below. They are tracked only for an IE save that actually exposes MR8 progression; they are not fresh IE MR10/Legend entry builds, and their full builds are not claimed until separately written.
 
-### Combined IE final-build matrix
+### Complete IE endgame rating list
 
-Every row below is a finished build format, not a bare “level 20 Mutation Warrior” entry. `DLC tier` is the source archetype tier; `IE cross-system` means a non-DLC system included as an IE benchmark, not a separate main-campaign ranking. The MR10 column is a **30-step end state**: 20 class levels plus Mythic Rank 10. `N/A` means fresh IE Legend cannot legally select that mythic path; `—` means a complete 40-Legend version has not been selected yet.
+The scores below compare complete IE end states under Unfair assumptions with final gear and a fully buffed party. Inciter, BFT and Oracle scores measure party value; KSS and Sword Saint scores measure personal endgame output.
 
-| Scope / tier | Final build | IE Mythic entry: level 20 / MR10 (30-step end state) | IE Legend entry: MR3 → 40 class levels | Combat identity |
-|---|---|---|---|---|
-| DLC6 SS | Inciter | Inciter Skald 20 / Trickster MR10 | Inciter Skald 20 / Mutation Warrior 20 | Raging Song, shared sneak attack, Beast Totem and control |
-| DLC6 SS | Kinetic Sharpshooter | Kinetic Sharpshooter 20 / Trickster MR10 | Kinetic Sharpshooter 20 / Mutation Warrior 20 | Kinetic Quiver and one charged blast per round |
-| DLC6 S | Sable Company Marine | Sable Company Marine 1 / Paladin 13 / Sohei 1 / Mutation Warrior 5 / Trickster MR10 | Sable Company Marine 1 / Paladin 20 / Sohei 1 / Mutation Warrior 18 | Hippogriff Flying Attack and mounted full-round attacks |
-| DLC5 S | Ghost Rider | Ghost Rider 1 / Sacred Huntsmaster 8 / Vivisectionist 8 / Sohei 2 / Demonslayer 1 / Trickster MR10 | Ghost Rider 1 / Sacred Huntsmaster 8 / Vivisectionist 12 / Sohei 6 / Demonslayer 1 / Mutation Warrior 12 | Etheric Tether, mount safety and sneak-attack charges |
-| DLC5 S | Weretouched | Shifter (Weretouched) 17 / Stigmatized Witch 1 / Fighter 1 / Demonslayer 1 / Trickster MR10 | Shifter (Weretouched) 20 / Stigmatized Witch 1 / Fighter 18 / Demonslayer 1 | Shifting, aspects, pounce and natural attacks |
-| DLC5 S | Geomancer | Stigmatized Witch 10 / Geomancer Sorcerer 1 / Loremaster 9 / Azata MR10 | Stigmatized Witch 20 / Geomancer Sorcerer 1 / Loremaster 19 | Fire rays, geomancy and selective area control |
-| DLC5 A+ | Dual-Cursed Oracle | Dual-Cursed Oracle 20 / Angel MR10 | — | Curses, revelations and Angel divine casting |
-| DLC6 A− | Drunken Master | Drunken Master 20 / Trickster MR10 | — | Unarmed flurry, drunken ki and defensive mobility |
-| DLC6 A− | Titan Fighter | Titan Fighter 20 / Trickster MR10 | — | Oversized weapon reach and full attacks |
-| DLC6 B+ | Bloodseeker | Bloodseeker 20 / Trickster MR10 | — | Slayer sneak attack, bleed and focus fire |
-| DLC6 B+ | Mantis Zealot | Mantis Zealot 20 / Angel MR10 | — | Warpriest self-buffs, crit pressure and divine support |
-| DLC6 B | Magic Deceiver | Magic Deceiver 20 / Azata MR10 | — | Spell theft, flexible control and setup-dependent casting |
-| DLC6 C+ | Bladebound | Bladebound 20 / Trickster MR10 | — | Black Blade, spellstrike and arcane weapon pressure |
-| DLC6 C | Chelaxian Diva | Chelaxian Diva 20 / Azata MR10 | — | Support song, enchantment and social control |
-| DLC6 C | Living Grimoire | Living Grimoire 20 / Angel MR10 | — | Judgment, divine support and weapon attacks |
-| DLC5 A+ | Winter Child | Winter Child 20 / Azata MR10 | — | Cold damage, nature control and familiar support |
-| DLC5 A+ | Shadowcaster | Shadowcaster 20 / Lich MR10 | — | Shadow spells, illusion DCs and battlefield control |
-| DLC5 A− | Tandem Executioner | Tandem Executioner 20 / Trickster MR10 | — | Teamwork attacks, companion positioning and focus fire |
-| DLC5 B+ | Hag of Gyronna | Hag of Gyronna 20 / Lich MR10 | — | Hexes, curses and save-based debuffs |
-| DLC5 B | Dark Lurker | Dark Lurker 20 / Trickster MR10 | — | Stealth, concealment and precision damage |
-| DLC5 B− | Hag-Riven | Hag-Riven 20 / Angel MR10 | — | Oracle curse package and limited divine support |
-| DLC5 B− | Tortured Crusader | Tortured Crusader 20 / Angel MR10 | — | Paladin auras, defenses and martial attacks |
-| DLC5 C+ | Prophet of Pestilence | Prophet of Pestilence 20 / Angel MR10 | — | Disease, curses and condition pressure |
-| DLC5 C | Reanimator | Reanimator 20 / Lich MR10 | — | Mutagens, extracts and undead summons |
-| DLC5 C | Flesheater | Flesheater 20 / Trickster MR10 | — | Rage, mutations and natural-attack pressure |
-| DLC5 D | Separatist | Separatist 20 / Angel MR10 | — | Domain flexibility with a lower endgame ceiling |
-| IE cross-system top | Angel Oracle | Seeker Oracle 16 / Scaled Fist Monk 1 / Paladin 2 / Hellknight 1 / Angel MR10 | N/A — fresh IE Legend cannot select Angel | Merged Angel spellbook, buffs, healing and bolts |
-| IE cross-system top | Lich caster | Stigmatized Witch 10 / Loremaster 9 / Crossblooded Sorcerer 1 / Lich MR10 | N/A — fresh IE Legend cannot select Lich | Merged Lich spellbook, Corrupt Magic and negative damage |
-| IE cross-system top | Trickster Sword Saint | Sword Saint 20 / Trickster MR10 | N/A — fresh IE Legend cannot select Trickster | Perception critical feats, Dimension Strike and Trick Fate |
-| IE cross-system support | Brown-Fur Transmuter | Brown-Fur Transmuter 20 / Azata MR10 | — | Shared transformations, Haste and weapon buffs |
-| IE cross-system martial | Mutation Warrior / Demonslayer | Mutation Warrior 19 / Demonslayer Ranger 1 / Trickster MR10 | Mutation Warrior 20 / Demonslayer Ranger 20 | Complete martial route; the KSS/Inciter rows use the same chassis as an extension |
+| Score | Tier | Final system | IE final form | Legend status | Why it ranks here |
+|---:|---|---|---|---|---|
+| 9.9 | **SS** | Angel Oracle | Seeker Oracle 16 / Scaled Fist Monk 1 / Paladin 2 / Hellknight 1 / Angel MR10 | MR10 only | Merged Angel spellbook, top buffs, healing and bolt damage |
+| 9.8 | **SS** | Lich caster | Stigmatized Witch 10 / Loremaster 9 / Crossblooded Sorcerer 1 / Lich MR10 | MR10 only | Merged Lich spellbook, Corrupt Magic and powerful negative-damage casting |
+| 9.7 | **SS** | Kinetic Sharpshooter | Kinetic Sharpshooter 20 / Trickster MR10 | MR10 | Independent ranged finisher with Quiver, critical tricks and minimal party dependency |
+| 9.7 | **SS** | Trickster Sword Saint | Sword Saint 20 / Trickster MR10 | MR10 only | Dimension Strike, Trickster critical feats and Trick Fate |
+| 9.6 | **SS** | Inciter Skald | Inciter Skald 20 / Trickster MR10 | MR10 | Strongest party-wide melee multiplier, rage powers and control |
+| 9.6 | **SS** | Kinetic Sharpshooter Legend | Kinetic Sharpshooter 20 / Mutation Warrior 20 | Fresh IE Legend MR3 → 40 | Best path-independent Legend ranged finisher; extra levels add martial accuracy and feats |
+| 9.4 | **S+** | Brown-Fur Transmuter | Brown-Fur Transmuter 20 / Azata MR10 | MR10 only | Shared transformations and party-wide stat, weapon and speed buffs |
+| 9.4 | **S+** | Inciter Legend | Inciter Skald 20 / Mutation Warrior 20 | Fresh IE Legend MR3 → 40 | Keeps the Skald party engine and uses 20 Fighter levels for martial feats and mutagen |
+| 9.3 | **S+** | Mutation Warrior / Demonslayer | Mutation Warrior 19 / Demonslayer Ranger 1 / Trickster MR10 | MR10 | Full martial chassis, mutagen, weapon training and Trickster crit support |
+| 9.2 | **S+** | Dual-Cursed Oracle | Dual-Cursed Oracle 20 / Angel MR10 | MR10 only | Strong curse/control Oracle with Angel divine casting |
+| 9.1 | **S+** | Geomancer | Stigmatized Witch 10 / Geomancer Sorcerer 1 / Loremaster 9 / Azata MR10 | MR10 | Fire rays, area damage and selective control |
+| 9.0 | **S+** | Mutation Warrior / Demonslayer Legend | Mutation Warrior 20 / Demonslayer Ranger 20 | Fresh IE Legend MR3 → 40 | Strongest straightforward Legend martial extension |
+| 9.0 | **S+** | Sable Company Marine | Sable Company Marine 1 / Paladin 13 / Sohei 1 / Mutation Warrior 5 / Trickster MR10 | MR10 | Flying Attack, mounted full attacks and terrain bypass |
+| 8.9 | **S** | Sable Company Marine Legend | Sable Company Marine 1 / Paladin 20 / Sohei 1 / Mutation Warrior 18 | Fresh IE Legend MR3 → 40 | Excellent mounted front line; Flying Attack can be patch-sensitive |
+| 8.9 | **S** | Ghost Rider | Ghost Rider 1 / Sacred Huntsmaster 8 / Vivisectionist 8 / Sohei 2 / Demonslayer 1 / Trickster MR10 | MR10 | Etheric Tether, mount safety, pet support and sneak-attack charges |
+| 8.8 | **S** | Weretouched | Shifter (Weretouched) 17 / Stigmatized Witch 1 / Fighter 1 / Demonslayer 1 / Trickster MR10 | MR10 | Strong natural attacks, aspects and pounce without requiring a Demon route |
+| 8.7 | **S** | Geomancer Legend | Stigmatized Witch 20 / Geomancer Sorcerer 1 / Loremaster 19 | Fresh IE Legend MR3 → 40 | The fire-ray core survives Legend, but loses later path casting tools |
+| 8.6 | **S** | Ghost Rider Legend | Ghost Rider 1 / Sacred Huntsman 8 / Vivisectionist 12 / Sohei 6 / Demonslayer 1 / Mutation Warrior 12 | Fresh IE Legend MR3 → 40 | Complete mounted hybrid with strong ordinary-class scaling |
+| 8.4 | **A+** | Weretouched Legend | Shifter (Weretouched) 20 / Stigmatized Witch 1 / Fighter 18 / Demonslayer 1 | Fresh IE Legend MR3 → 40 | Strong natural-attack bruiser; no Demon/Kalavakus loop |
+| — | — | Swarm-that-Walks candidate | Kinetic Sharpshooter 20 / Swarm-that-Walks MR8+ | IE MR8 research pending | Not scored until the complete IE MR8 route is written |
+| — | — | Gold Dragon candidate | Sword Saint 20 / Gold Dragon MR8+ | IE MR8 research pending | Not scored until the complete IE MR8 route is written |
 
-The A–D rows are complete IE MR10 reference builds (20 class levels plus the listed mythic route), but they do not yet have a recommended 40-Legend extension. The SS/S rows and the whole-game rows carry the fully written 40-Legend adaptations where the route is legal.
+The MR10 path-only systems—Angel Oracle, Lich caster and Trickster Sword Saint—have no fresh IE Legend version. The Legend rows are complete 40-level builds; they are not level-20 Mutation Warrior placeholders.
 
-Pure 20-class rows such as Sword Saint 20 and Brown-Fur Transmuter 20 are intentional capstone builds because their class progression is the payoff; they are still complete builds because the MR10 mythic route is written beside them.
+### Recommendation by playstyle
 
+| Priority | Final system | Best use |
+|---:|---|---|
+| 1 | **Kinetic Sharpshooter 20 / Mutation Warrior 20** | Best fresh IE Legend ranged damage |
+| 2 | **Inciter Skald 20 / Mutation Warrior 20** | Best Legend party engine for a melee-heavy team |
+| 3 | **Angel Oracle MR10** | Best divine caster and all-purpose support/damage |
+| 4 | **Lich caster MR10** | Best offensive caster and boss debuff package |
+| 5 | **Trickster Sword Saint MR10** | Best martial critical and Dimension Strike package |
+| 6 | **Brown-Fur Transmuter / Azata MR10** | Best party-wide transformation support |
+| 7 | **Mutation Warrior / Demonslayer / Trickster MR10** | Best straightforward martial finisher |
+| 8 | **Sable Company Marine Legend** | Best mounted Legend front line |
 ### IE MR8 future candidates
 
 These are included in the IE scope but are not yet final build entries: **Kinetic Sharpshooter 20 / Swarm-that-Walks MR8+** and **Sword Saint 20 / Gold Dragon MR8+**. They must be researched as IE MR8-capable mythic-route builds; neither is a fresh IE MR10/Legend entry or a main-campaign path-to-Legend conversion.
@@ -285,36 +217,18 @@ Choose **Powerful Change** for the BFT's stronger personal transmutation or **Sh
 
 **Sustained loop:** maintain mutagen, use Combat Reflexes opportunity attacks and keep the selected weapon-training group active. Change the group only outside combat or through a planned respec/equipment plan.
 
-## Combined evaluation
+## How to use the scores
 
-| Priority | Build | What it is best at | IE Legend value | Main limitation |
-|---:|---|---|---|---|
-| 1 | **Inciter Skald (SS)** | Party-wide melee damage, rage powers, enchantment control | Excellent if the party has several melee attackers | The rage song is less attractive in a caster-heavy party; source recommends hiring at level 20 |
-| 2 | **Kinetic Sharpshooter (SS)** | Independent ranged damage with Quiver, Rending, Chain and Exploding Arrows; Bowling is an Earth-element alternative | Excellent; almost path-independent and has no spellbook to lose | The build is a ranged kineticist, not a normal bow archer; extra Legend levels do not increase Kineticist level past 20 |
-| 3 | **Ghost Rider (S)** | Mount/tether safety and mounted Vivisectionist support | Excellent as a one-level Ghost Rider dip; strong as a mounted hybrid | The source’s late Mythic sequence and any path-dependent bonuses do not apply to a fresh IE Legend |
-| 4 | **Geomancer (S)** | Fire ray damage plus AoE; Hellfire Ray and Geomancy | Very good; the core ray plan survives IE Legend | The source is an Ember companion build and leaves race, deity, alignment and background implicit |
-| 5 | **Weretouched (S)** | Natural-attack tank/damage dealer with pounce, claws and aspect choices | Good after removing Demon-only assumptions | The source’s Demon/Kalavakus trip loop is unavailable when Legend is selected at IE MR3; shapeshifting gear also has known compatibility issues |
-| 6 | **Sable Company Marine (S)** | One-level dip for a Flying Attack hippogriff: full-round mounted attack, terrain bypass and a flat-footed target | Excellent dip; strong mounted Paladin shell | The flying attack can be janky/bugged; the source build is a mounted Paladin and needs a pet |
-
-### My combined recommendation
-
-- **Best all-purpose IE Legend damage dealer:** Kinetic Sharpshooter.
-- **Best party multiplier:** Inciter Skald.
-- **Best mounted frontliner:** Sable Company Marine plus the DLC6 Paladin shell.
-- **Best one-level utility dip:** Ghost Rider.
-- **Best caster:** Geomancer.
-- **Best natural-attack bruiser:** Weretouched, provided you do not plan around the unavailable Demon path.
+The unified IE table above is the ranking list for complete end states. The playbooks below explain how to run the recommended systems; their headings identify the build and no longer repeat the DLC archetype grade.
 
 ---
-
-# DLC6 — Inciter Skald (SS)
+# IE complete build — Inciter Skald
 
 **Source build:** [InEffect’s Instigator Skald Mercenary](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Skald_Mercenary_%28DLC6%29)  
-**Rank source:** [Neoseeker Class Rankings](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/guides/Class_Rankings)
 
 ## Evaluation
 
-Inciter is the strongest support archetype in this list. It keeps the Skald’s party engine and adds more damage to the rage-song package. It is best as a level-20 hire in a melee-heavy party. For a fresh normal IE character, the strongest control and crit-support route is **Inciter 20 / Trickster**; Azata is a valid caster-heavy alternative when Favorable Magic and Zippy Magic matter more than Trickster’s skill and critical tricks. For a fresh IE Legend main character, use the class core but do not assume Mythic Rank 4–10 support choices survive the Legend start.
+Inciter is the strongest party-support system in this guide. It keeps the Skald’s party engine and adds more damage to the rage-song package. It is best as a level-20 hire in a melee-heavy party. For an IE Mythic-entry character, the strongest control and crit-support route is **Inciter 20 / Trickster**; Azata is a valid caster-heavy alternative when Favorable Magic and Zippy Magic matter more than Trickster’s skill and critical tricks. For a fresh IE Legend main character, use the class core but do not assume Mythic Rank 4–10 support choices survive the Legend start.
 
 The Inciter song shares sneak-attack dice, Lethal Stance and Beast Totem with allies. Inciter’s Sneaky Tricks also makes selected rogue talents shareable. At level 14, the strongest party-support talent is **Advanced Rogue Talent: Dispelling Attack** with Dispel Focus and Greater Dispel Focus; at level 19 use **Petrifying Strike** or **Weakening Wound**. If the current patch still shows the old dispel bug, use Petrifying Strike as the reliable fallback. The underlying class progression is documented in the [GameFAQs Skald guide](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/skald) and the [Rogue advanced-talent rules](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/rogue).
 
@@ -432,12 +346,12 @@ Before a boss: apply party buffs, position the two melee attackers for flanks, t
 
 ---
 
-# DLC6 — Kinetic Sharpshooter (SS)
+# IE complete build — Kinetic Sharpshooter
 
 **Absolute strongest IE Mythic route:** Kinetic Sharpshooter 20 / Trickster MR10, with a Heavy Crossbow.
 **Legend-only route:** Kinetic Sharpshooter 20 / Mutation Warrior 20, documented below as the 1–40 alternative.
 
-The current [Neoseeker class-ranking page](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/guides/Class_Rankings) rates Kinetic Sharpshooter SS. The established DLC6 source is [InEffect's Kinetic Archer Wenduag](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Kinetic_Archer_Wenduag_%28DLC6%29), which is Fighter 1 / Kinetic Sharpshooter 19 because Wenduag already has Fighter 1.
+The established Kinetic Sharpshooter source is [InEffect's Kinetic Archer Wenduag](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Kinetic_Archer_Wenduag_%28DLC6%29), which is Fighter 1 / Kinetic Sharpshooter 19 because Wenduag already has Fighter 1.
 
 KSS Charged Ammunition uses the equipped ranged weapon's attack, enhancement/applicable weapon properties and critical profile; community testing reports that base weapon dice and STR/composite damage are ignored; see the [KSS comprehensive test thread](https://www.reddit.com/r/Pathfinder_Kingmaker/comments/1vnrrjs/pathfinder_wrath_of_the_righteous_comprehensive/). It delivers only one kinetic blast per turn. It cannot Gather Power or use Deadly Earth. These rules are documented in the [GameFAQs Kineticist guide](https://gamefaqs.gamespot.com/pc/354971-pathfinder-wrath-of-the-righteous-inevitable-excess/faqs/80843/kineticist#Kinetic%20Sharpshooter) and the [LUDO KSS guide](https://origin.ludo.guide/guide/pathfinder-wrath-of-the-righteous/kinetic-sharpshooter).
 
@@ -662,15 +576,14 @@ If your specific IE party is fighting almost exclusively demons and you value th
 
 
 
-# DLC6 — Sable Company Marine (S)
+# IE complete build — Sable Company Marine
 
 **Source build:** [InEffect’s Paladin Mercenary, DLC6](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Standard_Paladin_Mercenary_%28DLC6%29)  
 **Dedicated DLC evaluation:** [A Dance of Masks New Content Evaluation](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/DLC/A_Dance_of_Masks_New_Content_Evaluation)  
-**Rank source:** [Neoseeker Class Rankings](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/guides/Class_Rankings)
 
 ## Evaluation
 
-Sable Company Marine is one of the best one-level dips in the entire game: it supplies a hippogriff with Flying Attack, a full-round mounted attack that bypasses terrain and leaves the target flat-footed. The full source build wraps that dip in a Lawful Good Paladin shell. The mount is the real reason for the S ranking. Treat the flying attack as a quality-of-life feature that can be janky in some encounters.
+Sable Company Marine is one of the best one-level dips in the entire game: it supplies a hippogriff with Flying Attack, a full-round mounted attack that bypasses terrain and leaves the target flat-footed. The full source build wraps that dip in a Lawful Good Paladin shell. The mount is the reason this system scores highly in the unified IE table. Treat Flying Attack as a quality-of-life feature that can be janky in some encounters.
 
 ## Creation
 
@@ -755,15 +668,14 @@ For a level-40 Legend extension, use:
 
 ---
 
-# DLC5 — Ghost Rider / Riding Vivisectionist (S)
+# IE complete build — Ghost Rider / Riding Vivisectionist
 
 **Source build:** [InEffect’s Riding Vivisectionist Mercenary](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Riding_Vivi_Mercenary)  
 **Dedicated DLC evaluation:** [The Lord of Nothing New Content Evaluation](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/DLC/The_Lord_of_Nothing_New_Content_Evaluation)  
-**Rank source:** [Neoseeker Class Rankings](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/guides/Class_Rankings)
 
 ## Evaluation
 
-The dedicated DLC review highlights Ghost Rider as a strong one-level dip for Etheric Tether. The current class-ranking page rates it S and notes two viable directions: a one-level tether dip or a full paralysis-DC build. The source build below chooses the one-level dip and uses the rest of the levels for a mounted Vivisectionist/Sacred Huntsmaster chassis.
+The dedicated DLC review highlights Ghost Rider as a strong one-level dip for Etheric Tether and notes two viable directions: a one-level tether dip or a full paralysis-DC build. The source build below chooses the one-level dip and uses the rest of the levels for a mounted Vivisectionist/Sacred Huntsmaster chassis.
 
 ## Creation
 
@@ -852,11 +764,10 @@ For a level-40 Legend extension, use:
 
 ---
 
-# DLC5 — Weretouched (S)
+# IE complete build — Weretouched
 
 **Source build:** [InEffect’s Demonic Shifter](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Demonic_Shifter)  
 **Dedicated DLC evaluation:** [The Lord of Nothing New Content Evaluation](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/DLC/The_Lord_of_Nothing_New_Content_Evaluation)  
-**Rank source:** [Neoseeker Class Rankings](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/guides/Class_Rankings)
 
 ## Evaluation
 
@@ -958,14 +869,13 @@ For a level-40 Legend extension, use:
 
 ---
 
-# DLC5 — Geomancer (S)
+# IE complete build — Geomancer
 
 **Source build:** [InEffect’s Burning Ember, DLC5](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Burning_Ember_%28DLC5%29)  
-**Rank source:** [Neoseeker Class Rankings](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/guides/Class_Rankings)
 
 ## Evaluation
 
-Geomancer is the best caster in this S/SS subset for a direct fire-ray plan. The source describes a ray Witch with AoE support, approximately 600 damage on a Hellfire Ray critical, and roughly 30 extra damage per round from Geomancy in AoE situations. The build remains usable in IE Legend because its core damage comes from spell selection, metamagic, gear and class features rather than a merged Mythic spellbook.
+Geomancer is the strongest caster in the recommended IE set for a direct fire-ray plan. The source describes a ray Witch with AoE support, approximately 600 damage on a Hellfire Ray critical, and roughly 30 extra damage per round from Geomancy in AoE situations. The build remains usable in IE Legend because its core damage comes from spell selection, metamagic, gear and class features rather than a merged Mythic spellbook.
 
 The source page is written for Ember and therefore does not repeat race, deity, alignment or background. For a new IE mercenary, use the completion fields below.
 
