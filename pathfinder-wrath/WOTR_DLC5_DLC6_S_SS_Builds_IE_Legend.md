@@ -1,23 +1,90 @@
 # Pathfinder: Wrath of the Righteous
-# DLC5 + DLC6 S/SS Build List and IE Legend Adaptations
+# DLC5 + DLC6 Archetypes, Full Ratings, and IE Build Plans
 
-Prepared for a fresh character in **Inevitable Excess (IE)**.
-This document intentionally covers only the DLC5 and DLC6 archetypes that are rated **S** or **SS** by the current Neoseeker class-ranking page.
+Prepared for characters and parties in **Inevitable Excess (IE)**.
+This document covers every DLC5 and DLC6 archetype in the current Neoseeker ranking snapshot, then separates those archetype grades from the strongest full-game IE systems.
 
-## Scope, ranking source, and IE Legend rule
+## Scope, ranking source, and IE environment
 
-The ranking page defines **SS** as “broken and way above the power curve” and **S** as “above the power curve.” The current page lists these six relevant archetypes:
+The ranking source uses this Unfair/min-max scale:
 
-| DLC | Archetype | Current rank |
-|---|---|---:|
-| DLC6: A Dance of Masks | Inciter (Skald) | SS |
-| DLC6: A Dance of Masks | Kinetic Sharpshooter (Kineticist) | SS |
-| DLC6: A Dance of Masks | Sable Company Marine (Ranger) | S |
-| DLC5: The Lord of Nothing | Ghost Rider (Cavalier) | S |
-| DLC5: The Lord of Nothing | Weretouched (Shifter) | S |
-| DLC5: The Lord of Nothing | Geomancer (Sorcerer) | S |
+| Rating | Meaning |
+|---|---|
+| **SS** | Far above the power curve; close to balance-breaking |
+| **S** | Clearly above the power curve |
+| **A / A+ / A−** | Top-tier, with the sign showing relative placement inside the tier |
+| **B / B+ / B−** | Average to above-average, but not a defining endgame engine |
+| **C / C+** | Below average or highly conditional |
+| **D** | Clearly weak in the current min-max environment |
 
-Primary ranking source: [Neoseeker — Class Rankings](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/guides/Class_Rankings).
+Primary ranking source: [Neoseeker — Class Rankings](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/guides/Class_Rankings). The dedicated archetype pages are older snapshots, so their individual labels can differ from the maintained general ranking page.
+
+### Full DLC6 ranking — A Dance of Masks
+
+| Rating | Archetype | Class | Practical IE reading |
+|---|---|---|---|
+| **SS** | Inciter | Skald | Best party-wide melee multiplier and control support |
+| **SS** | Kinetic Sharpshooter | Kineticist | Best self-contained ranged blast finisher |
+| **S** | Sable Company Marine | Ranger | Excellent one-level flying mount and terrain-ignoring dip |
+| **A−** | Drunken Master | Monk | Strong pure high-level martial; wants defensive support |
+| **A−** | Titan Fighter | Fighter | Good large-weapon martial package; less flexible than Mutation Warrior |
+| **B+** | Bloodseeker | Slayer | Solid martial and bleed package, but not a top IE engine |
+| **B+** | Mantis Zealot | Warpriest | Useful divine martial hybrid with narrower support ceiling |
+| **B** | Magic Deceiver | Arcanist | Flexible spell tricks, but lower sustained output than top casters |
+| **C+** | Bladebound | Magus | Playable spellblade, but weaker than established Magus cores |
+| **C** | Chelaxian Diva | Bard | Niche social/control bard with a lower combat ceiling |
+| **C** | Living Grimoire | Inquisitor | Flavorful divine caster, but outperformed by stronger Inquisitor shells |
+
+DLC6 contains 11 archetypes; see [Owlcat’s official DLC6 announcement](https://wrath.owlcat.games/news/78).
+
+### Full DLC5 ranking — The Lord of Nothing
+
+| Rating | Archetype | Class | Practical IE reading |
+|---|---|---|---|
+| **S** | Ghost Rider | Cavalier | Best one-level tether/mount utility and a strong mounted hybrid core |
+| **S** | Weretouched | Shifter | Strong natural-attack bruiser when the build does not depend on Demon-only tricks |
+| **S** | Geomancer | Sorcerer | Strong fire-ray and area-damage caster shell |
+| **A+** | Winter Child | Shaman | Excellent cold/nature caster with strong control and support options |
+| **A+** | Shadowcaster | Wizard | Strong shadow/illusion control with a high tactical ceiling |
+| **A+** | Dual-Cursed Oracle | Oracle | Excellent curse/control Oracle; especially strong with Angel support |
+| **A−** | Tandem Executioner | Ranger | Reliable two-character focus-fire package, but party-dependent |
+| **B+** | Hag of Gyronna | Witch | Useful curse and debuff tools with a narrower build path |
+| **B** | Dark Lurker | Rogue | Sneak-attack stealth package that needs more support than top martials |
+| **B−** | Hag-Riven | Oracle | Functional hybrid witch, but less focused than Shadowcaster |
+| **B−** | Tortured Crusader | Paladin | Defensive paladin variant with lower damage specialization |
+| **C+** | Prophet of Pestilence | Cleric | Disease/control theme with inconsistent high-end reliability |
+| **C** | Reanimator | Alchemist | Summon and undead package below stronger alchemist shells |
+| **C** | Flesheater | Barbarian | Fun mutation bruiser, but weaker than established barbarian cores |
+| **D** | Separatist | Cleric | Flexible domain access, but a poor primary endgame chassis |
+
+DLC5 contains 15 archetypes; see [Owlcat’s official DLC5 announcement](https://wrath.owlcat.games/news/75). The [Burning Ember](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Burning_Ember_%28DLC5%29), [Demonic Shifter](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Demonic_Shifter), and [Riding Vivi](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Riding_Vivi_Mercenary) pages are useful build references, but their main-campaign mythic assumptions still need to be removed for a fresh IE Legend.
+No complete level-by-level progression is implied for the A–D entries; this file keeps full build progressions for the six S/SS archetypes and gives the lower tiers a practical role summary. Prima Games publishes a separate editorial order—[Bladebound, Magic Deceiver, Chelaxian Diva, Living Grimoire, Bloodseeker, Drunken Master, Sable Company Marine, Kinetic Sharpshooter, Mantis Zealot, Inciter and Titan Fighter](https://primagames.com/gaming/best-new-archetypes-in-pathfinder-wotr-dance-of-masks-ranked)—because it measures novelty and general appeal rather than Unfair/min-max combat ceiling.
+
+### Machine-readable tier map
+
+```yaml
+DLC6:
+  SS: [Inciter, Kinetic Sharpshooter]
+  S: [Sable Company Marine]
+  A-: [Drunken Master, Titan Fighter]
+  B+: [Bloodseeker, Mantis Zealot]
+  B: [Magic Deceiver]
+  C+: [Bladebound]
+  C: [Chelaxian Diva, Living Grimoire]
+DLC5:
+  S: [Ghost Rider, Weretouched, Geomancer]
+  A+: [Winter Child, Shadowcaster, Dual-Cursed Oracle]
+  A-: [Tandem Executioner]
+  B+: [Hag of Gyronna]
+  B: [Dark Lurker]
+  B-: [Hag-Riven, Tortured Crusader]
+  C+: [Prophet of Pestilence]
+  C: [Reanimator, Flesheater]
+  D: [Separatist]
+```
+
+**Do not treat these two tables as a whole-game IE class ranking.** They rate DLC archetypes inside their own source category. Angel Oracle, Lich caster, Trickster Sword Saint, Brown-Fur Transmuter and Mutation Warrior are separate full-game systems and are compared below.
+
 
 **Rating-version note:** Neoseeker’s dedicated DLC review pages are older snapshots and can show a lower label (for example, A+ for some DLC5 archetypes or S for Kinetic Sharpshooter). The inclusion filter here uses the current general Class Rankings page, and the dedicated pages are linked under each build for mechanical commentary.
 
@@ -36,6 +103,63 @@ Sources:
 - [GameFAQs — Legend mechanics and loss of later Mythic ranks/spellbook](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/other-mythic-paths)
 
 The cited Neoseeker builds are ordinary level-20 builds written for the main campaign. Their Mythic Rank 4–10 lines are retained below as **source reference only**. Each section then gives an **IE Legend adaptation**. The adaptation is my recommendation, not a claim made by the original build author.
+
+## Whole-game IE build hierarchy
+
+The following is a strategic shortlist for the whole IE environment, rather than a claim that Neoseeker publishes one numeric ranking for every class and archetype.
+
+### Fresh normal IE — level 20 / Mythic Rank 10
+
+| Priority | Build system | Why it belongs here | Path dependence |
+|---:|---|---|---|
+| 1 | **Angel Oracle** | Merged divine spellbook, powerful buffs, healing and endgame damage | Angel; available in normal MR10 IE |
+| 2 | **Lich caster** | Merged arcane/necromancy spellbook, strong save-based control and damage | Lich; available in normal MR10 IE |
+| 3 | **Trickster Sword Saint** | Perception critical line plus a high-damage martial spellblade core | Trickster; available in normal MR10 IE |
+| 4 | **Kinetic Sharpshooter 20 / Trickster** | One-blast ranged damage, Trickster critical support and Trick Fate | Trickster; fully available in normal MR10 IE |
+| 5 | **Inciter Skald 20 / Trickster** | Party-wide sneak attack, rage powers, Persuasion and dispel support | Trickster is best; Azata is the caster-party alternative |
+| 6 | **Brown-Fur Transmuter** | The strongest general-purpose transformation and buff engine | Path-independent core |
+| 7 | **Mutation Warrior 20** | Full BAB, mutagen, weapon training and a reliable martial chassis | Path-independent core |
+| 8 | **Ghost Rider hybrid** | Mount/tether safety with Vivisectionist, Sohei or full-BAB levels | Path-independent core; source mythics need adaptation |
+| 9 | **Geomancer caster** | Fire rays and area damage with a compact, IE-friendly core | Path-independent core; source is an Ember-style reference |
+| 10 | **Weretouched** | Strong natural attacks when Demon/Kalavakus assumptions are removed | Path-independent class core; Demon tricks are not required |
+
+Angel and Lich should be evaluated here with their complete merged spellbooks. Do not lower their normal-MR10 ranking because of the separate fresh Legend restriction.
+
+### Fresh IE Legend — level 40 / Mythic Rank 3
+
+| Priority | Build system | Why it survives the Legend entry | What it loses |
+|---:|---|---|---|
+| 1 | **Kinetic Sharpshooter 20 / Mutation Warrior 20** | KSS keeps its full class capstone; Mutation Warrior supplies BAB, mutagen and bonus feats | No Trickster critical line or Trick Fate |
+| 2 | **Inciter Skald 20 / Mutation Warrior 20** | Pure Inciter song and spellbook remain; fighter levels add feats and weapon training | No later Trickster/Azata mythic support |
+| 3 | **Sable Company Marine 1 / Sohei, Gendarme or Mutation Warrior** | One-level hippogriff dip remains useful without a mythic path | Flying attack can be patch-sensitive |
+| 4 | **Ghost Rider 1 / Vivisectionist or Sohei** | Tether and mount core are class-based | Source mythic bonuses do not carry over |
+| 5 | **Geomancer 1 / Witch, Oracle or Loremaster** | Fire-ray and caster core can be rebuilt from ordinary levels | No merged Angel/Lich spellbook |
+| 6 | **Weretouched 20 / martial extension** | Natural-attack class features remain available | Demon/Kalavakus loops cannot be assumed |
+| 7 | **Drunken Master 20** | Pure high-level martial chassis works without a path | Needs external shield, buff and defense support |
+
+Fresh Legend keeps only the class chassis and the two retained Mythic Hero choices. A main-campaign Angel/Lich merged book, Trickster critical line, or Azata-to-Devil transition cannot be used as evidence for this table.
+
+### Recommended six-person parties
+
+**Normal MR10 damage/control party:**
+
+1. Main character: Angel Oracle, Lich caster, Trickster Sword Saint or KSS20/Trickster.
+2. Inciter 20/Trickster for the song, shared sneak attack and Persuasion.
+3. Brown-Fur Transmuter for transformations and weapon buffs.
+4. Cleric/Oracle buffer for Guarded Hearth, communal defenses, Death Ward and condition removal.
+5. Sable Company Marine dip on a full-BAB frontliner, or Mutation Warrior/Paladin for the second melee anchor.
+6. Ember, Nenio, Arueshalae or Wenduag as the flex damage/control slot.
+
+**Fresh Legend party:**
+
+1. Main character: KSS20/Mutation Warrior20 for ranged damage, or Inciter20/Mutation Warrior20 for party support.
+2. The other one as a mercenary, so KSS and Inciter can share the same team.
+3. Brown-Fur Transmuter or Arcanist for Legendary Proportions, Transformation, Haste and Greater Magic Weapon.
+4. Sosiel or Daeran for divine defenses, healing and Guarded Hearth.
+5. Sable Company Marine/Sohei/Gendarme frontliner.
+6. Ember, Nenio, Arueshalae or Wenduag for ranged pressure, hexes and control.
+
+Do not stack multiple competing rage songs. Let one Inciter supply the party engine, keep the KSS at range, and use the remaining slots for transmutation, divine defense and a reliable front line.
 
 ## Combined evaluation
 
