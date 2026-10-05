@@ -161,6 +161,146 @@ Fresh Legend keeps only the class chassis and the two retained Mythic Hero choic
 
 Do not stack multiple competing rage songs. Let one Inciter supply the party engine, keep the KSS at range, and use the remaining slots for transmutation, divine defense and a reliable front line.
 
+### Unified IE comparison table
+
+The two DLC tables above preserve the source categories. This master table combines them with the strongest non-DLC systems. `DLC tier` is the supplied Neoseeker-style archetype grade; `whole-game role` is a practical comparison and is not a new Neoseeker rating.
+
+| Scope | DLC tier / whole-game role | Build or system | Normal IE MR10 | Fresh IE Legend MR3 | Core play
+|---|---|---|---|---|---|
+| DLC6 | SS | Inciter (Skald) | Full Trickster or Azata support route | Pure Inciter20 plus martial extension | Raging Song, shared sneak attack, rage powers and control
+| DLC6 | SS | Kinetic Sharpshooter (Kineticist) | KSS20/Trickster | KSS20/Mutation Warrior20 | Kinetic Quiver, one charged blast, infusion selection
+| DLC6 | S | Sable Company Marine (Ranger) | Paladin/Sohei mounted shell | One-level dip into a full-BAB shell | Hippogriff mount, pounce and terrain bypass
+| DLC6 | A− | Drunken Master (Monk) | Pure high-level martial | Pure or martial extension | Defensive monk chassis and unarmed pressure
+| DLC6 | A− | Titan Fighter (Fighter) | Oversized-weapon martial | Full-BAB extension | Large-weapon reach and weapon training
+| DLC6 | B+ | Bloodseeker (Slayer) | Sneak-attack/bleed striker | Martial extension | Focus-fire and bleed pressure
+| DLC6 | B+ | Mantis Zealot (Warpriest) | Divine martial hybrid | Martial extension | Self-buffs plus weapon attacks
+| DLC6 | B | Magic Deceiver (Arcanist) | Flexible arcane control | Caster extension without path assumptions | Spell theft, control and setup-dependent casting
+| DLC6 | C+ | Bladebound (Magus) | Sword/spell hybrid | Martial-caster extension | Black Blade and spellstrike
+| DLC6 | C | Chelaxian Diva (Bard) | Social/control support | Bard chassis only | Support songs and enchantment control
+| DLC6 | C | Living Grimoire (Inquisitor) | Book/weapon divine hybrid | Inquisitor extension | Judgment, divine spells and weapon attacks
+| DLC5 | S | Ghost Rider (Cavalier) | One-level dip or mounted hybrid | One-level dip plus Vivisectionist/Sohei | Etheric Tether, mount safety and charge
+| DLC5 | S | Weretouched (Shifter) | Natural-attack bruiser | Shifter20 plus martial extension | Shapeshift, aspects and pounce
+| DLC5 | S | Geomancer (Sorcerer) | Fire-ray caster | Geomancer/caster extension | Ray spells, geomancy and area damage
+| DLC5 | A+ | Winter Child (Shaman) | Cold/nature caster | Caster extension | Elemental damage and control
+| DLC5 | A+ | Shadowcaster (Wizard) | Shadow/illusion control | Wizard extension | High-DC illusion and battlefield control
+| DLC5 | A+ | Dual-Cursed Oracle (Oracle) | Curse/control Oracle, especially Angel | Oracle chassis without merged Angel book | Curses, revelations and divine control
+| DLC5 | A− | Tandem Executioner (Ranger) | Partner/pet focus fire | Ranger extension | Teamwork attacks and companion positioning
+| DLC5 | B+ | Hag of Gyronna (Witch) | Hex/control caster | Witch extension | Hexes, curses and debuffs
+| DLC5 | B | Dark Lurker (Rogue) | Stealth/sneak-attack utility | Rogue extension | Concealment, stealth and precision damage
+| DLC5 | B− | Hag-Riven (Oracle) | Curse/hex hybrid | Oracle extension | Debuffs and limited divine support
+| DLC5 | B− | Tortured Crusader (Paladin) | Defensive paladin variant | Paladin extension | Auras, defenses and martial attacks
+| DLC5 | C+ | Prophet of Pestilence (Cleric) | Disease/curse caster | Cleric extension | Disease and condition pressure
+| DLC5 | C | Reanimator (Alchemist) | Undead/pet alchemist | Alchemist extension | Mutagens, extracts and summons
+| DLC5 | C | Flesheater (Barbarian) | Rage/natural-attack bruiser | Barbarian extension | Rage, mutations and full attacks
+| DLC5 | D | Separatist (Cleric) | Flexible but inefficient cleric | Cleric extension | Domain flexibility with a lower ceiling
+| Full game | Whole-game top | Angel Oracle | Full merged Angel spellbook | Not a fresh Legend route | Buffs, healing, Sword of Heaven and Angel bolts
+| Full game | Whole-game top | Lich caster | Full merged Lich spellbook | Not a fresh Legend route | Negative-energy damage, Corrupt Magic and save-based control
+| Full game | Whole-game top | Trickster Sword Saint | Complete Trickster critical route | Not a fresh Legend route | Arcane weapon, Dimension Strike and Trick Fate
+| Full game | Core support | Brown-Fur Transmuter | Complete transmutation support | Class support remains intact | Shared transformations, Haste and weapon buffs
+| Full game | Core martial | Mutation Warrior | Full BAB, mutagen and weapon training | Best martial extension for KSS/Inciter | Mutagen, weapon training, feats and full attacks
+
+### Operational playbooks
+
+These sequences describe the normal combat loop. Exact names can vary with patches, mods and respec choices; the combat log takes priority when an interaction is known to be patch-sensitive.
+
+#### Kinetic Sharpshooter
+
+**Before combat:** cast Greater Magic Weapon, Haste, Heroic Invocation/Greater Heroism, True Seeing, communal defenses and the needed transmutations. Create **Kinetic Quiver** with 1 Burn and keep charges available. Prepare the Heavy Crossbow, Fire → Fire → Air element line and the intended infusion.
+
+**Opening turn:** let the Inciter start Raging Song, then select the target. Use **Blue Flame + Rending Arrows** against a target without problematic spell resistance. Use **Pure-Flame** when SR is the problem. If the current patch accepts the interaction, combine Rending and Pure-Flame through Over-Infused Blasts. Against a line or clustered group, use unaltered Blue Flame + Chain Arrows.
+
+Blue Flame is the energy/touch-AC line; physical Air blasts use normal AC. Rending is for stacking the AC penalty after a hit, while Honed is the DR answer.
+
+Keep **Enveloping Winds** active against ranged pressure. Swap to **Honed Infusion** when damage reduction is the problem; do not spend a burn on it when the target has no relevant DR.
+
+**Boss sequence:** cast Trick Fate immediately before the decisive shot, use The Bigger They Are when its attack bonus matters, then fire the single charged blast. **Metakinesis — Empowered** is the reliable sustained default. Test Quicken on an empty target after a patch: keep it only if the combat log shows two Charged Ammunition entries and the expected extra Quiver cost; otherwise use Empowered. Refresh Kinetic Quiver before charges run out. Never use Gather Power; KSS cannot use it.
+
+**Do not waste actions on:** Exploding Arrows as the default single-target line, Rapid Shot/Manyshot as a way to create extra KSS blasts, or Deadly Earth/Kinetic Blade/Eruption, which KSS cannot use.
+
+#### Inciter Skald
+
+**Before combat:** cast Greater Heroism, Good Hope, Haste, Freedom of Movement, Echolocation and defensive images. Put the Inciter in a safe position with a Dagger of the Betrayer or another finesse weapon if available.
+
+**Opening turn:** activate **Raging Song**. Use Accept Rage on melee and thrown-weapon allies; leave it off for casters when the song would restrict spellcasting. Turn on Lethal Stance and Beast Totem/Greater Beast Totem for the attackers. Use Come and Get Me only when the front line can survive the incoming attacks.
+
+Before level 20, activate Lingering Performance and then end the song when you need to preserve the three-round effect without forcing casters to accept rage. At level 20, test Hit a Nerve before treating the song as caster-safe; the Inciter does not automatically gain the base Skald's separate Haste capstone.
+
+**First attack:** make a qualifying weapon sneak attack to trigger **Dispelling Attack**. Then let the two melee characters flank and full-attack. Use Selective Confusion, Song of Discord or Overwhelming Presence after the song and positioning are established. Persuasion I–III is the combat-control line: demoralize, paralyze and finish failed-save enemies.
+
+**Sustained loop:** keep the song active, make weapon attacks when a dispel is valuable, and spend later actions on selective control or emergency buffs. At level 20 test Hit a Nerve; allies should be able to cast without the song’s normal AC penalty. If the platform still blocks casting, turn the song off for caster rounds.
+
+#### Sable Company Marine
+
+**Before combat:** mount the hippogriff, apply Divine Favor, Greater Magic Weapon, defensive paladin buffs and the needed shield/armor setup. Mark or Smite the priority enemy before the charge when action economy allows.
+
+**Opening turn:** charge with the mounted pair. The hippogriff’s pounce and terrain bypass create the first flank; the rider uses the full attack on the same target. Follow with Outflank/Seize the Moment attacks when allies threaten the target.
+
+**Sustained loop:** maintain the mount, rotate Smite Evil/Mark of Justice on major targets, and use Lay on Hands or mercies only when they prevent a lost full-attack round. Treat the flying attack as a positioning tool, not as the only source of damage.
+
+#### Ghost Rider / Riding Vivisectionist
+
+**Before combat:** mount up, apply the Vivisectionist’s mutagen and defensive extracts, then use Greater Magic Weapon, Haste, Legendary Proportions and concealment. Pick the tether target before initiative if possible.
+
+**Opening turn:** apply **Etheric Tether** to the dangerous enemy, then charge the isolated target with the mount and rider. Use the rider’s sneak-attack/full-attack package while the mount blocks movement and protects the back line.
+
+**Sustained loop:** keep the tether on the highest-value target, refresh mutagen/extract defenses between encounters, and use bombs or dispels only when a full attack is impossible.
+
+#### Weretouched
+
+**Before combat:** choose the aspect and natural-attack form, apply Greater Magic Fang, Barkskin, Haste, Legendary Proportions or other party transmutations, then position for a charge. Do not plan around Demon/Kalavakus tricks in fresh IE Legend.
+
+**Opening turn:** charge or pounce the priority target and make the full natural-attack sequence. Use the Stigmatized Witch/Loremaster support spell or hex only when moving into melee would lose more damage than the control effect gains.
+
+**Sustained loop:** remain in the chosen form, maintain flank/Outflank positioning and use defensive transformations before attacking again.
+
+#### Geomancer
+
+**Before combat:** apply Haste, True Seeing, Greater Invisibility or concealment, communal defenses and Spell Resistance as needed. Set the desired terrain/geomancy effect before the encounter and prepare the ray metamagic.
+
+**Opening turn:** remove or reduce enemy defenses with Dispel Magic when necessary, then cast the strongest available fire ray (Scorching Ray or Hellfire Ray) at the priority target. Use Bolstered/Empowered/Maximized versions according to spell slots and metamagic.
+
+**Sustained loop:** continue ray volleys against single targets; use selective area control when enemies cluster. Keep the caster out of melee and let the front line create flat-footed or flanked targets.
+
+#### Angel Oracle
+
+**Before combat:** use the merged spellbook for long-duration communal defenses, Freedom of Movement, Death Ward, True Seeing, Greater Angelic Aspect and other enduring buffs. Apply Sword of Heaven before the encounter.
+
+**Opening turn:** against one boss, use the strongest Angel bolt/ray sequence after any required debuff; against a group, use Storm of Justice or the highest available Angel area spell. Use Quickened buffs only when they preserve the main casting action.
+
+**Sustained loop:** alternate Angel damage with Heal, dispels and emergency defenses. Do not spend the first combat round on small heals when an Angel spell can remove the encounter’s main threat.
+
+#### Lich caster
+
+**Before combat:** apply long-duration arcane defenses, Mind Blank/True Seeing, Greater Invisibility or concealment and the Lich defensive package. Keep a quickened defensive spell available.
+
+**Opening turn:** use Corrupt Magic or another major debuff on the boss, then follow with Exsanguinate, Negative Eruption or the strongest save-based Lich spell that matches the encounter.
+
+**Sustained loop:** maintain control on the most dangerous enemy, use negative-energy damage against groups and preserve Repurpose/defensive tools for encounters where a new undead ally or immunity matters.
+
+#### Trickster Sword Saint
+
+**Before combat:** enhance the weapon with Arcane Pool, cast long-duration defensive wizard spells and prepare Dimension Strike, Prescient Attack and Trick Fate.
+
+**Opening turn:** activate Prescient Attack or Dimension Strike on the priority target, use Trick Fate for a decisive crit sequence, then full-attack. Perception II’s Trickster critical feats are the payoff for the route.
+
+**Sustained loop:** alternate Arcane Pool/Dimension Strike full attacks with Bladed Dash or defensive repositioning. Save spell slots for defensive layers and boss accuracy rather than low-DC control.
+
+#### Brown-Fur Transmuter
+
+**Before combat:** cast the party package in this order: Greater Magic Weapon → Legendary Proportions or Transformation → Haste → Echolocation/True Seeing → communal defenses and condition immunity. Use Share Transmutation on the characters who actually attack.
+
+**Opening turn:** begin with a preselected buff or a quickened control spell only if the party was not fully prebuffed. The BFT’s first job is to make KSS, Inciter and the front line hit; offensive casting is secondary.
+
+**Sustained loop:** maintain dispels, emergency Greater Invisibility and targeted transformations. Do not overwrite a better size or Dexterity buff with a weaker late spell.
+
+#### Mutation Warrior
+
+**Before combat:** activate Mutagen, select the weapon training group and apply long-duration martial buffs. Set Outflank/Seize the Moment positioning before initiative.
+
+**Opening turn:** charge or full-attack the target already marked by the Inciter/KSS control package. Use the bonus feats and weapon training to keep attacking instead of spending turns on small utility actions.
+
+**Sustained loop:** maintain mutagen, use Combat Reflexes opportunity attacks and switch weapon-training groups only when the enemy’s defenses justify losing an attack action.
+
 ## Combined evaluation
 
 | Priority | Build | What it is best at | IE Legend value | Main limitation |
@@ -204,10 +344,10 @@ The Inciter song shares sneak-attack dice, Lethal Stance and Beast Totem with al
 | Background | Pickpocket |
 | Skills | Max Persuasion and Perception; keep Mobility high; put 1 rank in Use Magic Device and add Trickery or Stealth only if the party lacks it. Do not spend core ranks on Lore (Nature). |
 | Role | Party support, enchantment control, rage-power support |
-| Starting stats | Source mercenary spread: STR 7, DEX 14, CON 14, INT 12, WIS 7, CHA 21 → 26. For a 25-point-buy IE main character use STR 7, DEX 14, CON 14, INT 12, WIS 8, CHA 22 → 27; put every normal level-up point into CHA. |
+| Starting stats | Source mercenary spread: STR 7, DEX 14, CON 14, INT 12, WIS 7, CHA 21 → 26. For a 25-point-buy IE main character use STR 7, DEX 14, CON 14, INT 12, WIS 10, CHA 22 → 27; put every normal level-up point into CHA. |
 | Hire timing | Level 20 is preferred by the source |
 | Key gear | Call to Violence; White Dragon; Mindmaster Eyes; Ring of Chaotic Fascination; Bracers of Mind Break; Twisted Temptation |
-| Endgame gear | Headband of Perfection +8; Mindmaster Eyes; Cloak of Reflections; Ring of Chaotic Fascination; Ring of Evasion; Bracers of Mind Break; Glass Amulet of Clarity; White Dragon; Wandering Conman; Twisted Temptation; Dagger of the Betrayer; Assertion of Dominance; Persistent Rods |
+| Endgame gear | Headband of Perfection +8; Mindmaster Eyes; Cloak of Reflections; Ring of Chaotic Fascination; Ring of Evasion; Bracers of Mind Break; Glass Amulet of Clarity; White Dragon; Wandering Conman; Twisted Temptation; Dagger of the Betrayer (optional if available from imported/main-campaign inventory; otherwise any +5 finesse stat-stick dagger or rapier); Assertion of Dominance; Persistent Rods |
 
 ## Class
 
