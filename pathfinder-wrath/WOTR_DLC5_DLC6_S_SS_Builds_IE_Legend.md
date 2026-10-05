@@ -115,7 +115,7 @@ IE MR8 Swarm-that-Walks and Gold Dragon are listed as future IE candidates below
 
 ### Combined IE final-build matrix
 
-Every row below is a finished build format, not a bare “level 20 Mutation Warrior” entry. `DLC tier` is the source archetype tier; `whole-game` is this guide's strategic priority and is not a new Neoseeker rating. The MR10 column is a **30-step end state**: 20 class levels plus Mythic Rank 10. `N/A` means fresh IE Legend cannot legally select that mythic path; `—` means a complete 40-Legend version has not been selected yet.
+Every row below is a finished build format, not a bare “level 20 Mutation Warrior” entry. `DLC tier` is the source archetype tier; `IE cross-system` means a non-DLC system included as an IE benchmark, not a separate main-campaign ranking. The MR10 column is a **30-step end state**: 20 class levels plus Mythic Rank 10. `N/A` means fresh IE Legend cannot legally select that mythic path; `—` means a complete 40-Legend version has not been selected yet.
 
 | Scope / tier | Final build | IE Mythic entry: level 20 / MR10 (30-step end state) | IE Legend entry: MR3 → 40 class levels | Combat identity |
 |---|---|---|---|---|
@@ -145,11 +145,11 @@ Every row below is a finished build format, not a bare “level 20 Mutation Warr
 | DLC5 C | Reanimator | Reanimator 20 / Lich MR10 | — | Mutagens, extracts and undead summons |
 | DLC5 C | Flesheater | Flesheater 20 / Trickster MR10 | — | Rage, mutations and natural-attack pressure |
 | DLC5 D | Separatist | Separatist 20 / Angel MR10 | — | Domain flexibility with a lower endgame ceiling |
-| Whole-game top | Angel Oracle | Seeker Oracle 16 / Scaled Fist Monk 1 / Paladin 2 / Hellknight 1 / Angel MR10 | N/A — fresh IE Legend cannot select Angel | Merged Angel spellbook, buffs, healing and bolts |
-| Whole-game top | Lich caster | Stigmatized Witch 10 / Loremaster 9 / Crossblooded Sorcerer 1 / Lich MR10 | N/A — fresh IE Legend cannot select Lich | Merged Lich spellbook, Corrupt Magic and negative damage |
-| Whole-game top | Trickster Sword Saint | Sword Saint 20 / Trickster MR10 | N/A — fresh IE Legend cannot select Trickster | Perception critical feats, Dimension Strike and Trick Fate |
-| Whole-game support | Brown-Fur Transmuter | Brown-Fur Transmuter 20 / Azata MR10 | — | Shared transformations, Haste and weapon buffs |
-| Whole-game martial | Mutation Warrior / Demonslayer | Mutation Warrior 19 / Demonslayer Ranger 1 / Trickster MR10 | Mutation Warrior 20 / Demonslayer Ranger 20 | Complete martial route; the KSS/Inciter rows use the same chassis as an extension |
+| IE cross-system top | Angel Oracle | Seeker Oracle 16 / Scaled Fist Monk 1 / Paladin 2 / Hellknight 1 / Angel MR10 | N/A — fresh IE Legend cannot select Angel | Merged Angel spellbook, buffs, healing and bolts |
+| IE cross-system top | Lich caster | Stigmatized Witch 10 / Loremaster 9 / Crossblooded Sorcerer 1 / Lich MR10 | N/A — fresh IE Legend cannot select Lich | Merged Lich spellbook, Corrupt Magic and negative damage |
+| IE cross-system top | Trickster Sword Saint | Sword Saint 20 / Trickster MR10 | N/A — fresh IE Legend cannot select Trickster | Perception critical feats, Dimension Strike and Trick Fate |
+| IE cross-system support | Brown-Fur Transmuter | Brown-Fur Transmuter 20 / Azata MR10 | — | Shared transformations, Haste and weapon buffs |
+| IE cross-system martial | Mutation Warrior / Demonslayer | Mutation Warrior 19 / Demonslayer Ranger 1 / Trickster MR10 | Mutation Warrior 20 / Demonslayer Ranger 20 | Complete martial route; the KSS/Inciter rows use the same chassis as an extension |
 
 The A–D rows are complete IE MR10 reference builds (20 class levels plus the listed mythic route), but they do not yet have a recommended 40-Legend extension. The SS/S rows and the whole-game rows carry the fully written 40-Legend adaptations where the route is legal.
 
