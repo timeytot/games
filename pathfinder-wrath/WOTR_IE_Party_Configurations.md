@@ -4,6 +4,8 @@ This file gives compact six-person party shells for the five complete IE Mythic-
 
 The class levels are the important part of each companion or mercenary chassis. A non-commander mercenary can use Mythic Companion choices; do not read every support row as a second required mythic path.
 
+For level-by-level feats, spells and combat order, see [WOTR_IE complete endgame builds and ranking](./WOTR_IE_Complete_Endgame_Builds.md).
+
 In each roster, **slot 1 is the commander/main character**. Slots 2–6 are mercenary or respec-companion blueprints; they provide the listed class abilities without requiring a second Angel, Lich or Trickster path.
 
 ## Reusable support chassis
@@ -108,3 +110,4 @@ Inciter is the party engine rather than the party's main damage dealer. Its valu
 ## Fresh Legend note
 
 The only two complete fresh IE Legend adaptations in this group are **Kinetic Sharpshooter 20 / Mutation Warrior 20** and **Inciter Skald 20 / Mutation Warrior 20**. They start at MR3 and reach character level 40. Angel Oracle, Lich caster and Trickster Sword Saint above are MR10-only systems in IE; they are not valid fresh Legend entries.
+

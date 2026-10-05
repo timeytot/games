@@ -5,7 +5,7 @@ Each playthrough has its own folder. A save loads the mod config that matches it
 ## Shared mod guides
 
 - [Buff It 2 The Limit — generic guide](./BuffIt-Guide.md) — buttons, live file path, JSON fields, personal spells, red-row debugging, restore checklist. Playthrough folders only store GameId pointers and config copies.
-- [DLC5/DLC6 S/SS build guide](./WOTR_DLC5_DLC6_S_SS_Builds_IE_Legend.md) — complete English DLC5/DLC6 tier tables plus Kinetic Sharpshooter, Inciter, Trickster, Legend, and other S/SS build plans.
+- [IE complete endgame builds and ranking](./WOTR_IE_Complete_Endgame_Builds.md) — one English build file with the ranked Angel Oracle, Lich caster, Kinetic Sharpshooter, Trickster Sword Saint and Inciter Skald end states, spells, combat order and party shells.
 - [IE party configurations](./WOTR_IE_Party_Configurations.md) — concise six-person rosters with exact class levels and the abilities each slot supplies for Angel Oracle, Lich, Kinetic Sharpshooter, Sword Saint and Inciter Skald.
 - [IE build research notes](./WOTR_IE_Build_Research_Notes.md) — reusable IE and Kinetic Sharpshooter mechanics and source links.
 
@@ -19,3 +19,4 @@ Each playthrough has its own folder. A save loads the mod config that matches it
 `tools/refresh_current_snapshot.cmd` extracts the newest FaN save into `lich/current/`. The default GameId is `7ea3d466491c4249aec2742271c2e71a`. Repo, saves folder, and GameId can be overridden with arguments or `WOTR_REPO`, `WOTR_SAVES`, and `WOTR_GAME_ID`. Double-clicking extracts only. Pass `-Commit` to commit locally, and `-Push` to commit and push the current branch.
 
 Start the game yourself. After you finish a FaN session, double-click that script.
+
