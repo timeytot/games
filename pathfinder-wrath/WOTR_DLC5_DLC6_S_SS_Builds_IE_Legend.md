@@ -104,100 +104,82 @@ Sources:
 
 The cited Neoseeker builds are ordinary level-20 builds written for the main campaign. Their Mythic Rank 4–10 lines are retained below as **source reference only**. Each section then gives an **IE Legend adaptation**. The adaptation is my recommendation, not a claim made by the original build author.
 
-## Whole-game IE build hierarchy
+## IE final-build scope
 
-The following is a strategic shortlist for the whole IE environment, rather than a claim that Neoseeker publishes one numeric ranking for every class and archetype.
+This guide evaluates **Inevitable Excess only**. It does not use the main-campaign route “take Trickster/Angel/Lich first, then change to Legend at Mythic Rank 8.” In IE, the two build modes are separate:
 
-### Fresh normal IE — level 20 / Mythic Rank 10
+1. **IE Mythic entry: level 20 / MR10:** continue with a mythic path at the IE mythic entry. The finished build is 20 class levels plus the selected mythic route (the guide's “30-step” format).
+2. **IE Legend MR3 → character level 40:** select Legend at MR3 immediately. The finished build is a 40-level class split; later MR4–10 path features are unavailable.
 
-| Priority | Build system | Why it belongs here | Path dependence |
-|---:|---|---|---|
-| 1 | **Angel Oracle** | Merged divine spellbook, powerful buffs, healing and endgame damage | Angel; available in normal MR10 IE |
-| 2 | **Lich caster** | Merged arcane/necromancy spellbook, strong save-based control and damage | Lich; available in normal MR10 IE |
-| 3 | **Trickster Sword Saint** | Perception critical line plus a high-damage martial spellblade core | Trickster; available in normal MR10 IE |
-| 4 | **Kinetic Sharpshooter 20 / Trickster** | One-blast ranged damage, Trickster critical support and Trick Fate | Trickster; fully available in normal MR10 IE |
-| 5 | **Inciter Skald 20 / Trickster** | Party-wide sneak attack, rage powers, Persuasion and dispel support | Trickster is best; Azata is the caster-party alternative |
-| 6 | **Brown-Fur Transmuter** | The strongest general-purpose transformation and buff engine | Path-independent core |
-| 7 | **Mutation Warrior 20** | Full BAB, mutagen, weapon training and a reliable martial chassis | Path-independent core |
-| 8 | **Ghost Rider hybrid** | Mount/tether safety with Vivisectionist, Sohei or full-BAB levels | Path-independent core; source mythics need adaptation |
-| 9 | **Geomancer caster** | Fire rays and area damage with a compact, IE-friendly core | Path-independent core; source is an Ember-style reference |
-| 10 | **Weretouched** | Strong natural attacks when Demon/Kalavakus assumptions are removed | Path-independent class core; Demon tricks are not required |
+IE MR8 Swarm-that-Walks and Gold Dragon are listed as future IE candidates below. They are tracked only for an IE save that actually exposes MR8 progression; they are not fresh IE MR10/Legend entry builds, and their full builds are not claimed until separately written.
 
-Angel and Lich should be evaluated here with their complete merged spellbooks. Do not lower their normal-MR10 ranking because of the separate fresh Legend restriction.
+### Combined IE final-build matrix
 
-### Fresh IE Legend — level 40 / Mythic Rank 3
+Every row below is a finished build format, not a bare “level 20 Mutation Warrior” entry. `DLC tier` is the source archetype tier; `whole-game` is this guide's strategic priority and is not a new Neoseeker rating. The MR10 column is a **30-step end state**: 20 class levels plus Mythic Rank 10. `N/A` means fresh IE Legend cannot legally select that mythic path; `—` means a complete 40-Legend version has not been selected yet.
 
-| Priority | Build system | Why it survives the Legend entry | What it loses |
-|---:|---|---|---|
-| 1 | **Kinetic Sharpshooter 20 / Mutation Warrior 20** | KSS keeps its full class capstone; Mutation Warrior supplies BAB, mutagen and bonus feats | No Trickster critical line or Trick Fate |
-| 2 | **Inciter Skald 20 / Mutation Warrior 20** | Pure Inciter song and spellbook remain; fighter levels add feats and weapon training | No later Trickster/Azata mythic support |
-| 3 | **Sable Company Marine 1 / Sohei, Gendarme or Mutation Warrior** | One-level hippogriff dip remains useful without a mythic path | Flying attack can be patch-sensitive |
-| 4 | **Ghost Rider 1 / Vivisectionist or Sohei** | Tether and mount core are class-based | Source mythic bonuses do not carry over |
-| 5 | **Geomancer 1 / Witch, Oracle or Loremaster** | Fire-ray and caster core can be rebuilt from ordinary levels | No merged Angel/Lich spellbook |
-| 6 | **Weretouched 20 / martial extension** | Natural-attack class features remain available | Demon/Kalavakus loops cannot be assumed |
-| 7 | **Drunken Master 20** | Pure high-level martial chassis works without a path | Needs external shield, buff and defense support |
+| Scope / tier | Final build | IE Mythic entry: level 20 / MR10 (30-step end state) | IE Legend entry: MR3 → 40 class levels | Combat identity |
+|---|---|---|---|---|
+| DLC6 SS | Inciter | Inciter Skald 20 / Trickster MR10 | Inciter Skald 20 / Mutation Warrior 20 | Raging Song, shared sneak attack, Beast Totem and control |
+| DLC6 SS | Kinetic Sharpshooter | Kinetic Sharpshooter 20 / Trickster MR10 | Kinetic Sharpshooter 20 / Mutation Warrior 20 | Kinetic Quiver and one charged blast per round |
+| DLC6 S | Sable Company Marine | Sable Company Marine 1 / Paladin 13 / Sohei 1 / Mutation Warrior 5 / Trickster MR10 | Sable Company Marine 1 / Paladin 20 / Sohei 1 / Mutation Warrior 18 | Hippogriff Flying Attack and mounted full-round attacks |
+| DLC5 S | Ghost Rider | Ghost Rider 1 / Sacred Huntsmaster 8 / Vivisectionist 8 / Sohei 2 / Demonslayer 1 / Trickster MR10 | Ghost Rider 1 / Sacred Huntsmaster 8 / Vivisectionist 12 / Sohei 6 / Demonslayer 1 / Mutation Warrior 12 | Etheric Tether, mount safety and sneak-attack charges |
+| DLC5 S | Weretouched | Shifter (Weretouched) 17 / Stigmatized Witch 1 / Fighter 1 / Demonslayer 1 / Trickster MR10 | Shifter (Weretouched) 20 / Stigmatized Witch 1 / Fighter 18 / Demonslayer 1 | Shifting, aspects, pounce and natural attacks |
+| DLC5 S | Geomancer | Stigmatized Witch 10 / Geomancer Sorcerer 1 / Loremaster 9 / Azata MR10 | Stigmatized Witch 20 / Geomancer Sorcerer 1 / Loremaster 19 | Fire rays, geomancy and selective area control |
+| DLC5 A+ | Dual-Cursed Oracle | Dual-Cursed Oracle 20 / Angel MR10 | — | Curses, revelations and Angel divine casting |
+| DLC6 A− | Drunken Master | Drunken Master 20 / Trickster MR10 | — | Unarmed flurry, drunken ki and defensive mobility |
+| DLC6 A− | Titan Fighter | Titan Fighter 20 / Trickster MR10 | — | Oversized weapon reach and full attacks |
+| DLC6 B+ | Bloodseeker | Bloodseeker 20 / Trickster MR10 | — | Slayer sneak attack, bleed and focus fire |
+| DLC6 B+ | Mantis Zealot | Mantis Zealot 20 / Angel MR10 | — | Warpriest self-buffs, crit pressure and divine support |
+| DLC6 B | Magic Deceiver | Magic Deceiver 20 / Azata MR10 | — | Spell theft, flexible control and setup-dependent casting |
+| DLC6 C+ | Bladebound | Bladebound 20 / Trickster MR10 | — | Black Blade, spellstrike and arcane weapon pressure |
+| DLC6 C | Chelaxian Diva | Chelaxian Diva 20 / Azata MR10 | — | Support song, enchantment and social control |
+| DLC6 C | Living Grimoire | Living Grimoire 20 / Angel MR10 | — | Judgment, divine support and weapon attacks |
+| DLC5 A+ | Winter Child | Winter Child 20 / Azata MR10 | — | Cold damage, nature control and familiar support |
+| DLC5 A+ | Shadowcaster | Shadowcaster 20 / Lich MR10 | — | Shadow spells, illusion DCs and battlefield control |
+| DLC5 A− | Tandem Executioner | Tandem Executioner 20 / Trickster MR10 | — | Teamwork attacks, companion positioning and focus fire |
+| DLC5 B+ | Hag of Gyronna | Hag of Gyronna 20 / Lich MR10 | — | Hexes, curses and save-based debuffs |
+| DLC5 B | Dark Lurker | Dark Lurker 20 / Trickster MR10 | — | Stealth, concealment and precision damage |
+| DLC5 B− | Hag-Riven | Hag-Riven 20 / Angel MR10 | — | Oracle curse package and limited divine support |
+| DLC5 B− | Tortured Crusader | Tortured Crusader 20 / Angel MR10 | — | Paladin auras, defenses and martial attacks |
+| DLC5 C+ | Prophet of Pestilence | Prophet of Pestilence 20 / Angel MR10 | — | Disease, curses and condition pressure |
+| DLC5 C | Reanimator | Reanimator 20 / Lich MR10 | — | Mutagens, extracts and undead summons |
+| DLC5 C | Flesheater | Flesheater 20 / Trickster MR10 | — | Rage, mutations and natural-attack pressure |
+| DLC5 D | Separatist | Separatist 20 / Angel MR10 | — | Domain flexibility with a lower endgame ceiling |
+| Whole-game top | Angel Oracle | Seeker Oracle 16 / Scaled Fist Monk 1 / Paladin 2 / Hellknight 1 / Angel MR10 | N/A — fresh IE Legend cannot select Angel | Merged Angel spellbook, buffs, healing and bolts |
+| Whole-game top | Lich caster | Stigmatized Witch 10 / Loremaster 9 / Crossblooded Sorcerer 1 / Lich MR10 | N/A — fresh IE Legend cannot select Lich | Merged Lich spellbook, Corrupt Magic and negative damage |
+| Whole-game top | Trickster Sword Saint | Sword Saint 20 / Trickster MR10 | N/A — fresh IE Legend cannot select Trickster | Perception critical feats, Dimension Strike and Trick Fate |
+| Whole-game support | Brown-Fur Transmuter | Brown-Fur Transmuter 20 / Azata MR10 | — | Shared transformations, Haste and weapon buffs |
+| Whole-game martial | Mutation Warrior / Demonslayer | Mutation Warrior 19 / Demonslayer Ranger 1 / Trickster MR10 | Mutation Warrior 20 / Demonslayer Ranger 20 | Complete martial route; the KSS/Inciter rows use the same chassis as an extension |
 
-Fresh Legend keeps only the class chassis and the two retained Mythic Hero choices. A main-campaign Angel/Lich merged book, Trickster critical line, or Azata-to-Devil transition cannot be used as evidence for this table.
+The A–D rows are complete IE MR10 reference builds (20 class levels plus the listed mythic route), but they do not yet have a recommended 40-Legend extension. The SS/S rows and the whole-game rows carry the fully written 40-Legend adaptations where the route is legal.
 
-### Recommended six-person parties
+Pure 20-class rows such as Sword Saint 20 and Brown-Fur Transmuter 20 are intentional capstone builds because their class progression is the payoff; they are still complete builds because the MR10 mythic route is written beside them.
 
-**Normal MR10 damage/control party:**
+### IE MR8 future candidates
 
-1. Main character: Angel Oracle, Lich caster, Trickster Sword Saint or KSS20/Trickster.
-2. Inciter 20/Trickster for the song, shared sneak attack and Persuasion.
-3. Brown-Fur Transmuter for transformations and weapon buffs.
+These are included in the IE scope but are not yet final build entries: **Kinetic Sharpshooter 20 / Swarm-that-Walks MR8+** and **Sword Saint 20 / Gold Dragon MR8+**. They must be researched as IE MR8-capable mythic-route builds; neither is a fresh IE MR10/Legend entry or a main-campaign path-to-Legend conversion.
+
+### IE party shells
+
+**IE Mythic entry: level 20 / MR10 party:**
+
+1. Main character: Seeker Oracle 16 / Scaled Fist Monk 1 / Paladin 2 / Hellknight 1 / Angel, Stigmatized Witch 10 / Loremaster 9 / Crossblooded Sorcerer 1 / Lich, Sword Saint 20 / Trickster or KSS 20 / Trickster.
+2. Inciter Skald 20 as a mercenary; use Mythic Companion unless the Inciter is the commander.
+3. Brown-Fur Transmuter 20 as a mercenary; use Mythic Companion unless the BFT is the commander.
 4. Cleric/Oracle buffer for Guarded Hearth, communal defenses, Death Ward and condition removal.
-5. Sable Company Marine dip on a full-BAB frontliner, or Mutation Warrior/Paladin for the second melee anchor.
-6. Ember, Nenio, Arueshalae or Wenduag as the flex damage/control slot.
-
-**Fresh Legend party:**
-
-1. Main character: KSS20/Mutation Warrior20 for ranged damage, or Inciter20/Mutation Warrior20 for party support.
-2. The other one as a mercenary, so KSS and Inciter can share the same team.
-3. Brown-Fur Transmuter or Arcanist for Legendary Proportions, Transformation, Haste and Greater Magic Weapon.
-4. Sosiel or Daeran for divine defenses, healing and Guarded Hearth.
-5. Sable Company Marine/Sohei/Gendarme frontliner.
+5. Sable Company Marine 1 / Paladin 13 / Sohei 1 / Mutation Warrior 5 mounted shell or Mutation Warrior 20 / Trickster front line.
 6. Ember, Nenio, Arueshalae or Wenduag for ranged pressure, hexes and control.
 
-Do not stack multiple competing rage songs. Let one Inciter supply the party engine, keep the KSS at range, and use the remaining slots for transmutation, divine defense and a reliable front line.
+**IE Legend MR3 → level 40 party:**
 
-### Unified IE comparison table
+1. Kinetic Sharpshooter 20/Mutation Warrior 20 as the ranged finisher.
+2. Inciter Skald 20/Mutation Warrior 20 as the party engine.
+3. Brown-Fur Transmuter or Arcanist support; keep casters out of Inspired Rage before Hit a Nerve.
+4. Sosiel or Daeran for divine defenses, healing and Guarded Hearth.
+5. Sable Company Marine 1 / Paladin 20 / Sohei 1 / Mutation Warrior 18 mounted front line.
+6. Ember, Nenio, Arueshalae or Wenduag for ranged pressure, hexes and control.
 
-The two DLC tables above preserve the source categories. This master table combines them with the strongest non-DLC systems. `DLC tier` is the supplied Neoseeker-style archetype grade; `whole-game role` is a practical comparison and is not a new Neoseeker rating.
-
-| Scope | DLC tier / whole-game role | Build or system | Normal IE MR10 | Fresh IE Legend MR3 | Core play
-|---|---|---|---|---|---|
-| DLC6 | SS | Inciter (Skald) | Full Trickster or Azata support route | Pure Inciter20 plus martial extension | Raging Song, shared sneak attack, rage powers and control
-| DLC6 | SS | Kinetic Sharpshooter (Kineticist) | KSS20/Trickster | KSS20/Mutation Warrior20 | Kinetic Quiver, one charged blast, infusion selection
-| DLC6 | S | Sable Company Marine (Ranger) | Paladin/Sohei mounted shell | One-level dip into a full-BAB shell | Hippogriff mount, pounce and terrain bypass
-| DLC6 | A− | Drunken Master (Monk) | Pure high-level martial | Pure or martial extension | Defensive monk chassis and unarmed pressure
-| DLC6 | A− | Titan Fighter (Fighter) | Oversized-weapon martial | Full-BAB extension | Large-weapon reach and weapon training
-| DLC6 | B+ | Bloodseeker (Slayer) | Sneak-attack/bleed striker | Martial extension | Focus-fire and bleed pressure
-| DLC6 | B+ | Mantis Zealot (Warpriest) | Divine martial hybrid | Martial extension | Self-buffs plus weapon attacks
-| DLC6 | B | Magic Deceiver (Arcanist) | Flexible arcane control | Caster extension without path assumptions | Spell theft, control and setup-dependent casting
-| DLC6 | C+ | Bladebound (Magus) | Sword/spell hybrid | Martial-caster extension | Black Blade and spellstrike
-| DLC6 | C | Chelaxian Diva (Bard) | Social/control support | Bard chassis only | Support songs and enchantment control
-| DLC6 | C | Living Grimoire (Inquisitor) | Book/weapon divine hybrid | Inquisitor extension | Judgment, divine spells and weapon attacks
-| DLC5 | S | Ghost Rider (Cavalier) | One-level dip or mounted hybrid | One-level dip plus Vivisectionist/Sohei | Etheric Tether, mount safety and charge
-| DLC5 | S | Weretouched (Shifter) | Natural-attack bruiser | Shifter20 plus martial extension | Shapeshift, aspects and pounce
-| DLC5 | S | Geomancer (Sorcerer) | Fire-ray caster | Geomancer/caster extension | Ray spells, geomancy and area damage
-| DLC5 | A+ | Winter Child (Shaman) | Cold/nature caster | Caster extension | Elemental damage and control
-| DLC5 | A+ | Shadowcaster (Wizard) | Shadow/illusion control | Wizard extension | High-DC illusion and battlefield control
-| DLC5 | A+ | Dual-Cursed Oracle (Oracle) | Curse/control Oracle, especially Angel | Oracle chassis without merged Angel book | Curses, revelations and divine control
-| DLC5 | A− | Tandem Executioner (Ranger) | Partner/pet focus fire | Ranger extension | Teamwork attacks and companion positioning
-| DLC5 | B+ | Hag of Gyronna (Witch) | Hex/control caster | Witch extension | Hexes, curses and debuffs
-| DLC5 | B | Dark Lurker (Rogue) | Stealth/sneak-attack utility | Rogue extension | Concealment, stealth and precision damage
-| DLC5 | B− | Hag-Riven (Oracle) | Curse/hex hybrid | Oracle extension | Debuffs and limited divine support
-| DLC5 | B− | Tortured Crusader (Paladin) | Defensive paladin variant | Paladin extension | Auras, defenses and martial attacks
-| DLC5 | C+ | Prophet of Pestilence (Cleric) | Disease/curse caster | Cleric extension | Disease and condition pressure
-| DLC5 | C | Reanimator (Alchemist) | Undead/pet alchemist | Alchemist extension | Mutagens, extracts and summons
-| DLC5 | C | Flesheater (Barbarian) | Rage/natural-attack bruiser | Barbarian extension | Rage, mutations and full attacks
-| DLC5 | D | Separatist (Cleric) | Flexible but inefficient cleric | Cleric extension | Domain flexibility with a lower ceiling
-| Full game | Whole-game top | Angel Oracle | Full merged Angel spellbook | Not a fresh Legend route | Buffs, healing, Sword of Heaven and Angel bolts
-| Full game | Whole-game top | Lich caster | Full merged Lich spellbook | Not a fresh Legend route | Negative-energy damage, Corrupt Magic and save-based control
-| Full game | Whole-game top | Trickster Sword Saint | Complete Trickster critical route | Not a fresh Legend route | Arcane weapon, Dimension Strike and Trick Fate
-| Full game | Core support | Brown-Fur Transmuter | Complete transmutation support | Class support remains intact | Shared transformations, Haste and weapon buffs
-| Full game | Core martial | Mutation Warrior | Full BAB, mutagen and weapon training | Best martial extension for KSS/Inciter | Mutagen, weapon training, feats and full attacks
+Do not stack competing rage songs. Use one Inciter, keep KSS at range, and let the remaining slots cover transmutation, divine defense and a second front line.
 
 ### Operational playbooks
 
@@ -233,17 +215,17 @@ Before level 20, activate Lingering Performance and then end the song when you n
 
 **Before combat:** mount the hippogriff, apply Divine Favor, Greater Magic Weapon, defensive paladin buffs and the needed shield/armor setup. Mark or Smite the priority enemy before the charge when action economy allows.
 
-**Opening turn:** charge with the mounted pair. The hippogriff’s pounce and terrain bypass create the first flank; the rider uses the full attack on the same target. Follow with Outflank/Seize the Moment attacks when allies threaten the target.
+**Opening turn:** use the hippogriff's **Flying Attack** with the mounted pair. The rider attacks the chosen target as a full-round action; terrain bypass and the flat-footed target help create the first flank. Follow with Outflank/Seize the Moment attacks when allies threaten the target.
 
 **Sustained loop:** maintain the mount, rotate Smite Evil/Mark of Justice on major targets, and use Lay on Hands or mercies only when they prevent a lost full-attack round. Treat the flying attack as a positioning tool, not as the only source of damage.
 
 #### Ghost Rider / Riding Vivisectionist
 
-**Before combat:** mount up, apply the Vivisectionist’s mutagen and defensive extracts, then use Greater Magic Weapon, Haste, Legendary Proportions and concealment. Pick the tether target before initiative if possible.
+**Before combat:** mount up, apply the Vivisectionist’s mutagen and defensive extracts, then use Greater Magic Weapon, Haste, Legendary Proportions and concealment. Enable Etheric Tether between rider and ghost mount before initiative if possible.
 
-**Opening turn:** apply **Etheric Tether** to the dangerous enemy, then charge the isolated target with the mount and rider. Use the rider’s sneak-attack/full-attack package while the mount blocks movement and protects the back line.
+**Opening turn:** activate **Etheric Tether** between the rider and ghost mount, then charge the isolated target with the mount and rider. Use the rider’s sneak-attack/full-attack package while the mount blocks movement and protects the back line.
 
-**Sustained loop:** keep the tether on the highest-value target, refresh mutagen/extract defenses between encounters, and use bombs or dispels only when a full attack is impossible.
+**Sustained loop:** keep Etheric Tether active between rider and mount, refresh mutagen/extract defenses between encounters, and use ranged attacks, dispels or support extracts only when a full attack is impossible.
 
 #### Weretouched
 
@@ -255,11 +237,11 @@ Before level 20, activate Lingering Performance and then end the song when you n
 
 #### Geomancer
 
-**Before combat:** apply Haste, True Seeing, Greater Invisibility or concealment, communal defenses and Spell Resistance as needed. Set the desired terrain/geomancy effect before the encounter and prepare the ray metamagic.
+**Before combat:** apply Haste, True Seeing, Greater Invisibility or concealment, communal defenses and Spell Resistance as needed. Prepare the ray metamagic; Geomancy is a free-action toggle for the next spell, not a persistent precombat buff.
 
 **Opening turn:** remove or reduce enemy defenses with Dispel Magic when necessary, then cast the strongest available fire ray (Scorching Ray or Hellfire Ray) at the priority target. Use Bolstered/Empowered/Maximized versions according to spell slots and metamagic.
 
-**Sustained loop:** continue ray volleys against single targets; use selective area control when enemies cluster. Keep the caster out of melee and let the front line create flat-footed or flanked targets.
+**Sustained loop:** continue ray volleys against single targets; use selective area control when enemies cluster. Enable the desired Geomancy effect immediately before the next creature-targeting spell; that spell consumes the toggle and deals +1d8 damage to you, so verify the terrain effect in the icon/log before committing metamagic. Keep the caster out of melee and let the front line create flat-footed or flanked targets.
 
 #### Angel Oracle
 
@@ -291,15 +273,17 @@ Before level 20, activate Lingering Performance and then end the song when you n
 
 **Opening turn:** begin with a preselected buff or a quickened control spell only if the party was not fully prebuffed. The BFT’s first job is to make KSS, Inciter and the front line hit; offensive casting is secondary.
 
+Choose **Powerful Change** for the BFT's stronger personal transmutation or **Shared Transmutation** to convert a personal spell for an ally; do not try to apply both to the same cast.
+
 **Sustained loop:** maintain dispels, emergency Greater Invisibility and targeted transformations. Do not overwrite a better size or Dexterity buff with a weaker late spell.
 
 #### Mutation Warrior
 
-**Before combat:** activate Mutagen, select the weapon training group and apply long-duration martial buffs. Set Outflank/Seize the Moment positioning before initiative.
+**Before combat:** activate Mutagen, equip the weapon from your chosen weapon-training group and apply long-duration martial buffs. Set Outflank/Seize the Moment positioning before initiative.
 
 **Opening turn:** charge or full-attack the target already marked by the Inciter/KSS control package. Use the bonus feats and weapon training to keep attacking instead of spending turns on small utility actions.
 
-**Sustained loop:** maintain mutagen, use Combat Reflexes opportunity attacks and switch weapon-training groups only when the enemy’s defenses justify losing an attack action.
+**Sustained loop:** maintain mutagen, use Combat Reflexes opportunity attacks and keep the selected weapon-training group active. Change the group only outside combat or through a planned respec/equipment plan.
 
 ## Combined evaluation
 
@@ -310,7 +294,7 @@ Before level 20, activate Lingering Performance and then end the song when you n
 | 3 | **Ghost Rider (S)** | Mount/tether safety and mounted Vivisectionist support | Excellent as a one-level Ghost Rider dip; strong as a mounted hybrid | The source’s late Mythic sequence and any path-dependent bonuses do not apply to a fresh IE Legend |
 | 4 | **Geomancer (S)** | Fire ray damage plus AoE; Hellfire Ray and Geomancy | Very good; the core ray plan survives IE Legend | The source is an Ember companion build and leaves race, deity, alignment and background implicit |
 | 5 | **Weretouched (S)** | Natural-attack tank/damage dealer with pounce, claws and aspect choices | Good after removing Demon-only assumptions | The source’s Demon/Kalavakus trip loop is unavailable when Legend is selected at IE MR3; shapeshifting gear also has known compatibility issues |
-| 6 | **Sable Company Marine (S)** | One-level dip for a pouncing hippogriff that ignores terrain | Excellent dip; strong mounted Paladin shell | The flying attack can be janky/bugged; the source build is a mounted Paladin and needs a pet |
+| 6 | **Sable Company Marine (S)** | One-level dip for a Flying Attack hippogriff: full-round mounted attack, terrain bypass and a flat-footed target | Excellent dip; strong mounted Paladin shell | The flying attack can be janky/bugged; the source build is a mounted Paladin and needs a pet |
 
 ### My combined recommendation
 
@@ -393,9 +377,9 @@ The table above is the optimized level-20 route. The old source’s level-19 Imp
 | 5 | Greater Heroism; Mass Cacophonous Call; Song of Discord; Mind Fog; Summon Monster V |
 | 6 | Overwhelming Presence; Waves of Ecstasy; Brilliant Inspiration; Greater Song of Discord; Summon Monster VI |
 
-### Recommended full IE Mythic route: Inciter 20 / Trickster
+### Recommended IE Mythic route: Inciter 20 / Trickster MR10
 
-For a fresh normal IE character, take Trickster if the goal is the strongest party control package. Keep the source’s generic mythic feats and use the separate Trickster trick slots in this order:
+For an IE mythic-entry character at level 20/MR10, take Trickster if the goal is the strongest party control package. Keep the source’s generic mythic feats and use the separate Trickster trick slots in this order:
 
 | Mythic rank | Generic choice | Trickster choice |
 |---:|---|---|
@@ -412,7 +396,7 @@ For a fresh normal IE character, take Trickster if the goal is the strongest par
 
 Perception II supplies the critical line for the melee attackers, while Persuasion I–III is the Inciter’s control finisher. If your party already has a stronger Persuasion controller, use the MR9–10 trick slots for Mobility or Lore (Religion) instead. Azata is the alternative for a caster-heavy team: take Favorable Magic, Zippy Magic, Life-Bonding Friendship and Incredible Might, then keep Spell Focus: Enchantment and Selective Spell as the core.
 
-## Source Mythic sequence (normal campaign only)
+## IE MR10 mythic sequence
 
 1. Last Stand  
 2. Extra Mythic Ability: Abundant Casting  
@@ -450,14 +434,14 @@ Before a boss: apply party buffs, position the two melee attackers for flanks, t
 
 # DLC6 — Kinetic Sharpshooter (SS)
 
-**Absolute strongest fresh-IE route:** Kinetic Sharpshooter 20 / Trickster, with a Heavy Crossbow.  
+**Absolute strongest IE Mythic route:** Kinetic Sharpshooter 20 / Trickster MR10, with a Heavy Crossbow.
 **Legend-only route:** Kinetic Sharpshooter 20 / Mutation Warrior 20, documented below as the 1–40 alternative.
 
 The current [Neoseeker class-ranking page](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/guides/Class_Rankings) rates Kinetic Sharpshooter SS. The established DLC6 source is [InEffect's Kinetic Archer Wenduag](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/builds/Kinetic_Archer_Wenduag_%28DLC6%29), which is Fighter 1 / Kinetic Sharpshooter 19 because Wenduag already has Fighter 1.
 
 KSS Charged Ammunition uses the equipped ranged weapon's attack, enhancement/applicable weapon properties and critical profile; community testing reports that base weapon dice and STR/composite damage are ignored; see the [KSS comprehensive test thread](https://www.reddit.com/r/Pathfinder_Kingmaker/comments/1vnrrjs/pathfinder_wrath_of_the_righteous_comprehensive/). It delivers only one kinetic blast per turn. It cannot Gather Power or use Deadly Earth. These rules are documented in the [GameFAQs Kineticist guide](https://gamefaqs.gamespot.com/pc/354971-pathfinder-wrath-of-the-righteous-inevitable-excess/faqs/80843/kineticist#Kinetic%20Sharpshooter) and the [LUDO KSS guide](https://origin.ludo.guide/guide/pathfinder-wrath-of-the-righteous/kinetic-sharpshooter).
 
-Fresh IE has two mutually exclusive starting structures. A normal fresh character starts level 20/MR10; a fresh Legend character starts level 40/MR3. See the [IE postlude](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/postlude-inevitable-excess). The Legend start retains only the two generic Mythic Hero choices before selecting Legend and does not continue through MR4–10; see [Legend mechanics](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/other-mythic-paths) and the [IE path discussion](https://steamcommunity.com/app/1184370/discussions/0/4031346570751578331/).
+Fresh IE has two mutually exclusive starting structures. The mythic entry is class level 20/MR10; the Legend entry is level 40/MR3 and does not continue through MR4–10. See the [IE postlude](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/postlude-inevitable-excess), [Legend mechanics](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/other-mythic-paths) and the [IE path discussion](https://steamcommunity.com/app/1184370/discussions/0/4031346570751578331/).
 
 ## Creation
 
@@ -473,7 +457,7 @@ Fresh IE has two mutually exclusive starting structures. A normal fresh characte
 | Skills | Max Perception, Stealth, Use Magic Device and Persuasion first. Your screenshot shows Persuasion only +4 while Mobility is already +32; move later ranks from Mobility into Persuasion if you intend to use Persuasion II/III. Use Trickery, Lore (Nature) or Knowledge (World) after those four priorities. Human + INT 14 supports this plan. |
 | Spellbook | None. This build is not a caster. Use party buffs/scrolls: Greater Magic Weapon, Haste, Heroic Invocation, True Seeing, communal defenses and Transformation from a support caster. |
 
-## Absolute strongest fresh-IE route: Kinetic Sharpshooter 20 / Trickster
+## Absolute strongest IE Mythic route: Kinetic Sharpshooter 20 / Trickster MR10
 
 Use this route for a new IE character when your only criterion is the highest current KSS ceiling. It starts at level 20/MR10, so there is no level-1-to-40 campaign inside IE. KSS20 keeps the full blast progression, Infusion Specialization rank 6 and the live Critical Overdrive capstone; see the [KSS feature reference](https://pathfinderkingmaker.fandom.com/wiki/Kinetic_Sharpshooter). Older tests reported an x4 overwrite, but your current screenshot shows **18–20 and x5** with Mythic Improved Critical Heavy Crossbow active. Keep that feat on your current patch and recheck the combat log after a major game update.
 
@@ -660,7 +644,7 @@ Use the legal 25-point-buy spread above. Put every level-up point into DEX at ch
 - **Single target with SR:** Blue Flame + Pure-Flame (one Substance infusion). Ascendant Element: Fire handles resistance/immunity; Pure-Flame handles Spell Resistance.
 - **Single target without SR:** Blue Flame + Rending Arrows (one Substance infusion). Rending stacks an AC penalty up to –10. Rending and Pure-Flame cannot be combined without Over-Infused Blasts, which is unavailable in a fresh Legend start.
 - **Line or cluster:** Use Detonation/Torrent. Chain Arrows is an unaltered-blast toggle and cannot be combined with Rending or Pure-Flame.
-- **Burst turn:** Use Quicken for a second blast. Rapid Shot and Manyshot do not create extra KSS blasts.
+- **Burst turn:** Use Quicken for a second blast only if the current combat log proves two Charged Ammunition entries and the expected extra Quiver cost; otherwise use Empowered/Maximized for the single blast. Rapid Shot and Manyshot do not create extra KSS blasts.
 - Read the combat log before assuming Weapon Specialization, Deadly Aim, elemental weapon procs or normal-arrow-only gear bonuses affect a charged blast.
 ## Optional demon-heavy split
 
@@ -686,7 +670,7 @@ If your specific IE party is fighting almost exclusively demons and you value th
 
 ## Evaluation
 
-Sable Company Marine is one of the best one-level dips in the entire game: it supplies a pouncing hippogriff that ignores terrain. The full source build wraps that dip in a Lawful Good Paladin shell. The mount is the real reason for the S ranking. Treat the flying attack as a quality-of-life feature that can be janky in some encounters.
+Sable Company Marine is one of the best one-level dips in the entire game: it supplies a hippogriff with Flying Attack, a full-round mounted attack that bypasses terrain and leaves the target flat-footed. The full source build wraps that dip in a Lawful Good Paladin shell. The mount is the real reason for the S ranking. Treat the flying attack as a quality-of-life feature that can be janky in some encounters.
 
 ## Creation
 
@@ -741,7 +725,7 @@ Sable Company Marine is one of the best one-level dips in the entire game: it su
 | 3 | Archon’s Aura; Delay Poison |
 | 4 | Eaglesoul; Inspiring Recovery |
 
-## Source Mythic sequence (normal campaign only)
+## IE MR10 mythic reference sequence
 
 1. Master Shapeshifter  
 2. Improved Critical (Mythic): Scimitar  
@@ -839,7 +823,7 @@ The dedicated DLC review highlights Ghost Rider as a strong one-level dip for Et
 | 2 | Barkskin; Animal Aspect; False Life |
 | 3 | Delay Poison |
 
-## Source Mythic sequence (normal campaign only)
+## IE MR10 mythic reference sequence
 
 1. Last Stand  
 2. Power Attack  
@@ -951,7 +935,7 @@ For the IE Legend adaptation, obtain the same defensive functions from party cas
 - Legendary Proportions or Frightful Aspect from a support caster
 - True Seeing and communal defenses as needed
 
-## Source Mythic sequence (normal campaign only)
+## IE MR10 mythic reference sequence
 
 1. Danse Macabre; Last Stand  
 2. Extra Mythic Ability: Master Shapeshifter  
@@ -1046,7 +1030,7 @@ Spells marked with an asterisk are supplied by the curse or gear in the source a
 - Bolster: Scorching Ray; Burning Arc; Fireball; Controlled Fireball; Fire Snake; Hellfire Ray (level 6 and level 7 versions); Firestorm.
 - Bolster + Empower: Scorching Ray; Fireball; Hellfire Ray (level 6 version).
 
-## Source Mythic sequence (normal campaign only)
+## IE MR10 mythic reference sequence
 
 1. Ascendant Element: Fire  
 2. Extra Mythic Ability: Abundant Casting  
@@ -1082,33 +1066,4 @@ If you want one build only:
 5. **Ghost Rider** for the mount/tether dip and mounted Vivisectionist.
 6. **Weretouched** for natural attacks after removing Demon-only assumptions.
 
-The central IE rule is the same for all six: select Legend at IE Mythic Rank 3 if that is the goal, and treat every cited Mythic Rank 4–10 line as a normal-campaign reference rather than an available IE Legend progression.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The central IE rule is the same for all six: select Legend at IE Mythic Rank 3 if that is the goal. For the IE Mythic entry, use the adapted MR10 sequence; for fresh IE Legend, every MR4–10 path feature is unavailable.
