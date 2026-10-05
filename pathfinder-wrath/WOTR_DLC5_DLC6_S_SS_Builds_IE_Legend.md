@@ -80,7 +80,7 @@ The Inciter song shares sneak-attack dice, Lethal Stance and Beast Totem with al
 | Background | Pickpocket |
 | Skills | Max Persuasion and Perception; keep Mobility high; put 1 rank in Use Magic Device and add Trickery or Stealth only if the party lacks it. Do not spend core ranks on Lore (Nature). |
 | Role | Party support, enchantment control, rage-power support |
-| Starting stats | STR 7, DEX 14, CON 14, INT 12, WIS 7, CHA 21; put every normal level-up point into CHA to reach 26 |
+| Starting stats | Source mercenary spread: STR 7, DEX 14, CON 14, INT 12, WIS 7, CHA 21 → 26. For a 25-point-buy IE main character use STR 7, DEX 14, CON 14, INT 12, WIS 8, CHA 22 → 27; put every normal level-up point into CHA. |
 | Hire timing | Level 20 is preferred by the source |
 | Key gear | Call to Violence; White Dragon; Mindmaster Eyes; Ring of Chaotic Fascination; Bracers of Mind Break; Twisted Temptation |
 | Endgame gear | Headband of Perfection +8; Mindmaster Eyes; Cloak of Reflections; Ring of Chaotic Fascination; Ring of Evasion; Bracers of Mind Break; Glass Amulet of Clarity; White Dragon; Wandering Conman; Twisted Temptation; Dagger of the Betrayer; Assertion of Dominance; Persistent Rods |
@@ -116,7 +116,7 @@ The Inciter song shares sneak-attack dice, Lethal Stance and Beast Totem with al
 
 ### Strongest Inciter talent overlay
 
-The table above is the optimized level-20 route. **Dispelling Attack** is a targeted Dispel on every shared sneak attack, with caster level equal to the character level. Use a weapon sneak attack (the source’s Dagger of the Betrayer, a rapier or a throwing weapon) to proc it; do not assume a spell ray will trigger the shared dispel on every patch. **Petrifying Strike** lowers enemy Dexterity and therefore AC; use **Weakening Wound** when removing DR is more valuable. If Dispelling Attack does not actually dispel on your current patch, use Petrifying Strike at level 14 and Weakening Wound at level 19. At Inciter 20, verify that **Hit a Nerve** lets an ally cast while the song is active and removes the song’s AC penalty; if your platform still blocks casting, treat that as a patch bug and turn the song off for caster rounds.
+The table above is the optimized level-20 route. The old source’s level-19 Improved Elven Immunities is omitted because Kindred-Raised Half-Elf may not retain that prerequisite; use Selective Spell plus an advanced rogue talent instead. **Dispelling Attack** is a targeted Dispel on every shared sneak attack, with caster level equal to the character level. Use a weapon sneak attack (the source’s Dagger of the Betrayer, a rapier or a throwing weapon) to proc it; do not assume a spell ray will trigger the shared dispel on every patch. **Petrifying Strike** lowers enemy Dexterity and therefore AC; use **Weakening Wound** when removing DR is more valuable. If Dispelling Attack does not actually dispel on your current patch, use Petrifying Strike at level 14 and Weakening Wound at level 19. At Inciter 20, verify that **Hit a Nerve** lets an ally cast while the song is active and removes the song’s AC penalty; if your platform still blocks casting, treat that as a patch bug and turn the song off for caster rounds.
 
 ## Sample level-20 spellbook
 
