@@ -66,7 +66,9 @@ The cited Neoseeker builds are ordinary level-20 builds written for the main cam
 
 ## Evaluation
 
-Inciter is the strongest support archetype in this list. It keeps the Skald’s party engine and adds more damage to the rage-song package. It is best as a level-20 hire in a melee-heavy party. For a fresh IE Legend main character, the class still works, but the original build’s Mythic Rank 4–10 support package is unavailable.
+Inciter is the strongest support archetype in this list. It keeps the Skald’s party engine and adds more damage to the rage-song package. It is best as a level-20 hire in a melee-heavy party. For a fresh normal IE character, the strongest control and crit-support route is **Inciter 20 / Trickster**; Azata is a valid caster-heavy alternative when Favorable Magic and Zippy Magic matter more than Trickster’s skill and critical tricks. For a fresh IE Legend main character, use the class core but do not assume Mythic Rank 4–10 support choices survive the Legend start.
+
+The Inciter song shares sneak-attack dice, Lethal Stance and Beast Totem with allies. Inciter’s Sneaky Tricks also makes selected rogue talents shareable. At level 14, the strongest party-support talent is **Advanced Rogue Talent: Dispelling Attack** with Dispel Focus and Greater Dispel Focus; at level 19 use **Petrifying Strike** or **Weakening Wound**. If the current patch still shows the old dispel bug, use Petrifying Strike as the reliable fallback. The underlying class progression is documented in the [GameFAQs Skald guide](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/skald) and the [Rogue advanced-talent rules](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/rogue).
 
 ## Creation
 
@@ -76,9 +78,9 @@ Inciter is the strongest support archetype in this list. It keeps the Skald’s 
 | Alignment | Any |
 | Deity | Any; the source does not specify one and Skald does not require a deity |
 | Background | Pickpocket |
-| Skills | Stealth or Trickery; Use Magic Device 1+, then party needs |
+| Skills | Max Persuasion and Perception; keep Mobility high; put 1 rank in Use Magic Device and add Trickery or Stealth only if the party lacks it. Do not spend core ranks on Lore (Nature). |
 | Role | Party support, enchantment control, rage-power support |
-| Starting stats | STR 7, DEX 14, CON 14, INT 12, WIS 7, CHA 21 → 26 |
+| Starting stats | STR 7, DEX 14, CON 14, INT 12, WIS 7, CHA 21; put every normal level-up point into CHA to reach 26 |
 | Hire timing | Level 20 is preferred by the source |
 | Key gear | Call to Violence; White Dragon; Mindmaster Eyes; Ring of Chaotic Fascination; Bracers of Mind Break; Twisted Temptation |
 | Endgame gear | Headband of Perfection +8; Mindmaster Eyes; Cloak of Reflections; Ring of Chaotic Fascination; Ring of Evasion; Bracers of Mind Break; Glass Amulet of Clarity; White Dragon; Wandering Conman; Twisted Temptation; Dagger of the Betrayer; Assertion of Dominance; Persistent Rods |
@@ -99,18 +101,22 @@ Inciter is the strongest support archetype in this list. It keeps the Skald’s 
 | 6 | Beast Totem (Lesser) |
 | 7 | Greater Spell Penetration |
 | 8 | Skald |
-| 9 | Elven Spirit; Canny Observer |
+| 9 | **Dispel Focus**; Canny Observer |
 | 10 | Skald |
 | 11 | Extra Rage Power: Beast Totem |
-| 12 | Greater Beast Totem |
-| 13 | Selective Spell |
-| 14 | Skald |
+| 12 | Greater Beast Totem; Sneaky Tricks unlocks shareable rogue talents |
+| 13 | **Greater Dispel Focus** |
+| 14 | Skald Talent: **Advanced Rogue Talent — Dispelling Attack** |
 | 15 | Extra Rage Power: Come and Get Me, or Ambuscading Spell |
 | 16 | Skald |
 | 17 | Extra Rage Power: Deadly Accuracy |
 | 18 | Lethal Accuracy |
-| 19 | Improved Elven Immunities |
-| 20 | Skald |
+| 19 | **Selective Spell**; Skald Talent: **Advanced Rogue Talent — Petrifying Strike** (Weakening Wound or Crippling Strike are alternatives) |
+| 20 | Master Skald; **Hit a Nerve** capstone |
+
+### Strongest Inciter talent overlay
+
+The table above is the optimized level-20 route. **Dispelling Attack** is a targeted Dispel on every shared sneak attack, with caster level equal to the character level. Use a weapon sneak attack (the source’s Dagger of the Betrayer, a rapier or a throwing weapon) to proc it; do not assume a spell ray will trigger the shared dispel on every patch. **Petrifying Strike** lowers enemy Dexterity and therefore AC; use **Weakening Wound** when removing DR is more valuable. If Dispelling Attack does not actually dispel on your current patch, use Petrifying Strike at level 14 and Weakening Wound at level 19. At Inciter 20, verify that **Hit a Nerve** lets an ally cast while the song is active and removes the song’s AC penalty; if your platform still blocks casting, treat that as a patch bug and turn the song off for caster rounds.
 
 ## Sample level-20 spellbook
 
@@ -122,6 +128,25 @@ Inciter is the strongest support archetype in this list. It keeps the Skald’s 
 | 4 | Freedom of Movement; Greater Invisibility; Echolocation; Dimension Door; Cure Critical Wounds; Summon Monster IV |
 | 5 | Greater Heroism; Mass Cacophonous Call; Song of Discord; Mind Fog; Summon Monster V |
 | 6 | Overwhelming Presence; Waves of Ecstasy; Brilliant Inspiration; Greater Song of Discord; Summon Monster VI |
+
+### Recommended full IE Mythic route: Inciter 20 / Trickster
+
+For a fresh normal IE character, take Trickster if the goal is the strongest party control package. Keep the source’s generic mythic feats and use the separate Trickster trick slots in this order:
+
+| Mythic rank | Generic choice | Trickster choice |
+|---:|---|---|
+| 1 | Last Stand | — |
+| 2 | Extra Mythic Ability: Abundant Casting | — |
+| 3 | Improved Abundant Casting | Perception I |
+| 4 | Extra Mythic Ability: Mythic Inspiration | Perception II; Knowledge (World) I |
+| 5 | Enforced Vigor | Persuasion I |
+| 6 | Mythic Spell Penetration | Persuasion II; Knowledge (Arcana) I |
+| 7 | Favorite Metamagic: Selective | Persuasion III; Infuse Magic Device |
+| 8 | Mythic Spell Focus: Enchantment | Knowledge (World) II |
+| 9 | Inspirational Leader | Perception III or Lore (Religion) I |
+| 10 | Extra Mythic Ability: Rupture Restraints | Greater Trick utility (Mobility or Knowledge) |
+
+Perception II supplies the critical line for the melee attackers, while Persuasion I–III is the Inciter’s control finisher. If your party already has a stronger Persuasion controller, use the MR9–10 trick slots for Mobility or Lore (Religion) instead. Azata is the alternative for a caster-heavy team: take Favorable Magic, Zippy Magic, Life-Bonding Friendship and Incredible Might, then keep Spell Focus: Enchantment and Selective Spell as the core.
 
 ## Source Mythic sequence (normal campaign only)
 
@@ -142,7 +167,20 @@ At fresh IE Legend, retain only the first two Mythic Hero choices. Do not plan o
 
 For a level-40 Legend extension, use:
 
-**Skald (Inciter) 20 / Mutation Warrior 20** — this is an adaptation, not the Neoseeker source. Keep the Skald spellbook and song as the core; use the extra Fighter levels for bonus feats, mutagen and weapon training. Recommended extra feat priorities are Outflank, Dazzling Display, Shatter Defenses, Improved Critical for the chosen weapon, Weapon Focus, Weapon Specialization, Combat Reflexes, Seize the Moment, Blind Fight and Toughness.
+**Skald (Inciter) 20 / Mutation Warrior 20** — this is an adaptation, not the Neoseeker source. Keep the Skald spellbook and song as the core; use the extra Fighter levels for bonus feats, mutagen and weapon training. Recommended extra feat priorities are Outflank, Dazzling Display, Shatter Defenses, Improved Critical for the chosen weapon, Weapon Focus, Weapon Specialization, Combat Reflexes, Seize the Moment, Blind Fight and Toughness. Do not expect Trickster Persuasion or later Inciter mythic feats after taking fresh IE Legend.
+
+### Inciter party configuration
+
+Use Inciter as the first-round party engine, not as a solo damage dealer:
+
+1. **Inciter 20 (Trickster):** activate Raging Song with Accept Rage on the melee attackers, Lethal Stance and Beast Totem. Open with Greater Heroism, Good Hope and Haste; use Selective Confusion, Song of Discord and Overwhelming Presence only after the party is in position.
+2. **Kinetic Sharpshooter 20:** the ranged finisher. It benefits from the song’s shared sneak dice and the Inciter’s enemy AC/Will penalties while staying outside melee.
+3. **Brown-Fur Transmuter or other Arcanist:** Greater Magic Weapon, Legendary Proportions or Transformation, Echolocation and emergency Displacement/Greater Invisibility.
+4. **Cleric/Oracle buffer:** Guarded Hearth, communal True Seeing, Death Ward, Protection from Energy and Remove Fear; this slot keeps the song user from spending turns on defensive cleanup.
+5. **Full-BAB frontliner:** Mutation Warrior, Demonslayer or Sohei with Outflank/Seize the Moment to turn shared sneak dice into reliable melee damage.
+6. **Flexible control/heal slot:** a Divine Hound, Witch or Loremaster for Frightful Aspect, dispels, heal and condition removal. A concrete companion shell is **Seelah + Regill + Ulbrig + Arueshalae/Wenduag**; replace one slot with **Sosiel or Daeran** when you need a dedicated divine buffer.
+
+Before a boss: apply party buffs, position the two melee attackers for flanks, turn on the song, then use Inciter’s Dispel/Selective control while KSS and the frontliners spend their turns attacking. If the party is caster-heavy, replace the second frontliner with an Azata-compatible controller and use Favorable Magic; the Inciter core remains unchanged.
 
 ---
 
@@ -168,12 +206,12 @@ Fresh IE has two mutually exclusive starting structures. A normal fresh characte
 | Weapon | Heavy Crossbow. Weapon Focus and Improved Critical apply to the weapon used for Charged Ammunition; Kinetic Blast weapon focus does not. |
 | Role | Single-target ranged damage, with optional line/AoE infusions. |
 | Starting abilities | 25-point buy before racial bonus: STR 12, DEX 16, CON 16, INT 14, WIS 12, CHA 7. Human +2 goes to DEX, so level-1 DEX is 18. Put every normal level-up point into DEX at character levels 4, 8, 12, 16, 20, 24, 28, 32, 36 and 40 for the maximum charged-blast attack bonus. Put Grand Mutagen's largest physical-stat bonus on DEX for charged-blast accuracy; use gear and secondary mutagen bonuses for CON. Move the last two level-up points to CON only if you prefer survivability over hit chance.
-| Skills | For the normal Trickster route, max Perception, Stealth, Use Magic Device and Persuasion first. Mobility is the first skill to sacrifice for Persuasion; use Trickery, Lore (Nature) or Knowledge (World) only after these four priorities. Human + INT 14 supports this plan without assuming every skill reaches its cap during Mutation Warrior levels. |
+| Skills | Max Perception, Stealth, Use Magic Device and Persuasion first. Your screenshot shows Persuasion only +4 while Mobility is already +32; move later ranks from Mobility into Persuasion if you intend to use Persuasion II/III. Use Trickery, Lore (Nature) or Knowledge (World) after those four priorities. Human + INT 14 supports this plan. |
 | Spellbook | None. This build is not a caster. Use party buffs/scrolls: Greater Magic Weapon, Haste, Heroic Invocation, True Seeing, communal defenses and Transformation from a support caster. |
 
 ## Absolute strongest fresh-IE route: Kinetic Sharpshooter 20 / Trickster
 
-Use this route for a new IE character when your only criterion is the highest current KSS ceiling. It starts at level 20/MR10, so there is no level-1-to-40 campaign inside IE. KSS20 keeps the full blast progression, Infusion Specialization rank 6 and the live Critical Overdrive capstone; see the [KSS feature reference](https://pathfinderkingmaker.fandom.com/wiki/Kinetic_Sharpshooter). Current tests report that its threat-range bonus stacks correctly, while the blast multiplier may be hard-capped at x4; verify the combat log on your patch. See the [current KSS crit test thread](https://steamcommunity.com/app/1184370/discussions/5/834997363209833557/).
+Use this route for a new IE character when your only criterion is the highest current KSS ceiling. It starts at level 20/MR10, so there is no level-1-to-40 campaign inside IE. KSS20 keeps the full blast progression, Infusion Specialization rank 6 and the live Critical Overdrive capstone; see the [KSS feature reference](https://pathfinderkingmaker.fandom.com/wiki/Kinetic_Sharpshooter). Older tests reported an x4 overwrite, but your current screenshot shows **18–20 and x5** with Mythic Improved Critical Heavy Crossbow active. Keep that feat on your current patch and recheck the combat log after a major game update.
 
 ### Primary creation and level plan
 
@@ -199,7 +237,7 @@ Use Human, Pickpocket, Lamashtu, Chaotic Neutral, Heavy Crossbow, the legal 25-p
 | 16 | KSS 16 | — | Expanded Defense: Air (grants Enveloping Winds) |
 | 17 | KSS 17 | Improved Precise Shot | Pure-Flame for Blue Flame; combine with Rending only when Over-Infused Blasts works; Infusion Specialization rank 5 |
 | 18 | KSS 18 | — | Aerial Evasion, which requires Enveloping Winds |
-| 19 | KSS 19 | Improved Initiative or Blind-Fight | Chain Arrows is an unaltered form; use it separately from Substance infusions |
+| 19 | KSS 19 | Improved Initiative or Blind-Fight | Chain Arrows; **Metakinetic Master — Empowered (default)**. Use Quicken only if your combat log proves it creates a second KSS blast. |
 | 20 | KSS 20 | — | Celerity; **Critical Overdrive**; Infusion Specialization rank 6 |
 
 **Level-10 exact choice:** select `Kineticist Bonus Feat — Fire`, then select `Iron Will`. Do not select `Skill Focus — Lore (Nature)` for this damage build. `Skilled Kineticist` is a utility alternative: it automatically buffs the skills added by your primary element, including Fire's `Lore (Nature)`, but it does not increase blast attack, damage, crit range or infusion power.
@@ -223,35 +261,45 @@ The First Ascension screen has two different choices that appear next to each ot
 
 `Bit of Fun` does not itself finalize the later path selection. When the IE route presents the path choice, select **Trickster**, then take Perception I and Perception II as specified below.
 
-- MR1: Last Stand.
+- MR1: **Last Stand**; keep **Bit of Fun** in the Trickster-linked slot.
 - MR2: **Extra Mythic Ability: Ascendant Element: Fire**. MR2 is a Mythic Feat slot, so Ascendant Element must be taken through Extra Mythic Ability.
-- MR3: **Over-Infused Blasts** in the generic Mythic Ability slot; choose **Trickster** and immediately choose Mythic Trick: **Perception I**. These are separate selections at the same rank.
-- MR4: take **Point-Blank Shot (Mythic)** in the generic Mythic Feat slot if it is still unspent. In the Trickster slots, take Improved Mythic Trick: **Perception II** and Mythic Trick: **Knowledge (World) I**. Perception II unlocks the three Heavy Crossbow critical feats; take the first two at KSS13/KSS15, and use Improved Precise Shot at KSS17 because current KSS20 tests can hard-cap the multiplier at x4.
-- MR5: **Rupture Restraints** for IE condition and movement protection, plus Mythic Trick: **Persuasion I**. Over-Infused Blasts is deliberately taken at MR3 because it is available there and immediately enables the strongest two-substance single-target tests.
-- MR6: take **Spell Penetration (Mythic)** in the generic Mythic Feat slot; Improved Mythic Trick: **Persuasion II**; Mythic Trick: **Stealth I**. MR6 has only one Improved Mythic Trick slot, so do not try to select Knowledge (World) II here as a second upgrade.
-- MR7: take **The Bigger They Are** in the generic Mythic Ability slot; Greater Mythic Trick: **Persuasion III**; Mythic Trick: **Infuse Magic Device**.
-- MR8: take **Weapon Focus (Mythic) — Heavy Crossbow** in the generic Mythic Feat slot; Improved Mythic Trick: **Knowledge (World) II**; Mythic Trick: **Reuse Magic Device**.
-- MR9: take **Ranging Shots** in the generic Mythic Ability slot; Improved Mythic Trick: **Stealth II**; Mythic Trick: **Lore (Religion) I**.
-- MR10: take **Deadly Aim (Mythic)** in the generic Mythic Feat slot; Greater Mythic Trick: **Knowledge (World) III**; Mythic Trick: **Mobility I**.
-- Do not use Mythic Improved Critical: Heavy Crossbow as the default generic feat while the KSS20 Critical Overdrive multiplier is hard-capped at x4. Test it in your combat log first; use the reliable ranged bonuses above for the primary route.
-- The normal Trickster sequence is Perception I → Perception II, Knowledge (World) I/II, then Persuasion I/II/III. Knowledge (World) II changes a natural 1 on a skill check into a 20; Persuasion II can paralyze demoralized enemies that fail their Will saves.
-- **Kinetic Overcharge warning:** do not select this for Kinetic Sharpshooter. Its prerequisite and effect are tied to `Gather Power`, while KSS replaces that mechanic with Kinetic Quiver and cannot use Gather Power. It appears in the list but does not provide the intended burn reduction for this archetype.
-- Use Trick Fate, the late level-7 Trickster spell, before an IE boss. The [Trickster guide](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/trickster) documents Perception II, the critical feats and Trick Fate.
+- MR3: **Over-Infused Blasts**; choose Trickster and take Mythic Trick **Perception I**.
+- MR4: **Weapon Focus (Mythic) — Heavy Crossbow**; take Improved Mythic Trick **Perception II** and Mythic Trick **Knowledge (World) I**. Your screenshot has this legal combination.
+- MR5: **Rupture Restraints**; take Mythic Trick **Persuasion I**.
+- MR6: **Spell Penetration (Mythic)**; take Improved Mythic Trick **Persuasion II** and Mythic Trick **Stealth I**.
+- MR7: **Ranging Shots**; take Greater Mythic Trick **Persuasion III** and Mythic Trick **Infuse Magic Device**.
+- MR8: **Deadly Aim (Mythic)**; take Improved Mythic Trick **Knowledge (World) II** and Mythic Trick **Lore (Religion) I**.
+- MR9: **The Bigger They Are**; take Improved Mythic Trick **Reuse Magic Device** and Mythic Trick **Mobility I**. If you can respec, putting The Bigger They Are at MR7 and Ranging Shots at MR9 gives the earlier attack bonus; your current order is legal.
+- MR10: **Improved Critical (Mythic) — Heavy Crossbow**; take Greater Mythic Trick **Knowledge (World) III** and Mythic Trick **Knowledge (Arcana) I**. Your screenshot’s x5 threat profile confirms that this feat is active on your current patch.
+- There is no hard feat/ability conflict in the screenshot. The only practical conflict is investment: Persuasion II/III is weak at Persuasion +4 and CHA 7. Move ranks out of Mobility, add Eagle’s Splendor/CHA gear, and keep the tricks only if you want their control effect.
+- **Kinetic Overcharge** remains a bad KSS pick: its prerequisite and effect use `Gather Power`, which KSS replaces with Kinetic Quiver.
+- Use **Trick Fate** before an IE boss. The [Trickster guide](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/trickster) documents Perception II, the critical feats and Trick Fate.
 - KSS has no class spellbook. Party casters or scrolls provide Greater Magic Weapon, Haste, Heroic Invocation/Greater Heroism, True Seeing, Death Ward, communal defenses and Transformation.
 
 ### Trickster spell picks for KSS
 
 The Trickster spellbook is utility for this build; it does not increase Charged Ammunition damage. Prefer no-save self-buffs and movement tools over low-DC offensive spells.
 
-| Mythic rank | New spell picks |
-|---:|---|
-| 3 | **Expeditious Retreat**, **Reduce Person**, **Vanish** (level 1) |
-| 4 | **Blur**, **Mirror Image** (level 2); if the interface asks for one additional level-1 spell, choose **Grease** |
-| 5 | **Displacement** and **Invisibility, Almost Greater** (level 3) |
-| 6 | **Greater Invisibility** and **Chameleon Stride, Greater** (level 4) |
-| 9 | **Trick Fate** (level 7); save it for a boss burst turn |
+| Mythic rank | Spell level | Exact priority picks |
+|---:|---:|---|
+| 1 | 1 | **Expeditious Retreat**, **Reduce Person**, **Vanish**. Grease is the spare control slot; Feather Step is the terrain alternative. |
+| 2 | 2 | **Blur**, **Mirror Image**, **Invisibility**. Keep Cat’s Grace only when no other caster supplies Dexterity. |
+| 3 | 3 | **Displacement**, **Invisibility, Almost Greater**, **Slow**. Hallucinogenic Cloud is the lower-priority control alternative. |
+| 4 | 4 | **Greater Invisibility**, **Chameleon Stride, Greater**, **Phantasmal Killer**. Replace the offensive pick with Mass Reduce Person if your DC is poor. |
+| 5 | 5 | **Microscopic Proportions**, **Phantasmal Web**, **Mind Fog**. Dominate Person is a single-target alternative; Rain of Halberds is a damage filler. |
+| 6 | 6 | **Cat’s Grace, Mass**, **Phantasmal Putrefaction**, **Umbral Strike**. Use Eagle’s Splendor, Mass only for a Persuasion-heavy setup. |
+| 7 | 7 | **Trick Fate**, **Mass Invisibility**, **Insanity**. Greater Shadow Conjuration is the safe replacement when Insanity’s save is unreliable. |
+| 8–10 | extra slots | No new spell level is required. Add extra casts of **Greater Invisibility**, **Displacement**, **Cat’s Grace, Mass**, **Phantasmal Web/Putrefaction** and **Trick Fate**. |
 
-Keep **Reduce Person** for the strict combat route: it can provide a size-based attack benefit and Dexterity if no stronger Dexterity enhancement or size-changing buff is already active. Use **Feather Step** instead only if you deliberately avoid size changes and value terrain mobility more than attack accuracy.
+Keep **Reduce Person** for the strict combat route: it can provide a size-based attack benefit and Dexterity if no stronger Dexterity enhancement or size-changing buff is already active. Use **Feather Step** instead only if you deliberately avoid size changes and value terrain mobility more than attack accuracy. These are Trickster utility spells; they do not increase Charged Ammunition damage.
+
+### Screenshot audit and optimization notes
+
+Your attached level-20 sheet is internally legal: Heavy Crossbow focus, the full Perception critical chain, Spell Penetration (Mythic), Ranging Shots, The Bigger They Are, Deadly Aim (Mythic), Mythic Improved Critical and the three Trickster skill lines can coexist. The sheet also shows **18–20 / x5**, so the old x4 warning does not apply to this save. Keep Mythic Improved Critical Heavy Crossbow unless a future patch changes the combat log.
+
+Your only real weakness is skill allocation. Persuasion is +4 while Mobility is +32, so Persuasion II/III will not reliably paralyze or demoralize high-Will enemies. Move later ranks from Mobility to Persuasion and use Eagle’s Splendor or Charisma gear. If you do not want to respec skills, treat Persuasion as utility and leave the rest of the mythic sequence unchanged.
+
+At KSS19, the screenshot shows Metakinesis — Quicken. For a one-blast-per-turn KSS, **Empowered** is the strongest default because it adds damage without depending on a second blast bug. Keep Quicken only if the combat log visibly records two KSS blasts in one round; otherwise retrain to Empowered.
 
 ### Primary combat routine
 
@@ -259,10 +307,23 @@ Keep **Reduce Person** for the strict combat route: it can provide a size-based 
 - Boss with high SR: Blue Flame + Pure-Flame.
 - If your patch accepts Over-Infused Blasts, combine Rending Arrows + Pure-Flame on Blue Flame for the strongest single-target line; confirm both Substance effects in the combat log.
 - Line/cluster: unaltered Blue Flame + Chain Arrows.
-- Quicken supplies the second blast of the round. Rapid Shot and Manyshot do not add KSS blasts.
+- KSS normally delivers one Charged Ammunition blast per turn. **Metakinesis — Empowered** is the reliable sustained level-19 choice. Keep **Quicken** only when your own combat log shows that it creates a second KSS blast on the current patch; Rapid Shot and Manyshot do not add blasts.
 - Create the Quiver with 1 Burn at KSS3 and refresh it when charges run out.
 - Avoid Exploding Arrows as the default attack because current reports show inconsistent Quiver/Infusion Specialization discounts.
 - KSS cannot use Gather Power, Deadly Earth, Kinetic Blade, Eruption, Blade Whirlwind, Extended Range or Fragmentation.
+
+### KSS party configuration
+
+Run KSS as the ranged finisher in a six-person team:
+
+1. **KSS 20 / Trickster:** Fire → Fire → Air, Blue Flame for SR-resistant targets, Rending/Pure-Flame only when the combat log confirms both substance infusions, and Trick Fate for the boss turn.
+2. **Inciter 20 / Trickster:** Accept Rage on the melee attackers, Lethal Stance, Beast Totem and shared sneak dice. The Inciter supplies the party-wide damage multiplier and enemy AC/Will pressure.
+3. **Brown-Fur Transmuter or Arcanist:** Greater Magic Weapon, Haste, Heroic Invocation, Legendary Proportions/Transformation, Echolocation and emergency Greater Invisibility.
+4. **Cleric/Oracle buffer:** Guarded Hearth, communal True Seeing, Death Ward, Protection from Energy, Freedom of Movement and Remove Fear.
+5. **Full-BAB melee striker:** Mutation Warrior, Demonslayer or Sohei with Outflank and Seize the Moment. Keep this character adjacent to the Inciter so the song’s shared sneak dice and flanking trigger consistently.
+6. **Control/heal flex:** Witch, Loremaster or Divine Hound for dispels, hexes, Frightful Aspect, Heal and condition removal.
+
+Buff order is: communal defenses and Greater Magic Weapon, transmutations and Haste, Inciter song, then KSS Quiver and boss debuffs. KSS stays at range while the two melee characters create flanks; do not make the KSS spend turns chasing a target just to trigger Ranging Shots.
 
 ### Compatibility variant: KSS19 / Fighter1
 
