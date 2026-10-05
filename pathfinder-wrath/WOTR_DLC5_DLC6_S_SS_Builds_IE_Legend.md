@@ -93,6 +93,8 @@ These are included in the IE scope but are not yet final build entries: **Kineti
 
 ### IE party shells
 
+For the concrete six-person rosters, class levels and role-by-role abilities for the five main end states, see [IE Party Configurations](./WOTR_IE_Party_Configurations.md). The short shells below remain as a quick reference; the linked file is the authoritative party matrix.
+
 **IE Mythic entry: level 20 / MR10 party:**
 
 1. Main character: Seeker Oracle 16 / Scaled Fist Monk 1 / Paladin 2 / Hellknight 1 / Angel, Stigmatized Witch 10 / Loremaster 9 / Crossblooded Sorcerer 1 / Lich, Sword Saint 20 / Trickster or KSS 20 / Trickster.

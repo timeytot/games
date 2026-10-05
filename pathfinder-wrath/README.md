@@ -6,6 +6,7 @@ Each playthrough has its own folder. A save loads the mod config that matches it
 
 - [Buff It 2 The Limit — generic guide](./BuffIt-Guide.md) — buttons, live file path, JSON fields, personal spells, red-row debugging, restore checklist. Playthrough folders only store GameId pointers and config copies.
 - [DLC5/DLC6 S/SS build guide](./WOTR_DLC5_DLC6_S_SS_Builds_IE_Legend.md) — complete English DLC5/DLC6 tier tables plus Kinetic Sharpshooter, Inciter, Trickster, Legend, and other S/SS build plans.
+- [IE party configurations](./WOTR_IE_Party_Configurations.md) — concise six-person rosters with exact class levels and the abilities each slot supplies for Angel Oracle, Lich, Kinetic Sharpshooter, Sword Saint and Inciter Skald.
 - [IE build research notes](./WOTR_IE_Build_Research_Notes.md) — reusable IE and Kinetic Sharpshooter mechanics and source links.
 
 ## Playthroughs
