@@ -53,8 +53,8 @@ The Sword Saint bonus-feat levels are included in the table. If a particular res
 | 3 | **Critical Focus** |
 | 5 | **Staggering Critical**; Sword Saint bonus: **Blind Fight** |
 | 7 | **Stunning Critical** |
-| 9 | **Weapon Specialization: Heavy Pick** |
-| 11 | **Improved Critical: Heavy Pick**; Sword Saint bonus: **Improved Improved Critical: Heavy Pick** |
+| 9 | **Improved Critical: Heavy Pick** |
+| 11 | **Weapon Specialization: Heavy Pick**; Sword Saint bonus: **Improved Improved Critical: Heavy Pick** |
 | 13 | **Improved Improved Improved Critical: Heavy Pick** |
 | 15 | **Improved Improved Improved Critical Improved: Heavy Pick** |
 | 17 | **Greater Weapon Specialization: Heavy Pick**; Sword Saint bonus: **Critical Mastery** |
@@ -232,7 +232,7 @@ The compact mythic table above describes the target end state. The in-game Trick
 
 `Infuse Magic Device` is the UI name for the first UMD trick. The final Wizard-book trick is `Use Magic Device III`; do not search for a feat named “Use Magic Device I”. If `Knowledge (Arcana) II` was selected in the MR9 Improved Trick slot, replace it with **Trickery II**. Arcana I is a harmless item-identification bonus; Trickery II is the PvP dispel tool.
 
-When Hilor retrains this already-completed Trickster, World III remains active while ordinary slots are replayed. Use the following order: level 3 **Critical Focus**, level 5 **Staggering Critical**, level 7 **Stunning Critical** (or Blinding), level 9 **Weapon Specialization**, level 11 **Improved Critical** plus the Sword Saint bonus **Improved Improved Critical**, levels 13 and 15 for the other two Trickster critical feats, level 17 **Greater Weapon Specialization** plus bonus **Critical Mastery**, and level 19 **Greater Weapon Focus**. MR4 still cannot be selected before character level 11; World III does not change mythic-rank gates. If the current patch refuses Critical Mastery in the level-17 bonus list, use the fallback legal route: Staggering Critical at level 17 normal, Stunning/Blinding Critical at the level-17 bonus slot, and Critical Mastery at level 19 normal, sacrificing Greater Weapon Specialization and Greater Weapon Focus.
+When Hilor retrains this already-completed Trickster, World III remains active while ordinary slots are replayed. Use the following order: level 3 **Critical Focus**, level 5 **Staggering Critical**, level 7 **Stunning Critical** (or Blinding), level 9 **Improved Critical**, level 11 **Weapon Specialization** plus the Sword Saint bonus **Improved Improved Critical**, levels 13 and 15 for the other two Trickster critical feats, level 17 **Greater Weapon Specialization** plus bonus **Critical Mastery**, and level 19 **Greater Weapon Focus**. MR4 still cannot be selected before character level 11; World III does not change mythic-rank gates. If the current patch refuses Critical Mastery in the level-17 bonus list, use the fallback legal route: Staggering Critical at level 17 normal, Stunning/Blinding Critical at the level-17 bonus slot, and Critical Mastery at level 19 normal, sacrificing Greater Weapon Specialization and Greater Weapon Focus.
 
 ## Current-save audit checklist
 
