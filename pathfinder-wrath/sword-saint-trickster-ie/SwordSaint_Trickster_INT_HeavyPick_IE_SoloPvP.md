@@ -50,17 +50,17 @@ The Sword Saint bonus-feat levels are included in the table. If a particular res
 | Character level | Feat |
 |---:|---|
 | 1 | **Power Attack**; **Improved Initiative** (Human bonus) |
-| 3 | **Combat Reflexes** |
-| 5 | **Dodge**; Sword Saint bonus: **Blind Fight** |
-| 7 | **Weapon Specialization: Heavy Pick** |
-| 9 | **Improved Critical: Heavy Pick** |
-| 11 | **Critical Focus**; Sword Saint bonus: **Improved Improved Critical: Heavy Pick** |
+| 3 | **Critical Focus** |
+| 5 | **Staggering Critical**; Sword Saint bonus: **Blind Fight** |
+| 7 | **Stunning Critical** |
+| 9 | **Weapon Specialization: Heavy Pick** |
+| 11 | **Improved Critical: Heavy Pick**; Sword Saint bonus: **Improved Improved Critical: Heavy Pick** |
 | 13 | **Improved Improved Improved Critical: Heavy Pick** |
 | 15 | **Improved Improved Improved Critical Improved: Heavy Pick** |
-| 17 | **Staggering Critical**; Sword Saint bonus: **Stunning Critical** |
-| 19 | **Critical Mastery** |
+| 17 | **Greater Weapon Specialization: Heavy Pick**; Sword Saint bonus: **Critical Mastery** |
+| 19 | **Greater Weapon Focus: Heavy Pick** |
 
-Perception II unlocks the three Trickster critical feats in the table. Knowledge (World) III does **not** replace Perception II and does **not** give extra feat slots. Its prerequisite override applies to ordinary character-level feat choices after you take the trick; it does not override Magus bonus-feat validation. This Hilor route deliberately takes **Critical Focus** at the legal level-11 normal slot, takes **Staggering Critical** and **Stunning Critical** at level 17 after World III is available, and takes **Critical Mastery** in the level-19 normal slot. That makes the Fighter-14 requirement on Critical Mastery a legitimate World III choice without using Toybox to inject a bonus feat.
+Perception II unlocks the three Trickster critical feats in the table. Knowledge (World) III does **not** replace Perception II and does **not** give extra feat slots. When Hilor retrains an existing Trickster who already owns World III, the trick remains available while the ordinary level-up slots are replayed; it does not bypass the separate Magus bonus-feat rules. This legal route takes Critical Focus, Staggering Critical and Stunning Critical in ordinary slots first, then takes Critical Mastery in the level-17 Sword Saint bonus slot after Sword Saint Fighter Training supplies the effective Fighter level and the three critical prerequisites are already present. The level-19 normal slot remains Greater Weapon Focus.
 
 ### World III all-feat pass
 
@@ -68,7 +68,7 @@ The current WotR feat list was checked against the game's full weapon, critical,
 
 | Candidate | Decision | Reason |
 |---|---|---|
-| Critical Focus + Staggering Critical + Stunning Critical + Critical Mastery | **Default Hilor-legal package** | Critical Focus is taken at level 11, the two riders at level 17, and Critical Mastery at level 19 after World III. Critical Mastery applies both rider effects on each critical hit. If Stunning Critical is missing because the Lord of Nothing DLC is not installed, use **Blinding Critical** instead. |
+| Critical Focus + Staggering Critical + Stunning Critical + Critical Mastery | **Default Hilor-legal package** | The first three are taken in ordinary level-up slots while the existing World III trick is active during Hilor retraining; Critical Mastery is then taken in the level-17 Sword Saint bonus slot after its prerequisites are satisfied. If Stunning Critical is missing because the Lord of Nothing DLC is not installed, use **Blinding Critical** instead. |
 | Improved Blind Fight → Greater Blind Fight | Concealment variant | Removes miss chance below total concealment; Greater reduces total-concealment miss to 20% and keeps the reroll. Use this in place of the critical-control package against Displacement/stealth-heavy opponents or critical-immune targets. |
 | Sickening Critical | One-slot control alternative | Applies a no-save sickened penalty on critical hits. It is a good substitute for Greater Weapon Focus if you want some control without spending four slots; it still obeys the one-critical-feat-per-hit rule unless Critical Mastery is also taken. |
 | Accomplished Sneak Attacker | Damage variant | Trickster supplies the Sneak Attack prerequisite at MR3; this adds 1d6 precision damage. It costs a legal normal feat slot, so use it only if your opening reliably denies Dexterity (for example, a successful Prescient Attack or Greater Invisibility). |
@@ -78,9 +78,9 @@ The current WotR feat list was checked against the game's full weapon, critical,
 | Shatter Defenses, Outflank, Cleave line | **Do not take in solo default** | Shatter Defenses depends on a successful demoralize and only helps attacks after the first; Outflank is a teamwork feat; Cleave is a multi-target/PvE line. |
 | Piranha Strike, Fencing/Slashing Grace | **Do not take** | They are for finesse or the listed one-handed weapons; Death's Consonant Heavy Pick is a Strength/Intelligence one-handed martial pick, not a finesse weapon. |
 
-For your current save, the Hilor-only respec changes are: remove **Greater Weapon Focus: Heavy Pick**, **Greater Weapon Specialization: Heavy Pick** and **Greater Blind Fight**; keep **Dodge**, **Weapon Specialization: Heavy Pick**, **Blind Fight** and **Critical Focus**; add **Staggering Critical**, **Stunning Critical** (or **Blinding Critical** without DLC5) and **Critical Mastery**. This uses only the three post-World-III slots: level 17 normal, level 17 Sword Saint bonus and level 19 normal. If concealment is more important than the second critical rider, keep Greater Blind Fight and drop Stunning Critical; that is the defensive variant.
+For your current save, use Hilor and reproduce the table exactly: remove **Dodge**, **Combat Reflexes** and **Greater Blind Fight**; keep **Weapon Specialization**, **Greater Weapon Specialization**, **Blind Fight** and **Greater Weapon Focus**; add **Critical Focus**, **Staggering Critical**, **Stunning Critical** (or **Blinding Critical** without DLC5) and **Critical Mastery**. If concealment is more important than the extra weapon damage, replace Greater Weapon Specialization with Greater Blind Fight; that is the defensive variant.
 
-If you expect a spell-heavy tournament rather than melee-heavy opponents, replace **Greater Weapon Focus** (the normal level-11 slot in the damage variant) with **Spell Penetration**. Keep **Critical Focus** and **Critical Mastery**; they remain the better use of the remaining late slots when the fight reaches melee.
+If you expect a spell-heavy tournament rather than melee-heavy opponents, replace **Greater Weapon Focus** at level 19 with **Spell Penetration**. Keep **Critical Focus** and **Critical Mastery**; they remain the better use of the remaining slots when the fight reaches melee.
 
 ## Magus Arcana
 
@@ -232,7 +232,7 @@ The compact mythic table above describes the target end state. The in-game Trick
 
 `Infuse Magic Device` is the UI name for the first UMD trick. The final Wizard-book trick is `Use Magic Device III`; do not search for a feat named “Use Magic Device I”. If `Knowledge (Arcana) II` was selected in the MR9 Improved Trick slot, replace it with **Trickery II**. Arcana I is a harmless item-identification bonus; Trickery II is the PvP dispel tool.
 
-When leveling from 10 to 11, MR4 is still locked. The character-level gate still applies, so MR4 cannot be selected before level 11. Keep the legal level-11 normal choice **Critical Focus** and the Sword Saint bonus choice **Improved Improved Critical: Heavy Pick**. World III does not grant MR4 early and does not replace Perception II or Mythic Improved Critical; it only removes prerequisites for later ordinary level-up feat choices. The level-17 normal/bonus slots and level-19 normal slot are the slots used for the two critical riders and Critical Mastery.
+When Hilor retrains this already-completed Trickster, World III remains active while ordinary slots are replayed. Use the following order: level 3 **Critical Focus**, level 5 **Staggering Critical**, level 7 **Stunning Critical** (or Blinding), level 9 **Weapon Specialization**, level 11 **Improved Critical** plus the Sword Saint bonus **Improved Improved Critical**, levels 13 and 15 for the other two Trickster critical feats, level 17 **Greater Weapon Specialization** plus bonus **Critical Mastery**, and level 19 **Greater Weapon Focus**. MR4 still cannot be selected before character level 11; World III does not change mythic-rank gates. If the current patch refuses Critical Mastery in the level-17 bonus list, use the fallback legal route: Staggering Critical at level 17 normal, Stunning/Blinding Critical at the level-17 bonus slot, and Critical Mastery at level 19 normal, sacrificing Greater Weapon Specialization and Greater Weapon Focus.
 
 ## Current-save audit checklist
 
@@ -240,7 +240,7 @@ When leveling from 10 to 11, MR4 is still locked. The character-level gate still
 
 In a standalone Inevitable Excess start, **Hilor is already in the Threshold camp**. Talk to him and choose the retraining/respec option. Whether that dialogue appears is controlled by the difficulty setting **Enable Character Retrain**; if it is disabled, set the game to a Custom difficulty with retraining enabled.
 
-For a legitimate Hilor rebuild, select the mythic ranks in order and take **Knowledge (World) III at MR7 before choosing the level-17 feats**. The legal route above uses Critical Focus earlier at level 11, then Staggering Critical at level 17, Stunning/Blinding Critical in the level-17 Sword Saint bonus slot, and Critical Mastery at level 19. Do not put World III-only choices into the level-5/11/17 Magus bonus slot, and do not use Toybox to inject feats that the level-up screen rejects.
+For a legitimate Hilor rebuild of your existing MR10 Trickster, select the mythic ranks in order and replay the ordinary feat slots with World III retained. World III may bypass prerequisites in the ordinary slots, but it does not bypass the separate Magus bonus-feat validation. Therefore the two level-17 choices are legal because the ordinary slots already supplied Critical Focus, Staggering Critical and Stunning/Blinding Critical; Sword Saint Fighter Training supplies the effective Fighter level for Critical Mastery. Do not use Toybox to inject feats that the level-up screen rejects.
 
 For the actual endgame save, the following corrections matter more than the unbuffed character-sheet numbers:
 
