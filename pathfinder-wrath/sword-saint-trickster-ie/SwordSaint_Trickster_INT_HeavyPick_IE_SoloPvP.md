@@ -119,6 +119,8 @@ The important Trickster route is:
 - Perception I → Perception II: unlocks the expanded critical chain.
 - Knowledge (World) I → II → III: the second rank changes natural 1s to 20s; rank III removes feat prerequisites.
 - Use Magic Device I → Reuse Magic Device → Use Magic Device III: grants a Wizard spellbook that can copy scrolls as a Wizard of character level.
+- Persuasion I → Persuasion II: Persuasion I demoralizes enemies as combat begins; Persuasion II can paralyze a target that fails the follow-up Will save without spending a separate combat action. This is the default MR9 Improved Trick for this INT Sword Saint.
+- Trickery I remains useful as a dispel check, but Trickery II is a situational anti-buff variant rather than the default: it is a standard action, has no ranged use, and applies a -20 penalty to the Trickery check.
 
 Do not use the Trickster feats as a bridge into Legend. This document is the direct Trickster version only.
 
@@ -196,7 +198,7 @@ Dimension Strike, Prescient Attack and Arcane Accuracy compete for the swift-act
 ## Matchup rules
 
 - **Against ordinary martial builds:** Dimension Strike + Trick Fate is the primary kill window.
-- **Against Fortification or Lich Bone Shield:** critical damage is not the plan. Use Greater Dispel or Trickery II's dispel option, then attack normally; Bone Shield specifically grants critical-hit immunity. Corrupt Magic is a Lich tool, not a Sword Saint spell.
+- **Against Fortification or Lich Bone Shield:** critical damage is not the plan. Use Greater Dispel or, if you deliberately chose the situational Trickery II variant, its dispel option, then attack normally; Bone Shield specifically grants critical-hit immunity. Corrupt Magic is a Lich tool, not a Sword Saint spell.
 - **Against Aeon:** expect buffs to be stripped. Keep Mind Blank, Freedom of Movement, Death Ward and a second defensive layer; do not spend every resource on a single opening attack.
 - **Against Last Stand:** first-round damage is only a tempo advantage. Dual Kukri is a viable alternate chassis if the rule set rewards long fights.
 - **Against a full merged Lich/Angel caster:** this build is no longer the strongest character in the rules. A complete merged caster has better caster level, spell DC and dispel pressure than a Sword Saint with a UMD book.
@@ -227,10 +229,10 @@ The compact mythic table above describes the target end state. The in-game Trick
 | 6 | Mythic Weapon Focus: Heavy Pick | Knowledge (World) II | Knowledge (Arcana) I |
 | 7 | Archmage Armor | Knowledge (World) III | Persuasion I |
 | 8 | Mythic Improved Initiative | Reuse Magic Device | Trickery I |
-| 9 | Ever Ready (Archmage Armor was already taken at MR7) | Trickery II | Stealth I |
+| 9 | Ever Ready (Archmage Armor was already taken at MR7) | **Persuasion II** | Stealth I |
 | 10 | Mythic Weapon Specialization: Heavy Pick | Use Magic Device III | Mobility I |
 
-`Infuse Magic Device` is the UI name for the first UMD trick. The final Wizard-book trick is `Use Magic Device III`; do not search for a feat named “Use Magic Device I”. If `Knowledge (Arcana) II` was selected in the MR9 Improved Trick slot, replace it with **Trickery II**. Arcana I is a harmless item-identification bonus; Trickery II is the PvP dispel tool.
+`Infuse Magic Device` is the UI name for the first UMD trick. The final Wizard-book trick is `Use Magic Device III`; do not search for a feat named “Use Magic Device I”. If `Knowledge (Arcana) II` was selected in the MR9 Improved Trick slot, replace it with **Persuasion II** for this build. Arcana II only gives identified items an extra random minor effect. Persuasion I already demoralizes enemies as combat begins, so Persuasion II can convert a failed Will save into paralysis without consuming the standard action needed for a full attack. Choose Trickery II only for a dedicated dispel variant: on the current save's displayed Trickery +29, its -20 penalty leaves an effective d20+9 check, and it is a standard action.
 
 When Hilor retrains this already-completed Trickster, World III remains active while ordinary slots are replayed. Use the following order: level 3 **Critical Focus**, level 5 **Staggering Critical**, level 7 **Stunning Critical** (or Blinding), level 9 **Improved Critical**, level 11 **Weapon Specialization** plus the Sword Saint bonus **Improved Improved Critical**, levels 13 and 15 for the other two Trickster critical feats, level 17 **Greater Weapon Specialization** plus bonus **Critical Mastery**, and level 19 **Greater Weapon Focus**. MR4 still cannot be selected before character level 11; World III does not change mythic-rank gates. If the current patch refuses Critical Mastery in the level-17 bonus list, use the fallback legal route: Staggering Critical at level 17 normal, Stunning/Blinding Critical at the level-17 bonus slot, and Critical Mastery at level 19 normal, sacrificing Greater Weapon Specialization and Greater Weapon Focus.
 
