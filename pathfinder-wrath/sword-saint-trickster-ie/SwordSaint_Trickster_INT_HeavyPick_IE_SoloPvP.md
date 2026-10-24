@@ -45,7 +45,7 @@ The first four are required for the endgame Trickster package. Persuasion is use
 
 ## Natural ordinary feat order
 
-This is the only feat order in this document. It is the legal level-by-level route for a new character; it does not use World III to bypass early prerequisites and does not require a later Hilor respec.
+This is the only feat order in this document. It is the legal level-by-level route for a new character; it does not use World III before the natural MR7 unlock and does not require a later Hilor respec.
 
 | Character level | Feat |
 |---:|---|
@@ -57,12 +57,12 @@ This is the only feat order in this document. It is the legal level-by-level rou
 | 11 | **Improved Critical: Heavy Pick**; Sword Saint bonus: **Greater Weapon Focus: Heavy Pick** |
 | 13 | **Staggering Critical** |
 | 15 | **Improved Improved Critical: Heavy Pick** after Perception II is available |
-| 17 | **Improved Improved Improved Critical: Heavy Pick**; Sword Saint bonus: **Stunning Critical** |
+| 17 | **Improved Improved Improved Critical Improved: Heavy Pick**; Sword Saint bonus: **Stunning Critical** |
 | 19 | **Critical Mastery** |
 
 At level 3, Critical Focus is unavailable because the character has BAB 2. Focused Strike removes the Power Attack attack penalty from the first attack each turn when the one-handed Heavy Pick is held in two hands; the empty off-hand makes that mode available. Sword Saint's Critical Perfection arrives at level 9 and allows Magus level to replace BAB for feat prerequisites. Fighter Training arrives at level 7 and counts as Fighter level `Sword Saint level - 3`, making Weapon Specialization legal at that point.
 
-This natural route prioritizes the playable critical/control package and Greater Weapon Focus. At level 11, the Sword Saint bonus slot cannot see Improved Improved Critical until Perception II is active, so Greater Weapon Focus is the correct legal choice there. Perception II must be taken at the first available rank-2 Trick slot; the Trickster critical feats then enter the normal slots at levels 15 and 17. This route does not use World III to retroactively add feats or create extra feat slots.
+This natural route prioritizes the playable critical/control package and Greater Weapon Focus. At level 11, the Sword Saint bonus slot cannot see Improved Improved Critical until Perception II is active, so Greater Weapon Focus is the correct legal choice there. Perception II must be taken at the first available rank-2 Trick slot; take Improved Improved Critical at level 15. Once World III is naturally acquired at MR7, its ordinary feat prerequisite bypass allows the level-17 feat screen to select **Improved Improved Improved Critical Improved** directly; no respec or extra feat slot is involved. Take Stunning Critical in the other level-17 slot, then Critical Mastery at level 19.
 
 ## Magus Arcana
 
