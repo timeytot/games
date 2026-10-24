@@ -2,7 +2,7 @@
 
 This is the compact, actionable build file for **Inevitable Excess (IE)**. It keeps one strongest finished build per system, in score order. The scores are internal Unfair/min-max comparisons, not official ratings.
 
-The Angel, Lich, and Sword Saint sections now give one natural level-1-to-20 class/feat progression each. They do not rely on a World III prerequisite bypass, Hilor retraining, or a final respec; IE direct-entry characters may still use the same choices in the level-up UI.
+The Angel, Lich, and Sword Saint sections give one direct level-1-to-20 progression each. The Sword Saint route uses the naturally acquired Trickster Knowledge (World) III at MR7 for its legal late feat choice; it does not use Toybox, Hilor retraining, or a final respec.
 
 IE has two separate entry modes:
 

@@ -6,7 +6,7 @@ This is the all-DLC natural level-1-to-20 version, including Lord of Nothing. Ch
 
 The build is rated for unknown optimized solo opponents rather than a PvE boss. Its default weapon is the **Death's Consonant Heavy Pick**. The weapon is only +3, but Greater Magic Weapon at caster level 20 or Arcane Weapon can bring its total enhancement to +5; the Intelligence-for-attack-and-damage property remains. The +3 is therefore not an endgame problem.
 
-**Final recommendation:** Human Sword Saint 20, Intelligence level-ups, empty off-hand, Death's Consonant Heavy Pick, Trickster Perception II, Knowledge (World) III, Lore (Religion) II and Use Magic Device III. Take Lore (Religion) I before Lore (Religion) II and use Nethys so Magic and Protection are available as the two domain choices. This document contains one natural progression only.
+**Final recommendation:** Human Sword Saint 20, Intelligence level-ups, empty off-hand, Death's Consonant Heavy Pick, Trickster Perception II, Knowledge (World) III, Lore (Religion) II and Use Magic Device III. The current finished character uses **Luck + Travel** from Lore (Religion) II. This document contains one natural progression only.
 
 **Solo-PvP score: 9.4/10.** Damage 9.5, opening reliability 9.5, anti-caster 9.0, defense 8.8, resource independence 8.7. The score assumes finite scrolls and no imported Trickster-to-Legend critical chain.
 
@@ -17,7 +17,7 @@ The build is rated for unknown optimized solo opponents rather than a PvE boss. 
 | Race | Human |
 | Background | Pickpocket (+2 initiative) |
 | Alignment | Chaotic Neutral |
-| Deity | Nethys or any deity you prefer; no material endgame difference |
+| Deity | Atheism (the current character); Lore (Religion) II supplies the selected domains |
 | Class | Sword Saint 20 |
 | Chosen weapon | Heavy Pick |
 | Armor | None; use Mage Armor and Archmage Armor |
@@ -33,15 +33,17 @@ The 25-point-buy values before the racial bonus are STR 13 / DEX 14 / CON 16 / I
 
 Put every level-up point into **INT**. Intelligence is the build's attack/damage attribute through Death's Consonant and also improves Canny Defense, initiative, critical confirmation, Arcane Pool and Sword Saint spellcasting. Do not spend level-ups on Strength.
 
-Max these skills throughout the run:
+Prioritize these skills throughout the run:
 
 1. Use Magic Device
 2. Knowledge (World)
 3. Knowledge (Arcana)
-4. Perception
-5. Persuasion
+4. Trickery
+5. Perception
+6. Lore (Religion)
+7. Stealth
 
-The first four are required for the endgame Trickster package. Persuasion is useful against non-immune targets but is not the primary win condition.
+Knowledge (World), Knowledge (Arcana), Trickery, Perception, Lore (Religion) and Use Magic Device are the useful endgame package. The current character's Persuasion is only +1, so do not divert skill points into it unless you deliberately want a separate demoralize build.
 
 ## Natural ordinary feat order
 
@@ -55,14 +57,14 @@ This is the only feat order in this document. It is the legal level-by-level rou
 | 7 | **Weapon Specialization: Heavy Pick**; Fighter Training is now active |
 | 9 | **Critical Focus**; Sword Saint Critical Perfection now lets Magus level 9 satisfy the BAB prerequisite |
 | 11 | **Improved Critical: Heavy Pick**; Sword Saint bonus: **Greater Weapon Focus: Heavy Pick** |
-| 13 | **Staggering Critical** |
-| 15 | **Improved Improved Critical: Heavy Pick** after Perception II is available |
+| 13 | **Improved Improved Critical: Heavy Pick** after Perception II is available |
+| 15 | **Improved Improved Improved Critical: Heavy Pick** |
 | 17 | **Improved Improved Improved Critical Improved: Heavy Pick**; Sword Saint bonus: **Stunning Critical** |
-| 19 | **Critical Mastery** |
+| 19 | **Greater Weapon Specialization: Heavy Pick** |
 
 At level 3, Critical Focus is unavailable because the character has BAB 2. Focused Strike removes the Power Attack attack penalty from the first attack each turn when the one-handed Heavy Pick is held in two hands; the empty off-hand makes that mode available. Sword Saint's Critical Perfection arrives at level 9 and allows Magus level to replace BAB for feat prerequisites. Fighter Training arrives at level 7 and counts as Fighter level `Sword Saint level - 3`, making Weapon Specialization legal at that point.
 
-This natural route prioritizes the playable critical/control package and Greater Weapon Focus. At level 11, the Sword Saint bonus slot cannot see Improved Improved Critical until Perception II is active, so Greater Weapon Focus is the correct legal choice there. Perception II must be taken at the first available rank-2 Trick slot; take Improved Improved Critical at level 15. Once World III is naturally acquired at MR7, its ordinary feat prerequisite bypass allows the level-17 feat screen to select **Improved Improved Improved Critical Improved** directly; no respec or extra feat slot is involved. Take Stunning Critical in the other level-17 slot, then Critical Mastery at level 19.
+This natural route prioritizes the playable critical/control package and steady weapon damage. Weapon Focus (Heavy Pick) is supplied by the Sword Saint weapon choice; the ordinary feat slots are therefore free for the chain shown above. At level 11, Greater Weapon Focus is the correct Sword Saint bonus choice. Perception II unlocks the higher Trickster critical chain. The current endgame character takes Stunning Critical as the only critical rider and Greater Weapon Specialization at level 19; it deliberately does not spend a slot on Staggering Critical or Critical Mastery. Stunning Critical already becomes Staggered when the target succeeds on its Fortitude save, while Critical Mastery would need a second usable critical rider to provide a second effect.
 
 ## Magus Arcana
 
@@ -94,17 +96,27 @@ Keep Perfect Strike toggled on. Do not spend a swift action on Arcane Accuracy o
 | 9 | **Archmage Armor**; **Reuse Magic Device** |
 | 10 | **Mythic Weapon Specialization: Heavy Pick**; **Use Magic Device III** |
 
-If Archmage Armor is unavailable at MR7, take Ever Ready instead. Archmage Armor requires a self-cast Mage Armor effect; a scroll/potion Mage Armor does not activate it. Once active, it is the armor layer, so do not count ordinary Bracers of Armor on top of it.
+The finished character can keep both **Ever Ready** and **Archmage Armor**. If an early mythic slot forces a choice, take Ever Ready first and add Archmage Armor at the later available slot. Archmage Armor requires a self-cast Mage Armor effect; a scroll/potion Mage Armor does not activate it. Once active, it is the armor layer, so do not count ordinary Bracers of Armor on top of it.
 
 The important Trickster route is:
 
 - Perception I → Perception II: unlocks the expanded critical chain.
 - Knowledge (World) I → II → III: the second rank changes natural 1s to 20s; rank III is taken naturally at MR7 and is not used to bypass earlier feat prerequisites.
 - Infuse Magic Device → Reuse Magic Device → Use Magic Device III: grants a Wizard spellbook that can copy scrolls as a Wizard of character level.
-- Lore (Religion) I → II: rank II grants two domains and one daily use of spells below your mythic rank. With Nethys, use Magic and Protection for extra dispel and defensive options. This is the fresh-start default when the opponent pool includes Mind Blank, fear immunity or paralysis immunity.
+- Lore (Religion) I → II: rank II grants two domains and one daily use of spells below your mythic rank. The current character takes **Luck and Travel**. Luck supplies Divine Fortune and the Luck spell list; Travel supplies +10 speed, Agile Feet and Dimensional Hop. These are the best self-contained choices for this INT melee build. Community is weaker with the character's low Wisdom, while Strength and War do not exploit the Death's Consonant Intelligence attack/damage profile.
 - Trickery I remains useful as a dispel check, but Trickery II is a situational anti-buff variant rather than the default: it is a standard action, has no ranged use, and applies a -20 penalty to the Trickery check.
 
 Do not use the Trickster feats as a bridge into Legend. This document is the direct Trickster version only.
+
+## Current level-20 save check
+
+The finished screenshot matches the route above:
+
+- Final unbuffed attributes are STR 13 / DEX 14 / CON 16 / INT 24 / WIS 8 / CHA 7; every level-up point went to INT.
+- The feat list contains the class-granted Weapon Focus (Heavy Pick), the full Heavy Pick specialization and critical chain, **Stunning Critical**, and **Greater Weapon Specialization (Heavy Pick)**. It correctly contains neither Staggering Critical nor Critical Mastery.
+- The mythic list contains the Heavy Pick mythic chain, Last Stand, Enduring Spells, Greater Enduring Spells, Archmage Armor and Ever Ready. Luck and Travel are the two Lore (Religion) II domains.
+- The panel's unbuffed attack and damage numbers are not the final combat profile. Verify that the equipped weapon is **Death's Consonant** and that Greater Magic Weapon or Arcane Weapon is bringing it to +5. If INT is not being used for attack and damage after those checks, the weapon is wrong or its property is not active.
+- Cast Mage Armor yourself before relying on Archmage Armor. Keep Keen off the finished weapon: the existing Trickster critical chain already supplies the threat-range expansion.
 
 ## Endgame equipment
 
@@ -128,7 +140,7 @@ Carry a second +5 Ghost Touch weapon or scroll solution for incorporeal targets.
 
 ### Weapon enhancement
 
-Use **Greater Magic Weapon** from the UMD Wizard spellbook at caster level 20, or spend Arcane Pool points on the Sword Saint weapon enchantment, until the displayed total enhancement is +5. The +3 weapon and a +5 spell do not become +8; the tooltip uses the applicable highest enhancement instead. The Death's Consonant Intelligence effect is retained.
+Use **Greater Magic Weapon** from the UMD Wizard spellbook at caster level 20, or spend Arcane Pool points on the Sword Saint weapon enchantment, until the displayed total enhancement is +5. The +3 weapon and a +5 spell do not become +8; the tooltip uses the applicable highest enhancement instead. The Death's Consonant Intelligence effect is retained. Do not use Keen on top of the finished critical chain; it does not stack with the existing threat-range expansion. Anarchic is also a poor default against chaotic demons; use the elemental/burst or situational Ghost Touch options that match the target.
 
 ## Wizard spellbook and daily preparation
 
