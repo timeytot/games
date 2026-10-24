@@ -2,7 +2,7 @@
 
 ## Scope and verdict
 
-This is the direct-entry Inevitable Excess version. Create a fresh character at level 20 and Mythic Rank 10, choose Trickster, and stay Trickster. Do not start as Trickster and later become Legend. The build assumes the local 2.7.0x rules, no party buffs, self-preparation, finite scrolls and rods, turn-based combat, Last Stand, Fortification, concealment, spell resistance and immunities all working.
+This is the direct-entry Inevitable Excess version with all DLC enabled, including Lord of Nothing. Create a fresh character at level 20 and Mythic Rank 10, choose Trickster, and stay Trickster. Do not start as Trickster and later become Legend. The build assumes the local 2.7.0x rules, no party buffs, self-preparation, finite scrolls and rods, turn-based combat, Last Stand, Fortification, concealment, spell resistance and immunities all working.
 
 The build is rated for unknown optimized solo opponents rather than a PvE boss. Its default weapon is the **Death's Consonant Heavy Pick**. The weapon is only +3, but Greater Magic Weapon at caster level 20 or Arcane Weapon can bring its total enhancement to +5; the Intelligence-for-attack-and-damage property remains. The +3 is therefore not an endgame problem.
 
@@ -68,7 +68,7 @@ The current WotR feat list was checked against the game's full weapon, critical,
 
 | Candidate | Decision | Reason |
 |---|---|---|
-| Critical Focus + Staggering Critical + Stunning Critical + Critical Mastery | **Default level-20 legal package** | The first three are taken in ordinary level-up slots while World III is active; Critical Mastery is then taken in the level-17 Sword Saint bonus slot after its prerequisites are satisfied. If Stunning Critical is missing because the Lord of Nothing DLC is not installed, use **Blinding Critical** instead. |
+| Critical Focus + Staggering Critical + Stunning Critical + Critical Mastery | **Default all-DLC level-20 legal package** | The first three are taken in ordinary level-up slots while World III is active; Critical Mastery is then taken in the level-17 Sword Saint bonus slot after its prerequisites are satisfied. With Lord of Nothing installed, use **Stunning Critical**. |
 | Improved Blind Fight → Greater Blind Fight | Concealment variant | Removes miss chance below total concealment; Greater reduces total-concealment miss to 20% and keeps the reroll. Use this in place of the critical-control package against Displacement/stealth-heavy opponents or critical-immune targets. |
 | Sickening Critical | One-slot control alternative | Applies a no-save sickened penalty on critical hits. It is a good substitute for Greater Weapon Focus if you want some control without spending four slots; it still obeys the one-critical-feat-per-hit rule unless Critical Mastery is also taken. |
 | Accomplished Sneak Attacker | Damage variant | Trickster supplies the Sneak Attack prerequisite at MR3; this adds 1d6 precision damage. It costs a legal normal feat slot, so use it only if your opening reliably denies Dexterity (for example, a successful Prescient Attack or Greater Invisibility). |
