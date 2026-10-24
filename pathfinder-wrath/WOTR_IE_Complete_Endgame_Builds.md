@@ -2,6 +2,8 @@
 
 This is the compact, actionable build file for **Inevitable Excess (IE)**. It keeps one strongest finished build per system, in score order. The scores are internal Unfair/min-max comparisons, not official ratings.
 
+The Angel, Lich, and Sword Saint sections now give one natural level-1-to-20 class/feat progression each. They do not rely on a World III prerequisite bypass, Hilor retraining, or a final respec; IE direct-entry characters may still use the same choices in the level-up UI.
+
 IE has two separate entry modes:
 
 - **Mythic entry:** character level 20 with Mythic Rank 10. The five builds below are written for this mode.
@@ -14,7 +16,7 @@ The guide does not use the main-campaign sequence where a character starts as An
 | Score | Tier | One retained end state | Finished class/path | Main job |
 |---:|---|---|---|---|
 | 9.9 | **SS** | Angel Oracle | Seeker Oracle 16 / Scaled Fist Monk 1 / Paladin 2 / Hellknight 1 / Angel MR10 | Merged divine casting, buffs, healing and bolts |
-| 9.8 | **SS** | Lich caster | Stigmatized Witch 10 / Loremaster 9 / Crossblooded Sorcerer 1 / Lich MR10 | Merged negative-energy casting and boss debuffs |
+| 9.6 | **SS** | Lich caster | Dhampir Vetala-Born / Exploiter Wizard 20 / Lich MR10 | Prepared merged casting, dispel, control and long-fight sustain |
 | 9.7 | **SS** | Kinetic Sharpshooter | Kinetic Sharpshooter 20 / Trickster MR10 | Independent ranged finisher |
 | 9.7 | **SS** | Trickster Sword Saint | Sword Saint 20 / Trickster MR10 | Dimension Strike and critical full attacks |
 | 9.6 | **SS** | Inciter Skald | Inciter Skald 20 / Trickster MR10 | Party-wide melee multiplier and control |
@@ -66,13 +68,31 @@ This is the strongest all-purpose IE main: it combines very high Charisma defens
 |---:|---|---|
 | 1 | Seeker Oracle 1 | Nature's Whispers; Improved Initiative |
 | 2 | Scaled Fist Monk 1 | Dodge |
-| 3–9 | Seeker Oracle 2–8 | Crane Style, Outflank, Power Attack, Wolf companion revelation and core metamagic |
+| 3–9 | Seeker Oracle 2–8 | Crane Style, Outflank, Power Attack and the Wolf companion revelation |
 | 10 | Paladin 1 | Divine Grace |
-| 11–18 | Seeker Oracle 9–16 | Boon Companion, spell DC/penetration feats and final revelations |
+| 11–18 | Seeker Oracle 9–16 | Spell focus/penetration feats and final revelations |
 | 19 | Hellknight 1 | Smite Chaos; choose the lawful order that matches the character |
 | 20 | Paladin 2 | Second Paladin level and final Oracle package |
 
-Take **Improved Initiative**, **Dodge**, **Crane Style**, **Outflank**, **Power Attack**, **Boon Companion**, **Spell Focus: Conjuration**, **Greater Spell Focus: Conjuration**, **Shatter Defenses**, **Spell Penetration**, **Greater Spell Penetration**, **Bolster Spell**, **Extend Spell**, **Quicken Spell** and **Heighten Spell** as the core package. Use the Seeker bonus feat slots for Greataxe Weapon Focus/Greater Weapon Focus and the companion prerequisites.
+Use this natural feat order; it does not assume a respec or illegal early prerequisites:
+
+| Character level | Ordinary feat | Seeker bonus magic feat |
+|---:|---|---|
+| 1 | Improved Initiative | — |
+| 2 | — | Monk bonus: Dodge |
+| 3 | Crane Style | — |
+| 5 | Power Attack | — |
+| 6 | — | Spell Focus: Conjuration |
+| 7 | Outflank | — |
+| 9 | Boon Companion if the Nature Animal Companion revelation is active; otherwise Spell Penetration | — |
+| 11 | Spell Penetration if it was not taken at level 9 | — |
+| 12 | — | Greater Spell Penetration |
+| 13 | Greater Spell Focus: Conjuration | — |
+| 15 | Bolster Spell | — |
+| 17 | Heighten Spell | Quicken Spell |
+| 19 | Spell Specialization: Bolt of Justice, or a defensive feat | — |
+
+Seeker bonus feats at Oracle 5/10/15 are restricted to the magic-feat list; they cannot provide weapon feats. The Battle Weapon Mastery revelation from the MR3 Second Mystery supplies Greataxe Weapon Focus, Improved Critical at Oracle 8, and Greater Weapon Focus at Oracle 12 without spending ordinary or Seeker feat slots. Spell Specialization at level 19 targets Bolt of Justice; replace it with Storm of Justice if that is the primary Angel spell in your current spellbook. Shatter Defenses is omitted because this natural route does not spend extra slots on Dazzling Display and a demoralize chain.
 
 ### Mythic and Angel progression
 
@@ -110,77 +130,51 @@ Before combat, let the BFT and Cleric apply the communal package, then cast Guar
 
 ---
 
-## 2. Lich caster — 9.8/10 SS
+## 2. Lich caster — 9.6/10 Boss ranking; 9.4/10 Solo PvP ranking
 
-### Final build
+> **Authoritative full configuration:** [WOTR_Lich_Complete_Endgame_Build_EN.md](WOTR_Lich_Complete_Endgame_Build_EN.md). This section keeps only the summary needed by the master table.
+>
+> The 9.6 and 9.4 scores are two independent scores for the same core: 9.6 is the prepared Unfair Boss score, while 9.4 is the prepared Solo PvP score against an unknown opponent without opponent-specific equipment swaps. The Boss version prioritizes reliability; the PvP version makes small substitutions to Lich Powers and spell preparation.
 
-**Stigmatized Witch 10 / Loremaster 9 / Crossblooded Sorcerer 1 / Lich MR10**
+### Authoritative endgame build
 
-This is the strongest offensive caster package in the retained list. The merged Lich book supplies Corrupt Magic, Exsanguinate, Negative Eruption and high-end control while the Witch/Loremaster chassis supplies defenses, metamagic and off-list spell access.
+**Dhampir（Vetala-Born/Ajibachana） / Exploiter Wizard 20 / Lich MR10**
 
-### Creation
+This replaces the old `Stigmatized Witch 10 / Loremaster 9 / Crossblooded Sorcerer 1` Solo plan in this file. The old hybrid remains a party or legacy-version reference, but it is not the current vanilla, bug-free endgame Boss/PvP build. The pure Exploiter route keeps Wizard 20, full prepared casting, the CL30 merged spellbook, and all 10th-level Lich resources; it does not add Quick Study, Counterspell, or Metamixing, which are not present in the current vanilla Exploit list.
 
-| Field | Choice |
+### Character-creation fields
+
+| Field | Selection |
 |---|---|
-| Race | Kindred Half-Elf |
-| Alignment | Lawful Evil |
-| Background | Scholar — Arcane |
-| Patron | Shadow |
-| Curse | Plagued |
-| Starting stats | STR 7, DEX 12, CON 14, INT 14, WIS 10, CHA 20 |
-| Level-ups | Put every normal increase into CHA |
-| Skills | Max Knowledge (Arcana), Knowledge (World), Use Magic Device, Persuasion and Spellcraft |
-| Bloodlines | Undead + Fey for the one-level Crossblooded Sorcerer dip |
+| Race | Dhampir — Vetala-Born/Ajibachana; Basic Elf is an alternative if you only want the highest SR checks |
+| Alignment | NE or LE; NE recommended |
+| Background | Pickpocket (+2 Initiative, Trickery/Stealth); Scholar–Arcane is the academic alternative |
+| Deity | Urgathoa; Nethys is only a narrative alternative |
+| Abilities | 25-point buy: STR 7 / DEX 14 / CON 14 / INT 17 / WIS 11 / CHA 14; after Vetala: DEX 16 / CON 14 / INT 19 / WIS 9 / CHA 14; put every level-up into INT, final INT 24 |
+| Skills | Knowledge (Arcana/World/Religion), Perception, Spellcraft, Use Magic Device, Trickery; put remaining ranks into Mobility |
 
-### Class order and feats
+### Class, feats, and Exploits
 
-| Character level | Class | Key choice |
-|---:|---|---|
-| 1–8 | Stigmatized Witch 1–8 | Protective Luck, Selective Spell, Cackle, Skill Focus: Knowledge (World) and Fortune |
-| 9–13 | Loremaster 1–5 | Spell Focus: Conjuration and off-list spell secrets such as Barkskin or Greater Dispel |
-| 14 | Crossblooded Sorcerer 1 | Spell Focus: Evocation; Undead + Fey bloodlines |
-| 15–16 | Loremaster 6–7 | Greater Spell Focus: Evocation and another high-value spell secret |
-| 17 | Stigmatized Witch 9 | Spell Focus: Necromancy |
-| 18–19 | Loremaster 8–9 | Greater Spell Focus: Necromancy and final spell secrets |
-| 20 | Stigmatized Witch 10 | Beast's Gift |
+- Take **Exploiter Wizard** at levels 1–20; choose Lich at MR3 and merge the spellbooks, reaching effective CL30 at endgame.
+- Key feats: Spell Focus (Conjuration/Necromancy), Greater Spell Focus (Conjuration/Necromancy), Spell Penetration, Greater Spell Penetration, Selective Spell, Heighten Spell, Persistent Spell, Quicken Spell, Bolster Spell, Extend Spell, Blind Fight, and Improved Initiative; take Spell Specialization (Enervation/Boneshaker) as the level-20 Wizard bonus feat. Some versions may not list Lich-exclusive spells in this UI.
+- Exploits: 1 Potent Magic; 5 Dimensional Slide; 9 Spell Resistance; 13 Greater Spell Resistance; 17 Arcane Barrier/Energy Shield. Potent Magic consumes limited Arcane Reservoir charges; it is not a permanent +2.
 
-Core feats are **Spell Focus: Necromancy**, **Greater Spell Focus: Necromancy**, **Spell Penetration**, **Greater Spell Penetration**, **Selective Spell**, **Bolster Spell**, **Heighten Spell** and **Quicken Spell**. Keep one defensive feat slot for Improved Initiative, Iron Will or Toughness according to the current save profile.
+### Natural mythic and Lich choices
 
-### Mythic and Lich progression
+- Generic mythic order: Abundant Casting MR1; Mythic Spell Focus: Necromancy MR2; Enduring Spells MR3; Mythic Spell Penetration MR4; Greater Enduring Spells MR5; Mythic Improved Initiative MR6; Improved Abundant Casting MR7; Archmage Armor MR8; Greater Abundant Casting MR9; Last Stand or Mythic Resolve MR10.
+- Lich path order: Danse Macabre at MR1; Negative Energy Insight at MR2; Indestructible Bones at MR3; Lord Beyond the Grave at MR4; Dark Rites at MR5; Withering Life at MR6; Skeletal Cleric I at MR8; Eclipse Chill at MR9; Skeletal Bard I at MR10.
+- The Phylactery provides the Deadly Magic resource described in the full Lich file; it is not a separate respec or alternate level-up route.
 
-| Rank | Generic choice | Lich choice or priority |
-|---:|---|---|
-| 1 | Abundant Casting | More merged-book casts |
-| 2 | Expanded Arsenal: Enchantment | Open the save-based control package |
-| 3 | Improved Abundant Casting | Select Lich and merge the Witch/Lich spellbook |
-| 4 | Mythic Spell Penetration | Caster-level and resistance checks |
-| 5 | Last Stand | Survive the first boss burst |
-| 6 | Sorcerous Reflex | Two-action opening on the hardest encounter |
-| 7 | Greater Abundant Casting | Keep the merged book online all day |
-| 8 | Mythic Spell Focus: Conjuration | Improve the main save/DC line |
-| 9 | Favorite Metamagic: Selective | Selective control without friendly-fire |
-| 10 | Mythic Spell Focus: Evocation | Finish the high-damage spell package |
+### Spell and equipment summary
 
-### Spell priorities
+- Core spells: Corrupt Magic (multi-layer dispel and penalties with no SR/no save), Absolute Death (10th level, Will partial, no SR; Greater Quicken Rod cannot accelerate 10th-level spells), Negative Eruption, Feast of Blood, Siphon Life, Embrace of Death, Domain of Hungry Flesh, Siphon Time, Bone Shield, False Grace, Deny Death, Blessing of Unlife, Vampiric Blade, and Power from Death.
+- Long-duration defenses: Mage Armor + Archmage Armor, Shield, Mind Blank, True Seeing, Echolocation, Foresight, Greater Invisibility/Displacement, Seamantle, Frightful Aspect, Freedom of Movement, Death Ward, energy protections, and Greater Heroism.
+- Endgame equipment: Robe of Seven Sins (or one Necromancy-DC robe), Sin Mage's Staff/Quarterstaff of the War Mage, Heartstone of Night Hag Queen (SR38; use the current tooltip for natural AC because guides disagree between +5 and +7), Flawless Headband of Mental Perfection +8, Flawless Cloak of Resistance +7, Phylactery (wrist slot; +2 uses if Lich Deadly Magic is also selected), Gloves of Enduring Wizard, Belt of Physical Perfection, Boots of Perfect Grounding, Ring of Triumphant Advance + Magician's Ring/Caster's Dream; carry a Greater Quicken Rod, Grandmaster's Rod, and a Ghost Touch weapon or scroll as Nahyndrian Darkness backups.
 
-- **Defenses:** Mage Armor, Shield, Mirror Image, Displacement, Greater Invisibility, Mind Blank, True Seeing, Protection from Spells and Foresight.
-- **Debuff opening:** Greater Dispel Magic or **Corrupt Magic** on the boss. Corrupt Magic is the default first action when the target has layered buffs.
-- **Single target:** Exsanguinate, Feast of Blood, Siphon Life and the strongest available save-based Lich spell.
-- **Groups:** Negative Eruption, Domain of Hungry Flesh and selective control. Use Selective metamagic so the party can remain in the area.
-- **Utility:** Repurpose only when creating an undead ally matters; do not waste the first round on small healing or low-impact summons.
+### Boss/PvP trade-offs
 
-### How to play
-
-Pre-buff before entering, especially Mind Blank, True Seeing, Greater Invisibility and the communal defense package. Open on the boss with Corrupt Magic, then cast Exsanguinate or another high-impact Lich spell. Against groups, place Selective Hungry Flesh or Negative Eruption after the main resistance/dispel check. Keep a Quickened defensive spell or Displacement available. The Lich is powerful because its merged book removes defensive layers and then converts the opening into negative-energy damage; it is not a front-line melee caster.
-
-### Recommended party
-
-1. Lich caster above.
-2. Inciter Skald 20 for physical-party pressure and dispels.
-3. Brown-Fur Transmuter 20 for shared transformations.
-4. Cleric 20 for Guarded Hearth, Death Ward and healing.
-5. Sable Company Marine 1 / Paladin 13 / Sohei 1 / Mutation Warrior 5 as the mounted front line.
-6. Kinetic Sharpshooter 20 as the independent ranged finisher.
+- **Boss 9.6:** Start with Corrupt Magic, then use Negative Eruption/Feast of Blood/Absolute Death; use Last Stand, Bone Shield, temporary hit points, summons, and Dimensional Slide for a long fight. Against Nahyndrian Darkness, do not rely only on direct spells: handle the crystals and concealment/incorporeal defenses first, then use Ghost Touch/Weapon of Death, summons, or SR-free control as backups.
+- **PvP 9.4:** Prepare Mind Blank, True Seeing, Greater Invisibility, Foresight, and Deny Death; use Corrupt Magic to dismantle defenses, Deadly Magic during key casting windows, and Absolute Death/control chains to close. Against high saves, death immunity, or counter-casters, do not treat one Absolute Death cast as the only win condition.
 
 ---
 
@@ -288,7 +282,7 @@ Athletics III can raise the effective Base Attack Bonus toward the skill rank ca
 
 ### How to play
 
-Before combat, cast Shield, Mirror Image, Displacement and the enduring buffs. Keep Perfect Strike and the critical toggle on. Against a boss, use **Arcane Pool → Dimension Strike → Trick Fate → full attack** when Trick Fate is available. Dimension Strike is the preferred accuracy button because it targets Touch AC; Prescient Attack is the cheaper alternative when the target's Dexterity is the main defense. Do not enter melee without Mirror Image/Displacement active.
+Before combat, cast Shield, Mirror Image, Displacement and the enduring buffs. Pre-apply the Arcane Weapon enhancement and Trick Fate when the rules allow short-duration pre-buffs. Keep Perfect Strike and the critical toggle on. During the Trick Fate window, use the full attack directly; its attack and confirmation rolls are already replaced by 20, so Dimension Strike is usually redundant. After Trick Fate expires, use **Dimension Strike (Swift) → full attack** against high AC. Do not try to activate Arcane Weapon or cast Trick Fate after Dimension Strike in the same round: the former competes for Swift and the latter is a Standard action. Prescient Attack is the alternative when flat-footed/Canny-defense interaction is more valuable. Do not enter melee without Mirror Image/Displacement active.
 
 ### Recommended party
 
@@ -360,4 +354,3 @@ Fresh Legend is selected at MR3 and cannot later become Angel, Lich or Trickster
 | Party engine | Inciter Skald 20 / Mutation Warrior 20 |
 
 Do not label either replacement as an Angel, Lich or Trickster build. They retain only ordinary class levels and the two generic Mythic Hero choices available before the MR3 Legend selection.
-

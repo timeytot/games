@@ -2,11 +2,11 @@
 
 ## Scope and verdict
 
-This is the direct-entry Inevitable Excess version with all DLC enabled, including Lord of Nothing. Create a fresh character at level 20 and Mythic Rank 10, choose Trickster, and stay Trickster. Do not start as Trickster and later become Legend. The build assumes the local 2.7.0x rules, no party buffs, self-preparation, finite scrolls and rods, turn-based combat, Last Stand, Fortification, concealment, spell resistance and immunities all working.
+This is the all-DLC natural level-1-to-20 version, including Lord of Nothing. Choose Sword Saint at level 1, choose Trickster at Mythic Rank 3, and stay Trickster. Do not start as Trickster and later become Legend. The build assumes the local 2.7.0x rules, no party buffs, self-preparation, finite scrolls and rods, turn-based combat, Last Stand, Fortification, concealment, spell resistance and immunities all working.
 
 The build is rated for unknown optimized solo opponents rather than a PvE boss. Its default weapon is the **Death's Consonant Heavy Pick**. The weapon is only +3, but Greater Magic Weapon at caster level 20 or Arcane Weapon can bring its total enhancement to +5; the Intelligence-for-attack-and-damage property remains. The +3 is therefore not an endgame problem.
 
-**Final recommendation:** Human Sword Saint 20, Intelligence level-ups, empty off-hand, Death's Consonant Heavy Pick, Trickster Perception II, Knowledge (World) III, Lore (Religion) II and Use Magic Device III. For a new IE level-20/MR10 character, take Lore (Religion) I before Lore (Religion) II and use Nethys so Magic and Protection are available as the two domain choices. This document is the fresh-start route only.
+**Final recommendation:** Human Sword Saint 20, Intelligence level-ups, empty off-hand, Death's Consonant Heavy Pick, Trickster Perception II, Knowledge (World) III, Lore (Religion) II and Use Magic Device III. Take Lore (Religion) I before Lore (Religion) II and use Nethys so Magic and Protection are available as the two domain choices. This document contains one natural progression only.
 
 **Solo-PvP score: 9.4/10.** Damage 9.5, opening reliability 9.5, anti-caster 9.0, defense 8.8, resource independence 8.7. The score assumes finite scrolls and no imported Trickster-to-Legend critical chain.
 
@@ -43,63 +43,26 @@ Max these skills throughout the run:
 
 The first four are required for the endgame Trickster package. Persuasion is useful against non-immune targets but is not the primary win condition.
 
-## Ordinary feats
+## Natural ordinary feat order
 
-The Sword Saint bonus-feat levels are included in the table. If a particular respec screen places a bonus feat one level later, preserve the same priority order.
+This is the only feat order in this document. It is the legal level-by-level route for a new character; it does not use World III to bypass early prerequisites and does not require a later Hilor respec.
 
 | Character level | Feat |
 |---:|---|
 | 1 | **Power Attack**; **Improved Initiative** (Human bonus) |
-| 3 | **Critical Focus** |
-| 5 | **Staggering Critical**; Sword Saint bonus: **Blind Fight** |
-| 7 | **Stunning Critical** |
-| 9 | **Improved Critical: Heavy Pick** |
-| 11 | **Weapon Specialization: Heavy Pick**; Sword Saint bonus: **Improved Improved Critical: Heavy Pick** |
-| 13 | **Improved Improved Improved Critical: Heavy Pick** |
-| 15 | **Improved Improved Improved Critical Improved: Heavy Pick** |
-| 17 | **Greater Weapon Specialization: Heavy Pick**; Sword Saint bonus: **Critical Mastery** |
+| 3 | **Focused Strike** (Lord of Nothing; requires STR 13 and Power Attack) |
+| 5 | **Combat Reflexes**; Sword Saint bonus: **Blind Fight** |
+| 7 | **Weapon Specialization: Heavy Pick**; Fighter Training is now active |
+| 9 | **Critical Focus**; Sword Saint Critical Perfection now lets Magus level 9 satisfy the BAB prerequisite |
+| 11 | **Improved Critical: Heavy Pick**; Sword Saint bonus: **Improved Improved Critical: Heavy Pick** if Perception II is already available |
+| 13 | **Staggering Critical** |
+| 15 | **Improved Improved Improved Critical: Heavy Pick** |
+| 17 | **Stunning Critical**; Sword Saint bonus: **Critical Mastery** |
 | 19 | **Greater Weapon Focus: Heavy Pick** |
 
-Perception II unlocks the three Trickster critical feats in the table. Knowledge (World) III does **not** replace Perception II and does **not** give extra feat slots. World III removes prerequisites from ordinary feat slots, but it does not bypass the separate Magus bonus-feat rules. This legal route takes Critical Focus, Staggering Critical and Stunning Critical in ordinary slots first, then takes Critical Mastery in the level-17 Sword Saint bonus slot after Sword Saint Fighter Training supplies the effective Fighter level and the three critical prerequisites are already present. The level-19 normal slot remains Greater Weapon Focus.
+At level 3, Critical Focus is unavailable because the character has BAB 2. Focused Strike removes the Power Attack attack penalty from the first attack each turn when the one-handed Heavy Pick is held in two hands; the empty off-hand makes that mode available. Sword Saint's Critical Perfection arrives at level 9 and allows Magus level to replace BAB for feat prerequisites. Fighter Training arrives at level 7 and counts as Fighter level `Sword Saint level - 3`, making Weapon Specialization legal at that point.
 
-### Natural level-by-level route before the final respec
-
-The table above is the **level-20/MR10 end-state layout**. It is not the order that a new level-1 character can select. At character level 3, Critical Focus is unavailable because the character has BAB 2. Do this instead:
-
-| Character level | Legal natural choice |
-|---:|---|
-| 1 | Power Attack; Human bonus: Improved Initiative |
-| 3 | **Focused Strike** (Lord of Nothing; requires STR 13 and Power Attack; removes the Power Attack attack penalty from the first two-handed attack each turn) |
-| 5 | Combat Reflexes; Sword Saint bonus: Blind Fight |
-| 7 | Weapon Specialization: Heavy Pick, after Fighter Training becomes active |
-| 9 | **Critical Focus**; Sword Saint Critical Perfection now lets Magus level 9 satisfy the BAB prerequisite |
-| 11 | Improved Critical: Heavy Pick; Sword Saint bonus: Improved Improved Critical if Perception II is available |
-| 13 | Staggering Critical |
-| 15 | Improved Improved Improved Critical |
-| 17 | Stunning Critical; Sword Saint bonus: Critical Mastery |
-| 19 | Greater Weapon Focus: Heavy Pick |
-
-This natural route spends the early slots on legal temporary feats, so it does not fit every final damage feat at once. At MR10, use the final level-20 respec to replace Focused Strike/Combat Reflexes and replay the ordinary slots as the full end-state table above, including the fourth Trickster critical feat and Greater Weapon Specialization. Do not try to select Critical Focus at level 3.
-
-### World III all-feat pass
-
-The current WotR feat list was checked against the game's full weapon, critical, defensive, spell and miscellaneous sections. The results for this specific INT Heavy Pick / solo PvP chassis are:
-
-| Candidate | Decision | Reason |
-|---|---|---|
-| Critical Focus + Staggering Critical + Stunning Critical + Critical Mastery | **Default all-DLC level-20 legal package** | The first three are taken in ordinary level-up slots while World III is active; Critical Mastery is then taken in the level-17 Sword Saint bonus slot after its prerequisites are satisfied. With Lord of Nothing installed, use **Stunning Critical**. |
-| Improved Blind Fight → Greater Blind Fight | Concealment variant | Removes miss chance below total concealment; Greater reduces total-concealment miss to 20% and keeps the reroll. Use this in place of the critical-control package against Displacement/stealth-heavy opponents or critical-immune targets. |
-| Sickening Critical | One-slot control alternative | Applies a no-save sickened penalty on critical hits. It is a good substitute for Greater Weapon Focus if you want some control without spending four slots; it still obeys the one-critical-feat-per-hit rule unless Critical Mastery is also taken. |
-| Accomplished Sneak Attacker | Damage variant | Trickster supplies the Sneak Attack prerequisite at MR3; this adds 1d6 precision damage. It costs a legal normal feat slot, so use it only if your opening reliably denies Dexterity (for example, a successful Prescient Attack or Greater Invisibility). |
-| Disruptive | Caster-duel swap | Raises the defensive-casting DC of enemies within 10 feet by 4. Replace Combat Reflexes only for a caster-heavy ruleset. |
-| Hammer the Gap | Keep as a test-only alternative to Greater Weapon Focus | It adds damage on consecutive full-attack hits and multiplies that bonus on a critical, but it is less reliable than the weapon-focus attack bonus when the opponent's AC is not already solved by Trick Fate/Dimension Strike. Do not replace Weapon Specialization or Greater Weapon Specialization with it. |
-| Vital Strike line | **Do not take** | It is a standard-action single attack; this build wins through a full attack with a x5 Heavy Pick crit profile. |
-| Shatter Defenses, Outflank, Cleave line | **Do not take in solo default** | Shatter Defenses depends on a successful demoralize and only helps attacks after the first; Outflank is a teamwork feat; Cleave is a multi-target/PvE line. |
-| Piranha Strike, Fencing/Slashing Grace | **Do not take** | They are for finesse or the listed one-handed weapons; Death's Consonant Heavy Pick is a Strength/Intelligence one-handed martial pick, not a finesse weapon. |
-
-If concealment is more important than the extra weapon damage, replace Greater Weapon Specialization with Greater Blind Fight; that is the defensive variant.
-
-If you expect a spell-heavy tournament rather than melee-heavy opponents, replace **Greater Weapon Focus** at level 19 with **Spell Penetration**. Keep **Critical Focus** and **Critical Mastery**; they remain the better use of the remaining slots when the fight reaches melee.
+This natural route prioritizes the complete playable critical/control package and Greater Weapon Focus. It does not use World III to retroactively add feats or create extra feat slots. Perception II is still taken when the normal mythic progression unlocks it, so the Trickster critical feats are selected only after their actual Trickster prerequisite is available.
 
 ## Magus Arcana
 
@@ -127,17 +90,17 @@ Keep Perfect Strike toggled on. Do not spend a swift action on Arcane Accuracy o
 | 5 | **Enduring Spells**; **Knowledge (World) I** |
 | 6 | **Mythic Weapon Focus: Heavy Pick**; **Knowledge (World) II** |
 | 7 | **Greater Enduring Spells**; **Knowledge (World) III** |
-| 8 | **Mythic Improved Initiative**; **Use Magic Device I** |
+| 8 | **Mythic Improved Initiative**; **Infuse Magic Device** |
 | 9 | **Archmage Armor**; **Reuse Magic Device** |
 | 10 | **Mythic Weapon Specialization: Heavy Pick**; **Use Magic Device III** |
 
-If Archmage Armor is unavailable in the current respec state, take Ever Ready instead. Archmage Armor requires a self-cast Mage Armor effect; a scroll/potion Mage Armor does not activate it. Once active, it is the armor layer, so do not count ordinary Bracers of Armor on top of it.
+If Archmage Armor is unavailable at MR7, take Ever Ready instead. Archmage Armor requires a self-cast Mage Armor effect; a scroll/potion Mage Armor does not activate it. Once active, it is the armor layer, so do not count ordinary Bracers of Armor on top of it.
 
 The important Trickster route is:
 
 - Perception I → Perception II: unlocks the expanded critical chain.
-- Knowledge (World) I → II → III: the second rank changes natural 1s to 20s; rank III removes feat prerequisites.
-- Use Magic Device I → Reuse Magic Device → Use Magic Device III: grants a Wizard spellbook that can copy scrolls as a Wizard of character level.
+- Knowledge (World) I → II → III: the second rank changes natural 1s to 20s; rank III is taken naturally at MR7 and is not used to bypass earlier feat prerequisites.
+- Infuse Magic Device → Reuse Magic Device → Use Magic Device III: grants a Wizard spellbook that can copy scrolls as a Wizard of character level.
 - Lore (Religion) I → II: rank II grants two domains and one daily use of spells below your mythic rank. With Nethys, use Magic and Protection for extra dispel and defensive options. This is the fresh-start default when the opponent pool includes Mind Blank, fear immunity or paralysis immunity.
 - Trickery I remains useful as a dispel check, but Trickery II is a situational anti-buff variant rather than the default: it is a standard action, has no ranged use, and applies a -20 penalty to the Trickery check.
 
@@ -233,23 +196,3 @@ Dimension Strike, Prescient Attack and Arcane Accuracy compete for the swift-act
 | DEX+INT Estoc/Rapier | 8.4/10 | You value defense/initiative and accept lower damage |
 
 The existing Bardiche document remains a good PvE/party reference, but it spends feats on Cleave and Outflank and assumes party support. This file is the direct IE solo-PvP architecture.
-
-## Fresh IE level-20 UI route
-
-The compact mythic table above describes the target end state. The in-game Trickster screen exposes extra ordinary, Improved and Greater Trick slots, and it gates MR4 until character level 11. Use this practical route when building level by level:
-
-| Mythic rank | Mythic feat/ability | Improved or Greater Trick | Ordinary Mythic Trick |
-|---:|---|---|---|
-| 1 | Last Stand | — | — |
-| 2 | Mythic Power Attack | — | — |
-| 3 | Enduring Spells; Trickster | — | Perception I |
-| 4 | Mythic Improved Critical: Heavy Pick | Perception II | Knowledge (World) I |
-| 5 | Greater Enduring Spells | — | Infuse Magic Device |
-| 6 | Mythic Weapon Focus: Heavy Pick | Knowledge (World) II | Knowledge (Arcana) I |
-| 7 | Archmage Armor | Knowledge (World) III | Lore (Religion) I |
-| 8 | Mythic Improved Initiative | Reuse Magic Device | Trickery I |
-| 9 | Ever Ready (Archmage Armor was already taken at MR7) | **Lore (Religion) II** | Stealth I |
-| 10 | Mythic Weapon Specialization: Heavy Pick | Use Magic Device III | Mobility I |
-
-`Infuse Magic Device` is the UI name for the first UMD trick. The final Wizard-book trick is `Use Magic Device III`; do not search for a feat named “Use Magic Device I”. For this fresh restart, take **Lore (Religion) I** at MR7 and **Lore (Religion) II** at MR9. Choose **Magic + Protection** from the Nethys domain list when the UI offers them; Magic adds another dispel route and Protection adds defensive domain options. Do not substitute Knowledge (Arcana) II: it only gives identified items an extra random minor effect. Trickery II is an optional dedicated-dispel route, not this default build.
-
