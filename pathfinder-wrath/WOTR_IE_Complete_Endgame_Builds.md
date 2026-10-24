@@ -230,70 +230,7 @@ Take Perception I at MR3, Perception II at MR4, then Knowledge (World) I/II/III 
 
 ## 4. Trickster Sword Saint — 9.7/10 SS
 
-### Final build
-
-**Sword Saint 20 / Trickster MR10**, using a two-handed **Bardiche**.
-
-Dimension Strike converts the full attack into Touch attacks for the round. Trickster Perception II supplies the extra critical chain, while Arcane Pool, Prescient Attack and Arcane Accuracy solve the boss accuracy problem.
-
-### Creation and class plan
-
-| Field | Choice |
-|---|---|
-| Race | Human |
-| Alignment | Chaotic Neutral |
-| Background | Pickpocket |
-| Stats | STR 18, DEX 12, CON 14, INT 16, WIS 8, CHA 7 |
-| Level-ups | Put every normal increase into STR |
-| Skills | Athletics, Knowledge (Arcana), Knowledge (World), Use Magic Device and Perception |
-| Weapon | Bardiche; stay unarmored and use Canny Defense |
-
-Take **Power Attack**, **Cleave**, **Cleaving Finish**, **Combat Reflexes**, **Great Cleave**, **Improved Critical: Bardiche**, **Outflank**, **Weapon Specialization: Bardiche**, then the Trickster Improved Critical chain and Improved Initiative. Do not waste the short feat budget on Shatter Defenses if the critical chain is incomplete.
-
-### Magus arcana and mythic sequence
-
-| Level/rank | Choice |
-|---:|---|
-| Magus 3 | Arcane Accuracy |
-| Magus 6 | Enduring Blade |
-| Magus 9 | Prescient Attack |
-| Magus 12 | Dimension Strike |
-| Magus 15 | Ghost Blade |
-| Magus 18 | Devoted Blade |
-| MR1 | Last Stand |
-| MR2 | Mythic Power Attack |
-| MR3 | Trickster; Knowledge (Arcana) I |
-| MR4 | Mythic Improved Critical: Bardiche; Perception I and II |
-| MR5 | Enduring Spells; Knowledge (World) I |
-| MR6 | Mythic Power Attack; Knowledge (World) II |
-| MR7 | Improved Initiative; Knowledge (World) III |
-| MR8 | Greater Enduring Spells; Reuse Magic Device |
-| MR9 | Ever Ready; Trick Fate becomes available |
-| MR10 | Mythic Weapon Specialization: Bardiche; Athletics III |
-
-Athletics III can raise the effective Base Attack Bonus toward the skill rank cap. Until it is online, Transformation supplies the missing martial accuracy for a hard encounter.
-
-### Spell priorities
-
-- **Defense:** Shield, Mirror Image, Blur, Displacement, Greater Invisibility, Stoneskin, Vampiric Shadow Shield and True Seeing.
-- **Accuracy:** True Strike, Arcane Accuracy, Prescient Attack and Dimension Strike. These use the same swift-action economy, so choose one for the round.
-- **Buffs:** Haste, Greater Magic Weapon, Enlarge Person Mass and Transformation.
-- **Utility:** Greater Dispel Magic, Dimension Door and Frigid Touch.
-
-### How to play
-
-Before combat, cast Shield, Mirror Image, Displacement and the enduring buffs. Pre-apply the Arcane Weapon enhancement and Trick Fate when the rules allow short-duration pre-buffs. Keep Perfect Strike and the critical toggle on. During the Trick Fate window, use the full attack directly; its attack and confirmation rolls are already replaced by 20, so Dimension Strike is usually redundant. After Trick Fate expires, use **Dimension Strike (Swift) → full attack** against high AC. Do not try to activate Arcane Weapon or cast Trick Fate after Dimension Strike in the same round: the former competes for Swift and the latter is a Standard action. Prescient Attack is the alternative when flat-footed/Canny-defense interaction is more valuable. Do not enter melee without Mirror Image/Displacement active.
-
-### Recommended party
-
-1. Sword Saint 20 / Trickster MR10.
-2. Inciter Skald 20 for flanking, shared sneak dice and melee damage.
-3. Brown-Fur Transmuter 20 for GMW, Haste and shared transformations.
-4. Cleric 20 for Guarded Hearth, Death Ward and healing.
-5. Sable Company Marine 1 / Paladin 13 / Sohei 1 / Mutation Warrior 5 as the second front line.
-6. Kinetic Sharpshooter 20 for ranged pressure.
-
----
+The authoritative natural level-1-to-20 build is the dedicated [INT Death's Consonant Heavy Pick progression](./sword-saint-trickster-ie/SwordSaint_Trickster_INT_HeavyPick_IE_SoloPvP.md). It includes the legal feat order, Magus Arcana, Trickster ranks, spells, equipment, and combat sequence. This master file does not keep a second Bardiche progression.
 
 ## 5. Inciter Skald — 9.6/10 SS support
 
