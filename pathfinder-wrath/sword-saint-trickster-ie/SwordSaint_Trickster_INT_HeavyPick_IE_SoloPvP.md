@@ -54,15 +54,15 @@ This is the only feat order in this document. It is the legal level-by-level rou
 | 5 | **Combat Reflexes**; Sword Saint bonus: **Blind Fight** |
 | 7 | **Weapon Specialization: Heavy Pick**; Fighter Training is now active |
 | 9 | **Critical Focus**; Sword Saint Critical Perfection now lets Magus level 9 satisfy the BAB prerequisite |
-| 11 | **Improved Critical: Heavy Pick**; Sword Saint bonus: **Improved Improved Critical: Heavy Pick** if Perception II is already available |
+| 11 | **Improved Critical: Heavy Pick**; Sword Saint bonus: **Greater Weapon Focus: Heavy Pick** |
 | 13 | **Staggering Critical** |
-| 15 | **Improved Improved Improved Critical: Heavy Pick** |
-| 17 | **Stunning Critical**; Sword Saint bonus: **Critical Mastery** |
-| 19 | **Greater Weapon Focus: Heavy Pick** |
+| 15 | **Improved Improved Critical: Heavy Pick** after Perception II is available |
+| 17 | **Improved Improved Improved Critical: Heavy Pick**; Sword Saint bonus: **Stunning Critical** |
+| 19 | **Critical Mastery** |
 
 At level 3, Critical Focus is unavailable because the character has BAB 2. Focused Strike removes the Power Attack attack penalty from the first attack each turn when the one-handed Heavy Pick is held in two hands; the empty off-hand makes that mode available. Sword Saint's Critical Perfection arrives at level 9 and allows Magus level to replace BAB for feat prerequisites. Fighter Training arrives at level 7 and counts as Fighter level `Sword Saint level - 3`, making Weapon Specialization legal at that point.
 
-This natural route prioritizes the complete playable critical/control package and Greater Weapon Focus. It does not use World III to retroactively add feats or create extra feat slots. Perception II is still taken when the normal mythic progression unlocks it, so the Trickster critical feats are selected only after their actual Trickster prerequisite is available.
+This natural route prioritizes the playable critical/control package and Greater Weapon Focus. At level 11, the Sword Saint bonus slot cannot see Improved Improved Critical until Perception II is active, so Greater Weapon Focus is the correct legal choice there. Perception II must be taken at the first available rank-2 Trick slot; the Trickster critical feats then enter the normal slots at levels 15 and 17. This route does not use World III to retroactively add feats or create extra feat slots.
 
 ## Magus Arcana
 
