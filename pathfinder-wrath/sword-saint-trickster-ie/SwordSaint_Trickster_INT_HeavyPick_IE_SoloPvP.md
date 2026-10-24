@@ -62,6 +62,25 @@ The Sword Saint bonus-feat levels are included in the table. If a particular res
 
 Perception II unlocks the three Trickster critical feats in the table. Knowledge (World) III does **not** replace Perception II and does **not** give extra feat slots. World III removes prerequisites from ordinary feat slots, but it does not bypass the separate Magus bonus-feat rules. This legal route takes Critical Focus, Staggering Critical and Stunning Critical in ordinary slots first, then takes Critical Mastery in the level-17 Sword Saint bonus slot after Sword Saint Fighter Training supplies the effective Fighter level and the three critical prerequisites are already present. The level-19 normal slot remains Greater Weapon Focus.
 
+### Natural level-by-level route before the final respec
+
+The table above is the **level-20/MR10 end-state layout**. It is not the order that a new level-1 character can select. At character level 3, Critical Focus is unavailable because the character has BAB 2. Do this instead:
+
+| Character level | Legal natural choice |
+|---:|---|
+| 1 | Power Attack; Human bonus: Improved Initiative |
+| 3 | **Focused Strike** (Lord of Nothing; requires STR 13 and Power Attack; removes the Power Attack attack penalty from the first two-handed attack each turn) |
+| 5 | Combat Reflexes; Sword Saint bonus: Blind Fight |
+| 7 | Weapon Specialization: Heavy Pick, after Fighter Training becomes active |
+| 9 | **Critical Focus**; Sword Saint Critical Perfection now lets Magus level 9 satisfy the BAB prerequisite |
+| 11 | Improved Critical: Heavy Pick; Sword Saint bonus: Improved Improved Critical if Perception II is available |
+| 13 | Staggering Critical |
+| 15 | Improved Improved Improved Critical |
+| 17 | Stunning Critical; Sword Saint bonus: Critical Mastery |
+| 19 | Greater Weapon Focus: Heavy Pick |
+
+This natural route spends the early slots on legal temporary feats, so it does not fit every final damage feat at once. At MR10, use the final level-20 respec to replace Focused Strike/Combat Reflexes and replay the ordinary slots as the full end-state table above, including the fourth Trickster critical feat and Greater Weapon Specialization. Do not try to select Critical Focus at level 3.
+
 ### World III all-feat pass
 
 The current WotR feat list was checked against the game's full weapon, critical, defensive, spell and miscellaneous sections. The results for this specific INT Heavy Pick / solo PvP chassis are:
