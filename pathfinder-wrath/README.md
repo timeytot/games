@@ -6,8 +6,10 @@ Each playthrough has its own folder. A save loads the mod config that matches it
 
 - [Buff It 2 The Limit — generic guide](./BuffIt-Guide.md) — buttons, live file path, JSON fields, personal spells, red-row debugging, restore checklist. Playthrough folders only store GameId pointers and config copies.
 - [IE complete endgame builds and ranking](./WOTR_IE_Complete_Endgame_Builds.md) — one English build file with the ranked Angel Oracle, Lich caster, Kinetic Sharpshooter, Trickster Sword Saint and Inciter Skald end states, spells, combat order and party shells.
+- [Lich complete endgame build](./WOTR_Lich_Complete_Endgame_Build_EN.md) — the English-only Wizard 20 (Divination) / merged Lich MR10 build, with one natural progression and solo PvP rules allowing legal self-summons and finite resources.
 - [IE party configurations](./WOTR_IE_Party_Configurations.md) — concise six-person rosters with exact class levels and the abilities each slot supplies for Angel Oracle, Lich, Kinetic Sharpshooter, Sword Saint and Inciter Skald.
 - [IE build research notes](./WOTR_IE_Build_Research_Notes.md) — reusable IE and Kinetic Sharpshooter mechanics and source links.
+- [Solo PvP build ranking](./Solo_PvP_Build_Ranking_EN.md) — English IE duel comparison allowing legal self-summons, normal-duration self-buffs and finite resources, with no external teammates or infinite army loops.
 
 ## Playthroughs
 

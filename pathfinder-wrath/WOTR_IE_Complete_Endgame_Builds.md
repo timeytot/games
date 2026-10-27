@@ -16,7 +16,7 @@ The guide does not use the main-campaign sequence where a character starts as An
 | Score | Tier | One retained end state | Finished class/path | Main job |
 |---:|---|---|---|---|
 | 9.9 | **SS** | Angel Oracle | Seeker Oracle 16 / Scaled Fist Monk 1 / Paladin 2 / Hellknight 1 / Angel MR10 | Merged divine casting, buffs, healing and bolts |
-| 9.6 | **SS** | Lich caster | Dhampir Vetala-Born / Exploiter Wizard 20 / Lich MR10 | Prepared merged casting, dispel, control and long-fight sustain |
+| — | **SS** | Divination Lich | Dhampir Vetala-Born / Wizard 20 (Divination) / Lich MR10 | Prepared solo PvP with legal self-summons, initiative and dispels; no numerical PvP score |
 | 9.7 | **SS** | Kinetic Sharpshooter | Kinetic Sharpshooter 20 / Trickster MR10 | Independent ranged finisher |
 | 9.7 | **SS** | Trickster Sword Saint | Sword Saint 20 / Trickster MR10 | Dimension Strike and critical full attacks |
 | 9.6 | **SS** | Inciter Skald | Inciter Skald 20 / Trickster MR10 | Party-wide melee multiplier and control |
@@ -130,51 +130,87 @@ Before combat, let the BFT and Cleric apply the communal package, then cast Guar
 
 ---
 
-## 2. Lich caster — 9.6/10 Boss ranking; 9.4/10 Solo PvP ranking
+## 2. Divination Lich — solo PvP with self-summons
 
 > **Authoritative full configuration:** [WOTR_Lich_Complete_Endgame_Build_EN.md](WOTR_Lich_Complete_Endgame_Build_EN.md). This section keeps only the summary needed by the master table.
->
-> The 9.6 and 9.4 scores are two independent scores for the same core: 9.6 is the prepared Unfair Boss score, while 9.4 is the prepared Solo PvP score against an unknown opponent without opponent-specific equipment swaps. The Boss version prioritizes reliability; the PvP version makes small substitutions to Lich Powers and spell preparation.
 
 ### Authoritative endgame build
 
-**Dhampir（Vetala-Born/Ajibachana） / Exploiter Wizard 20 / Lich MR10**
+**Dhampir (Vetala-Born/Ajibachana) / Wizard 20 — Divination / Lich MR10**, with a merged spellbook.
 
-This replaces the old `Stigmatized Witch 10 / Loremaster 9 / Crossblooded Sorcerer 1` Solo plan in this file. The old hybrid remains a party or legacy-version reference, but it is not the current vanilla, bug-free endgame Boss/PvP build. The pure Exploiter route keeps Wizard 20, full prepared casting, the CL30 merged spellbook, and all 10th-level Lich resources; it does not add Quick Study, Counterspell, or Metamixing, which are not present in the current vanilla Exploit list.
+Use the ordinary Wizard class and select Divination as its Arcane School. This is one natural level-1-to-20 route: no Hilor retraining, prerequisite bypasses or Toybox-only feats. At Wizard 20, Forewarned supplies +10 Initiative and fixes the Initiative die at a natural 20; a rival with a higher total can still act first. Hare supplies another +4 Initiative. The merged spellbook reaches base CL30 before Dark Rites and equipment.
+
+The duel rules allow the character's own legal summons and Lich skeletal companion, normal-duration self-buffs, equipment and finite consumables. They exclude external party members, an unlimited prebuilt army and infinite resource loops. This is a mechanism-based recommendation, not a measured win-rate ranking.
 
 ### Character-creation fields
 
 | Field | Selection |
 |---|---|
-| Race | Dhampir — Vetala-Born/Ajibachana; Basic Elf is an alternative if you only want the highest SR checks |
-| Alignment | NE or LE; NE recommended |
-| Background | Pickpocket (+2 Initiative, Trickery/Stealth); Scholar–Arcane is the academic alternative |
-| Deity | Urgathoa; Nethys is only a narrative alternative |
-| Abilities | 25-point buy: STR 7 / DEX 14 / CON 14 / INT 17 / WIS 11 / CHA 14; after Vetala: DEX 16 / CON 14 / INT 19 / WIS 9 / CHA 14; put every level-up into INT, final INT 24 |
-| Skills | Knowledge (Arcana/World/Religion), Perception, Spellcraft, Use Magic Device, Trickery; put remaining ranks into Mobility |
+| Race | Dhampir — Vetala-Born/Ajibachana |
+| Alignment | Neutral Evil |
+| Background | Pickpocket (+2 Initiative) |
+| Deity | Urgathoa |
+| Abilities | 25-point buy before heritage: STR 7 / DEX 16 / CON 10 / INT 17 / WIS 11 / CHA 14; after heritage: STR 7 / DEX 18 / CON 10 / INT 19 / WIS 9 / CHA 14 |
+| Level-ups | INT at levels 4, 8, 12, 16 and 20; unbuffed INT 24 before equipment and permanent bonuses |
+| Arcane School | Divination; retain all 20 Wizard levels for Forewarned's capstone |
+| Opposition schools | Evocation and Enchantment; their spells remain available but cost two preparation slots |
+| Arcane Bond | Hare familiar (+4 Initiative) |
+| Skills | Prioritize Knowledge (Arcana), Use Magic Device and Perception; spend spare ranks on Knowledge (World), Lore (Religion) and campaign utility |
 
-### Class, feats, and Exploits
+Constitution keeps the living character functional during natural progression. After full Lich transformation, Charisma replaces Constitution for undead hit points; continue using Intelligence for Wizard casting.
 
-- Take **Exploiter Wizard** at levels 1–20; choose Lich at MR3 and merge the spellbooks, reaching effective CL30 at endgame.
-- Key feats: Spell Focus (Conjuration/Necromancy), Greater Spell Focus (Conjuration/Necromancy), Spell Penetration, Greater Spell Penetration, Selective Spell, Heighten Spell, Persistent Spell, Quicken Spell, Bolster Spell, Extend Spell, Blind Fight, and Improved Initiative; take Spell Specialization (Enervation/Boneshaker) as the level-20 Wizard bonus feat. Some versions may not list Lich-exclusive spells in this UI.
-- Exploits: 1 Potent Magic; 5 Dimensional Slide; 9 Spell Resistance; 13 Greater Spell Resistance; 17 Arcane Barrier/Energy Shield. Potent Magic consumes limited Arcane Reservoir charges; it is not a permanent +2.
+### Natural class and feat order
+
+Take **Wizard** at every level. The class supplies bonus feats at 1, 5, 10, 15 and 20; these are separate from the ordinary odd-level feats.
+
+| Character level | Ordinary feat | Wizard bonus feat |
+|---:|---|---|
+| 1 | Spell Focus: Conjuration | Spell Focus: Necromancy |
+| 3 | Improved Initiative | — |
+| 5 | Selective Spell | Greater Spell Focus: Necromancy |
+| 7 | Spell Penetration | — |
+| 9 | Greater Spell Penetration | — |
+| 10 | — | Heighten Spell |
+| 11 | Persistent Spell | — |
+| 13 | Dispel Focus | — |
+| 15 | Greater Dispel Focus | Extend Spell |
+| 17 | Spell Focus: Abjuration | — |
+| 19 | Spell Specialization: Corrupt Magic | — |
+| 20 | — | Bolster Spell |
+
+Dispel Focus and Greater Dispel Focus add a combined +4 to dispel checks. Spell Focus: Abjuration unlocks the relevant Spell Specialization choice; Spell Specialization adds +2 CL to Corrupt Magic, not +2 DC. If that mythic spell is absent from the current selection menu, use Greater Dispel Magic as the legal Abjuration target. Never bypass the menu's prerequisites.
 
 ### Natural mythic and Lich choices
 
-- Generic mythic order: Abundant Casting MR1; Mythic Spell Focus: Necromancy MR2; Enduring Spells MR3; Mythic Spell Penetration MR4; Greater Enduring Spells MR5; Mythic Improved Initiative MR6; Improved Abundant Casting MR7; Archmage Armor MR8; Greater Abundant Casting MR9; Last Stand or Mythic Resolve MR10.
-- Lich path order: Danse Macabre at MR1; Negative Energy Insight at MR2; Indestructible Bones at MR3; Lord Beyond the Grave at MR4; Dark Rites at MR5; Withering Life at MR6; Skeletal Cleric I at MR8; Eclipse Chill at MR9; Skeletal Bard I at MR10.
-- The Phylactery provides the Deadly Magic resource described in the full Lich file; it is not a separate respec or alternate level-up route.
+| Mythic rank | Generic choice | Path choice |
+|---:|---|---|
+| 1 | Abundant Casting | First Ascension: Danse Macabre |
+| 2 | Improved Initiative (Mythic) | — |
+| 3 | Last Stand | Lich; merge spellbooks; Deadly Magic; Skeletal Marksman |
+| 4 | Spell Focus (Mythic): Necromancy | Skeletal Fighter I |
+| 5 | Improved Abundant Casting | — |
+| 6 | Spell Penetration (Mythic) | Withering Life |
+| 7 | Archmage Armor | — |
+| 8 | School Mastery: Abjuration | Skeletal Cleric I |
+| 9 | Greater Abundant Casting | Magic Devourer |
+| 10 | Extra Mythic Ability → Favorite Metamagic: Persistent | Skeletal Bard I |
+
+Enduring Spells and Greater Enduring Spells are omitted for the single-duel objective. Extend Spell handles useful preparation durations. Favorite Metamagic reduces Persistent's adjustment from +2 to +1; it still cannot fit a 10th-level Absolute Death into a legal spell slot. School Mastery adds +1 CL for Abjuration, not +1 DC.
+
+The Phylactery adds two Deadly Magic uses when that Lich Power is already selected. Retain the Engraved Lucky Bracers for the ritual to obtain the wrist-slot form; other choices can conflict with the staff or neck slot. Track those finite uses and the skeletal companion's resources normally. The Marksman's WIS must be raised with legal equipment before its Cleric upgrade can cast the corresponding spell levels; the full guide specifies a +8 mental-stat headband and casting equipment without applicable arcane spell failure.
 
 ### Spell and equipment summary
 
-- Core spells: Corrupt Magic (multi-layer dispel and penalties with no SR/no save), Absolute Death (10th level, Will partial, no SR; Greater Quicken Rod cannot accelerate 10th-level spells), Negative Eruption, Feast of Blood, Siphon Life, Embrace of Death, Domain of Hungry Flesh, Siphon Time, Bone Shield, False Grace, Deny Death, Blessing of Unlife, Vampiric Blade, and Power from Death.
-- Long-duration defenses: Mage Armor + Archmage Armor, Shield, Mind Blank, True Seeing, Echolocation, Foresight, Greater Invisibility/Displacement, Seamantle, Frightful Aspect, Freedom of Movement, Death Ward, energy protections, and Greater Heroism.
-- Endgame equipment: Robe of Seven Sins (or one Necromancy-DC robe), Sin Mage's Staff/Quarterstaff of the War Mage, Heartstone of Night Hag Queen (SR38; use the current tooltip for natural AC because guides disagree between +5 and +7), Flawless Headband of Mental Perfection +8, Flawless Cloak of Resistance +7, Phylactery (wrist slot; +2 uses if Lich Deadly Magic is also selected), Gloves of Enduring Wizard, Belt of Physical Perfection, Boots of Perfect Grounding, Ring of Triumphant Advance + Magician's Ring/Caster's Dream; carry a Greater Quicken Rod, Grandmaster's Rod, and a Ghost Touch weapon or scroll as Nahyndrian Darkness backups.
+- Core spells: Corrupt Magic, Absolute Death, Negative Eruption, Feast of Blood, Siphon Life, Embrace of Death, Domain of Hungry Flesh, Siphon Time, Bone Shield, False Grace, Deny Death, Blessing of Unlife and Power from Death.
+- Self-defenses: Mage Armor + Archmage Armor, Shield/Bone Shield as appropriate, Mind Blank, True Seeing, Echolocation, Foresight, Greater Invisibility, Seamantle and other legally available buffs. Evocation/Enchantment opposition spells require their normal doubled slots.
+- Self-summons: prepare selected Summon Monster spells and Lich summoning spells, use the skeletal companion, and count every spell slot and duration. Summons screen movement and add actions; their presence does not prove that they can hit or disable an optimized opponent.
+- Endgame equipment: Robe of Seven Sins, Sin Mage's Staff, an Intelligence/Charisma headband, resistance cloak, Phylactery and the initiative/caster gear specified in the full guide. Carry a Greater Quicken Rod and Grandmaster's Rod with finite charges.
 
-### Boss/PvP trade-offs
+### Duel routine
 
-- **Boss 9.6:** Start with Corrupt Magic, then use Negative Eruption/Feast of Blood/Absolute Death; use Last Stand, Bone Shield, temporary hit points, summons, and Dimensional Slide for a long fight. Against Nahyndrian Darkness, do not rely only on direct spells: handle the crystals and concealment/incorporeal defenses first, then use Ghost Touch/Weapon of Death, summons, or SR-free control as backups.
-- **PvP 9.4:** Prepare Mind Blank, True Seeing, Greater Invisibility, Foresight, and Deny Death; use Corrupt Magic to dismantle defenses, Deadly Magic during key casting windows, and Absolute Death/control chains to close. Against high saves, death immunity, or counter-casters, do not treat one Absolute Death cast as the only win condition.
+Apply legal self-buffs and summon screens before initiative within their real durations. Protect against critical hits with Bone Shield. Use Corrupt Magic to remove the opponent's relevant defenses, then choose damage or control against the remaining immunities. A Greater Quicken Rod can accelerate spells of level 9 or lower; it cannot quicken 10th-level Absolute Death. Use Deadly Magic during the important casting window and preserve Last Stand as a survival resource.
+
+Trick Fate does not remove critical immunity, and the target's natural-20 saves do not force the Lich's dispel checks to fail. Conversely, do not assume Absolute Death kills through an active successful save, Last Stand or every defensive effect. Summons, dispels and remaining actions make the matchup more complex than comparing character-sheet damage.
 
 ---
 
