@@ -1,44 +1,14 @@
-# Pathfinder: Wrath of the Righteous — IE Complete Endgame Builds
+# Boss PvE Builds — Inevitable Excess
 
-This is the compact, actionable build file for **Inevitable Excess (IE)**. It keeps one strongest finished build per system, in score order. The scores are internal Unfair/min-max comparisons, not official ratings.
+The earlier Boss-oriented builds are retained here as PvE references. They are separate from the solo 1v1 builds and may depend on allied support; they are not a PvP ranking or a new validation of every old selection.
 
-The Angel, Lich, and Sword Saint sections give one direct level-1-to-20 progression each. The Sword Saint route uses the naturally acquired Trickster Knowledge (World) III at MR7 for its legal late feat choice; it does not use Toybox, Hilor retraining, or a final respec.
+| Build | Finished class and path | PvE role |
+|---|---|---|
+| Angel Oracle | Seeker Oracle 16 / Scaled Fist 1 / Paladin 2 / Hellknight 1 / Angel | Divine casting, defenses and boss damage |
+| Kinetic Sharpshooter | Kinetic Sharpshooter 20 / Trickster | Ranged boss damage |
+| Inciter Skald | Inciter Skald 20 / Trickster | Martial support and enemy debuffs |
 
-IE has two separate entry modes:
-
-- **Mythic entry:** character level 20 with Mythic Rank 10. The five builds below are written for this mode.
-- **Fresh Legend entry:** select Legend at MR3 and reach character level 40. A fresh Legend cannot later gain Angel, Lich or Trickster path features. The full ranked builds below therefore do not pretend that those paths are available in fresh Legend.
-
-The guide does not use the main-campaign sequence where a character starts as Angel, Lich or Trickster and changes to Legend at MR8. For the fresh Legend fallback, use Kinetic Sharpshooter 20 / Mutation Warrior 20 or Inciter Skald 20 / Mutation Warrior 20; those are compatibility plans, not additional ranked variants.
-
-## Ranking
-
-| Score | Tier | One retained end state | Finished class/path | Main job |
-|---:|---|---|---|---|
-| 9.9 | **SS** | Angel Oracle | Seeker Oracle 16 / Scaled Fist Monk 1 / Paladin 2 / Hellknight 1 / Angel MR10 | Merged divine casting, buffs, healing and bolts |
-| — | **SS** | Divination Lich | Dhampir Vetala-Born / Wizard 20 (Divination) / Lich MR10 | Prepared solo PvP with legal self-summons, initiative and dispels; no numerical PvP score |
-| 9.7 | **SS** | Kinetic Sharpshooter | Kinetic Sharpshooter 20 / Trickster MR10 | Independent ranged finisher |
-| 9.7 | **SS** | Trickster Sword Saint | Sword Saint 20 / Trickster MR10 | Dimension Strike and critical full attacks |
-| 9.6 | **SS** | Inciter Skald | Inciter Skald 20 / Trickster MR10 | Party-wide melee multiplier and control |
-
-The lower-rated DLC archetype rows and duplicate Legend versions are omitted from this actionable file. They remain unnecessary when the goal is one strongest build per system.
-
-## Shared party shell
-
-| Slot | Chassis | What it supplies |
-|---:|---|---|
-| 1 | The selected build below | Main damage, casting or party engine |
-| 2 | Inciter Skald 20 | Inspired Rage, Lethal Stance, Beast Totem, shared sneak dice and enemy pressure |
-| 3 | Brown-Fur Transmuter 20 | Share Transmutation, Greater Magic Weapon, Legendary Proportions, Haste and Echolocation |
-| 4 | Cleric 20 or Oracle 20 | Guarded Hearth, communal defenses, Death Ward, Freedom of Movement, Heal and dispels |
-| 5 | Mutation Warrior 19 / Demonslayer Ranger 1 | Mutagen, weapon training, Outflank and full-BAB melee damage |
-| 6 | Witch 20, Kinetic Sharpshooter 20 or a second divine buffer | Hexes, ranged pressure, healing and condition removal |
-
-Use only one active rage song. Casters should decline Inspired Rage unless the current patch confirms that **Hit a Nerve** allows them to cast safely while the song is active.
-
----
-
-## 1. Angel Oracle — 9.9/10 SS
+## Angel Oracle
 
 ### Final build
 
@@ -119,102 +89,9 @@ Seeker bonus feats at Oracle 5/10/15 are restricted to the magic-feat list; they
 
 Before combat, let the BFT and Cleric apply the communal package, then cast Guarded Hearth when the encounter justifies it. Put Sword of Heaven and the long-duration Angel defenses up before initiative. On the opening turn, remove a boss defense with Greater Dispel if necessary, then cast Bolt/Storm of Justice. Use Quickened Heal or Greater Dispel only when it preserves the main Angel action. Keep healing and condition removal for emergencies; do not spend the first round on small heals while the primary threat is alive.
 
-### Recommended party
-
-1. Angel Oracle above.
-2. Inciter Skald 20 for the martial multiplier.
-3. Brown-Fur Transmuter 20 for shared size, Dexterity and weapon buffs.
-4. Cleric 20 for Guarded Hearth and communal defenses.
-5. Mutation Warrior 19 / Demonslayer Ranger 1 as the full-BAB front line.
-6. Stigmatized Witch 20 for Evil Eye, Protective Luck and Cackle.
-
 ---
 
-## 2. Divination Lich — solo PvP with self-summons
-
-> **Authoritative full configuration:** [WOTR_Lich_Complete_Endgame_Build_EN.md](WOTR_Lich_Complete_Endgame_Build_EN.md). This section keeps only the summary needed by the master table.
-
-### Authoritative endgame build
-
-**Dhampir (Vetala-Born/Ajibachana) / Wizard 20 — Divination / Lich MR10**, with a merged spellbook.
-
-Use the ordinary Wizard class and select Divination as its Arcane School. This is one natural level-1-to-20 route: no Hilor retraining, prerequisite bypasses or Toybox-only feats. At Wizard 20, Forewarned supplies +10 Initiative and fixes the Initiative die at a natural 20; a rival with a higher total can still act first. Hare supplies another +4 Initiative. The merged spellbook reaches base CL30 before Dark Rites and equipment.
-
-The duel rules allow the character's own legal summons and Lich skeletal companion, normal-duration self-buffs, equipment and finite consumables. They exclude external party members, an unlimited prebuilt army and infinite resource loops. This is a mechanism-based recommendation, not a measured win-rate ranking.
-
-### Character-creation fields
-
-| Field | Selection |
-|---|---|
-| Race | Dhampir — Vetala-Born/Ajibachana |
-| Alignment | Neutral Evil |
-| Background | Pickpocket (+2 Initiative) |
-| Deity | Urgathoa |
-| Abilities | 25-point buy before heritage: STR 7 / DEX 16 / CON 10 / INT 17 / WIS 11 / CHA 14; after heritage: STR 7 / DEX 18 / CON 10 / INT 19 / WIS 9 / CHA 14 |
-| Level-ups | INT at levels 4, 8, 12, 16 and 20; unbuffed INT 24 before equipment and permanent bonuses |
-| Arcane School | Divination; retain all 20 Wizard levels for Forewarned's capstone |
-| Opposition schools | Evocation and Enchantment; their spells remain available but cost two preparation slots |
-| Arcane Bond | Hare familiar (+4 Initiative) |
-| Skills | Prioritize Knowledge (Arcana), Use Magic Device and Perception; spend spare ranks on Knowledge (World), Lore (Religion) and campaign utility |
-
-Constitution keeps the living character functional during natural progression. After full Lich transformation, Charisma replaces Constitution for undead hit points; continue using Intelligence for Wizard casting.
-
-### Natural class and feat order
-
-Take **Wizard** at every level. The class supplies bonus feats at 1, 5, 10, 15 and 20; these are separate from the ordinary odd-level feats.
-
-| Character level | Ordinary feat | Wizard bonus feat |
-|---:|---|---|
-| 1 | Spell Focus: Conjuration | Spell Focus: Necromancy |
-| 3 | Improved Initiative | — |
-| 5 | Selective Spell | Greater Spell Focus: Necromancy |
-| 7 | Spell Penetration | — |
-| 9 | Greater Spell Penetration | — |
-| 10 | — | Heighten Spell |
-| 11 | Persistent Spell | — |
-| 13 | Dispel Focus | — |
-| 15 | Greater Dispel Focus | Extend Spell |
-| 17 | Spell Focus: Abjuration | — |
-| 19 | Spell Specialization: Corrupt Magic | — |
-| 20 | — | Bolster Spell |
-
-Dispel Focus and Greater Dispel Focus add a combined +4 to dispel checks. Spell Focus: Abjuration unlocks the relevant Spell Specialization choice; Spell Specialization adds +2 CL to Corrupt Magic, not +2 DC. If that mythic spell is absent from the current selection menu, use Greater Dispel Magic as the legal Abjuration target. Never bypass the menu's prerequisites.
-
-### Natural mythic and Lich choices
-
-| Mythic rank | Generic choice | Path choice |
-|---:|---|---|
-| 1 | Abundant Casting | First Ascension: Danse Macabre |
-| 2 | Improved Initiative (Mythic) | — |
-| 3 | Last Stand | Lich; merge spellbooks; Deadly Magic; Skeletal Marksman |
-| 4 | Spell Focus (Mythic): Necromancy | Skeletal Fighter I |
-| 5 | Improved Abundant Casting | — |
-| 6 | Spell Penetration (Mythic) | Withering Life |
-| 7 | Archmage Armor | — |
-| 8 | School Mastery: Abjuration | Skeletal Cleric I |
-| 9 | Greater Abundant Casting | Magic Devourer |
-| 10 | Extra Mythic Ability → Favorite Metamagic: Persistent | Skeletal Bard I |
-
-Enduring Spells and Greater Enduring Spells are omitted for the single-duel objective. Extend Spell handles useful preparation durations. Favorite Metamagic reduces Persistent's adjustment from +2 to +1; it still cannot fit a 10th-level Absolute Death into a legal spell slot. School Mastery adds +1 CL for Abjuration, not +1 DC.
-
-The Phylactery adds two Deadly Magic uses when that Lich Power is already selected. Retain the Engraved Lucky Bracers for the ritual to obtain the wrist-slot form; other choices can conflict with the staff or neck slot. Track those finite uses and the skeletal companion's resources normally. The Marksman's WIS must be raised with legal equipment before its Cleric upgrade can cast the corresponding spell levels; the full guide specifies a +8 mental-stat headband and casting equipment without applicable arcane spell failure.
-
-### Spell and equipment summary
-
-- Core spells: Corrupt Magic, Absolute Death, Negative Eruption, Feast of Blood, Siphon Life, Embrace of Death, Domain of Hungry Flesh, Siphon Time, Bone Shield, False Grace, Deny Death, Blessing of Unlife and Power from Death.
-- Self-defenses: Mage Armor + Archmage Armor, Shield/Bone Shield as appropriate, Mind Blank, True Seeing, Echolocation, Foresight, Greater Invisibility, Seamantle and other legally available buffs. Evocation/Enchantment opposition spells require their normal doubled slots.
-- Self-summons: prepare selected Summon Monster spells and Lich summoning spells, use the skeletal companion, and count every spell slot and duration. Summons screen movement and add actions; their presence does not prove that they can hit or disable an optimized opponent.
-- Endgame equipment: Robe of Seven Sins, Sin Mage's Staff, an Intelligence/Charisma headband, resistance cloak, Phylactery and the initiative/caster gear specified in the full guide. Carry a Greater Quicken Rod and Grandmaster's Rod with finite charges.
-
-### Duel routine
-
-Apply legal self-buffs and summon screens before initiative within their real durations. Protect against critical hits with Bone Shield. Use Corrupt Magic to remove the opponent's relevant defenses, then choose damage or control against the remaining immunities. A Greater Quicken Rod can accelerate spells of level 9 or lower; it cannot quicken 10th-level Absolute Death. Use Deadly Magic during the important casting window and preserve Last Stand as a survival resource.
-
-Trick Fate does not remove critical immunity, and the target's natural-20 saves do not force the Lich's dispel checks to fail. Conversely, do not assume Absolute Death kills through an active successful save, Last Stand or every defensive effect. Summons, dispels and remaining actions make the matchup more complex than comparing character-sheet damage.
-
----
-
-## 3. Kinetic Sharpshooter — 9.7/10 SS
+## Kinetic Sharpshooter
 
 ### Final build
 
@@ -253,22 +130,9 @@ Take Perception I at MR3, Perception II at MR4, then Knowledge (World) I/II/III 
 - Use Empowered as the default single-blast metakinesis. Use Quicken only when the current combat log proves that it creates a second Charged Ammunition blast.
 - Do not expect Rapid Shot, Manyshot or Vital Strike to create extra KSS blasts.
 
-### Recommended party
-
-1. KSS 20 / Trickster MR10.
-2. Inciter Skald 20 for shared sneak dice, Lethal Stance and Beast Totem.
-3. Brown-Fur Transmuter 20 for Greater Magic Weapon, Haste and shared transformations.
-4. Cleric 20 for Guarded Hearth, True Seeing, Death Ward and Freedom of Movement.
-5. Mutation Warrior 19 / Demonslayer Ranger 1 for a full-BAB flanking body.
-6. Witch 20 or Oracle 20 for hexes, healing and condition removal.
-
 ---
 
-## 4. Trickster Sword Saint — 9.7/10 SS
-
-The authoritative natural level-1-to-20 build is the dedicated [INT Death's Consonant Heavy Pick progression](./sword-saint-trickster-ie/SwordSaint_Trickster_INT_HeavyPick_IE_SoloPvP.md). It includes the legal feat order, Magus Arcana, Trickster ranks, spells, equipment, and combat sequence. This master file does not keep a second Bardiche progression.
-
-## 5. Inciter Skald — 9.6/10 SS support
+## Inciter Skald
 
 ### Final build
 
@@ -305,25 +169,3 @@ Take Last Stand, Abundant Casting, Improved Abundant Casting, Mythic Inspiration
 ### Spells and combat loop
 
 Prioritize Good Hope, Haste, Freedom of Movement, Greater Invisibility, Echolocation, Greater Heroism, Mass Cacophonous Call, Song of Discord, Mind Fog, Overwhelming Presence and Selective Confusion. Before combat, cast the long-duration package. In round one, activate **Raging Song** with Accept Rage only on the martial characters, then use Dispelling Attack or selective control. Let Sword Saint and Mutation Warrior full-attack while KSS stays at range. Turn the song off for caster rounds unless Hit a Nerve is confirmed to remove the patch's casting restriction.
-
-### Recommended party
-
-1. Inciter Skald 20 / Trickster MR10.
-2. Sword Saint 20 / Trickster MR10.
-3. Brown-Fur Transmuter 20.
-4. Cleric 20.
-5. Mutation Warrior 19 / Demonslayer Ranger 1.
-6. Kinetic Sharpshooter 20.
-
----
-
-## Fresh IE Legend fallback
-
-Fresh Legend is selected at MR3 and cannot later become Angel, Lich or Trickster. If this is the mode being played, use only these two practical replacements:
-
-| System | Fresh Legend replacement |
-|---|---|
-| Ranged finisher | Kinetic Sharpshooter 20 / Mutation Warrior 20 |
-| Party engine | Inciter Skald 20 / Mutation Warrior 20 |
-
-Do not label either replacement as an Angel, Lich or Trickster build. They retain only ordinary class levels and the two generic Mythic Hero choices available before the MR3 Legend selection.

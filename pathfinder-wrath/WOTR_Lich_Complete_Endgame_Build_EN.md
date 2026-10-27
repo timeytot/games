@@ -6,7 +6,7 @@ Use **ordinary Wizard 20, Divination school, merged Lich spellbook** as the defa
 
 The comparison includes all DLC, level 20 / Mythic Rank 10, turn-based combat, an approximately 10-metre starting separation, and equal difficulty rules for both sides. Use a fixed legal character and owned equipment inventory. Normal class/path companions and finite self-summons may participate; external party members, imported armies of captured enemies, unlimited preparation loops, duplicated unique equipment, and combat resets are excluded. Buff and summon durations continue to run normally.
 
-Follow one natural level-1-to-20 progression. No Toybox feat grants, Hilor retraining, final respec, prerequisite bypass, class dip, or inherited features from a discarded mythic path are required. This file supersedes the previous reservoir-based Wizard plan.
+Follow one natural level-1-to-20 progression. No Toybox feat grants, Hilor retraining, final respec, prerequisite bypass, class dip, or inherited features from a discarded mythic path are required.
 
 A direct-entry Inevitable Excess character can follow the same class and feat order, but does not automatically possess main-campaign rewards. An item's availability must come from that character's actual legal inventory. Owning a DLC alone does not place every reward in an IE character's inventory.
 
@@ -260,14 +260,6 @@ Against a crit-based attacker, retain critical immunity. Against another caster,
 
 No claim here assumes that Deadly Magic bypasses every immunity, that a dispel removes class features such as Last Stand, or that all damage can finish an opponent during a death-prevention window.
 
-## Alternative Lich chassis: result of the audit
-
-Shadowcaster 20 with Divination is a genuine competitor: it can preserve Forewarned and adds its own shadow abilities. It trades away Arcane Bond and four bonus feats, and its +5 profane INT does not stack with a higher profane INT reward. Do not dismiss it using old reports about its shadow rebelling; do not assume it is automatically stronger either.
-
-Scroll Savant 20 with Divination can preserve the school capstone and improve finite scroll use. Its value depends on the specified owned scroll inventory. Neither alternative has been shown to replace this full ordinary-Diviner configuration across the stated matchups.
-
-Allowing summons strengthens the Lich army, but also restores Aivu for Azata, Aeon summon interactions where implemented, and normal Trickster summons. It does not prove an overall winner. Swarm must specify Swarm Size, finite clone count, and real equipment allocation before being compared.
-
 ## Sources and validation status
 
 Mechanics were checked against current accessible descriptions on 2026-10-27. Class/feat slots, point buy, prerequisite order, item-slot conflicts, and the document's resource/action accounting were reviewed. No round-robin PvP experiment has been performed.
@@ -280,4 +272,3 @@ Mechanics were checked against current accessible descriptions on 2026-10-27. Cl
 - [Skeletal Champion casting and upgrades](https://pathfinderkingmaker.fandom.com/wiki/Skeletal_Champion_%28Lich%29)
 - [DLC6 quest reward: Razmir's Mask or Ring](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/a-dance-of-masks)
 - [Initiative modifiers](https://pathfinderkingmaker.fandom.com/wiki/Bonuses_%28WotR%29/Initiative)
-- [Summon-inclusive comparison](./Solo_PvP_Build_Ranking_EN.md)
