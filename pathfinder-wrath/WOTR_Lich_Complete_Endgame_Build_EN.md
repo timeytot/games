@@ -71,8 +71,8 @@ All twenty class levels are ordinary Wizard. Keep ordinary and Wizard bonus sele
 | 1 | Spell Focus: Conjuration | Spell Focus: Necromancy |
 | 3 | **Improved Initiative** | — |
 | 5 | Metamagic: Selective Spell | Greater Spell Focus: Necromancy |
-| 7 | Spell Penetration | — |
-| 9 | Greater Spell Penetration | — |
+| 7 | **Augment Summoning** | — |
+| 9 | **Superior Summoning** | — |
 | 10 | — | Metamagic: Heighten Spell |
 | 11 | Metamagic: Persistent Spell | — |
 | 13 | **Dispel Focus** | — |
@@ -85,46 +85,66 @@ Dispel Focus precedes Greater Dispel Focus. Abjuration focus precedes specializa
 
 Greater Quicken Metamagic Rod supplies the high-level quickening resource. An ordinary Quicken feat would raise a 9th-level spell to a 13th-level slot, which this character does not have. The rod's normal limit is spell level 9; it cannot quicken the 10th-level Absolute Death.
 
-Summoning feats are not included in this fixed plan. Normal summons and the Skeletal Champion already provide bodies and actions; the retained feat budget supports the main caster's dispelling and control. Do not assume Augment Summoning enhances every undead-creation or path-companion ability.
+Spell Focus: Conjuration at level 1 supplies Augment Summoning's prerequisite; Augment Summoning then unlocks Superior Summoning. Use eligible Summon Monster variants that already produce several creatures to obtain Superior Summoning's extra creature. It does not duplicate a single highest-tier summon or the Skeletal Champion. Augment Summoning supplies enhancement bonuses, while Ascendant Summons uses separate untyped bonuses; verify their application to the actual summoned unit. The skeleton does not become a newly summoned creature every round.
+
+The two ordinary Spell Penetration feats and their mythic enhancement are omitted. Corrupt Magic, Absolute Death, Domain of the Hungry Flesh and Negative Eruption do not check SR. Deadly Magic supplies a finite window for the other spells that benefit from bypassing SR. This trades better ordinary SR:yes casting outside that window for a stronger summon package in the stated summon-allowed duel; it does not claim that all Wizard spells now ignore SR.
 
 ## Natural mythic progression
 
 First Ascension is a separate selection: choose **Danse Macabre**. At MR3 choose **Lich** and merge the Wizard and Lich books.
 
-| Mythic rank | Generic ability / feat |
+| MR | Generic ability / feat |
 |---:|---|
-| 1 | Abundant Casting |
+| 1 | **Last Stand** |
 | 2 | **Improved Initiative (Mythic)** |
-| 3 | **Last Stand** |
+| 3 | **Archmage Armor** |
 | 4 | Spell Focus (Mythic): Necromancy |
-| 5 | Improved Abundant Casting |
-| 6 | Spell Penetration (Mythic) |
-| 7 | Archmage Armor |
-| 8 | School Mastery: Abjuration |
-| 9 | Greater Abundant Casting |
-| 10 | Extra Mythic Ability → Favorite Metamagic: Persistent |
+| 5 | **Favorite Metamagic: Persistent** |
+| 6 | **Expanded Arsenal: Conjuration** |
+| 7 | **Ascendant Summons** |
+| 8 | **School Mastery: Abjuration** |
+| 9 | **Favorite Metamagic: Selective** |
+| 10 | **School Mastery: Necromancy** |
 
-Improved Initiative is present before the normal first mythic ranks. Spell Penetration is present before its mythic enhancement. The Abundant Casting chain is selected in order. Favorite Metamagic is obtained through an extra-ability choice at the even MR10 feat slot.
+These are five ability slots and five feat slots. Improved Initiative, Necromancy focus and the relevant ordinary metamagic must exist before their mythic selections. Take ordinary Persistent at character 11 before MR5; if the mythic unlock comes earlier, postpone that selection. Selective is already present at character 5. School Mastery is selected for two different schools, not twice for one school.
 
-This is a single-duel build. It spends no mythic slots on Enduring Spells or Greater Enduring Spells. Extend Spell and ordinary preparation durations supply the combat window; they do not freeze time or make all summons permanent. Self-cast Mage Armor to activate Archmage Armor. Its armor bonus does not stack with another armor bonus from ordinary Bracers of Armor.
+Expanded Arsenal transfers the applicable focus/mastery package from another school to Conjuration. Do not add every school's focus bonuses together: the inspected implementation chooses the strongest eligible package. Read the final DC and CL from the actual spellbook/combat log, especially where native Conjuration focus and transferred bonuses meet.
+
+### Opportunity costs in one duel
+
+| Choice | Reason for the fixed selection or omission |
+|---|---|
+| No Abundant Casting chain | The three picks add four daily slots at each covered level 1-9, not extra actions or level-10 casts. The explicit preparation budget below fits the core defenses, multiple dispels and summons without them. More day-long endurance is less valuable here than three active combat investments. |
+| Ascendant Summons | Directly improves eligible summons. At MR10 the inspected buff gives +6 to STR, DEX, CON, WIS and CHA, plus physical-damage bypass properties. There is no INT component; do not describe it as +6 to every ability. |
+| Favorite Persistent | Makes compatible save-based control cheaper to prepare; it has no benefit on no-save Corrupt Magic. |
+| Favorite Selective | Reduces Selective's slot increase to zero. Selective Domain of the Hungry Flesh can occupy level 8 rather than level 9, preserving a scarce high-level slot. Eligibility is confirmed; test actual allied-unit exclusion for a lingering area rather than assuming every hazard is safe. |
+| Expanded Arsenal / two School Masteries | Supports both Conjuration control and the main Abjuration/Necromancy tools. DC bonuses do not improve dispels; Abjuration's actual CL bonus and specialization do. Necromancy mastery also improves the CL-dependent successful-save damage of Absolute Death. |
+| No Rupture Restraints | It overlaps substantially with the completed undead immunities and the fixed protective equipment. Residual non-mind-affecting control still matters, but it is not the highest-value default slot in this particular equipped Lich. |
+| No Enduring pair | Ordinary durations, finite Extend charges and the limited duel window suffice. Neither Enduring ability grants extra actions, extends every class ability, or makes summons permanent. |
+
+Self-cast Mage Armor to activate Archmage Armor. Its armor bonus does not add to another armor bonus from Bracers of Armor.
 
 ### Lich selections
 
 | Rank / selection | Choice |
 |---|---|
 | MR3 Lich Power | **Deadly Magic** |
-| MR6 Lich Power | **Withering Life** |
-| MR9 Lich Power | **Magic Devourer** |
+| MR6 Lich Power | **Indestructible Bones** |
+| MR9 Lich Power | **Eclipse Chill** |
 | Initial Skeletal Champion | Skeletal Marksman |
 | MR4 skeleton upgrade | Skeletal Fighter I |
 | MR8 skeleton upgrade | Skeletal Cleric I |
 | MR10 skeleton upgrade | Skeletal Bard I |
 
-The skeleton selections are path progression, not extra generic mythic feats. Its Cleric/Bard upgrades do not turn it into a separate level-20 merged caster. Give the Marksman a legally obtained +8 mental-stat headband: its base WIS is only 8, so the Cleric upgrade alone does not unlock useful cleric casting. WIS must reach at least 15 to cast 5th-level cleric spells. Bard casting uses CHA; keep its equipment free of applicable arcane spell failure, using an unarmored casting setup when necessary. The upgrade books have their own caster level and slots, rather than the Lich's merged CL.
+Deadly Magic is a limited activated resource, not a permanent immunity override. Use its finite bypass and anti-casting window where the spell and target benefit. Spell Turning is a separate interaction; the SR:no label or Deadly Magic's wording does not prove that a targeted spell bypasses a mask.
 
-Deadly Magic is a limited activated resource; it is not a permanent buff. It bypasses SR and can deny affected enemies spellcasting. Do not interpret it as tested permission to bypass every creature immunity, item effect, or encounter script. Withering Life affects living enemies vulnerable to its ability damage. Magic Devourer only supplies its quickening benefit after an enemy fails to penetrate applicable SR; it is not an unconditional extra action.
+Indestructible Bones supplies DR10/- and its listed attacker penalty. Apply damage-reduction rules: do not add its 10 to Stoneskin's 10 as DR20. It is useful against repeated weapon pressure, not a complete answer to a high-damage critical or force damage.
 
-Equip a legally obtained Phylactery if available. It provides Deadly Magic access or additional uses according to its tooltip; this plan already selects Deadly Magic and does not depend on receiving the item at character creation.
+Eclipse Chill adds its conditional vulnerability/blindness rider. It still needs its actual trigger, save and susceptible target. It does not force a failed save through active Trick Fate. Withering Life is omitted because ability-damage immunity limits it against undead and prepared body spells. Magic Devourer is omitted because its quickening requires an enemy to fail applicable SR: its MR10 SR 35 (and even Heartstone's SR 38) is ineffective against, for example, a +44 penetration check, and no-SR spells do not fail an SR check to trigger it. Neither omitted power is counted secretly in this build.
+
+The skeleton upgrades use separate path selections. Its Cleric/Bard books have their own caster level and slots. Equip the Marksman with a legally owned +8 mental-stat headband: base WIS8 otherwise does not permit useful high-level Cleric casting. WIS15 is needed for level-5 Cleric spells. Bard casting uses CHA; avoid applicable armor-related spell failure. Do not add the main Lich's merged CL to either companion book.
+
+Use the wrist-slot Phylactery made from retained Engraved Lucky Bracers when that ritual reward was actually acquired. Its finite Deadly Magic resource supplements a power this build already selects; it is not assumed to appear in a fresh IE inventory.
 
 ## Spell learning and preparation
 
@@ -149,7 +169,7 @@ The following is a conservative natural Wizard learning route. It does not rely 
 | 15 | Mind Blank; Seamantle |
 | 16 | Frightful Aspect; Protection from Spells |
 | 17 | **Foresight; Fiery Body** |
-| 18 | Heroic Invocation; Summon Monster IX |
+| 18 | **Summon Monster VIII; Summon Monster IX** |
 | 19 | Mind Blank, Communal; Icy Prison, Mass |
 | 20 | Clashing Rocks; Greater Shadow Conjuration |
 
@@ -176,6 +196,21 @@ Also retain the automatically learned Lich tools: Bone Shield, False Grace, Siph
 
 Freedom of Movement and Death Ward are external divine-scroll/consumable resources in this ordinary Wizard plan. They are not native Wizard spells. If the skeleton casts a protection, use the skeleton's own caster level and resources.
 
+### A concrete high-level slot budget
+
+Count permanent casting INT at preparation/rest, not a temporary Fox's Cunning. The listed mask supplies +8 enhancement; Sin Mage's Staff supplies a separate +6 untyped INT, and Draven's Hat supplies +2 profane INT. With INT 24 from natural leveling, the fixed owned-item loadout reaches **INT 40**, before any separately acquired permanent reward. Another +8 enhancement headband does not raise that to 48.
+
+The actual Wizard spell table includes CL30 and supplies four base level-8 slots and four base level-9 slots. INT 40 adds two at each, giving **six unrestricted slots at each level**, plus a separate restricted Divination slot. This deliberately does not spend any extra slots that equipment-derived CL might provide.
+
+| Level | Six unrestricted preparation slots | Restricted specialist slot |
+|---:|---|---|
+| 8 | Mind Blank; Seamantle; Protection from Spells; Selective Domain of the Hungry Flesh; Summon Monster VIII x2 | Eligible Divination, including a legal Heighten version |
+| 9 | Fiery Body; Corrupt Magic x3; Negative Eruption; Summon Monster IX | **Foresight** |
+| 10 | Reserve the available Absolute Death casts; use the actual merged-book UI for the final total | Do not invent another Corrupt Magic slot here |
+
+At the lower INT 32 baseline, there are only five unrestricted slots at 8/9: remove one Summon Monster VIII and Summon Monster IX from this ledger. At INT 40 the sixth slots are real capacity, not an unspent imaginary Abundant bonus. Keep the declared staff equipped; changing permanent casting stats can change usable preparation capacity.
+
+Greater Heroism is an Enchantment opposition spell and occupies **two level-6 slots per prepared cast**. Use it on the main character; Haste supplies group support. This ledger does not also fit Heroic Invocation, an opposition spell costing two level-9 slots. Foresight's specialist slot cannot be reused for Corrupt Magic. Precasting Fiery Body, summons and protections spends those prepared casts; it does not refund their slots before initiative.
 ### Metamagic boundaries
 
 - Extend: use for compatible timed defenses and summons; timers still run.
@@ -203,72 +238,100 @@ Enemy creatures collected through Repurpose outside the arena are not part of th
 
 ## Endgame equipment
 
-Use only rewards actually obtained by this character. Each row is one slot; alternatives replace the default rather than stacking with it.
+Fix the owned inventory before the duel. Each alternative replaces its slot's default; neither simultaneous wear nor a free in-combat equipment swap is assumed.
 
-| Slot | Default target / use |
-|---|---|
-| Head | **Razmir's Mask**, if legally obtained; otherwise a mental-stat headband |
-| Body | Robe of the Seven Sins: caster level and spell DC |
-| Main hand | Sin Mage's Staff; use the relevant equipped staff's actual effects |
-| Off-hand | Empty when using the staff |
-| Eyes | Goggles of Pure Sight for the limited dispel-roll resource |
-| Neck | Heartstone of the Night Hag Queen for its current defensive/DC package |
-| Wrists | Phylactery made from the retained Engraved Lucky Bracers at the Lich ritual |
-| Cloak | Highest suitable resistance cloak; The Bound of Possibility is an army-focused swap |
-| Gloves | Gloves of Enduring Wizard |
-| Belt | Best owned physical-stat belt for DEX |
-| Boots | Boots of Perfect Grounding |
-| Rings | Ring of Triumphant Advance and an owned caster/defensive ring |
-| Rods | Greater Quicken, Greater Persistent, Extend, and Grandmaster's Rod, within their real spell-level/charge limits |
+| Slot | Default target | Accounting |
+|---|---|---|
+| Head | **Draven's Hat** | +2 profane INT; compatible non-Good alignment. Its finite quickening supports spells up to level 9, not Absolute Death. |
+| Glasses | **Razmir's Mask** | +8 enhancement INT/WIS/CHA, first-spell free action and Spell Turning; obtained through the actual DLC6 quest choice. |
+| Body | **Robe of the Seven Sins** | Use its actual CL/DC effects; no second body item. |
+| Main hand | **Sin Mage's Staff** | The inspected feature gives +3 CL, +1 spell DC and +6 untyped INT. Its INT bonus is distinct from the mask's enhancement bonus. |
+| Off-hand | Empty | Staff occupies the weapon setup. |
+| Neck | **Wind Breath** | +4 morale initiative; useful before an enemy can strip protections. Ring of Triumphant Advance has no verified Initiative component: budget +4, not +8. |
+| Wrists | Wrist-slot Phylactery from Engraved Lucky Bracers | Requires the actual ritual choice and retained reward. |
+| Cloak | Best owned resistance cloak | The Bound of Possibility is an army-support replacement, not a second cloak. |
+| Gloves | Gloves of Enduring Wizard | Apply their actual qualifying-cast and temporary-HP rules. |
+| Belt | Flawless Belt of Physical Perfection +8 | DEX enhancement for initiative; undead CON does not supply ordinary living HP. |
+| Boots | Boots of Perfect Grounding | Listed energy/stun/stagger protections. |
+| Rings | Ring of Triumphant Advance; an owned caster/defensive ring | Apply only implemented morale-bonus categories; no blanket doubling of every morale statistic. |
+| Rod inventory | Greater Quicken, Greater Persistent, Extend, Grandmaster's Rod | Finite charges and real spell-level limits; a level9 maximum cannot quicken a level 10 spell. |
 
-Keep the Engraved Lucky Bracers for the ritual to obtain the wrist-slot Phylactery used in this table. Other ritual choices produce a necklace or weapon Phylactery and would conflict with the listed neck or staff slots; a fresh IE character must use the form it actually owns.
+**Glasses conflict:** Goggles of Pure Sight replace Razmir's Mask. The goggles' limited dispel-die resource and the mask's free cast cannot both be assumed in the same opening. Without the mask, use a mental-stat headband in the head slot instead of Draven's Hat and recalculate INT and slots. The default remains the mask loadout.
 
-Razmir's Mask and the mental headband occupy the same slot. The mask's first-spell action reduction is important if the equipped item's actual effect is available; it does not grant another swift action. Razmir's Mask and Razmir's Ring are alternative quest rewards in the normal acquisition route, so do not assume this character owns both.
+A mental headband can coexist with the mask physically; its same-type +8 enhancement bonuses do not add. Flawless Headband's separate Mind-Affecting immunity is valuable to a living Sword Saint, but overlaps this transformed Lich's undead immunity. Draven's +2 profane INT also does not stack with a larger Profane Ascension bonus to INT.
 
-Nocticula's Profane Ascension, Storyteller rewards, Inevitable Fate, and comparable campaign rewards apply only when actually acquired and retained. They are not guaranteed by selecting Lich in a fresh IE character. Do not add same-type stat bonuses twice.
+Heartstone of the Night Hag Queen is a legal neck replacement: +7 natural-armor enhancement, SR 38 and +3 spell DC can matter. They compete with Wind Breath's +4 initiative; the DC bonus does not improve Corrupt Magic's dispel check, and high-CL enemies can overcome SR 38. Choose the declared loadout before initiative, not after learning the initiative result.
 
-## Duel opening
+Razmir's Mask and Razmir's Ring are alternative normal quest rewards. Nocticula's Profane Ascension, Storyteller rewards and Inevitable Fate count only if actually acquired and retained. All-DLC ownership does not grant every campaign reward in direct-entry IE. No unique item is duplicated for the skeleton.
+
+## Casting and dispel arithmetic
+
+Merged baseline is Wizard 20 + Lich10 = CL30. Keep true CL, school-specific CL, specialization and dispel-only bonuses separate. With the listed effects actually present, an illustrative Corrupt Magic breakdown is:
+
+`30 merged + 2 Dark Rites + 3 robe + 3 staff + 1 Abjuration mastery + 2 specialization = CL41`
+
+Then add **+4 from Dispel Focus and Greater Dispel Focus** to the dispel check. Verify Dark Rites is active and the combat log reports the applicable item/mastery effects; do not manufacture a missing bonus. Compare each check with `11 + that individual buff's caster level`. School focus/DC bonuses do not increase this check.
+
+Corrupt Magic is an uncapped-CL, no-save, SR:no dispel of qualifying spell effects. Its blueprint does not enable one shared roll for all effects: do not borrow targeted Greater Dispel Magic's shared-roll behavior. It does not remove class features, feats, equipment or every possible non-spell buff.
+
+Trick Fate replaces its owner's qualifying d20 rolls, including that owner's dispel rolls. An enemy under Trick Fate does not roll the Lich's dispel check for it. Conversely, a natural20 on a dispel die is not automatic success: the total must still reach the buff's DC. Goggles' next-dispel resource is not evidence that every check in a multiple-effect Corrupt Magic is fixed at 20.
+
+## Concrete duel turns
 
 ### Before initiative
 
-Self-cast Mage Armor, Shield, Bone Shield, Mind Blank, Foresight, Seamantle, and the available protection package. Add sensory and concealment defenses, the finite summon group, and Haste in an order that preserves their durations.
+Prepare/rest first. Cast minutes-per-level defenses, then the finite summon group and compatible allied buffs, then shorter protections. Account for every action and elapsed round. No prebuff timer is paused and no summons are imported from repeated rests.
 
-Choose a compatible final polymorph layer. Fiery Body and Frightful Aspect are not two independent polymorph bonuses to add together. Fiery Body provides critical immunity; Bone Shield is a separate critical-immunity source. Bone Shield and Shield also supply overlapping shield bonuses: apply the higher, not their sum. Multiple temporary-HP effects do not automatically add together.
+The personal package includes Mage Armor, Shield, Bone Shield, Mind Blank, Foresight, Seamantle, Fiery Body, relevant energy protection and sensory defenses. Shield and Bone Shield overlap in shield-bonus type: use the higher, not their sum. Fiery Body and Frightful Aspect are alternative body/polymorph preparations, not independent bonuses to add together. Multiple temporary-HP effects do not automatically stack.
 
-### First effective turn
+Place the skeleton and summons in legal formation. They can screen, flank, attack or cast on their own turns; they do not automatically block teleportation or interrupt defensive casting. Use multi-creature Summon Monster variants when Superior Summoning is the intended benefit. Lord Beyond the Grave applies to eligible controlled undead, not every living summon.
 
-1. Check the actual initiative order, range, hostile spell protections, and the enemy's visible defenses.
-2. Activate the limited Deadly Magic window when the intended spell benefits from it.
-3. Remove key enemy effects with **Corrupt Magic**. Use the Greater Quicken Rod if a swift dispel is needed and legal.
-4. Use the remaining standard action for the effect the matchup requires: additional dispelling, compatible control, damage, or another summon.
-5. Use Absolute Death when its Will-save branch is appropriate; a successful save still takes damage. It is not an assumed kill through Trick Fate or Last Stand.
-6. Give the skeleton and summons their own orders and actions.
+### Action accounting
 
-Without a separate action-reduction effect, a standard Corrupt Magic and a standard Absolute Death do not fit into the same turn. With a valid mask effect, allocate its free-action spell, one swift action, and one standard action explicitly. Do not count the mask twice or assume the rod can quicken Absolute Death.
+A turn has one standard, one move and one swift action, or an applicable full-round action plus a swift. Rod-quickened casting spends the swift. Razmir's Mask can make the **first eligible Spell-type cast** free; it is neither a second swift action nor an unlimited sequence. Its marker can be consumed by another ability use, so cast the intended free spell before activating other abilities where necessary. Each free spell still spends its spell slot.
 
-## Checks that matter
+The following lines assume the mask marker is available and the required resources remain. If the marker is absent, the free spell must use an ordinary available action or wait. Greater Quicken cannot quicken Absolute Death.
 
-Merged book baseline: Wizard 20 + Lich 10 = CL30. Dark Rites, equipped item bonuses, School Mastery, and spell specialization must be recorded separately.
+| Observed situation | Free spell | Swift | Standard and move |
+|---|---|---|---|
+| Turn 1, targeted casting is safe; opponent relies on removable buffs | **Corrupt Magic** | Activate Deadly Magic if the next spell benefits, or preserve swift | **Standard:** Absolute Death only if its targeting, save and death-prevention gates make it appropriate; otherwise compatible control/damage. **Move:** improve distance or cover. |
+| Turn 1, enemy mask/turning is unresolved | A needed self-buff or **Summon Monster** | Activate a relevant limited power, or preserve swift | **Standard:** place a compatible ground-targeted area such as Selective Domain of the Hungry Flesh, or create another summon. **Move:** reposition away from melee. Area behavior against turning remains a test item, not a promised bypass. |
+| Turn 1, no mask free-cast marker | None | A Greater Quicken charge can pay for Corrupt Magic if safe to target | **Standard:** one separate appropriate spell. Without quickening, standard Corrupt Magic leaves no second standard cast. **Move:** reposition. |
+| Turn 2+, own critical immunity was removed | Restore **Bone Shield** if the free cast works | Quicken a second essential defense if needed; one swift only | **Standard:** one spell to regain pressure or recovery. **Move:** maintain spacing. Do not assume all lost buffs are restored together. |
+| Enemy Trick Fate remains | Additional safe dispelling or defense | One appropriate power/quickened spell | **Standard:** pressure through applicable damage, summons or movement. Do not base the plan on the opponent failing its protected saving throw. |
+| Enemy Last Stand is preventing death | Defense, movement utility or summon | One appropriate limited action | **Standard/move:** preserve control and distance while its actual window runs; do not promise an immediate death effect bypass. |
 
-For a dispel, distinguish actual caster level from dispel-only bonuses:
+If activation of a power, item or aura displays a different action in the installed UI, spend that action and remove the conflicting spell from the line. A swift used for Deadly Magic is unavailable for a rod spell. A mask free cast of Corrupt Magic followed by an appropriate standard spell does not require a third action, but it still needs safe targeting and successful removal checks.
 
-`d20 + relevant caster level + Dispel Focus bonuses + applicable check bonuses`
+Against Sword Saint, maintain at least one genuine critical-immunity source and expect normal weapon damage even while critical immunity works. Do not assume an undead target invalidates all of the opponent's weapon damage. Against another caster, protect the ability to act and replenish only the most consequential removed defenses. Against an enemy army, compare area control/removal with pursuing the summoner; living allied summons can be harmed by incompatible negative-energy or area effects.
 
-Compare with the affected spell's actual dispel DC, normally `11 + that buff's caster level`. School Mastery: Abjuration and specialization in Corrupt Magic concern the appropriate spell; Necromancy DC feats do not increase a Corrupt Magic check. Goggles can fix a limited dispel die at 20, not guarantee success against every possible DC.
+## Confirmed data, code inference and untested interactions
 
-Against a crit-based attacker, retain critical immunity. Against another caster, preserve the ability to act and cast after enemy dispels. Against a summon army, compare area removal/control with attacking the summoner. Against an opponent under Trick Fate, do not rely on a failed saving throw until that defense is removed or expires.
+| Interaction | Current finding | Evidence limit |
+|---|---|---|
+| Bone Shield / Fiery Body | Both provide critical immunity; Fiery Body also supplies stun immunity. | Natural20 and automatic confirmation do not remove immunity. |
+| Absolute Death | Failed Will invokes the kill action; successful Will deals **10 x actual CL unholy damage**. No SR check. | This does not establish a kill through Last Stand or Spell Turning. |
+| Absolute Death versus Last Stand | Last Stand's standby feature already carries UnitHealthGuard; the inspected death handler respects Infallible for ordinary MarkedForDeath, and Absolute Death does not use ForceKill. | Code supports death prevention, not the old assumed bypass. Test first lethal application, activation and expiry in the current turn-based setup. |
+| Corrupt Magic versus Trick Fate | The buff is spell-origin and dispellable; defender's natural20 does not fix the attacker's dispel die. | Removal still requires successful checks and safe targeting. |
+| Mask Spell Turning | The attached component is not limited to SR:yes spells. The inspected handler cancels an eligible original and executes a reflected cast. | Targeted Corrupt Magic / Greater Dispel / Absolute Death cannot be treated as proven safe. Area, self-cast, two-mask and special-effect interactions still need a current runtime test. |
+| Mask free cast | Blueprint checks AbilityType.Spell and supplies a finite round marker. | Confirm the marker and actual action display; another ability can consume it. It does not make SpellLike domain powers free. |
+| Mask divination protection | Attached protection concerns information-gathering effects such as True Seeing and Thoughtsense. | Do not infer that it automatically blocks every self-cast Divination buff. |
+| Deadly Magic | Limited SR/immunity-bypass and anti-casting tool. | No claim that it bypasses every death guard, item reflection, class feature or script. |
 
-No claim here assumes that Deadly Magic bypasses every immunity, that a dispel removes class features such as Last Stand, or that all damage can finish an opponent during a death-prevention window.
+These are implementation-based expectations. No live duel, full matchup matrix or measured win rate has been produced. The shared comparison in the [repository index](../README.md) uses the same rules and carries these uncertainties.
 
-## Sources and validation status
+## Sources and version
 
-Mechanics were checked against current accessible descriptions on 2026-10-27. Class/feat slots, point buy, prerequisite order, item-slot conflicts, and the document's resource/action accounting were reviewed. No round-robin PvP experiment has been performed.
+Audited **2026-10-29** against installed Steam **build 20212986**: [blueprints.zip](<C:/Program Files (x86)/Steam/steamapps/common/Pathfinder Second Adventure/blueprints.zip>), English `Wrath_Data/StreamingAssets/Localization/enGB.json`, and read-only assembly inspection. The installed data takes priority over an older public export.
 
-- [Wizard, Divination, and alternative archetypes](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/wizard)
-- [Magic feat prerequisites and dispel feats](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/feats)
-- [Owlcat reference: Hare familiar and class abilities](https://owlcat.games/PFWotRCRPGRD)
-- [Lich progression, skeleton, and spells](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/lich)
-- [Wizard class spell lists](https://www.neoseeker.com/pathfinder-wrath-of-the-righteous/guides/ClassSpellListing)
-- [Skeletal Champion casting and upgrades](https://pathfinderkingmaker.fandom.com/wiki/Skeletal_Champion_%28Lich%29)
-- [DLC6 quest reward: Razmir's Mask or Ring](https://gamefaqs.gamespot.com/ps4/324475-pathfinder-wrath-of-the-righteous/faqs/80843/a-dance-of-masks)
-- [Initiative modifiers](https://pathfinderkingmaker.fandom.com/wiki/Bonuses_%28WotR%29/Initiative)
+| Primary data | What it supports |
+|---|---|
+| [Razmir Mask item](https://wrath.bubbleprints.dev/bp/get/9338510a8d5c4b43b1284470b706128d?strings=true), [mask feature](https://wrath.bubbleprints.dev/bp/get/13d5818737694021b001641437a4ba29?strings=true), [free-cast marker](https://wrath.bubbleprints.dev/bp/get/40d4548a8b1f42ba92f70fcc1c50b491?strings=true) | Glasses slot, turning and free-spell implementation. |
+| [Corrupt Magic](https://wrath.bubbleprints.dev/bp/get/6fd7bdd6dfa9dd943b36d65faf97ac41?strings=true), [Trick Fate buff](https://wrath.bubbleprints.dev/bp/get/29d646e16e2539e45964f708f4c4f000?strings=true) | Dispel settings and owner-side d20 replacement. |
+| [Absolute Death](https://wrath.bubbleprints.dev/bp/get/7d721be6d74f07f4d952ee8d6f8f44a0?strings=true), [Last Stand standby](https://wrath.bubbleprints.dev/bp/get/c5455f88975e16648b4abc47a28fa120?strings=true) | Kill/save branches and the health guard already present before visible activation. |
+| [Wizard spell table](https://wrath.bubbleprints.dev/bp/get/78bb94ed2e75122428232950bb09e97b?strings=true) | CL30 base slots; actual INT and specialist restrictions remain separate. |
+| [Ascendant Summons buff](https://wrath.bubbleprints.dev/bp/get/3db4a1f9ffa46e7469f817bced1a0df2?strings=true), [Superior Summoning](https://wrath.bubbleprints.dev/bp/get/0477936c0f74841498b5c8753a8062a3?strings=true) | Eligible-unit stat/damage properties and multiple-creature bonus. |
+| [Expanded Arsenal](https://wrath.bubbleprints.dev/bp/get/f137089c48364014aa3ec3b92ccaf2e2?strings=true), [Favorite Selective](https://wrath.bubbleprints.dev/bp/get/3cdc012185334b7da4ed42c6fcc948cf?strings=true) | Focus-package transfer and the metamagic prerequisite. |
+| [Sin Mage's Staff feature](https://wrath.bubbleprints.dev/bp/get/a37d1e737e21433392b8292e2810906c?strings=true), [Draven's Hat enchantment](https://wrath.bubbleprints.dev/bp/get/b3894ce33c4c0ce4abf0dbcff0d6729f?strings=true), [Wind Breath enchantment](https://wrath.bubbleprints.dev/bp/get/de1d3eee66d7cff478b55384dcbd735d?strings=true) | Separate untyped/profane INT and the actual +4 morale initiative. |
+
+The public [decompiled engine snapshot](https://github.com/xADDBx/WrathDecompiled/tree/6ce4a6ba6d35039cc73ba16faf70c2d9952a63c2/Assembly-CSharp/Kingmaker) supplies readable implementations of `ContextActionKill`, `UnitHealthGuard`, `UnitLifeController`, `SpellTurning`, `RuleDispelMagic`, `ModifyD20` and `ExpandedArsenalMagicSchools`. That snapshot is older than the installed build; where a combined interaction has not been reproduced live, it is labelled untested above rather than promoted into a current-version victory claim.
