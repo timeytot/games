@@ -75,12 +75,13 @@ Spell Specialization: Greater Dispel Magic and Destructive Dispel are **not sele
 |---:|---|
 | 3 | Arcane Accuracy |
 | 6 | Enduring Blade |
-| 9 | Prescient Attack |
 | 12 | **Dimension Strike** |
 | 15 | Ghost Blade |
 | 18 | **Bane Blade** |
 
-Dimension Strike, Arcane Accuracy, Prescient Attack, and Arcane Weapon activation compete for the same swift action. Perfect Strike and Perfect Critical also consume the Arcane Pool according to their use; reserve the pool for the relevant attack window rather than treating it as unlimited.
+Sword Saint receives five Magus Arcana selections, at levels 3, 6, 12, 15 and 18. Its archetype removes the base Magus level-9 selection and grants Critical Perfection instead; there is no additional level-9 Prescient Attack in this build. See the [Sword Saint archetype](https://wrath.bubbleprints.dev/bp/get/7d6678f2160018049814838af2ab4236?strings=true).
+
+Dimension Strike, Arcane Accuracy and Arcane Weapon activation compete for the same swift action. Perfect Strike and Perfect Critical also consume the Arcane Pool according to their use; reserve the pool for the relevant attack window rather than treating it as unlimited.
 
 Enduring Blade remains the level 6 arcana. It extends the weapon enhancement's preparation window and reduces the need to renew it during combat. It is separate from the omitted Enduring Spells mythic abilities; it does not extend ordinary spell buffs or provide a free activation.
 
@@ -113,7 +114,7 @@ Perception II unlocks the special critical-feat chain. World III is acquired dur
 
 Luck and Travel are the two fixed Religion II domains. Luck supplies its normal luck tools; Travel supplies movement and Dimensional Hop. The current Domain Zealot blueprint explicitly accepts Trickster Religion II and includes Dimensional Hop among its affected abilities. Taking Religion II at MR8 makes that prerequisite available before MR9's generic mythic selection.
 
-Dimensional Hop normally uses a **move action**. With Domain Zealot it uses a **swift action**, preserving the full-round action for an attack after teleporting into reach. That swift action is then unavailable for Dimension Strike, Arcane Accuracy, Prescient Attack, Arcane Weapon activation, or a quickened spell. Hop has a finite domain resource and a legal destination/range; do not turn it into unlimited movement. Domain actions, durations, uses, and spell access must be counted separately from Magus actions and spell slots.
+Dimensional Hop normally uses a **move action**. With Domain Zealot it uses a **swift action**, preserving the full-round action for an attack after teleporting into reach. That swift action is then unavailable for Dimension Strike, Arcane Accuracy, Arcane Weapon activation, or a quickened spell. Hop has a finite domain resource and a legal destination/range; do not turn it into unlimited movement. Domain actions, durations, uses, and spell access must be counted separately from Magus actions and spell slots.
 
 **Archmage Armor timing:** this fixed arcana route does not supply native Mage Armor before UMD III. Use ordinary available defenses before MR10. Once the Wizard book is available, learn and self-cast Mage Armor. A Mage Armor potion or scroll does not activate Archmage Armor, and Bracers of Armor do not stack with its armor bonus.
 
